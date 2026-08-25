@@ -1,0 +1,4892 @@
+[
+  {
+    "id": "lm2-extra-shell-login-1",
+    "extra": true,
+    "topicHint": "쉘과 로그인 환경",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "현재 설정된 PATH 환경변수 뒤에 /opt/tools 디렉터리를 추가하려고 할 때 알맞은 명령은?",
+    "opts": [
+      "PATH=/opt/tools",
+      "export PATH=/opt/tools",
+      "export PATH=$PATH:/opt/tools",
+      "setenv PATH /opt/tools"
+    ],
+    "answer": 2,
+    "explain": "기존 PATH 값을 유지하며 새 경로를 추가하려면 <b>export PATH=$PATH:/opt/tools</b>처럼 $PATH를 그대로 포함시켜야 합니다. 단순히 PATH=/opt/tools로 지정하면 기존 경로가 모두 사라집니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-shell-login-2",
+    "extra": true,
+    "topicHint": "쉘과 로그인 환경",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "bash에서 ll을 입력하면 ls -al이 실행되도록 별명을 등록하는 명령으로 알맞은 것은?",
+    "opts": [
+      "alias ll ls -al",
+      "alias ll:ls -al",
+      "alias ll='ls -al'",
+      "alias 'ls -al'=ll"
+    ],
+    "answer": 2,
+    "explain": "<b>alias 별명='명령어'</b> 형식으로 등록합니다. 명령에 옵션 등 공백이 포함되면 반드시 따옴표로 묶어야 합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-shell-login-3",
+    "extra": true,
+    "topicHint": "쉘과 로그인 환경",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "일정 시간 동안 입력이 없으면 자동으로 로그아웃되도록 설정하는 환경변수는?",
+    "opts": [
+      "TMOUT",
+      "LOGOUT",
+      "HISTSIZE",
+      "IDLETIME"
+    ],
+    "answer": 0,
+    "explain": "<b>TMOUT</b>은 초 단위로 지정하며, 설정한 시간 동안 입력이 없으면 세션이 자동 종료됩니다. 전체 사용자에게 적용하려면 /etc/profile 등에 설정합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-shell-login-4",
+    "extra": true,
+    "topicHint": "쉘과 로그인 환경",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "현재 로그인해 있는 터미널 장치의 경로(예: /dev/pts/1)를 확인하는 명령은?",
+    "opts": [
+      "stty",
+      "tty",
+      "term",
+      "who"
+    ],
+    "answer": 1,
+    "explain": "<b>tty</b> 명령은 현재 사용 중인 터미널(가상 콘솔 또는 pseudo-terminal)의 장치 경로를 출력합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-shell-login-5",
+    "extra": true,
+    "topicHint": "쉘과 로그인 환경",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "명령의 출력 결과를 기존 파일 내용을 지우지 않고 끝에 이어붙이려 할 때 사용하는 기호는?",
+    "opts": [
+      ">",
+      ">>",
+      "<",
+      "|"
+    ],
+    "answer": 1,
+    "explain": "<b>>></b>는 기존 파일 내용을 유지한 채 끝에 이어붙입니다(append). >는 기존 내용을 덮어씁니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-filesystem-disk-1",
+    "extra": true,
+    "topicHint": "파일시스템과 디스크 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "MBR 방식의 파티션 구조에서 하나의 디스크에 만들 수 있는 주(Primary) 파티션의 최대 개수는?",
+    "opts": [
+      "2개",
+      "3개",
+      "4개",
+      "8개"
+    ],
+    "answer": 2,
+    "explain": "MBR 파티션 테이블은 파티션 정보를 <b>4개</b>까지만 담을 수 있어, 주 파티션은 최대 4개(또는 3개+확장 파티션 1개)까지 생성 가능합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-filesystem-disk-2",
+    "extra": true,
+    "topicHint": "파일시스템과 디스크 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "여러 개의 물리 디스크나 파티션을 하나의 논리 볼륨으로 묶어 동적으로 크기를 조정할 수 있게 해주는 기술은?",
+    "opts": [
+      "RAID",
+      "LVM",
+      "NFS",
+      "Swap"
+    ],
+    "answer": 1,
+    "explain": "<b>LVM</b>(Logical Volume Manager)은 여러 물리 디스크·파티션을 논리 볼륨으로 묶어 유연하게 관리하는 기술입니다. RAID는 성능 향상이나 이중화가 목적인 별개의 기술입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-filesystem-disk-3",
+    "extra": true,
+    "topicHint": "파일시스템과 디스크 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "두 번째 IDE(PATA) 디스크를 Primary Slave로 연결했을 때 인식되는 장치 파일명은?",
+    "opts": [
+      "/dev/hda",
+      "/dev/hdb",
+      "/dev/hdc",
+      "/dev/sdb"
+    ],
+    "answer": 1,
+    "explain": "IDE 장치는 <b>Primary Master=hda, Primary Slave=hdb, Secondary Master=hdc, Secondary Slave=hdd</b> 순으로 배정됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-filesystem-disk-4",
+    "extra": true,
+    "topicHint": "파일시스템과 디스크 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "로그 파일이나 메일 큐처럼 계속 변경·증가하는 데이터가 저장되어 별도 파티션 분리가 권장되는 디렉터리는?",
+    "opts": [
+      "/etc",
+      "/bin",
+      "/var",
+      "/boot"
+    ],
+    "answer": 2,
+    "explain": "<b>/var</b>는 로그·메일 큐 등 지속적으로 변경되는 데이터가 쌓이므로, 별도 파티션으로 분리하면 루트 파티션 용량 부족을 방지할 수 있습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-file-permission-1",
+    "extra": true,
+    "topicHint": "파일 및 디렉터리 권한 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "/etc/passwd 파일의 두 번째 필드 값이 x로 표시되어 있을 때 의미하는 것은?",
+    "opts": [
+      "실제 암호화된 비밀번호가 그대로 저장되어 있다",
+      "비밀번호가 /etc/shadow 파일에 별도로 저장되어 있다",
+      "계정이 잠겨 있다",
+      "로그인이 금지된 계정이다"
+    ],
+    "answer": 1,
+    "explain": "비밀번호 필드가 <b>x</b>이면 실제 암호화된 비밀번호는 /etc/shadow 파일에 저장되어 있다는 의미입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-file-permission-2",
+    "extra": true,
+    "topicHint": "파일 및 디렉터리 권한 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "사용자 계정을 삭제하면서 홈 디렉터리까지 함께 삭제하려 할 때 사용하는 옵션은?",
+    "opts": [
+      "userdel -f",
+      "userdel -r",
+      "userdel -d",
+      "userdel -h"
+    ],
+    "answer": 1,
+    "explain": "<b>userdel -r</b> 옵션을 사용하면 계정과 함께 홈 디렉터리 및 메일함까지 삭제합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-file-permission-3",
+    "extra": true,
+    "topicHint": "파일 및 디렉터리 권한 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "새 사용자를 생성할 때 기본 제공되는 설정 파일(.bashrc 등)이 담긴 원본 디렉터리는?",
+    "opts": [
+      "/etc/default",
+      "/etc/skel",
+      "/etc/login.defs",
+      "/etc/profile.d"
+    ],
+    "answer": 1,
+    "explain": "<b>/etc/skel</b> 디렉터리의 내용이 새 사용자의 홈 디렉터리로 복사되어 초기 설정 파일을 제공합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-file-permission-4",
+    "extra": true,
+    "topicHint": "파일 및 디렉터리 권한 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "그룹의 이름·비밀번호·그룹 관리자·구성원 정보를 담고 있는 파일은?",
+    "opts": [
+      "/etc/passwd",
+      "/etc/group",
+      "/etc/gshadow",
+      "/etc/shadow"
+    ],
+    "answer": 2,
+    "explain": "<b>/etc/gshadow</b>는 '그룹이름:비밀번호:그룹관리자:그룹멤버' 형식으로 그룹의 암호·관리 정보를 담습니다. 그룹명·GID·멤버 목록만 담는 /etc/group과는 구분됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-process-control-1",
+    "extra": true,
+    "topicHint": "프로세스와 작업 제어",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "시스템을 종료(정지)하지 않고 재부팅하는 명령으로 알맞은 것은?",
+    "opts": [
+      "shutdown -h now",
+      "halt",
+      "shutdown -r now",
+      "init 0"
+    ],
+    "answer": 2,
+    "explain": "<b>shutdown -r now</b>는 즉시 재부팅합니다. shutdown -h now, halt, init 0은 모두 시스템을 종료(정지)시킵니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-process-control-2",
+    "extra": true,
+    "topicHint": "프로세스와 작업 제어",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "root 비밀번호를 분실해 복구해야 할 때, 설치 디스크 부팅 메뉴에서 선택해야 하는 모드는?",
+    "opts": [
+      "Install or upgrade an existing system",
+      "Rescue installed system",
+      "Boot from local drive",
+      "Install system with basic video driver"
+    ],
+    "answer": 1,
+    "explain": "<b>Rescue installed system</b>(복구 모드)으로 부팅하면 기존 설치된 시스템에 진입해 root 비밀번호를 재설정할 수 있습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-process-control-3",
+    "extra": true,
+    "topicHint": "프로세스와 작업 제어",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "10분 뒤에 시스템을 재부팅하도록 예약하는 명령으로 알맞은 것은?",
+    "opts": [
+      "shutdown -r +10",
+      "shutdown -h +10",
+      "shutdown -r 00:10",
+      "reboot +10"
+    ],
+    "answer": 0,
+    "explain": "+분 표기는 지금부터 지정한 시간 뒤에 실행됨을 의미하며, <b>-r</b>은 재부팅, -h는 종료를 뜻합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-package-management-1",
+    "extra": true,
+    "topicHint": "패키지 관리와 소프트웨어 설치",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "소스 코드를 공개하지 않는 상용 소프트웨어에는 적용할 수 없는 라이선스는?",
+    "opts": [
+      "BSD",
+      "MIT",
+      "GPL",
+      "MPL"
+    ],
+    "answer": 2,
+    "explain": "<b>GPL</b>은 수정된 코드도 소스를 공개해야 하는 카피레프트 라이선스라, 소스를 비공개하는 상용 소프트웨어에는 적용할 수 없습니다. BSD·MIT는 제한이 적어 상용 소프트웨어에도 포함될 수 있습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-package-management-2",
+    "extra": true,
+    "topicHint": "패키지 관리와 소프트웨어 설치",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "리눅스 설치 시 MySQL·PostgreSQL 같은 프로그램을 함께 설치하려 할 때 선택하는 패키지 그룹은?",
+    "opts": [
+      "Web Server",
+      "Database Server",
+      "Virtual Host",
+      "Software Development Workstation"
+    ],
+    "answer": 1,
+    "explain": "<b>Database Server</b> 패키지 그룹을 선택하면 MySQL·PostgreSQL 등 데이터베이스 관련 패키지가 함께 설치됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-package-management-3",
+    "extra": true,
+    "topicHint": "패키지 관리와 소프트웨어 설치",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "설치 시 소스 코드를 직접 컴파일할 수 있는 개발 도구 모음을 포함하려 할 때 선택하는 패키지 그룹은?",
+    "opts": [
+      "Web Server",
+      "Virtual Host",
+      "Software Development Workstation",
+      "Database Server"
+    ],
+    "answer": 2,
+    "explain": "<b>Software Development Workstation</b> 그룹을 선택하면 gcc 등 소스 컴파일에 필요한 개발 도구가 함께 설치됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-shell-login-6",
+    "extra": true,
+    "topicHint": "쉘과 로그인 환경",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "현재 위치가 /home/user1일 때, 다음 중 이동 결과가 나머지 셋과 다른 것은?",
+    "opts": [
+      "cd ..",
+      "cd /home",
+      "cd ./..",
+      "cd"
+    ],
+    "answer": 3,
+    "explain": "인자 없이 <b>cd</b>만 입력하면 홈 디렉터리로 이동합니다. 나머지 세 가지는 모두 부모 디렉터리인 /home으로 이동합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-shell-login-7",
+    "extra": true,
+    "topicHint": "쉘과 로그인 환경",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "다음 중 로그인한 사용자 목록뿐 아니라 각 사용자가 실행 중인 프로세스 정보까지 함께 보여주는 명령은?",
+    "opts": [
+      "who",
+      "w",
+      "whoami",
+      "users"
+    ],
+    "answer": 1,
+    "explain": "<b>w</b>는 who와 비슷하지만 각 사용자가 실행 중인 프로세스 정보까지 함께 보여줍니다. whoami는 본인 계정명만, users는 로그인한 계정 목록만 출력합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-shell-login-8",
+    "extra": true,
+    "topicHint": "쉘과 로그인 환경",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "cut 명령으로 ':'을 구분자로 하여 /etc/passwd의 첫 번째와 세 번째 필드만 출력하려 할 때 알맞은 것은?",
+    "opts": [
+      "cut -f: -d 1,3 /etc/passwd",
+      "cut -d: -f 1,3 /etc/passwd",
+      "cut -d: -f 1-3 /etc/passwd",
+      "cut -f: -d 1-3 /etc/passwd"
+    ],
+    "answer": 1,
+    "explain": "<b>-d</b>는 구분자, <b>-f</b>는 출력할 필드 번호를 지정합니다. 1,3처럼 콤마로 구분하면 해당 필드만 골라 출력하고, 1-3처럼 하이픈을 쓰면 범위를 의미합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-shell-login-9",
+    "extra": true,
+    "topicHint": "쉘과 로그인 환경",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "옵션 없이 실행하면 파일을 1000줄 단위로 잘라 여러 개의 작은 파일로 만드는 명령은?",
+    "opts": [
+      "cut",
+      "sort",
+      "split",
+      "wc"
+    ],
+    "answer": 2,
+    "explain": "<b>split</b>은 옵션을 지정하지 않으면 기본적으로 1000줄 단위로 파일을 분할합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-shell-login-10",
+    "extra": true,
+    "topicHint": "쉘과 로그인 환경",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "mesg 명령을 인자 없이 실행했을 때 출력되는 y/n이 의미하는 것은?",
+    "opts": [
+      "다른 사용자가 write로 메시지를 보낼 수 있는지 여부",
+      "현재 로그인 여부",
+      "패스워드 설정 여부",
+      "화면 잠금 여부"
+    ],
+    "answer": 0,
+    "explain": "<b>mesg</b>는 다른 사용자가 write·wall 명령으로 내 터미널에 메시지를 보낼 수 있게 허용(y)할지 차단(n)할지 상태를 보여주고 설정합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-shell-login-11",
+    "extra": true,
+    "topicHint": "쉘과 로그인 환경",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "file 명령에 -i 옵션을 주었을 때 추가로 확인할 수 있는 정보는?",
+    "opts": [
+      "파일의 소유자 정보",
+      "파일의 MIME 타입 정보",
+      "파일의 아이노드 번호",
+      "파일의 최종 수정 시각"
+    ],
+    "answer": 1,
+    "explain": "<b>file -i</b>는 파일의 MIME 타입(예: text/plain; charset=us-ascii)을 함께 출력합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-filesystem-disk-5",
+    "extra": true,
+    "topicHint": "파일시스템과 디스크 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "E-IDE 방식의 디스크를 Secondary Slave로 연결했을 때 인식되는 장치 파일명은?",
+    "opts": [
+      "/dev/hda",
+      "/dev/hdb",
+      "/dev/hdc",
+      "/dev/hdd"
+    ],
+    "answer": 3,
+    "explain": "IDE 채널은 Primary Master=hda, Primary Slave=hdb, Secondary Master=hdc, <b>Secondary Slave=hdd</b> 순으로 배정됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-filesystem-disk-6",
+    "extra": true,
+    "topicHint": "파일시스템과 디스크 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "SATA 디스크(sda)가 이미 장착된 시스템에 USB 저장장치를 추가로 연결했을 때 인식되는 장치 파일명으로 알맞은 것은?",
+    "opts": [
+      "/dev/hdb",
+      "/dev/sda",
+      "/dev/sdb",
+      "/dev/hdc"
+    ],
+    "answer": 2,
+    "explain": "SATA·SCSI·USB 저장장치는 모두 sd 계열 이름을 쓰며, 이미 sda가 있는 상태에서 새 장치가 연결되면 다음 순번인 <b>sdb</b>로 인식됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-filesystem-disk-7",
+    "extra": true,
+    "topicHint": "파일시스템과 디스크 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "다음 중 별도 파티션으로 분할하는 것이 권장되지 않는 디렉터리는?",
+    "opts": [
+      "/var",
+      "/usr",
+      "/etc",
+      "/tmp"
+    ],
+    "answer": 2,
+    "explain": "<b>/etc</b>는 부팅 초기부터 반드시 접근 가능해야 하는 설정 파일이 모여 있어, 별도 파티션으로 분리하면 마운트 순서 문제로 부팅이 실패할 위험이 있어 권장되지 않습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-filesystem-disk-8",
+    "extra": true,
+    "topicHint": "파일시스템과 디스크 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "확장(Extended) 파티션 내부에 만들 수 있는 파티션의 종류로 알맞은 것은?",
+    "opts": [
+      "주(Primary) 파티션만 가능",
+      "논리(Logical) 파티션만 가능",
+      "주 파티션과 논리 파티션 모두 가능",
+      "스왑 파티션만 가능"
+    ],
+    "answer": 1,
+    "explain": "확장 파티션은 그 자체로는 데이터를 담지 않고, 내부에 <b>논리(Logical) 파티션</b>만 만들 수 있습니다. 주 파티션은 확장 파티션 안에 만들 수 없습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-file-permission-5",
+    "extra": true,
+    "topicHint": "파일 및 디렉터리 권한 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "passwd 명령으로 새 비밀번호를 입력할 때 화면에 나타나는 내용으로 알맞은 것은?",
+    "opts": [
+      "입력한 문자가 그대로 표시된다",
+      "입력한 문자 수만큼 *가 표시된다",
+      "아무것도 표시되지 않는다",
+      "입력할 때마다 비프음만 울린다"
+    ],
+    "answer": 2,
+    "explain": "보안상 passwd 입력 시에는 입력한 내용이 화면에 <b>전혀 표시되지 않습니다</b>(마스킹 문자조차 없음).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-file-permission-6",
+    "extra": true,
+    "topicHint": "파일 및 디렉터리 권한 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "일반 사용자 계정으로 groupadd 명령을 실행했을 때 'unable to lock group file'과 같은 오류가 발생하는 가장 흔한 이유는?",
+    "opts": [
+      "그룹 이름에 특수문자가 포함되어서",
+      "root 권한이 없어서",
+      "디스크 용량이 부족해서",
+      "네트워크 연결이 끊겨서"
+    ],
+    "answer": 1,
+    "explain": "groupadd·useradd 등 시스템 계정 파일을 수정하는 명령은 <b>root 권한</b>이 필요합니다. 일반 사용자로 실행하면 /etc/group 파일에 쓸 권한이 없어 실패합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-file-permission-7",
+    "extra": true,
+    "topicHint": "파일 및 디렉터리 권한 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": {
+      "text": "/etc/shadow 파일에 저장되는 정보가 아닌 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "마지막 비밀번호 변경일",
+        "truth": "true"
+      },
+      {
+        "text": "비밀번호 만료 전 경고기간",
+        "truth": "true"
+      },
+      {
+        "text": "계정 만료기간",
+        "truth": "true"
+      },
+      {
+        "text": "로그인 쉘",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "로그인 쉘 정보는 <b>/etc/passwd</b>에 저장됩니다. /etc/shadow는 암호화된 비밀번호와 비밀번호 정책(변경일·만료기간 등) 정보를 담습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-file-permission-8",
+    "extra": true,
+    "topicHint": "파일 및 디렉터리 권한 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "GID를 510으로 지정하여 ihd라는 새 그룹을 생성하는 명령으로 알맞은 것은?",
+    "opts": [
+      "groupadd -g ihd 510",
+      "groupadd -g 510 ihd",
+      "groupadd ihd -510",
+      "groupadd 510:ihd"
+    ],
+    "answer": 1,
+    "explain": "<b>groupadd -g [GID] [그룹명]</b> 순서로 지정합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-file-permission-9",
+    "extra": true,
+    "topicHint": "파일 및 디렉터리 권한 관리",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "특정 사용자의 비밀번호 상태(설정일, 최소/최대 사용기간 등)를 한 줄로 확인하는 명령으로 알맞은 것은?",
+    "opts": [
+      "passwd -l",
+      "passwd -S",
+      "passwd -u",
+      "passwd -e"
+    ],
+    "answer": 1,
+    "explain": "<b>passwd -S [사용자명]</b>은 해당 계정의 비밀번호 상태 정보를 한 줄로 보여줍니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-process-control-4",
+    "extra": true,
+    "topicHint": "프로세스와 작업 제어",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "SysV init 방식에서 시스템 재부팅 시 적용되는 기본 런레벨 값이 기록되어 있는 파일로 알맞은 것은?",
+    "opts": [
+      "/boot/grub/grub.conf",
+      "/etc/runlevels",
+      "/etc/inittab",
+      "/boot/runlevels"
+    ],
+    "answer": 2,
+    "explain": "SysV init 방식에서는 <b>/etc/inittab</b> 파일의 initdefault 항목에 기본 런레벨이 지정되어 있습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-process-control-5",
+    "extra": true,
+    "topicHint": "프로세스와 작업 제어",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "자정(00:00)에 시스템을 종료하도록 예약하는 명령으로 알맞은 것은?",
+    "opts": [
+      "shutdown -h 00:00",
+      "shutdown -h 12:00",
+      "shutdown -h 24:00",
+      "shutdown -h 12"
+    ],
+    "answer": 0,
+    "explain": "shutdown의 시각 지정은 24시간제 HH:MM 형식을 사용하므로 자정은 <b>00:00</b>으로 표기합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-process-control-6",
+    "extra": true,
+    "topicHint": "프로세스와 작업 제어",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "TMOUT 환경변수를 시스템의 모든 사용자에게 공통 적용하려고 할 때 설정해야 할 파일로 알맞은 것은?",
+    "opts": [
+      "~/.bashrc",
+      "/etc/profile",
+      "/etc/issue",
+      "/etc/motd"
+    ],
+    "answer": 1,
+    "explain": "개별 사용자가 아니라 전체 사용자에게 적용하려면 <b>/etc/profile</b>과 같은 전역 로그인 설정 파일에 TMOUT을 지정합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-package-management-4",
+    "extra": true,
+    "topicHint": "패키지 관리와 소프트웨어 설치",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": {
+      "text": "다음 중 GNU 프로젝트에 의해 개발된 프로그램이 아닌 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "gcc",
+        "truth": "true"
+      },
+      {
+        "text": "emacs",
+        "truth": "true"
+      },
+      {
+        "text": "KDE",
+        "truth": "false"
+      },
+      {
+        "text": "GNOME",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "<b>KDE</b>는 Qt 라이브러리 기반의 독립적인 데스크톱 프로젝트로 GNU 프로젝트 소속이 아닙니다. GNOME은 GNU 프로젝트의 공식 데스크톱 환경입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-package-management-5",
+    "extra": true,
+    "topicHint": "패키지 관리와 소프트웨어 설치",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "리눅스 설치 마법사가 진행 과정에서 기본적으로 설정을 요구하지 않는 항목은?",
+    "opts": [
+      "마우스",
+      "키보드",
+      "사용 언어",
+      "스캐너"
+    ],
+    "answer": 3,
+    "explain": "설치 과정에서 마우스·키보드·사용 언어는 기본으로 설정하지만, <b>스캐너</b> 같은 주변기기는 설치 마법사의 기본 설정 항목이 아닙니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-package-management-6",
+    "extra": true,
+    "topicHint": "패키지 관리와 소프트웨어 설치",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "리눅스 커널을 작성하는 데 사용된 프로그래밍 언어로 알맞은 것은?",
+    "opts": [
+      "COBOL",
+      "C",
+      "Java",
+      "Python"
+    ],
+    "answer": 1,
+    "explain": "리눅스 커널은 이식성과 성능을 위해 <b>C 언어</b>로 작성되었습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-package-management-7",
+    "extra": true,
+    "topicHint": "패키지 관리와 소프트웨어 설치",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": {
+      "text": "자유 소프트웨어(Free Software)에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "상업적 목적으로 사용할 수 있다",
+        "truth": "true"
+      },
+      {
+        "text": "소스 코드를 임의로 개작할 수 있다",
+        "truth": "true"
+      },
+      {
+        "text": "무료로 얻은 소스 코드로 프로그램을 만들면 반드시 무료로만 배포해야 한다",
+        "truth": "false"
+      },
+      {
+        "text": "라이선스에 따라 유료로 재배포할 수도 있다",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "자유 소프트웨어는 '자유롭게 사용·수정·배포할 수 있는 권리'가 핵심이지, 반드시 무료 배포를 강제하지는 않습니다. 예를 들어 BSD 라이선스 기반 소프트웨어는 유료로 판매할 수도 있습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-extra-peripheral-multimedia-1",
+    "extra": true,
+    "topicHint": "주변장치 및 멀티미디어 서비스",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "연습문제"
+    ],
+    "q": "광학 드라이브(CD/DVD)의 트레이를 열고 닫을 때 사용하는 명령으로 알맞은 것은?",
+    "opts": [
+      "mount",
+      "umount",
+      "eject",
+      "mmd"
+    ],
+    "answer": 2,
+    "explain": "<b>eject</b> 명령은 광학 드라이브의 트레이를 열고 닫는 데 사용됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q2",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 lin.txt 파일의 그룹 소유권을 kait, 소유자는 ihduser로 설정하는 명령으로 알맞은 것은?",
+    "opts": [
+      "chown kait:ihduser lin.txt",
+      "chown ihduser:kait lin.txt",
+      "charp kait:ihduser lin.txt",
+      "charp ihduser:kait lin.txt"
+    ],
+    "answer": 1,
+    "explain": "<b>chown</b>은 [소유자][:그룹] 순서로 지정합니다. 소유자를 ihduser, 그룹을 kait로 바꾸려면 <b>chown ihduser:kait lin.txt</b>가 맞고, charp는 존재하지 않는 명령어입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q3",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 파일이나 디렉터리에 부여된 Set-UID나 Set-GID와같은 특수 권한을 확인하는 명령어로 알맞은 것은?",
+    "opts": [
+      "ls",
+      "chmod",
+      "chown",
+      "umask"
+    ],
+    "answer": 0,
+    "explain": "<b>ls -l</b>로 출력되는 권한 필드에서 실행 권한 자리의 s(소문자) 또는 S(대문자)로 Set-UID·Set-GID 부여 여부를 확인합니다. chmod·chown은 권한을 변경하는 명령이고, umask는 새로 생성할 파일의 기본 권한을 제한할 뿐 기존 권한을 확인하는 명령이 아닙니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q6",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 fdisk 실행 상태에서 파티션을 삭제할 때 사용하는명령으로 알맞은 것은?",
+    "opts": [
+      "d",
+      "r",
+      "e",
+      "x"
+    ],
+    "answer": 0,
+    "explain": "fdisk 대화형 모드에서 <b>d</b>는 파티션 삭제, n은 생성, p는 정보 표시, t는 파티션 타입 지정 명령입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q8",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 /dev/sdb1 파티션을 ext4 파일 시스템으로 포맷하는명령으로 알맞은 것은?",
+    "opts": [
+      "mke2fs –j /dev/sdb1",
+      "mke2fs –j ext4 /dev/sdb1",
+      "mke2fs –t ext4 /dev/sdb1",
+      "mke2fs.ext4 /dev/sdb1"
+    ],
+    "answer": 2,
+    "explain": "<b>mke2fs -t ext4</b>처럼 -t 옵션으로 파일시스템 종류를 지정합니다. -j는 저널링(ext3) 옵션이라 ext4 지정에는 맞지 않고, mke2fs.ext4 같은 명령은 존재하지 않습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q9",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 현재 마운트된 디스크의 사용량을 확인할 때 사용하는 명령어로 알맞은 것은?",
+    "opts": [
+      "df",
+      "du",
+      "fdisk",
+      "mount"
+    ],
+    "answer": 0,
+    "explain": "<b>df</b>는 마운트된 파일시스템 단위로 디스크 사용량을 보여주고, du는 파일·디렉터리 단위 용량을 계산합니다. fdisk는 파티션 관리, mount는 마운트 명령입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q11",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 등장한 시기가 오래된 셸로 알맞은 것은?",
+    "opts": [
+      "bash",
+      "csh",
+      "dash",
+      "bourne shell"
+    ],
+    "answer": 3,
+    "explain": "<b>Bourne Shell(sh)</b>은 1977년에 만들어진 최초의 유닉스 표준 셸로, csh(1978)·bash(1989)·dash보다 시기적으로 앞섭니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q12",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 특정 사용자에게 부여된 로그인 셸이 기록된 파일명으로 알맞은 것은?",
+    "opts": [
+      "/etc/shells",
+      "/etc/passwd",
+      "˜/.bashrc",
+      "˜/.bash_profile"
+    ],
+    "answer": 1,
+    "explain": "사용자 계정 정보(로그인 셸 포함)는 <b>/etc/passwd</b>의 7번째 필드에 기록됩니다. /etc/shells는 시스템에서 허용하는 셸 '목록'만 담고 있는 파일입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q13",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 이용할 수 있는 셸의 정보를 확인할 때 사용하는명령으로 알맞은 것은?",
+    "opts": [
+      "chsh -i",
+      "chsh -s",
+      "chsh -u",
+      "chsh -l"
+    ],
+    "answer": 3,
+    "explain": "<b>chsh -l</b>은 /etc/shells에 등록되어 이용 가능한 셸 목록을 출력합니다. -s는 셸 변경 옵션이고, -u·-i는 존재하지 않는 옵션입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q14",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 사용자의 로그인 셸이 저장되는 환경 변수명으로알맞은 것은?",
+    "opts": [
+      "LOGIN",
+      "USER",
+      "SHELL",
+      "BASH"
+    ],
+    "answer": 2,
+    "explain": "현재 로그인 셸의 경로는 환경변수 <b>SHELL</b>에 저장됩니다. USER는 사용자명, BASH는 bash 관련 정보를 담는 변수이고 LOGIN은 표준 환경변수가 아닙니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q15",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 최근에 실행한 명령 중에 'al'로 끝나는 명령을 찾아서 실행하는 명령으로 알맞은 것은?(문제 오류로 가답안발표시 2번으로 발표되었지만 확정답안 발표시 모두 정답처리 되었습니다. 여기서는 가답안인 2번을 누르면 정답 처리됩니다.)",
+    "opts": [
+      "!!al",
+      "!?al",
+      "!*al",
+      "!-al"
+    ],
+    "answer": 1,
+    "explain": "히스토리에서 특정 문자열을 포함하는 가장 최근 명령을 재실행할 때는 <b>!?문자열?</b> 형식을 씁니다. 이 문제는 표기 오류 논란으로 확정답안 발표 시 전원 정답 처리되었으며, 원래 가답안은 ②였습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q16",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 시스템 전체 사용자에게 적용되는 환경변수 및 시작 관련 프로그램을 설정할 때 사용하는 파일로 가장 알맞은 것은?",
+    "opts": [
+      "/etc/bashrc",
+      "/etc/profile",
+      "˜/.bashrc",
+      "˜/.bash_profile"
+    ],
+    "answer": 1,
+    "explain": "시스템 전체(모든 사용자) 로그인 셸 환경을 설정하는 파일은 <b>/etc/profile</b>입니다. /etc/bashrc는 비로그인 셸(별칭 등) 설정용이고, ~/.bashrc·~/.bash_profile은 개별 사용자용 파일입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q22",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 SIGHUP의 시그널 번호로 알맞은 것은?",
+    "opts": [
+      "1",
+      "2",
+      "9",
+      "15"
+    ],
+    "answer": 0,
+    "explain": "SIGHUP은 시그널 번호 <b>1</b>번입니다. (2=SIGINT, 9=SIGKILL, 15=SIGTERM)",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q24",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 프로세스명을 인자값으로 사용하는 명령어의 조합으로 알맞은 것은?",
+    "opts": [
+      "kill, nice",
+      "kill, renice",
+      "killall, nice",
+      "killall, renice"
+    ],
+    "answer": 2,
+    "explain": "<b>killall</b>은 PID가 아니라 프로세스 이름으로 대상을 지정하고, <b>nice</b>는 실행할 프로그램(명령) 이름을 인자로 받아 우선순위를 지정해 실행합니다. kill과 renice는 이름이 아니라 PID를 인자로 사용합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q26",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "프로세스 아이디(PID)가 1222인 bash 프로세스의 우선순위(NI)값이 0이다. 다음 중 이 프로세스의 NI값을 10으로 우선순위를 변경하는 명령으로 알맞은 것은?",
+    "opts": [
+      "nice 10 1222",
+      "nice -10 1222",
+      "nice 10 bash",
+      "nice -10 bash"
+    ],
+    "answer": 3,
+    "explain": "old-style 문법인 <b>nice -증가값 명령</b>에서 '-'는 옵션 기호일 뿐이라 <b>nice -10 bash</b>는 NI값을 10으로 설정해 bash를 실행합니다. (다만 이미 떠 있는 특정 PID의 우선순위를 바꾸는 정식 명령은 renice이며, 이 문제는 nice의 옵션 표기법을 묻는 문제로 볼 수 있습니다.)",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q28",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 포어그라운드 프로세스를 백그라운드 프로세스로전환하기 위해 사용하는 키 조합으로 알맞은 것은?",
+    "opts": [
+      "[Ctrl]+[c]",
+      "[Ctrl]+[a]",
+      "[Ctrl]+[l]",
+      "[Ctrl]+[z]"
+    ],
+    "answer": 3,
+    "explain": "<b>[Ctrl]+[Z]</b>로 포그라운드 프로세스를 일시정지(suspend)시킨 뒤 bg 명령으로 백그라운드로 전환합니다. [Ctrl]+[C]는 프로세스를 아예 종료시키는 키입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q30",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 nano 편집기에서 프로그램을 종료하는 키 조합으로 알맞은 것은?",
+    "opts": [
+      "[Ctrl]+[a]",
+      "[Ctrl]+[e]",
+      "[Ctrl]+[c]",
+      "[Ctrl]+[x]"
+    ],
+    "answer": 3,
+    "explain": "nano 편집기는 <b>[Ctrl]+[X]</b>로 종료합니다. (저장은 [Ctrl]+[O], 잘라내기는 [Ctrl]+[K])",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q31",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 X 윈도 환경에서만 실행되는 편집기로 알맞은 것은?",
+    "opts": [
+      "gedit",
+      "pico",
+      "nano",
+      "emacs"
+    ],
+    "answer": 0,
+    "explain": "<b>gedit</b>은 그놈 데스크톱의 GUI 텍스트 편집기로 X 윈도 환경에서만 실행됩니다. pico·nano·emacs는 기본적으로 CLI(터미널) 환경에서도 실행할 수 있습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q34",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 vi 편집기에서 커서 키가 없는 자판 이용 시에 아래방향으로 이동하기 위한 명령으로 알맞은 것은?",
+    "opts": [
+      "h",
+      "j",
+      "k",
+      "l"
+    ],
+    "answer": 1,
+    "explain": "vi에서 방향키 대신 <b>h(왼쪽) j(아래) k(위) l(오른쪽)</b>로 커서를 이동합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q35",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 수세 리눅스에서 사용되는 패키지 관리 도구 모음으로 가장 알맞은 것은?",
+    "opts": [
+      "YaST, zypper",
+      "YaST, dpkg",
+      "dpkg, zypper",
+      "dnf, zypper"
+    ],
+    "answer": 0,
+    "explain": "수세(SUSE) 계열은 <b>YaST</b>(통합 관리 도구)와 <b>zypper</b>(패키지 관리 명령)를 사용합니다. dpkg는 데비안 계열, dnf는 레드햇/페도라 계열 도구입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q40",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 대용량의 파일을 백업할 때 압축 효율성이 좋은 순서의 나열로 알맞은 것은?",
+    "opts": [
+      ".gz ＞ .bz2 ＞ .xz",
+      ".bz2 ＞ .gz ＞ .xz",
+      ".xz ＞ .gz ＞ .bz2",
+      ".xz ＞ .bz2 ＞ .gz"
+    ],
+    "answer": 3,
+    "explain": "압축률은 일반적으로 <b>xz > bzip2 > gzip</b> 순으로 높습니다(대신 압축 속도는 반대로 gzip이 더 빠릅니다).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q42",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 yum 명령을 이용해서 nmap 패키지를 제거하는 명령으로 알맞은 것은?",
+    "opts": [
+      "yum –e nmap",
+      "yum –d nmap",
+      "yum remove nmap",
+      "yum delete nmap"
+    ],
+    "answer": 2,
+    "explain": "yum 패키지 제거 명령은 <b>yum remove 패키지명</b>입니다. -e, -d, delete 같은 옵션·서브커맨드는 존재하지 않습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q43",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 CentOS 7에서 X 윈도 기반으로 프린터를 설정할때 실행하는 명령으로 알맞은 것은?",
+    "opts": [
+      "printtool",
+      "printconf",
+      "system-config-printer",
+      "redhat-config-printer"
+    ],
+    "answer": 2,
+    "explain": "CentOS 7 계열의 GUI 프린터 설정 도구는 <b>system-config-printer</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q45",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 리눅스에서 프린터 서버로 사용하기 위해 설치하는프로그램으로 알맞은 것은?",
+    "opts": [
+      "CUPS",
+      "SANE",
+      "ALSA",
+      "OSS"
+    ],
+    "answer": 0,
+    "explain": "리눅스의 대표적인 프린팅 시스템(프린터 서버)은 <b>CUPS</b>(Common Unix Printing System)입니다. SANE은 스캐너, ALSA/OSS는 사운드 관련 시스템입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q46",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 System V 계열 유닉스에서 출력을 실행할 때 사용하는 명령으로 알맞은 것은?",
+    "opts": [
+      "lp",
+      "lpr",
+      "lpc",
+      "lpstat"
+    ],
+    "answer": 0,
+    "explain": "System V 계열 유닉스의 인쇄 명령은 <b>lp</b>입니다. (BSD 계열은 lpr을 사용하며, lpc·lpstat은 상태 확인·제어용 보조 명령입니다.)",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q48",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 중 하드디스크 4개를 사용해서 RAID 구성했을 경우실제 사용 가능한 디스크 용량의 효율성이 50%인 조합으로알맞은 것은?",
+    "opts": [
+      "RAID-0, RAID-5",
+      "RAID-1, RAID-5",
+      "RAID-0, RAID-6",
+      "RAID-1, RAID-6"
+    ],
+    "answer": 3,
+    "explain": "디스크 4개 기준, <b>RAID-1</b>(미러링, 유효 용량 50%)과 <b>RAID-6</b>(패리티 2개 사용, 유효 용량 50%)이 효율 50%에 해당합니다. RAID-0은 손실 없이 100%, RAID-5는 (n-1)/n=75%입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q3",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 특수 권한이 설정된 파일이나 디렉터리로 알맞은 것은?",
+    "opts": [
+      "/etc",
+      "/etc/shadow",
+      "/etc/passwd",
+      "/usr/bin/passwd"
+    ],
+    "answer": 3,
+    "explain": "특수 권한(Set-UID)이 걸린 대표적인 실행 파일이 <b>/usr/bin/passwd</b>입니다. 일반 사용자가 자기 비밀번호를 바꾸려면 /etc/shadow에 쓰기 권한이 필요한데, passwd 명령에 Set-UID가 걸려 있어 실행하는 동안만 root 권한을 빌려 씁니다. /etc, /etc/shadow, /etc/passwd 자체는 디렉터리·파일일 뿐 특수 권한 대상이 아닙니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q6",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 fdisk 실행 상태에서 변경된 파티션 정보를 저장하지않고 종료하는 명령으로 알맞은 것은?",
+    "opts": [
+      "w",
+      "q",
+      "t",
+      "x"
+    ],
+    "answer": 1,
+    "explain": "fdisk에서 변경 사항을 저장하지 않고 종료하는 명령은 <b>q</b>입니다. w는 저장 후 종료, t는 파티션 타입 변경 명령입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q8",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 파일 시스템이 ext4인 /dev/sdb1 파티션을 /data 디렉터리로 마운트하는 명령으로 알맞은 것은?",
+    "opts": [
+      "mount –o ext4 /data /dev/sdb1",
+      "mount –o ext4 /dev/sdb1 /data",
+      "mount –t ext4 /data /dev/sdb1",
+      "mount –t ext4 /dev/sdb1 /data"
+    ],
+    "answer": 3,
+    "explain": "<b>mount -t 파일시스템타입 장치명 마운트포인트</b> 순서로 사용합니다. -o는 마운트 옵션 지정용이라 파일시스템 타입 지정에는 맞지 않습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q10",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 /etc/fstab 파일에서 마운트될 때의 옵션을 지정하는 필드는 몇 번째인가?",
+    "opts": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 3,
+    "explain": "/etc/fstab의 필드 순서는 [장치][마운트포인트][파일시스템][옵션][덤프][점검순서]이며, 마운트 옵션은 <b>4번째</b> 필드입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q12",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 사용자가 시스템에 로그인한 후에 이용중인 셸을확인하는 명령으로 알맞은 것은?",
+    "opts": [
+      "ps",
+      "chsh",
+      "login",
+      "shells"
+    ],
+    "answer": 0,
+    "explain": "<b>ps</b> 명령 출력의 TTY·CMD 항목으로 현재 로그인 세션에서 사용 중인 셸을 확인할 수 있습니다. chsh는 셸을 변경하는 명령이라 확인 용도가 아닙니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q13",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 사용자가 이용할 수 있는 셸 정보가 기록된 파일명으로 알맞은 것은?",
+    "opts": [
+      "/etc/shells",
+      "/etc/passwd",
+      "~/.bashrc",
+      "~/.bash_profile"
+    ],
+    "answer": 0,
+    "explain": "사용 가능한 셸 목록은 <b>/etc/shells</b> 파일에 기록되어 있습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q14",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 사용자가 다른 셸로 변경할 때 실행하는 명령으로알맞은 것은?",
+    "opts": [
+      "chsh –n /bin/csh",
+      "chsh –s /bin/csh",
+      "chsh -u /bin/csh",
+      "chsh –l /bin/csh"
+    ],
+    "answer": 1,
+    "explain": "로그인 셸을 변경하는 명령은 <b>chsh -s 새셸경로</b>입니다. -n, -u, -l 같은 옵션은 존재하지 않습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q16",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 시스템 전체 사용자에게 적용되는 alias 및 함수를설정할 때 사용하는 파일로 가장 알맞은 것은?",
+    "opts": [
+      "/etc/bashrc",
+      "/etc/profile",
+      "~/.bashrc",
+      "~/.bash_profile"
+    ],
+    "answer": 0,
+    "explain": "시스템 전체 사용자에게 적용되는 별칭(alias)·함수는 <b>/etc/bashrc</b>에서 설정합니다. /etc/profile은 전역 환경변수·시작 프로그램용이고, ~/.bashrc·~/.bash_profile은 개별 사용자용입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q20",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 시그널에 부여된 번호값을 확인하는 방법으로 알맞은 것은?",
+    "opts": [
+      "signal 명령어를 사용해서 확인한다.",
+      "kill 명령어를 사용해서 확인한다.",
+      "ps 명령어를 사용해서 확인한다.",
+      "exec 명령어를 사용해서 확인한다."
+    ],
+    "answer": 1,
+    "explain": "시그널 번호는 <b>kill -l</b> 명령으로 확인할 수 있습니다. signal이라는 명령은 없고, ps·exec는 시그널 번호 확인과 무관합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q24",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 백그라운드로 실행 중인 데몬을 확인하는 방법으로알맞은 것은?",
+    "opts": [
+      "jobs 명령어를 사용해서 확인한다.",
+      "fg 명령어를 사용해서 확인한다.",
+      "bg 명령어를 사용해서 확인한다.",
+      "ps 명령어를 사용해서 확인한다."
+    ],
+    "answer": 3,
+    "explain": "포그라운드·백그라운드 여부와 무관하게 실행 중인 프로세스 전체를 확인하려면 <b>ps</b> 명령을 사용합니다. jobs·fg·bg는 현재 셸 세션에 속한 작업만 보여줍니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q26",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "프로세스 아이디(PID)가 1222인 bash 프로세스의 우선순위(NI)값이 0이다. 다음 중 이 프로세스의 NI값을 10으로 우선순위를 변경하는 명령으로 알맞은 것은?",
+    "opts": [
+      "renice 10 1222",
+      "renice -10 1222",
+      "renice 10 bash",
+      "renice -10 bash"
+    ],
+    "answer": 0,
+    "explain": "이미 실행 중인 PID의 우선순위를 바꿀 때는 <b>renice</b>를 사용하며, <b>renice 10 1222</b>처럼 [새 NI값] [PID] 순서로 지정합니다. (renice는 nice와 달리 '-' 없이 쓴 숫자가 그대로 NI값이 됩니다.)",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q28",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 프로세스 우선순위를 변경할 때 사용하는 NI 값의범위로 알맞은 것은?",
+    "opts": [
+      "-20 ~ 20",
+      "-20 ~ 19",
+      "-19 ~ 19",
+      "-19 ~ 20"
+    ],
+    "answer": 1,
+    "explain": "리눅스 NI(nice value) 범위는 <b>-20 ~ 19</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q29",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 GNU 프로젝트에 의해 관리되는 편집기로 알맞은것은?",
+    "opts": [
+      "pico",
+      "nano",
+      "vim",
+      "kwrite"
+    ],
+    "answer": 1,
+    "explain": "<b>nano</b>는 GNU 프로젝트가 관리하는 편집기입니다. pico는 nano의 원조가 된 비GNU(라이선스 제한) 편집기이고, vim·kwrite는 GNU 프로젝트 소속이 아닙니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q30",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 vim 편집기의 개발자로 알맞은 것은?",
+    "opts": [
+      "빌 조이",
+      "브람 무레나르",
+      "리처드 스톨먼",
+      "제임스 고슬링"
+    ],
+    "answer": 1,
+    "explain": "vim은 <b>브람 무레나르(Bram Moolenaar)</b>가 만든 vi 계열 편집기입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q32",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 vi 편집기에서 편집 중인 문서 파일의 마지막 줄로이동하기 위한 명령으로 알맞은 것은?",
+    "opts": [
+      ":^",
+      ":+",
+      ":$",
+      "ZZ"
+    ],
+    "answer": 2,
+    "explain": "vi에서 파일의 마지막 줄로 이동하는 명령은 <b>:$</b>입니다. (:^는 첫 줄의 첫 글자, ZZ는 저장 후 종료 명령입니다.)",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q33",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 vi 편집기에서 단어의 시작이 linux 인 경우에만 전부 Linux로 치환하는 명령으로 알맞은 것은?",
+    "opts": [
+      ":% s/^linux/Linux/g",
+      ":% s/\\<linux/Linux/g",
+      ":% s/Linux/^linux/g",
+      ":% s/Linux/\\<linux/g"
+    ],
+    "answer": 1,
+    "explain": "단어의 '시작'이 linux인 경우만 치환하려면 단어 경계를 나타내는 <b>\\\\<</b>를 사용해 <b>:%s/\\\\<linux/Linux/g</b>처럼 씁니다. ^linux는 '줄의 시작'이 linux인 경우를 뜻해 의미가 다릅니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q34",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 vi 편집기에서 환경 설정한 내용을 계속해서 사용하기 위해 등록하는 파일명으로 알맞은 것은?",
+    "opts": [
+      ".virc",
+      ".exrc",
+      "dd",
+      "s"
+    ],
+    "answer": 1,
+    "explain": "vi의 환경설정을 다음 실행에도 유지하려면 <b>.exrc</b> 파일에 set 옵션들을 저장해 둡니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q35",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": {
+      "text": "다음 중 리눅스에서 사용되는 온라인 패키지 관리도구로 거리가 먼 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "YaST",
+        "truth": "false"
+      },
+      {
+        "text": "apt-get",
+        "truth": "true"
+      },
+      {
+        "text": "dnf",
+        "truth": "true"
+      },
+      {
+        "text": "zypper",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>YaST</b>는 수세(SUSE) 계열 전용 통합 관리 도구라 다른 배포판과 무관합니다. apt-get(데비안)·dnf(레드햇)·zypper(수세)는 모두 온라인 저장소 기반 패키지 관리 명령입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q41",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": {
+      "text": "다음 중 rpm 명령의 설치 관련 옵션으로 가장 거리가 먼 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "-i",
+        "truth": "true"
+      },
+      {
+        "text": "-U",
+        "truth": "true"
+      },
+      {
+        "text": "-F",
+        "truth": "true"
+      },
+      {
+        "text": "-f",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "rpm 설치 관련 옵션은 <b>-i(설치) -U(업그레이드/설치) -F(이미 설치된 것만 업그레이드)</b>입니다. -f는 이런 설치 옵션이 아니라 파일을 지정할 때 쓰는 옵션(예: rpm -qf)입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q42",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 미설치된 sendmail 패키지에 대한 자세한 정보를확인하는 명령으로 알맞은 것은?",
+    "opts": [
+      "rpm –qi sendmail",
+      "yum –qi sendmail",
+      "yum list sendmail",
+      "yum info sendmail"
+    ],
+    "answer": 3,
+    "explain": "설치 여부와 무관하게 저장소의 패키지 정보를 자세히 보려면 <b>yum info 패키지명</b>을 사용합니다. rpm -qi는 이미 '설치된' 패키지만 조회할 수 있어 미설치 패키지에는 쓸 수 없습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q45",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 사운드카드를 제어 및 설정할 때 사용하는 명령으로 알맞은 것은?",
+    "opts": [
+      "lpadmin",
+      "cancel",
+      "lpc",
+      "alsactl"
+    ],
+    "answer": 3,
+    "explain": "사운드카드를 제어·설정하는 명령은 <b>alsactl</b>입니다. lpadmin·cancel·lpc는 프린터 관련 명령입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q46",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 BSD 계열 유닉스에서 출력을 실행할 때 사용하는명령으로 알맞은 것은?",
+    "opts": [
+      "lp",
+      "lpr",
+      "lpc",
+      "lpstat"
+    ],
+    "answer": 1,
+    "explain": "BSD 계열 유닉스의 인쇄 명령은 <b>lpr</b>입니다. (System V 계열은 lp를 사용)",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q48",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 10GB 용량을 가진 디스크 4개를 사용해서 RAID-0을 구성했을 경우 실제 사용 가능한 디스크 용량으로 알맞은 것은?",
+    "opts": [
+      "10GB",
+      "20GB",
+      "30GB",
+      "40GB"
+    ],
+    "answer": 3,
+    "explain": "RAID-0은 디스크를 그대로 이어 붙이는 방식(스트라이핑, 중복 없음)이라 10GB 4개를 모두 더한 <b>40GB</b>를 그대로 사용할 수 있습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q2",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": {
+      "text": "다음 중 특수 권한을 부여해서 사용하는 경우의 예로 가장거리가 먼 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "Sticky-Bit를 파일에 부여한다.",
+        "truth": "false"
+      },
+      {
+        "text": "Set-UID를 실행 파일에 부여한다.",
+        "truth": "true"
+      },
+      {
+        "text": "Set-GID를 실행 파일에 부여한다.",
+        "truth": "true"
+      },
+      {
+        "text": "Set-GID를 디렉터리에 부여한다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "리눅스에서 Sticky-Bit는 <b>디렉터리</b>에 부여했을 때만 의미가 있고(공용 디렉터리 보호), <b>파일에 부여하면 무시됩니다.</b> Set-UID·Set-GID는 실행 파일에, Set-GID는 디렉터리에도 실제로 의미 있게 쓰입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q3",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 파일이나 디렉터리의 소유자를 확인하는 명령어로알맞은 것은?",
+    "opts": [
+      "ls",
+      "chmod",
+      "chown",
+      "umask"
+    ],
+    "answer": 0,
+    "explain": "<b>ls -l</b> 출력의 세 번째 필드가 파일·디렉터리의 소유자입니다. chmod·chown은 권한·소유권을 바꾸는 명령이고, umask는 기본 권한 설정용입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q6",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 현재 마운트된 디스크의 남아있는 용량을 확인할 때사용하는 명령어로 알맞은 것은?",
+    "opts": [
+      "df",
+      "du",
+      "fdisk",
+      "mount"
+    ],
+    "answer": 0,
+    "explain": "<b>df</b>는 마운트된 파일시스템별로 전체·사용·가용 용량을 보여줍니다. du는 파일·디렉터리 단위 사용량만 계산합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q15",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 최근에 실행한 명령 중에 'al'이라는 문자열을 포함한 명령을 찾아서 실행하는 명령으로 알맞은 것은?",
+    "opts": [
+      "!?al",
+      "!!al",
+      "!*al",
+      "!-al"
+    ],
+    "answer": 0,
+    "explain": "히스토리에서 특정 <b>문자열을 포함</b>하는 가장 최근 명령을 실행할 때는 <b>!?문자열</b> 형식을 씁니다. !!는 바로 직전 명령을 뜻하고, !-al 같은 문법은 없습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q17",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "ls 명령으로 에일리어스(alias)가 설정된 상태에서 원래의 ls명령어를 실행하려고 한다. 다음 중 관련 설명으로 알맞은것은?",
+    "opts": [
+      "ls 명령어 앞에 ! 기호를 덧붙여서 실행한다.",
+      "ls 명령어 앞에 $ 기호를 덧붙여서 실행한다.",
+      "ls 명령어 앞에 \\ 기호를 덧붙여서 실행한다.",
+      "ls 명령어 앞에 / 기호를 덧붙여서 실행한다."
+    ],
+    "answer": 2,
+    "explain": "명령어 앞에 <b>\\</b>(백슬래시)를 붙이면 별칭(alias)을 무시하고 원래 명령을 실행합니다(예: \\ls).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q20",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 명령어를 백그라운드 프로세스로 실행하기 위한 방법으로 알맞은 것은?",
+    "opts": [
+      "실행 명령어 앞부분에 bg를 덧붙여서 실행한다.",
+      "실행 명령어 앞부분에 jobs를 덧붙여서 실행한다.",
+      "실행 명령어 뒷부분에 & 기호를 덧붙여서 실행한다.",
+      "실행 명령어 뒷부분에 bg를 덧붙여서 실행한다."
+    ],
+    "answer": 2,
+    "explain": "명령 뒤에 <b>&</b>를 붙이면 그 명령이 백그라운드로 실행됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q22",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 kill 명령어를 실행할 때 전달되는 기본 시그널 명칭과 번호의 조합으로 알맞은 것은?",
+    "opts": [
+      "SIGKILL, 9",
+      "SIGKILL, 15",
+      "SIGTERM, 9",
+      "SIGTERM, 15"
+    ],
+    "answer": 3,
+    "explain": "kill 명령에 시그널을 지정하지 않으면 기본값으로 <b>SIGTERM(15)</b>이 전달됩니다. 강제 종료 시그널인 SIGKILL(9)은 명시적으로 지정해야 합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q23",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 포어그라운드 프로세스를 백그라운드 프로세스로전환하기 위해 사용하는 키 조합으로 알맞은 것은?",
+    "opts": [
+      "[Ctrl] + [c]",
+      "[Ctrl] + [a]",
+      "[Ctrl] + [z]",
+      "[Ctrl] + [d]"
+    ],
+    "answer": 2,
+    "explain": "<b>[Ctrl]+[Z]</b>로 포그라운드 프로세스를 일시정지시킨 뒤 bg 명령으로 백그라운드 전환합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q29",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 vi 편집기를 개발한 인물로 알맞은 것은?",
+    "opts": [
+      "빌 조이",
+      "리처드 스톨만",
+      "브람 브레나르",
+      "제임스 고슬링"
+    ],
+    "answer": 0,
+    "explain": "vi는 <b>빌 조이(Bill Joy)</b>가 개발했습니다. (vim은 이후 브람 무레나르가 만든 vi 확장판입니다.)",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q30",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 기본 사용법이 동일한 편집기의 조합으로 알맞은것은?",
+    "opts": [
+      "vi, emacs",
+      "pico, emacs",
+      "pico, nano",
+      "vi, pico"
+    ],
+    "answer": 2,
+    "explain": "<b>nano</b>는 <b>pico</b>를 본떠 GNU 버전으로 만들어져 기본 조작법(단축키 등)이 거의 동일합니다. vi·emacs는 이들과 조작 방식이 크게 다릅니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q32",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 vi 편집기의 명령 모드에서 바로 직전에 삭제한 줄을 다시 복원하기 위해 실행하는 명령으로 알맞은 것은?",
+    "opts": [
+      "c",
+      "r",
+      "u",
+      "dd"
+    ],
+    "answer": 2,
+    "explain": "vi에서 <b>u</b>는 방금 실행한 명령(삭제 등)을 취소(undo)하는 명령입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q33",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 vi 편집기에서 한 줄이 linux인 경우에만 전부 Linux로 치환하는 명령으로 알맞은 것은?",
+    "opts": [
+      ":% s/^linux$/Linux/g",
+      ":% s/linux/^Linux$/g",
+      ":% s/\\<linux\\>/Linux/g",
+      ":% s/linux/\\<Linux\\>/g"
+    ],
+    "answer": 0,
+    "explain": "줄 <b>전체</b>가 정확히 linux인 경우만 바꾸려면 줄의 시작(^)과 끝($)을 모두 고정한 <b>:%s/^linux$/Linux/g</b>를 사용합니다. \\<...\\>는 '단어 경계'만 고정할 뿐 줄 전체 일치를 보장하지 않습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q34",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 vi 편집기에서 행 번호가 표시되도록 하는 ex 모드환경설정으로 알맞은 것은?",
+    "opts": [
+      "set no",
+      "set ai",
+      "set sm",
+      "set number"
+    ],
+    "answer": 3,
+    "explain": "vi에서 줄 번호를 표시하려면 <b>:set number</b>(축약: set nu)를 사용합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q35",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 데비안 계열 리눅스에서 사용되는 패키지 관리 도구 모음으로 가장 알맞은 것은?",
+    "opts": [
+      "YaST, zypper",
+      "YaST, dpkg",
+      "dpkg, apt-get",
+      "dnf, zypper"
+    ],
+    "answer": 2,
+    "explain": "데비안 계열은 저수준 도구 <b>dpkg</b>와 온라인 저장소 기반 <b>apt-get</b>을 함께 사용합니다. YaST·zypper는 수세, dnf는 레드햇 계열 도구입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q36",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": {
+      "text": "다음 중 리눅스에서 사용되는 온라인 패키지 관리 도구로거리가 먼 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "dnf",
+        "truth": "true"
+      },
+      {
+        "text": "dpkg",
+        "truth": "false"
+      },
+      {
+        "text": "zypper",
+        "truth": "true"
+      },
+      {
+        "text": "apt-get",
+        "truth": "true"
+      }
+    ],
+    "answer": 1,
+    "explain": "<b>dpkg</b>는 이미 받아놓은 .deb 파일을 설치·관리하는 저수준 도구로 온라인 저장소에 직접 접속하지 않습니다. dnf·zypper·apt-get은 온라인 저장소에서 패키지를 내려받아 의존성까지 처리하는 도구입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q37",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 Makefile 파일이 생성되는 소스 설치 단계로 알맞은 것은?",
+    "opts": [
+      "configure",
+      "make",
+      "cmake",
+      "make install"
+    ],
+    "answer": 0,
+    "explain": "소스 설치 과정에서 <b>./configure</b>가 환경을 점검하고 <b>Makefile</b>을 생성합니다. 이후 make(컴파일)·make install(설치) 순서로 진행됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q38",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": {
+      "text": "다음 중 소스 설치 방법으로 cmake를 선택한 프로젝트로틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "MySQL",
+        "truth": "true"
+      },
+      {
+        "text": "PHP",
+        "truth": "false"
+      },
+      {
+        "text": "KDE",
+        "truth": "true"
+      },
+      {
+        "text": "LMMS",
+        "truth": "true"
+      }
+    ],
+    "answer": 1,
+    "explain": "PHP는 전통적으로 <b>autotools(./configure && make)</b> 방식을 사용합니다. KDE·MySQL·LMMS 등은 <b>cmake</b> 기반 빌드 시스템을 채택한 대표적인 프로젝트입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q39",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 현재 디렉터리에 있는 C 언어 파일만을 source.tar로 묶는 명령으로 알맞은 것은?",
+    "opts": [
+      "tar rvf *.c source.tar",
+      "tar rvf source.tar *.c",
+      "tar cvf *.c source.tar",
+      "tar cvf source.tar *.c"
+    ],
+    "answer": 3,
+    "explain": "<b>tar cvf 아카이브명 대상파일</b> 순서로 지정합니다. 아카이브 파일명이 먼저, 묶을 대상(*.c)이 그 뒤에 와야 합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q40",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 yum 명령을 이용해서 nmap 패키지를 설치하는 명령으로 알맞은 것은?",
+    "opts": [
+      "yum nmap install",
+      "yum install nmap",
+      "yum -y nmap",
+      "yum -i nmap"
+    ],
+    "answer": 1,
+    "explain": "yum 패키지 설치 명령은 <b>yum install 패키지명</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q42",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음은 tar에서 xz 명령어와 관련 있는 압축 옵션으로 알맞은 것은?",
+    "opts": [
+      "-x",
+      "-z",
+      "-Z",
+      "-J"
+    ],
+    "answer": 3,
+    "explain": "tar에서 xz 압축을 다룰 때는 <b>-J</b> 옵션을 사용합니다. -z는 gzip, -Z(대문자)는 compress, -j는 bzip2용입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q43",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": {
+      "text": "다음 중 BSD 계열 유닉스에서 사용하는 프린터 관련 명령으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "lp",
+        "truth": "false"
+      },
+      {
+        "text": "lpr",
+        "truth": "true"
+      },
+      {
+        "text": "lpq",
+        "truth": "true"
+      },
+      {
+        "text": "lprm",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>lp</b>는 System V 계열의 인쇄 명령입니다. BSD 계열은 lpr(인쇄 요청)·lpq(큐 확인)·lprm(작업 삭제) 명령을 사용합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q44",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 사운드카드 사용과 관련된 프로그램으로 알맞은 것은?",
+    "opts": [
+      "ALSA",
+      "CUPS",
+      "SANE",
+      "LPRng"
+    ],
+    "answer": 0,
+    "explain": "<b>ALSA</b>(Advanced Linux Sound Architecture)는 리눅스의 사운드카드 제어 시스템입니다. CUPS는 프린팅, SANE은 스캐너, LPRng는 프린트 관리 시스템입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q45",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 프린트 작업을 요청하는 명령어로 알맞은 것은?",
+    "opts": [
+      "cancel",
+      "lpr",
+      "lpq",
+      "lpstat"
+    ],
+    "answer": 1,
+    "explain": "인쇄 작업을 요청(제출)하는 명령은 <b>lpr</b>입니다. lpq는 큐 확인, lpstat은 상태 확인, cancel은 작업 취소 명령입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q47",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": {
+      "text": "다음 중 LVM에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "물리적 디스크 2개를 이용해서 하나의 파티션으로 구성 할 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "파티션의 크기를 확장해도 데이터의 손실이 발생하지 않 는다.",
+        "truth": "true"
+      },
+      {
+        "text": "파티션의 크기를 축소해서 데이터의 손실이 발생하지 않 는다.",
+        "truth": "false"
+      },
+      {
+        "text": "물리적 디스크 1개를 이용해서 두 개의 파티션을 구성할 수 있다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "LVM에서 논리 볼륨 크기를 <b>축소</b>할 때는 먼저 파일시스템 자체를 줄여야 하며, 순서를 지키지 않거나 여유 공간을 잘못 계산하면 <b>데이터 손실 위험이 있습니다.</b> 반대로 확장은 기존 데이터에 영향 없이 비교적 안전합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q48",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 RAID로 구성된 하드 디스크 중에서 하나의 디스크에 오류가 발생해도 데이터의 손실이 없는 조합으로 알맞은것은?",
+    "opts": [
+      "RAID-0, RAID-1",
+      "RAID-0, RAID-5",
+      "RAID-1, RAID-5",
+      "RAID-0, RAID-6"
+    ],
+    "answer": 2,
+    "explain": "<b>RAID-1</b>(미러링)과 <b>RAID-5</b>(분산 패리티 1개)는 디스크 1개 장애까지는 데이터를 복구할 수 있습니다. RAID-0은 중복이 전혀 없어 디스크 하나만 고장 나도 전체 데이터를 잃습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q3",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 LVM 구성할 때 가장 먼저 생성되는 것은?",
+    "opts": [
+      "VG(Volume Group)",
+      "LV(Logical Volume)",
+      "PV(Physical Volume)",
+      "PE(Physical Extend)"
+    ],
+    "answer": 2,
+    "explain": "LVM은 <b>PV(물리 볼륨)</b>를 만들고, 여러 PV를 묶어 <b>VG(볼륨 그룹)</b>를 구성한 뒤, VG에서 필요한 만큼 잘라 <b>LV(논리 볼륨)</b>를 만드는 순서로 진행합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q4",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 프린터 큐의 작업 정보를 확인하는 명령어로 알맞은것은?",
+    "opts": [
+      "lp",
+      "lpr",
+      "lprm",
+      "lpstat"
+    ],
+    "answer": 3,
+    "explain": "인쇄 큐의 작업 상태를 확인하는 명령은 <b>lpstat</b>입니다. lpr은 인쇄 요청, lprm은 작업 삭제 명령입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q6",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 스캐너 사용과 관련된 프로그램으로 알맞은 것은?",
+    "opts": [
+      "ALSA",
+      "CUPS",
+      "SANE",
+      "LPRng"
+    ],
+    "answer": 2,
+    "explain": "<b>SANE</b>(Scanner Access Now Easy)은 리눅스의 스캐너 제어 표준 인터페이스입니다. ALSA는 사운드, CUPS는 프린팅 시스템입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q7",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 데비안 계열 리눅스에서 환경 설정 파일도 포함해서vsftpd 패키지를 제거하는 명령으로 알맞은 것은?",
+    "opts": [
+      "apt-get purge vsftpd",
+      "apt-get remove vsftpd",
+      "apt-get erase vsftpd",
+      "apt-get delete vsftpd"
+    ],
+    "answer": 0,
+    "explain": "<b>apt-get purge</b>는 패키지와 함께 설정 파일까지 완전히 제거합니다. apt-get remove는 설정 파일을 남겨둡니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q8",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 rpm 명령으로 의존성이 있는 패키지를 제거하는 명령으로 알맞은 것은?",
+    "opts": [
+      "rpm -d nmap --nodeps",
+      "rpm -e nmap --nodeps",
+      "rpm erase nmap --nodeps",
+      "rpm delete nmap -nodeps"
+    ],
+    "answer": 1,
+    "explain": "rpm 제거 명령은 <b>-e</b> 옵션이며, 의존성 검사를 무시하려면 <b>--nodeps</b>를 함께 씁니다: <b>rpm -e nmap --nodeps</b>.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q12",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 프로그램을 소스 파일로 설치하는 과정으로 알맞은것은?",
+    "opts": [
+      "configure → make → make install",
+      "make → configure → make install",
+      "make → make install → configure",
+      "make install → configure → make"
+    ],
+    "answer": 0,
+    "explain": "소스 설치는 <b>./configure(환경 점검, Makefile 생성) → make(컴파일) → make install(설치)</b> 순서로 진행합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q13",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": {
+      "text": "다음 중 리눅스에서 사용되는 온라인 패키지 관리 도구로거리가 먼 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "dnf",
+        "truth": "true"
+      },
+      {
+        "text": "rpm",
+        "truth": "false"
+      },
+      {
+        "text": "zypper",
+        "truth": "true"
+      },
+      {
+        "text": "apt-get",
+        "truth": "true"
+      }
+    ],
+    "answer": 1,
+    "explain": "<b>rpm</b>은 이미 받아놓은 .rpm 파일을 설치·관리하는 저수준 도구로 온라인 저장소에 직접 접속하지 않습니다. dnf·zypper·apt-get은 온라인 저장소 기반 도구입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q14",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": {
+      "text": "다음 중 레드햇 계열 리눅스에서 사용되는 패키지 관리 도구로 거리가 먼 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "dnf",
+        "truth": "true"
+      },
+      {
+        "text": "rpm",
+        "truth": "true"
+      },
+      {
+        "text": "zypper",
+        "truth": "false"
+      },
+      {
+        "text": "yum",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "<b>zypper</b>는 수세(SUSE) 계열 도구입니다. dnf·yum·rpm은 레드햇 계열(RHEL, CentOS, Fedora 등)에서 사용합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q15",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": {
+      "text": "다음중 vi 편집기의 ex 명령모드에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "w → 작업중인 내용을 저장한다.",
+        "truth": "true"
+      },
+      {
+        "text": "w 파일명 → 지정한 '파일명'으로 저장한다.",
+        "truth": "true"
+      },
+      {
+        "text": "wq → 변경된 내용을 저장하고 종료한다.",
+        "truth": "true"
+      },
+      {
+        "text": "q → 수정된 사항이 있어도 무조건 종료한다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "vi에서 <b>:q</b>는 수정된 내용이 있으면 경고를 내며 종료를 거부합니다(저장 후 종료하거나 :q!로 강제 종료해야 함). '수정사항이 있어도 무조건 종료'되는 것은 아닙니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q17",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 vi 편집기에서 linux로 끝나는 줄의 마지막에 마침표(.)을 덧붙이도록 치환하는 명령으로 알맞은 것은?",
+    "opts": [
+      ":% s/linux./linux$/",
+      ":% s/linux$/linux./",
+      ":% s/linux/linux./",
+      ":% s/linux/linux$/"
+    ],
+    "answer": 1,
+    "explain": "'~로 끝나는 줄'이라는 조건은 <b>$</b>(줄 끝 고정)로 표현합니다. 따라서 <b>:%s/linux$/linux./</b>처럼 써야 정확히 줄 끝이 linux인 경우만 치환됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q18",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 emacs 편집기를 개발한 인물로 알맞은 것은?",
+    "opts": [
+      "빌 조이",
+      "리처드 스톨만",
+      "브람 브레나르",
+      "귀도 반 로섬"
+    ],
+    "answer": 1,
+    "explain": "emacs는 <b>리처드 스톨만(Richard Stallman)</b>이 개발했습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q19",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 nano 편집기에서 현재 커서가 위치한 줄의 처음으로 이동할 때 사용하는 키 조합으로 알맞은 것은?",
+    "opts": [
+      "[Ctrl]+[a]",
+      "[Ctrl]+[e]",
+      "[Ctrl]+[o]",
+      "[Ctrl]+[i]"
+    ],
+    "answer": 0,
+    "explain": "nano에서 <b>[Ctrl]+[A]</b>는 커서를 현재 줄의 맨 앞으로 이동시킵니다. [Ctrl]+[E]는 줄 끝으로 이동하는 키입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q20",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 X 윈도 환경에서만 사용 가능한 편집기로 알맞은것은?",
+    "opts": [
+      "nano",
+      "pico",
+      "kwrite",
+      "vim"
+    ],
+    "answer": 2,
+    "explain": "<b>kwrite</b>는 KDE 데스크톱의 GUI 전용 편집기입니다. nano·pico·vim은 CLI(터미널) 환경에서도 실행됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q21",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 작업번호가 2번인 백그라운드 프로세스를 종료시키는 명령으로 알맞은 것은?",
+    "opts": [
+      "kill 2",
+      "kill %2",
+      "kill -j 2",
+      "kill -b 2"
+    ],
+    "answer": 1,
+    "explain": "작업 번호(job number)를 지정할 때는 <b>%</b>를 붙여 <b>kill %2</b>처럼 사용합니다. kill 2는 PID 2번 프로세스를 대상으로 하므로 의미가 다릅니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q22",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "ps 명령의 상태(STAT) 코드 중에 작업은 종료되었으나 부모프로세스에 의해 회수되지 않아 메모리를 차지하고 상태를 나타내는 값으로 알맞은 것은?",
+    "opts": [
+      "R",
+      "S",
+      "T",
+      "Z"
+    ],
+    "answer": 3,
+    "explain": "종료되었지만 부모 프로세스가 종료 상태를 회수(wait)하지 않아 프로세스 테이블에 남아 있는 상태는 <b>Z(좀비, Zombie)</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q23",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 프로세스 관련 명령어로 설정 가능한 NI 값의 범위로 알맞은 것은?",
+    "opts": [
+      "-19 ~ 19",
+      "-19 ~ 20",
+      "-20 ~ 19",
+      "-20 ~ 20"
+    ],
+    "answer": 2,
+    "explain": "리눅스 NI(nice value) 범위는 <b>-20 ~ 19</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q26",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 포어그라운드 프로세스를 종료하기 위해 사용하는키 조합으로 알맞은 것은?",
+    "opts": [
+      "[Ctrl]+[c]",
+      "[Ctrl]+[a]",
+      "[Ctrl]+[z]",
+      "[Ctrl]+[d]"
+    ],
+    "answer": 0,
+    "explain": "<b>[Ctrl]+[C]</b>는 포그라운드에서 실행 중인 프로세스에 인터럽트 시그널(SIGINT)을 보내 종료시킵니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q27",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 standalone 방식과 inetd 방식에 대한 비교 설명으로 알맞은 것은?",
+    "opts": [
+      "inetd 방식이 standalone 방식보다 메모리 관리가 더 효 율적이다.",
+      "inetd 방식이 standalone 방식보다 관련 서비스 처리가 빠르다.",
+      "웹과 같은 빈번한 요청이 들어오는 서비스는 inetd 방식 이 적합하다.",
+      "사용자가 많은 서비스는 standalone 방식보다 inetd 방 식이 적합하다."
+    ],
+    "answer": 0,
+    "explain": "inetd 방식은 요청이 들어올 때만 해당 서비스 데몬을 띄우므로 평소 <b>메모리를 절약</b>할 수 있습니다. 다만 매번 새로 실행하는 오버헤드 때문에 응답 속도는 상시 대기 중인 standalone 방식보다 느려, 웹처럼 요청이 잦은 서비스에는 오히려 standalone 방식이 적합합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q28",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 사용자가 본인이 실행한 백그라운드 프로세스 목록을 확인하는 명령어로 가장 알맞은 것은?",
+    "opts": [
+      "ps",
+      "bg",
+      "jobs",
+      "exec"
+    ],
+    "answer": 2,
+    "explain": "현재 셸 세션에서 실행 중인 작업(백그라운드 포함) 목록은 <b>jobs</b> 명령으로 확인합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q29",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 보기의 시그널을 번호값이 낮은 순부터 높은 순으로정렬했을 때 세 번째에 해당하는 시그널 이름으로 알맞은것은?",
+    "opts": [
+      "SIGTSTP",
+      "SIGKILL",
+      "SIGINT",
+      "SIGTERM"
+    ],
+    "answer": 3,
+    "explain": "각 시그널 번호는 SIGINT=2, SIGKILL=9, SIGTERM=15, SIGTSTP=20입니다. 오름차순으로 나열하면 SIGINT → SIGKILL → <b>SIGTERM</b> → SIGTSTP 순서이므로 세 번째는 SIGTERM입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q33",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 가장 최근에 실행한 명령을 재실행할 때 사용하는명령으로 알맞은 것은?",
+    "opts": [
+      "!0",
+      "!1",
+      "!!",
+      "history -1"
+    ],
+    "answer": 2,
+    "explain": "<b>!!</b>는 바로 직전에 실행한 명령을 다시 실행합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q40",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": {
+      "text": "다음 중 /etc/fstab 파일의 첫 번째 필드에 설정할 수 있는값으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "UUID",
+        "truth": "true"
+      },
+      {
+        "text": "LABEL",
+        "truth": "true"
+      },
+      {
+        "text": "마운트 포인트",
+        "truth": "false"
+      },
+      {
+        "text": "장치 파일명",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "/etc/fstab의 1번째 필드는 <b>장치</b>를 지정하는 자리로 장치 파일명·UUID·LABEL을 쓸 수 있습니다. 마운트 포인트는 2번째 필드에 들어갑니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q42",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음중 fdisk 작업 후에 변경된 파티션 정보를 저장하고 종료하는 명령어로 알맞은 것은?",
+    "opts": [
+      "n",
+      "w",
+      "x",
+      "q"
+    ],
+    "answer": 1,
+    "explain": "fdisk에서 변경 사항을 저장하고 종료하는 명령은 <b>w</b>입니다. q는 저장하지 않고 종료합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q45",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 설정된 umask 값이 0022일 경우 생성되는 파일의허가권 값으로 알맞은 것은?",
+    "opts": [
+      "-rw-r--r--",
+      "-rw-rw-r--",
+      "-rwxr-xr-x",
+      "-rwxrwxr-x"
+    ],
+    "answer": 0,
+    "explain": "파일의 기본 권한은 666에서 시작하며, umask 022를 빼면(666-022) <b>644(rw-r--r--)</b>가 됩니다. (디렉터리는 777이 기준이라 umask 022 적용 시 755가 됩니다.)",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q48",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 파일이나 디렉터리의 소유자를 변경하는 명령어로알맞은 것은?",
+    "opts": [
+      "ls",
+      "chgrp",
+      "chown",
+      "umask"
+    ],
+    "answer": 2,
+    "explain": "파일·디렉터리의 <b>소유자</b>를 변경하는 명령은 chown입니다. chgrp는 소유 그룹만 변경합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q1",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "project 그룹 소유의 디렉터리인 project에 ihduser 사용자가 파일을 생성 시 그룹 소유권을 자동으로 project 그룹 권한으로 지정되도록 한다.<br/><br/>다음 설명의 상황에 설정해야 하는 작업으로 가장 알맞은 것은?",
+    "opts": [
+      "ihduser 사용자를 project 그룹에 추가시킨다.",
+      "project 디렉터리에 Set-UID를 부여한다.",
+      "project 디렉터리에 Set-GID를 부여한다.",
+      "project 디렉터리에 Sticky-Bit를 부여한다."
+    ],
+    "answer": 2,
+    "explain": "새로 생성되는 파일이 자동으로 디렉터리 소유 그룹의 권한을 상속받게 하려면 <b>Set-GID</b>를 디렉터리에 부여합니다. project 디렉터리에 Set-GID를 걸어두면, project 그룹 소속이 아닌 사용자가 파일을 만들어도 그 파일의 그룹 소유권이 project로 지정됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q4",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "data 디렉터리 포함하여 하위에 존재하는 디렉터리 및 파일까지 모두 허가권을 변경하려고 한다.<br/><br/>다음 설명에 해당하는 명령으로 알맞은 것은?",
+    "opts": [
+      "chmod –a 755 data",
+      "chmod –A 755 data",
+      "chmod –r 755 data",
+      "chmod –R 755 data"
+    ],
+    "answer": 3,
+    "explain": "하위 디렉터리와 파일까지 재귀적으로 권한을 바꾸려면 <b>-R(재귀) 옵션</b>을 사용합니다: <b>chmod -R 755 data</b>. -a·-A·-r은 chmod의 유효한 옵션이 아닙니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q5",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음은 ihduser 사용자에게 대한 디스크 쿼터 설정하는 과정이다.<br/><code>[root@ihd ~]# ( 괄호 ) ihduser</code><br/>( 괄호 ) 안에 들어갈 명령어로 알맞은 것은?",
+    "opts": [
+      "quota",
+      "edquota",
+      "setquota",
+      "xfs_quota"
+    ],
+    "answer": 1,
+    "explain": "사용자명만 인자로 받아 편집기 화면을 여는 명령은 <b>edquota</b>입니다(예: edquota -u ihduser). setquota는 block·inode 값을 명령줄 인자로 직접 지정해야 해서 이런 형태로 쓰지 않습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q7",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 내용이 기록된 파일명으로 알맞은 것은?<br/><code>/dev/sda1 / xfs rw,seclabel,relatime,attr2,inode64,noquota 0 0<br/>selinuxfs /sys/fs/selinux selinuxfs rw,relatime 0 0</code>",
+    "opts": [
+      "/etc/fstab",
+      "/etc/mtab",
+      "/etc/mounts",
+      "/etc/partitions"
+    ],
+    "answer": 1,
+    "explain": "이 내용은 현재 마운트된 파일시스템의 실시간 상태를 보여주는 <b>/etc/mtab</b>의 예시입니다. /etc/fstab과 달리 mtab에는 실제 마운트 시 적용된 세부 옵션(rw, seclabel, relatime 등)이 그대로 기록됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q10",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "리눅스에서는 파티션을 생성하면 고유한 이 값이 부여되는데, 이 값을 ( ㉠ )라고 부른다. 이 값을 확인할 때는 ( ㉡ ) 명령어를 사용한다.<br/><br/>다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "opts": [
+      "㉠ blkid, ㉡ uuid",
+      "㉠ label, ㉡ uuid",
+      "㉠ label, ㉡ blkid",
+      "㉠ uuid, ㉡ blkid"
+    ],
+    "answer": 3,
+    "explain": "파티션 생성 시 자동으로 부여되는 고유 식별값은 <b>UUID</b>이며, 이를 확인하는 명령은 <b>blkid</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q17",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "명령행에서 이름이 긴 파일명을 입력할 때 앞 글자만 입력하고 [Tab] 키를 눌러 나머지 부분을 불러올 수 있다.<br/><br/>다음 설명에 해당하는 셸의 기능으로 알맞은 것은?",
+    "opts": [
+      "명령어 히스토리 기능",
+      "명령행 완성 기능",
+      "에일리어스(alias) 기능",
+      "명령행 편집 기능"
+    ],
+    "answer": 1,
+    "explain": "[Tab] 키로 입력 중인 파일명·명령어의 나머지를 자동으로 완성해주는 기능은 <b>명령행 완성(command completion)</b> 기능입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q18",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 예시로 제시된 프롬포트를 변경할 때 사용하는 환경변수로 알맞은 것은?<br/><code>[ihduser@www ~] $</code>",
+    "opts": [
+      "PS",
+      "PS1",
+      "PS2",
+      "PROMPT"
+    ],
+    "answer": 1,
+    "explain": "bash의 기본(1차) 프롬프트 모양은 환경변수 <b>PS1</b>에 저장되어 있어, PS1 값을 바꾸면 위와 같은 프롬프트 형태를 바꿀 수 있습니다. PS2는 명령이 다음 줄로 이어질 때 나오는 보조 프롬프트입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q19",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "CentOS 7 리눅스에서는 부팅을 시작하면 커널이 ( ㉠ )(이)라는 최초의 프로세스를 발생시키고 PID는 ( ㉡ )을 부여한다.<br/><br/>다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "opts": [
+      "㉠ init, ㉡ 0",
+      "㉠ init, ㉡ 1",
+      "㉠ systemd, ㉡ 0",
+      "㉠ systemd, ㉡ 1"
+    ],
+    "answer": 3,
+    "explain": "CentOS 7부터는 최초 프로세스로 <b>systemd</b>를 사용하며, 이 프로세스의 PID는 <b>1</b>번입니다. (CentOS 6 이전에는 init이 이 역할을 했습니다.)",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q20",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음은 기존의 프로세스를 교체하면서 새로운 프로세스를 발생시키는 과정이다.<br/><code>$ ( 괄호 ) ps -l</code><br/>( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "opts": [
+      "exec",
+      "fork",
+      "nohup",
+      "watch"
+    ],
+    "answer": 0,
+    "explain": "<b>exec</b>는 새 프로세스를 별도로 생성하지 않고, 현재 프로세스를 지정한 명령으로 그대로 교체(대체)해서 실행합니다. fork는 자식 프로세스를 새로 만드는 것이라 '교체'와는 다릅니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q21",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 결과에 해당하는 명령어로 알맞은 것은?<br/><code>[posein@www ~]$<br/>[1] - Stopped vim a.txt<br/>[2] + Stopped vim b.txt<br/>[3]   Running find / -name '*.txt' 2> /dev/null > list.txt &amp;</code>",
+    "opts": [
+      "fg",
+      "bg",
+      "jobs",
+      "kill"
+    ],
+    "answer": 2,
+    "explain": "현재 셸에 등록된 작업(job) 목록을 번호·상태와 함께 보여주는 명령은 <b>jobs</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q23",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "주기적이고 지속적인 서비스 요청을 처리하기 위해 계속 실행되는 프로세스이다.<br/><br/>다음 설명에 해당하는 명칭으로 가장 알맞은 것은?",
+    "opts": [
+      "inetd",
+      "xinetd",
+      "standalone",
+      "daemon"
+    ],
+    "answer": 3,
+    "explain": "요청 여부와 상관없이 메모리에 상주하며 서비스를 처리하는 프로세스를 <b>데몬(daemon)</b>이라고 합니다. standalone은 데몬이 상주하는 '실행 방식'의 이름이라 프로세스 자체의 명칭으로는 daemon이 더 알맞습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q25",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "cron을 이용해서 해당 스크립트를 매주 토요일과 일요일 오전 4시 1분에 주기적으로 실행하려고 한다.<br/><code>( 괄호 ) /etc/backup.sh</code><br/>( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "opts": [
+      "1 4 * * 0,6",
+      "1 4 * * 5,6",
+      "4 1 * * 0,6",
+      "4 1 * * 5,6"
+    ],
+    "answer": 0,
+    "explain": "cron 필드 순서는 <b>분 시 일 월 요일</b>입니다. 오전 4시 1분은 '1 4', 토요일·일요일은 요일 필드에 <b>0,6</b>(일요일=0, 토요일=6)으로 표시해 <b>1 4 * * 0,6</b>이 됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q27",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "작업이 종료되었으나 부모 프로세스로부터 회수되지 않아 메모리를 차지하고 있는 상태이다.<br/><br/>다음 설명에 해당하는 ps 명령의 프로세스 상태 코드값으로 알맞은 것은?",
+    "opts": [
+      "S",
+      "T",
+      "X",
+      "Z"
+    ],
+    "answer": 3,
+    "explain": "이 상태는 <b>Z(좀비, Zombie)</b>입니다. 자식 프로세스가 종료됐지만 부모가 종료 상태를 회수(wait)하지 않아 프로세스 테이블 항목만 남아있는 경우입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q29",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "리처드 스톨만이 개발한 고성능 문서 편집기로 단순한 편집기를 넘어서 텍스트 처리를 위한 포괄적인 통합 환경을 제공한다.<br/><br/>다음 설명에 해당하는 편집기로 알맞은 것은?",
+    "opts": [
+      "nano",
+      "gedit",
+      "vim",
+      "emacs"
+    ],
+    "answer": 3,
+    "explain": "<b>emacs</b>는 리처드 스톨만이 개발한 편집기로, 단순 텍스트 편집을 넘어 메일·일정 관리 등 다양한 기능을 통합 제공하는 것으로 유명합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q32",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "vi 편집기로 파일을 불러올 때 커서를 파일의 가장 마지막 줄에 위치시키려고 한다.<br/><code># vi ( 괄호 ) lin.txt</code><br/>( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "opts": [
+      "-c",
+      "-r",
+      "-R",
+      "+"
+    ],
+    "answer": 3,
+    "explain": "vi 실행 시 <b>+</b>를 붙이면 파일을 열자마자 커서를 마지막 줄로 이동시킵니다(예: vi + lin.txt). +n처럼 숫자를 지정하면 해당 줄로 이동합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q33",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "문서를 편집할 때 [Enter] 키를 입력해서 행 바꿈을 하면 바로 윗줄의 시작 열과 같은 곳에 커서를 위치시키려고 한다.<br/><br/>다음 설명에 해당하는 vi 편집기의 ex 모드 환경설정으로 알맞은 것은?",
+    "opts": [
+      "set ai",
+      "set nu",
+      "set sm",
+      "set ts"
+    ],
+    "answer": 0,
+    "explain": "새 줄로 넘어갈 때 윗줄과 같은 들여쓰기 위치에 커서를 자동으로 맞춰주는 설정은 <b>set ai(autoindent)</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q36",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "데비안 리눅스에서 사용하는 curses 메뉴 방식의 도구로 커서를 사용해서 주어진 메뉴를 이동하면서 손쉽게 패키지를 관리할 수 있다.<br/><br/>다음 설명에 해당하는 패키지 관리 도구로 알맞은 것은?",
+    "opts": [
+      "alien",
+      "dselect",
+      "dnf",
+      "zypper"
+    ],
+    "answer": 1,
+    "explain": "<b>dselect</b>는 데비안 계열에서 dpkg를 다루기 쉽게 만든 curses(텍스트 메뉴) 기반 패키지 관리 프론트엔드입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q37",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 ( 괄호 ) 안에 들어갈 명령어로 알맞은 것은?<br/><code># ( 괄호 ) -i vim_4.5-3.deb</code>",
+    "opts": [
+      "rpm",
+      "dpkg",
+      "apt",
+      "pat-get"
+    ],
+    "answer": 1,
+    "explain": "데비안 계열에서 .deb 패키지를 설치하는 명령은 <b>dpkg -i 패키지파일</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q38",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "Makefile 파일을 읽어 들여서 타깃(target)과 의존성(dependencies) 관련 작업을 수행한다.<br/><br/>다음 설명에 해당하는 소스 설치 단계로 알맞은 것은?",
+    "opts": [
+      "configure",
+      "make",
+      "cmake",
+      "make clean"
+    ],
+    "answer": 1,
+    "explain": "configure가 만들어 둔 <b>Makefile</b>을 읽어 타깃과 의존성에 따라 실제 컴파일을 수행하는 단계는 <b>make</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q39",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음은 text.tar에 묶인 파일의 내용을 확인하는 과정이다.<br/><code># tar ( 괄호 ) text.tar</code><br/>( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "opts": [
+      "cvf",
+      "xvf",
+      "tvf",
+      "rvf"
+    ],
+    "answer": 2,
+    "explain": "아카이브 안에 묶인 파일 목록(내용)만 확인할 때는 <b>tar tvf 파일명</b>을 사용합니다. c는 새로 묶기, x는 압축 해제 옵션입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q41",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "다음 결과에 해당하는 명령으로 알맞은 것은?<br/><code>[root@www packages]# ( 괄호 ) vsftpd<br/>Name        : vsftpd<br/>Version     : 3.0.2<br/>Release     : 29.el7_9<br/>Architecture: x86_64<br/>Install Date: (not installed)<br/>Group       : System Environment/Daemons<br/>Size        : 361349<br/>License     : GPLv2 with exceptions<br/>Signature   : RSA/SHA256, Sat Jun 12 00:06:15 2021, Key ID 24c6a8a7f4a80eb5<br/>Source RPM  : vsftpd-3.0.2-29.el7_9.src.rpm<br/>Build Date  : Thu Jun 10 01:15:50 2021<br/>Build Host  : x86-02.bsys.centos.org<br/>Relocations : (not relocatable)<br/>Packager    : CentOS BuildSystem &lt;http://bugs.centos.org&gt;<br/>Vendor      : CentOS<br/>URL         : https://security.appspot.com/vsftpd.html<br/>Summary     : Very Secure Ftp Daemon<br/>Description :<br/>vsftpd is a Very Secure FTP daemon. It was written completely from scratch.<br/>[root@www packages]#</code>",
+    "opts": [
+      "rpm –ql vsftpd",
+      "rpm –qa vsftpd",
+      "rpm –qV vsftpd",
+      "rpm –qip vsftpd-3.0.2-29.el7_9.x86_64.rpm"
+    ],
+    "answer": 3,
+    "explain": "출력에 <b>Install Date: (not installed)</b>이 있다는 것은 아직 설치되지 않은 rpm 파일의 정보를 조회했다는 뜻입니다. 이렇게 미설치 rpm 파일 자체의 상세 정보를 보려면 <b>rpm -qip 파일명.rpm</b>을 사용합니다. -qa·-ql은 이미 '설치된' 패키지 대상이라 미설치 상태에는 쓸 수 없습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q44",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "초기 리눅스에서는 사운드카드를 사용하기 위해서 표준 유닉스 장치 시스템 콜을 사용하는 ( ㉠ )를 이용하였으나 사유화되면서, ( ㉡ )(으)로 전환되었다.<br/><br/>다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "opts": [
+      "㉠ ALSA, ㉡ OSS",
+      "㉠ OSS, ㉡ ALSA",
+      "㉠ SANE, ㉡ XSANE",
+      "㉠ XSANE, ㉡ SANE"
+    ],
+    "answer": 1,
+    "explain": "초기에는 <b>OSS</b>(Open Sound System)를 사용했으나 라이선스가 유료화(사유화)되면서 오픈소스 대안인 <b>ALSA</b>로 전환되었습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-03-q47",
+    "extra": true,
+    "topicHint": "2023-03 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-03 기출문제"
+    ],
+    "q": "LVM을 구성하는 일종의 단위로 일반 하드디스크의 블록에 해당한다.<br/><br/>다음 설명에 해당하는 LVM 용어로 알맞은 것은?",
+    "opts": [
+      "PV",
+      "PE",
+      "VG",
+      "LV"
+    ],
+    "answer": 1,
+    "explain": "PV를 구성하는 일정 크기의 블록 단위를 <b>PE(Physical Extent)</b>라고 하며, 일반 디스크의 '블록'에 대응하는 개념입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q1",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "회사의 공유 디렉터리로 이용 중인 project에서 누구나 생성은 가능하나 삭제할 때는 본인 소유의 파일만 가능하도록 설정하려고 한다.<br/><br/>다음 설명의 상황에 설정해야 하는 작업으로 가장 알맞은 것은?",
+    "opts": [
+      "project 디렉터리에 부여된 w 권한을 제거한다.",
+      "project 디렉터리에 Set-UID를 부여한다.",
+      "project 디렉터리에 Set-GID를 부여한다.",
+      "project 디렉터리에 Sticky-Bit를 부여한다."
+    ],
+    "answer": 3,
+    "explain": "여러 사용자가 함께 쓰는 디렉터리에서 '자기 파일만 삭제 가능'하게 하려면 <b>Sticky-Bit</b>를 부여합니다. Sticky-Bit가 설정된 디렉터리에서는 소유자·root가 아니면 남의 파일을 지우거나 이름을 바꿀 수 없습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q2",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?<br/><code>[ihd@www ~]$ ls<br/>[ihd@www ~]$ touch lin.txt<br/>[ihd@www ~]$ ls -l lin.txt<br/>-rw-rw-r--. 1 ihd ihd 0 Jan 18 9:42 lin.txt<br/>[ihd@www ~]$ umask<br/>( 괄호 )</code>",
+    "opts": [
+      "0002",
+      "0022",
+      "0222",
+      "0664"
+    ],
+    "answer": 0,
+    "explain": "파일 기본 권한 666에서 실제 생성된 권한 664(rw-rw-r--)를 빼면 <b>umask 값은 0002</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q4",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 ( 괄호 ) 안에 들어갈 명령어로 알맞은 것은?<br/><code>[ihduser@ihd ~]$ ( 괄호 ) g+r lin.txt</code>",
+    "opts": [
+      "chmod",
+      "chown",
+      "chgrp",
+      "umask"
+    ],
+    "answer": 0,
+    "explain": "g+r처럼 기호 모드로 권한을 추가·제거하는 명령은 <b>chmod</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q5",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음은 ihduser 사용자에게 대한 디스크 쿼터를 설정하는 과정이다.<br/><code># ( 괄호 ) -x -c 'limit bsoft=100m bhard=100m ihduser' /home</code><br/>( 괄호 ) 안에 들어갈 명령어로 알맞은 것은?",
+    "opts": [
+      "quota",
+      "edquota",
+      "setquota",
+      "xfs_quota"
+    ],
+    "answer": 3,
+    "explain": "-x -c 옵션으로 명령줄에서 바로 제한값을 지정하는 것은 XFS 파일시스템 전용 쿼터 명령인 <b>xfs_quota</b>의 사용법입니다(-x 전문가 모드, -c 뒤에 하위 명령 지정).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q7",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음은 ihduser 사용자의 디스크 사용량을 확인하는 과정이다.<br/><code>[root@www ~]# ( 괄호 )<br/>20M    /home/ihduser</code><br/>( 괄호 ) 안에 들어갈 명령으로 알맞은 것은?",
+    "opts": [
+      "df –sh ~ihduser",
+      "du –sh ~ihduser",
+      "mount",
+      "fdisk –l"
+    ],
+    "answer": 1,
+    "explain": "특정 디렉터리(사용자 홈)의 실제 사용량 합계를 보려면 <b>du -sh ~ihduser</b>를 사용합니다. df는 파일시스템 전체 단위라 이런 개별 사용자 사용량 출력에는 맞지 않습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q9",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?<br/><br/>파일 시스템의 종류에 따라 파일 점검 명령어를 다르게 사용해야 한다. ext4인 경우에는 ( ㉠ ) 명령어를 사용하고, xfs인 경우에는 ( ㉡ ) 명령어를 사용한다.",
+    "opts": [
+      "㉠ fsck, ㉡ e2fsck",
+      "㉠ e2fsck, ㉡ fsck",
+      "㉠ fsck, ㉡ xfs_repair",
+      "㉠ fsck_repair, ㉡ xfs_repair"
+    ],
+    "answer": 2,
+    "explain": "ext 계열 파일시스템 점검은 <b>fsck</b>(내부적으로 e2fsck 호출), XFS 파일시스템 점검·복구는 전용 도구인 <b>xfs_repair</b>를 사용합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q11",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 셸로 알맞은 것은?<br/><br/>1978년에 버클리 대학의 빌 조이가 개발한 셸로 히스토리 기능, alias 기능, 작업 제어 등의 유용한 기능을 포함하였다.",
+    "opts": [
+      "bourne shell",
+      "csh",
+      "dash",
+      "bash"
+    ],
+    "answer": 1,
+    "explain": "<b>csh(C shell)</b>는 1978년 버클리대의 빌 조이가 개발했으며, 히스토리·alias·작업 제어 기능을 처음 도입한 셸로 유명합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q15",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 명령행을 연장할 때 나타나는 프롬프트를 변경할 때 사용하는 환경변수로 알맞은 것은?<br/><code>[posein@www ~]$ cp linuxmaster-second-class-2023-03-11.txt \\<br/>&gt;</code>",
+    "opts": [
+      "PS",
+      "PS1",
+      "PS2",
+      "PROMPT"
+    ],
+    "answer": 2,
+    "explain": "명령이 백슬래시(\\)로 다음 줄까지 이어질 때 나타나는 보조(2차) 프롬프트는 환경변수 <b>PS2</b>에 저장되어 있습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q17",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 명령의 결과로 알맞은 것은?<br/><code>[ihduser$www ~]$ !!</code>",
+    "opts": [
+      "'command not found'라는 오류 메시지를 출력한다.",
+      "히스토리에 저장된 명령어 목록을 출력한다.",
+      "가장 마지막에 실행한 명령을 재실행한다.",
+      "로그인한 후에 가장 처음 실행한 명령을 재실행한다."
+    ],
+    "answer": 2,
+    "explain": "<b>!!</b>는 바로 직전에 실행한 명령을 그대로 재실행합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q18",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 중 ( 괄호 ) 안에 들어갈 명령의 결과로 알맞은 것은?<br/><code>[ihduser@ihd ~]$ user=kaitman<br/>[ihduser@ihd ~]$ echo $USER<br/>( 괄호 )</code>",
+    "opts": [
+      "아무것도 출력되지 않는다.",
+      "$user",
+      "ihduser",
+      "kaitman"
+    ],
+    "answer": 2,
+    "explain": "소문자로 만든 사용자 정의 변수 <b>user</b>와 시스템이 제공하는 환경변수 <b>USER</b>는 서로 다릅니다. echo $USER는 실제 로그인한 사용자명인 <b>ihduser</b>를 출력합니다(방금 만든 user=kaitman과는 무관).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q19",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?<br/><br/>CentOS 7 리눅스에서는 부팅을 시작하면 커널이 systemd라는 프로세스를 발생시키고 PID 번호 값은 ( ㉠ )을 부여한다. 이후 시스템 운영에 필요한 데몬을 비롯한 다른 서비스들은 ( ㉡ ) 방식으로 systemd 프로세스의 자식 프로세스로 생성한다.",
+    "opts": [
+      "㉠ 0, ㉡ fork",
+      "㉠ 0, ㉡ exec",
+      "㉠ 1, ㉡ fork",
+      "㉠ 1, ㉡ exec"
+    ],
+    "answer": 2,
+    "explain": "systemd의 PID는 <b>1</b>번이며, 이후 서비스들은 systemd가 자기 자신을 복제하는 <b>fork</b> 방식으로 자식 프로세스를 만들어 실행합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q21",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 시그널 번호로 알맞은 것은?<br/><br/>강제로 사용자 로그아웃 시키는 작업과 같이 기본종료 시그널로 불가능할 경우에 이용하는 강제 종료 시그널이다.",
+    "opts": [
+      "1",
+      "9",
+      "15",
+      "20"
+    ],
+    "answer": 1,
+    "explain": "정상 종료 시그널(SIGTERM, 15)로 종료되지 않을 때 강제로 종료시키는 시그널은 <b>9(SIGKILL)</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q22",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?<br/><br/>데몬 프로세스를 실행하는 방법 중에 ( 괄호 ) 방식은 단독 데몬 방식이라고 부르는데, 데몬이 독자적으로 메모리에 상주 및 제거되는 형태이다.",
+    "opts": [
+      "init",
+      "inetd",
+      "xinetd",
+      "standalone"
+    ],
+    "answer": 3,
+    "explain": "데몬이 요청과 무관하게 항상 메모리에 상주하는 방식은 <b>standalone</b> 방식입니다. inetd/xinetd는 요청이 있을 때만 구동하는 방식입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q23",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 명칭으로 가장 알맞은 것은?<br/><br/>rlogin, rsh 등과 같이 자주 사용되지 않는 서비스들의 포트를 리슨(Listen)하고 있으면서, 요청이 들어오면 서버 프로그램을 실행해서 연결을 처리해준다.",
+    "opts": [
+      "inetd",
+      "daemon",
+      "init",
+      "systemd"
+    ],
+    "answer": 0,
+    "explain": "자주 쓰이지 않는 여러 서비스의 포트를 대신 감시하다가 요청이 오면 해당 서비스를 구동시켜주는 슈퍼데몬은 <b>inetd</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q25",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "cron을 이용해서 해당 스크립트를 10분 주기로 실행하려고 한다.<br/><code>( 괄호 )    /etc/backup.sh</code><br/>( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "opts": [
+      "0-59/10 * * * *",
+      "* 0-59/10 * * *",
+      "* * */10 * *",
+      "* * * */10 *"
+    ],
+    "answer": 0,
+    "explain": "cron 필드는 분 시 일 월 요일 순서입니다. '10분마다'는 분 필드에 <b>0-59/10</b>으로 표시하고 나머지는 전부 *로 두어 <b>0-59/10 * * * *</b>가 됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q27",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음은 실행 중인 vsftpd 프로세스를 종료시키는 과정이다.<br/><code># ( 괄호 ) vsftpd</code><br/>( 괄호 ) 안에 들어갈 명령어로 알맞은 것은?",
+    "opts": [
+      "kill",
+      "killall",
+      "fuser",
+      "pidof"
+    ],
+    "answer": 1,
+    "explain": "PID가 아니라 프로세스 이름(vsftpd)으로 바로 종료시키는 명령은 <b>killall</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q31",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 그림에 해당하는 편집기로 알맞은 것은?<br/>[그림: 편집기 화면 스크린샷. 상단에 File Edit Options Buffers Tools Help 메뉴 모음이 있고, 편집 중인 내용으로 study linux라는 텍스트가 보인다. 화면 하단 모드라인에는 -UU-:----F1  lin.txt   All L1   (Text) 라고 표시되어 있다.]",
+    "opts": [
+      "pico",
+      "nano",
+      "emacs",
+      "gedit"
+    ],
+    "answer": 2,
+    "explain": "'Buffers' 메뉴가 있는 메뉴 구성과 하단 모드라인 표시 방식은 <b>emacs</b>의 대표적인 특징입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q36",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 패키지 관리 도구로 알맞은 것은?<br/><br/>데비안 리눅스에서 다운로드받은 rpm 파일을 deb 파일로 변환하려고 한다.",
+    "opts": [
+      "alien",
+      "dselect",
+      "dnf",
+      "apt-get"
+    ],
+    "answer": 0,
+    "explain": "rpm ↔ deb 패키지 형식을 서로 변환해주는 도구는 <b>alien</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q37",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음은 데비안 리눅스에서 패키지를 제거하는 과정이다.<br/><code># dpkg ( 괄호 ) cron</code><br/>( 괄호 ) 안에 들어갈 옵션으로 알맞은 것은?",
+    "opts": [
+      "-e",
+      "-E",
+      "-r",
+      "-d"
+    ],
+    "answer": 2,
+    "explain": "dpkg에서 패키지를 제거하는 옵션은 <b>-r(--remove)</b>입니다. 설정 파일까지 지우려면 -P(--purge)를 사용합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q38",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음은 소스 파일로 프로그램을 설치하는 과정으로 관련 디렉터리는 PATH에 등록해서 작업중이다.<br/><code># ( 괄호 ) --prefix=/usr/local/apache</code><br/>( 괄호 ) 안에 들어갈 명령으로 알맞은 것은?",
+    "opts": [
+      "make",
+      "cmake",
+      "configure",
+      "make install"
+    ],
+    "answer": 2,
+    "explain": "설치 경로(--prefix)를 지정하며 환경을 점검하고 Makefile을 생성하는 단계는 <b>configure</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q39",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음은 묶인 파일인 text.tar를 해제하는 과정이다.<br/><code># tar ( 괄호 ) text.tar</code><br/>( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "opts": [
+      "cvf",
+      "xvf",
+      "tvf",
+      "rvf"
+    ],
+    "answer": 1,
+    "explain": "tar 아카이브를 압축 해제(추출)할 때는 <b>xvf</b> 옵션을 사용합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q40",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음은 tar에서 지원하는 압축 관련 옵션에 대한 설명이다.<br/><br/>tar 명령어는 GNU 프로젝트에 의해 개조되어 압축 관련 옵션을 지원한다. gzip은 ( ㉠ ) 옵션을 사용하고, bzip2는 ( ㉡ ) 옵션을 사용한다.<br/>( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "opts": [
+      "㉠ -g, ㉡ -b",
+      "㉠ -j, ㉡ -z",
+      "㉠ -j, ㉡ -b",
+      "㉠ -z, ㉡ -j"
+    ],
+    "answer": 3,
+    "explain": "tar에서 gzip 압축은 <b>-z</b>, bzip2 압축은 <b>-j</b> 옵션을 사용합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q43",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 명칭으로 알맞은 것은?<br/><br/>애플이 개발한 공개 소프트웨어 프린팅 시스템으로 유닉스 운영체제의 시스템을 프린터 서버로 사용할 수 있다.",
+    "opts": [
+      "OSS",
+      "ALSA",
+      "CUPS",
+      "LPRng"
+    ],
+    "answer": 2,
+    "explain": "<b>CUPS</b>(Common Unix Printing System)는 애플이 개발/관리하는 오픈소스 프린팅 시스템으로, 유닉스 계열 시스템을 프린터 서버로 만들 수 있게 해줍니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q44",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 프로그램으로 알맞은 것은?<br/><br/>X 윈도 기반의 GTK+ 라이브러리로 개발된 스캐너 프로그램으로 스캔 작업 이외의 캡처된 이미지 수정도 가능하다.",
+    "opts": [
+      "OSS",
+      "ALSA",
+      "SANE",
+      "XSANE"
+    ],
+    "answer": 3,
+    "explain": "<b>XSANE</b>은 SANE 프레임워크를 GTK+ 기반 GUI로 감싼 스캐너 프로그램으로, 스캔한 이미지의 간단한 수정 기능도 제공합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-06-q47",
+    "extra": true,
+    "topicHint": "2023-06 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-06 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 LVM 용어로 알맞은 것은?<br/><br/>사용자가 필요한 만큼 할당해서 생성되는 공간으로 물리적 디스크에서 분할하며 사용하는 파티션이라고 할 수 있다.",
+    "opts": [
+      "PV",
+      "PE",
+      "VG",
+      "LV"
+    ],
+    "answer": 3,
+    "explain": "사용자가 필요한 만큼 할당받아 실제로 사용하는 논리적인 파티션 개념은 <b>LV(Logical Volume)</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q1",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "project 그룹에 속한 사용자들이 /project 디렉터리에서 파일 생성은 자유로우나 삭제는 본인이 생성한 파일만 가능하도록 설정하려고 한다.<br/><br/>/project 디렉터리의 정보가 다음과 같을 때 관련 명령으로 알맞은 것은?<br/><code>[root@www /]# ls -ld /project<br/>drwxr-x---. 2 root project 6 Apr  4 19:32 /project<br/>[root@www /]#</code>",
+    "opts": [
+      "chmod g+s /project",
+      "chmod g+t /project",
+      "chmod o+s /project",
+      "chmod o+t /project"
+    ],
+    "answer": 3,
+    "explain": "여러 사용자가 함께 쓰는 디렉터리에서 '자기 파일만 삭제 가능'하게 하려면 <b>Sticky-Bit</b>를 부여합니다. 심볼릭 표기로는 <b>chmod o+t</b>처럼 설정하며, Sticky-Bit가 걸린 디렉터리에서는 소유자·root가 아니면 남의 파일을 지우거나 이름을 바꿀 수 없습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q4",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 생성된 a.txt의 허가권 값으로 알맞은 것은?<br/><code>$ umask<br/>0002<br/>$ touch a.txt</code>",
+    "opts": [
+      "-rw-rw-r--",
+      "-rwxrwxr-x",
+      "drw-rw-r--",
+      "drwxrwxr-x"
+    ],
+    "answer": 0,
+    "explain": "파일의 기본 생성 권한은 666이며, 여기서 umask 값 0002를 뺀 664(<b>-rw-rw-r--</b>)가 실제 생성되는 권한입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q5",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 명령어로 알맞은 것은?<br/><br/>사용자나 그룹에 쿼터를 설정할 때 사용하는 명령으로 실행시키면 vi 편집기를 이용해서 관련 값을 지정해야 한다.",
+    "opts": [
+      "quota",
+      "edquota",
+      "setquota",
+      "xfs_quota"
+    ],
+    "answer": 1,
+    "explain": "vi 편집기 화면을 열어 쿼터 값을 직접 수정하는 방식은 <b>edquota</b>입니다. quota는 조회용이고, setquota·xfs_quota는 명령줄 인자로 바로 값을 지정하는 방식입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q7",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 결과에 해당하는 명령어로 알맞은 것은?<br/><code>[posein@www ~]$<br/>NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT<br/>sda      8:0    0  60.6G  0 disk<br/>├─sda1   8:1    0  46.6G  0 part /<br/>├─sda2   8:2    0   3.7G  0 part [SWAP]<br/>├─sda3   8:3    0     1K  0 part<br/>├─sda5   8:5    0   1.9G  0 part<br/>├─sda6   8:6    0   1.9G  0 part<br/>└─sda7   8:7    0   1.9G  0 part<br/>sr0     11:0    1  1024M  0 rom<br/>[posein@www ~]$</code>",
+    "opts": [
+      "lsblk",
+      "blkid",
+      "fdisk",
+      "df"
+    ],
+    "answer": 0,
+    "explain": "디스크·파티션 구성을 트리 형태로 보여주는 명령은 <b>lsblk</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q8",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 파일명으로 알맞은 것은?<br/><br/>파일 시스템에 대한 정보를 담고 있는 파일로 부팅 시에 마운트할 파티션 정보가 기록되어 있다.",
+    "opts": [
+      "/etc/fstab",
+      "/etc/mtab",
+      "/etc/mounts",
+      "/etc/partitions"
+    ],
+    "answer": 0,
+    "explain": "부팅 시 자동으로 마운트할 파일시스템 목록을 정의해 두는 파일은 <b>/etc/fstab</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q9",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 (괄호) 안에 들어갈 명령어로 알맞은 것은?<br/><code># ( 괄호 ) -o remount,rw /home</code>",
+    "opts": [
+      "quota",
+      "mount",
+      "umount",
+      "fdisk"
+    ],
+    "answer": 1,
+    "explain": "이미 마운트된 파일시스템의 옵션을 다시 마운트하며 바꾸려면 <b>mount</b> 명령에 -o remount 옵션을 사용합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q10",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음은 /dev/sdb1을 XFS 파일 시스템으로 포맷하는 과정이다. (괄호)안에 들어갈 명령어로 알맞은 것은?<br/><code># ( 괄호 ) /dev/sdb1</code>",
+    "opts": [
+      "xfs.mkfs",
+      "mkfs.xfs",
+      "mke2fs -j xfs",
+      "mke2fs -t xfs"
+    ],
+    "answer": 1,
+    "explain": "XFS로 포맷하는 명령은 <b>mkfs.xfs</b>입니다(mkfs.파일시스템종류 형식).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q11",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 셸로 알맞은 것은?<br/><br/>GNU 프로젝트를 위해 개발된 셸로 GNU 운영체제, 리눅스, 맥 OS X 등 다양한 운영체제에서 사용한다.",
+    "opts": [
+      "bourne shell",
+      "csh",
+      "dash",
+      "bash"
+    ],
+    "answer": 3,
+    "explain": "GNU 프로젝트가 만든 셸로 여러 운영체제의 기본 셸로 널리 쓰이는 것은 <b>bash</b>(Bourne Again SHell)입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q12",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 (괄호) 안에 들어갈 파일명으로 알맞은 것은?<br/><br/>특정 사용자가 로그인한 후에 사용 가능한 셸의 목록 정보를 확인하려면 ( 괄호 ) 파일에서 관련 정보를 얻을 수 있다.",
+    "opts": [
+      "/etc/passwd",
+      "/etc/shells",
+      "/etc/bashrc",
+      "/etc/profile"
+    ],
+    "answer": 1,
+    "explain": "시스템에 등록되어 로그인 셸로 사용 가능한 셸 목록은 <b>/etc/shells</b> 파일에 기록되어 있습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q13",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 명령의 결과에 대한 설명으로 가장 알맞은 것은?<br/><code>$ echo $SHELL</code>",
+    "opts": [
+      "사용자가 로그인 시에 부여받은 셸 정보가 출력된다.",
+      "사용자가 현재 사용하고 있는 셸 정보가 출력된다.",
+      "사용자가 변경할 수 있는 셸 정보가 출력된다.",
+      "화면에 어떠한 결과도 출력되지 않는다."
+    ],
+    "answer": 0,
+    "explain": "환경변수 <b>SHELL</b>은 사용자가 로그인할 때 부여받은 로그인 셸 경로를 담고 있습니다. 즉 사용자가 로그인 시에 부여받은 셸 정보가 출력됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q14",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음은 ihd 사용자가 다른 셸로 변경하는 과정이다. (괄호)안에 들어갈 내용으로 알맞은 것은?<br/><code>[ihd@www ~]$ chsh ( 괄호 ) /bin/csh</code>",
+    "opts": [
+      "-l",
+      "-u",
+      "-s",
+      "-c"
+    ],
+    "answer": 2,
+    "explain": "chsh 명령으로 로그인 셸을 지정할 때 사용하는 옵션은 <b>-s</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q16",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 (괄호) 안에 들어갈 파일명으로 알맞은 것은?<br/><br/>사용자가 로그인한 후에 입력한 명령들은 로그아웃할 때 사용자의 홈 디렉터리 안에 있는 ( 괄호 ) 파일에서 저장된다.",
+    "opts": [
+      "bash_profile",
+      "bash_history",
+      ".bash_profile",
+      ".bash_history"
+    ],
+    "answer": 3,
+    "explain": "로그아웃 시 그동안 입력한 명령 이력이 저장되는 파일은 홈 디렉터리의 <b>.bash_history</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q18",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><code>[ihd@www ~]$ echo ( 괄호 )<br/>ko_KR.UTF-8</code>",
+    "opts": [
+      "$LANG",
+      "$TERM",
+      "$PS1",
+      "$TMOUT"
+    ],
+    "answer": 0,
+    "explain": "언어·지역(로케일) 설정을 담고 있는 환경변수는 <b>$LANG</b>이며, ko_KR.UTF-8처럼 언어_국가.인코딩 형식의 값을 가집니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q19",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><br/>사용자가 시스템에 로그인하면 bash라는 프로세스를 할당받고, 사용자가 명령어를 실행하면 ( 괄호 ) 형태로 프로세스가 발생하면서 동작한다.",
+    "opts": [
+      "exec",
+      "fork",
+      "init",
+      "systemd"
+    ],
+    "answer": 1,
+    "explain": "부모 프로세스(bash)가 자신을 복제해 자식 프로세스를 만드는 방식은 <b>fork</b>입니다. 이후 필요하면 exec로 다른 프로그램 이미지로 교체됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q21",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><br/>데몬 프로세스를 실행하는 방법 중에서 ( 괄호 ) 방식은 보통 부팅 시에 실행되어 해당 프로세스가 메모리에 계속 상주하면서 클라이언트의 서비스 요청을 처리하는 방식이다.",
+    "opts": [
+      "init",
+      "inetd",
+      "xinetd",
+      "standalone"
+    ],
+    "answer": 3,
+    "explain": "부팅 시 실행되어 항상 메모리에 상주한 채 요청을 직접 처리하는 데몬 실행 방식은 <b>standalone</b> 방식입니다(반대로 inetd·xinetd는 요청이 있을 때만 해당 데몬을 호출하는 방식입니다).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q24",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 명령의 결과에 대한 설명으로 알맞은 것은?<br/><code># renice -10 bash</code>",
+    "opts": [
+      "bash 프로세스의 우선순위를 높인다.",
+      "bash 프로세스의 우선순위를 낮춘다.",
+      "bash 프로세스의 PRI 값을 -10으로 변경한다.",
+      "사용법 오류로 인해 실행되지 않는다."
+    ],
+    "answer": 3,
+    "explain": "renice는 <code>renice 우선순위 -p PID</code>처럼 대상을 프로세스ID(숫자)나 -u/-g 옵션으로 지정해야 합니다. 'bash'라는 문자열은 유효한 PID가 아니므로 <b>사용법 오류로 인해 실행되지 않습니다.</b>",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q25",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "cron을 이용해서 해당 스크립트를 매월 1일 오전 4시 2분에 주기적으로 실행하려고 한다. (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><code>( 괄호 )  /etc/backup.sh</code>",
+    "opts": [
+      "4 2 * * 1",
+      "2 4 * * 1",
+      "4 2 1 * *",
+      "2 4 1 * *"
+    ],
+    "answer": 3,
+    "explain": "crontab 필드 순서는 분 시 일 월 요일입니다. 매월 1일 오전 4시 2분은 <b>2 4 1 * *</b>로 표현합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q26",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음은 프로세스 아이디가 513, 514, 515번인 프로세스를 종료시키는 과정이다. ( 괄호 ) 안에 들어갈 명령어로 알맞은 것은?<br/><code># ( 괄호 ) 513 514 515</code>",
+    "opts": [
+      "kill",
+      "pkill",
+      "killall",
+      "pgrep"
+    ],
+    "answer": 0,
+    "explain": "프로세스ID를 직접 지정해서 종료 시그널을 보내는 명령은 <b>kill</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q27",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 그림에 해당하는 명령어로 알맞은 것은?<br/><code>10:41:40 up 4:06, 2 users, load average: 0.00, 0.01, 0.05<br/>Tasks: 102 total, 1 running, 101 sleeping, 0 stopped, 0 zombie<br/>%Cpu(s): 0.3 us, 0.0 sy, 0.0 ni, 99.7 id, 0.0 wa, 0.0 hi, 0.0 si, 0.0 st<br/>KiB Mem : 4045268 total, 3225068 free, 676848 used, 1040852 buff/cache<br/>KiB Swap: 3905532 total, 3905532 free, 0 used, 2791320 avail Mem<br/>  PID USER  PR NI VIRT RES SHR S %CPU %MEM TIME+ COMMAND<br/>1560 root  20 0 321632 48964 240048 S 0.3 1.2 0:02.30 X<br/>2106 root  20 0 1010824 196252 690000 S 0.3 4.9 0:12.10 gnome-shell<br/>1 root    20 0 128632 7372 4184 S 0.0 0.2 0:05.19 systemd<br/>2 root    20 0 0 0 0 S 0.0 0.0 0:00.02 kthreadd<br/>4 root    0 -20 0 0 0 S 0.0 0.0 0:00.00 kworker/0:0H</code>",
+    "opts": [
+      "ps",
+      "top",
+      "jobs",
+      "pstree"
+    ],
+    "answer": 1,
+    "explain": "시스템 부하·CPU/메모리 사용량과 프로세스 목록을 실시간으로 갱신해서 보여주는 화면은 <b>top</b> 명령의 출력입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q28",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 명령어로 알맞은 것은?<br/><br/>사용자가 로그아웃하거나 작업 중인 터미널 창이 닫혀도 프로세스를 백그라운드 프로세스로 계속해서 작업할 수 있도록 해준다.",
+    "opts": [
+      "bg",
+      "jobs",
+      "pgrep",
+      "nohup"
+    ],
+    "answer": 3,
+    "explain": "터미널 세션이 끊겨도(로그아웃·터미널 종료) 프로세스가 계속 실행되도록 SIGHUP을 무시시켜주는 명령은 <b>nohup</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q31",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 편집기로 알맞은 것은?<br/><br/>X 윈도 환경에서만 사용할 수 있는 편집기로 윈도우 운영체제의 메모장처럼 손쉽게 사용할 수 있다.",
+    "opts": [
+      "nano",
+      "gedit",
+      "vim",
+      "emacs"
+    ],
+    "answer": 1,
+    "explain": "GNOME 데스크톱의 GUI 전용 텍스트 편집기로, 윈도우 메모장과 비슷하게 쓸 수 있는 것은 <b>gedit</b>입니다(nano·vim은 콘솔 기반 편집기입니다).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q41",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><code># rpm ( 괄호 ) /bin/ls<br/>coreutils-8.22-24.el7.x86_64</code>",
+    "opts": [
+      "-qi",
+      "-ql",
+      "-qa",
+      "-qf"
+    ],
+    "answer": 3,
+    "explain": "특정 파일이 어느 패키지에 속하는지 확인하는 rpm 옵션은 <b>-qf</b>(query, file 소속 조회)입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-09-q46",
+    "extra": true,
+    "topicHint": "2023-09 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-09 기출문제"
+    ],
+    "q": "다음 중 LVM 구성 순서로 알맞은 것은?<br/><code>가. VG(Volume Group)<br/>나. LV(Logical Volume)<br/>다. PV(Physical Volume)</code>",
+    "opts": [
+      "가 → 나 → 다",
+      "다 → 나 → 가",
+      "다 → 가 → 나",
+      "가 → 다 → 나"
+    ],
+    "answer": 2,
+    "explain": "LVM은 물리 디스크(PV)를 모아 볼륨 그룹(VG)을 만들고, 그 안에서 논리 볼륨(LV)을 잘라 쓰는 순서로 구성됩니다. 즉 <b>PV(다) → VG(가) → LV(나)</b> 순서입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q1",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><br/>10GB 용량의 하드디스크 8개가 장착된 시스템이다. 하나의 스페어(Spare) 디스크를 구성하고, 나머지 디스크로 RAID-5로 구성하려고 한다. 이 경우에 실제로 사용 가능한 용량은 ( 괄호 ) GB가 된다.",
+    "opts": [
+      "40",
+      "50",
+      "60",
+      "70"
+    ],
+    "answer": 2,
+    "explain": "스페어 디스크 1개를 뺀 나머지 7개로 RAID-5를 구성하며, RAID-5는 (디스크 개수-1)×디스크 용량만큼 사용 가능합니다. (7-1)×10GB = <b>60GB</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q2",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 RAID 관련 기술로 알맞은 것은?<br/><br/>연속된 데이터를 여러 개의 디스크에 라운드 로빈(Round Robin) 방식으로 기록하는 기술로 하나의 디스크에서 읽어 들이는 것보다 더 빠르게 데이터를 읽거나 쓸 수 있다.",
+    "opts": [
+      "스트라이핑(Striping)",
+      "미러링(Mirroring)",
+      "패리티(Parity)",
+      "ECC(Error Check & Correction)"
+    ],
+    "answer": 0,
+    "explain": "데이터를 여러 디스크에 순차적으로(라운드 로빈) 나누어 저장해 읽기·쓰기 속도를 높이는 기술은 <b>스트라이핑(Striping)</b>입니다(RAID-0에서 사용).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q5",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 명칭으로 알맞은 것은?<br/><br/>리눅스 및 유닉스 계열 운영체제에서 사운드를 만들고 캡처하는 인터페이스로 표준 유닉스 시스템 콜(POSIX)에 기반을 두고 있다. 프로젝트 초기에는 Free Software이었으나 사유화되기도 했다.",
+    "opts": [
+      "ALSA",
+      "CUPS",
+      "SANE",
+      "OSS"
+    ],
+    "answer": 3,
+    "explain": "POSIX 표준 시스템 콜 기반의 사운드 인터페이스로, 초기에는 자유 소프트웨어였으나 이후 상용화된 이력이 있는 것은 <b>OSS(Open Sound System)</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q9",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음은 확장 패키지 관련 저장소를 설치하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><code># yum install ( 괄호 )</code>",
+    "opts": [
+      "epel",
+      "epel-repository",
+      "epel-release",
+      "epel-download"
+    ],
+    "answer": 2,
+    "explain": "RHEL 계열에서 확장 패키지 저장소(EPEL)를 추가하는 패키지명은 <b>epel-release</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q10",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음은 다운로드 받은 소스 파일의 내용만을 확인하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><code># tar ( 괄호 ) php-8.2.7.tar.bz2</code>",
+    "opts": [
+      "jxvf",
+      "Jxvf",
+      "jtvf",
+      "Jtvf"
+    ],
+    "answer": 2,
+    "explain": "내용만 '확인'하는(추출하지 않는) 것이므로 목록 보기 옵션 t를 사용하며, .tar.bz2는 j 옵션이 필요합니다. 대소문자 구분은 옵션 순서 표기 관례일 뿐 동작은 같아 <b>jtvf</b>(j: bzip2, t: 목록보기, v: 상세출력, f: 파일지정)가 알맞습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q11",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 명령으로 알맞은 것은?<br/><br/>소스 파일의 압축을 푼 디렉터리에서 한 번 작업한 설정이나 관련 파일을 삭제하고 다시 설정 작업을 진행할 때 사용한다.",
+    "opts": [
+      "make init",
+      "make zero",
+      "make clean",
+      "make neat"
+    ],
+    "answer": 2,
+    "explain": "이전 컴파일 산출물과 설정 파일을 지우고 처음부터 다시 빌드 설정을 하려 할 때 쓰는 명령은 <b>make clean</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q16",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><br/>vi 편집기의 명령 모드 상태에서 특정 문자열을 아래 방향으로 검색하기 위해서는 ( ㉠ ) 기호를 선언한 뒤에 찾으려는 문자열 패턴을 덧붙여서 기재한다. 만약 다음 문자열을 찾으려면 ( ㉡ ) 키를 누르면 이동된다.",
+    "opts": [
+      "㉠ /, ㉡ n",
+      "㉠ ?, ㉡ n",
+      "㉠ /, ㉡ N",
+      "㉠ ?, ㉡ N"
+    ],
+    "answer": 0,
+    "explain": "아래 방향(순방향) 검색은 <b>/</b>문자열 형식을 사용하며, 같은 방향으로 다음 검색 결과로 이동할 때는 <b>n</b>을 누릅니다(N은 반대 방향으로 이동).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q24",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "cron을 이용해서 해당 스크립트를 매주 1회씩 주기적으로실행하려고 한다. (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><code>( 괄호 )  /etc/backup.sh</code>",
+    "opts": [
+      "1 1 1 * *",
+      "1 1 * 1 *",
+      "1 1 * * 1",
+      "* 1 1 1 *"
+    ],
+    "answer": 2,
+    "explain": "crontab 필드는 분 시 일 월 요일 순서입니다. 매주 1회(월요일 등 특정 요일 1시 1분)로 실행하려면 일·월 필드는 *로 두고 요일 필드를 지정한 <b>1 1 * * 1</b> 형식을 사용합니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q25",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 명령의 결과에 대한 설명으로 알맞은 것은?<br/><code># nice bash</code>",
+    "opts": [
+      "bash 프로세스의 우선순위를 높인다.",
+      "bash 프로세스의 우선순위를 낮춘다.",
+      "bash 프로세스의 우선순위 값을 출력한다.",
+      "사용법 오류로 인해 실행되지 않는다."
+    ],
+    "answer": 1,
+    "explain": "nice 명령을 옵션 없이 실행하면 대상 프로세스의 nice 값을 기본적으로 10 증가시킵니다. nice 값이 커질수록 우선순위는 낮아지므로 <b>bash 프로세스의 우선순위를 낮춘다</b>가 알맞습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q30",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><br/>하나의 프로세스가 다른 프로세스를 실행하기 위한 시스템 호출 방법에는 ( ㉠ )와 ( ㉡ )가 있다. ( ㉠ )는 새로운 프로세스를 위해 메모리를 할당받아 복사본 형태의 프로세스를 실행하는 형태로 기존의 프로세스는 그대로 실행되어 있다. 새롭게 생성된 프로세스는 원래의 프로세스랑 똑같은 코드를 기반으로 실행된다. ( ㉡ )는 원래의 프로세스를 새로운 프로세스로 대체하는 형태로 호출한 프로세스의 메모리에 새로운 프로세스의 코드를 덮어 씌워 버린다.",
+    "opts": [
+      "㉠ exec, ㉡ fork",
+      "㉠ fork, ㉡ exec",
+      "㉠ background, ㉡ foreground",
+      "㉠ foreground, ㉡ background"
+    ],
+    "answer": 1,
+    "explain": "자신을 복제해 새 프로세스를 만드는 시스템 호출은 <b>fork</b>, 호출한 프로세스의 메모리 내용을 다른 프로그램 코드로 덮어쓰는 시스템 호출은 <b>exec</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q31",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 파일명으로 가장 알맞은 것은?<br/><br/>모든 사용자에게 적용되는 alias와 함수를 설정하려고 한다.",
+    "opts": [
+      "/etc/.bashrc",
+      "/etc/.bash_profile",
+      "/etc/bashrc",
+      "/etc/profile"
+    ],
+    "answer": 2,
+    "explain": "시스템의 모든 사용자에게 공통으로 적용되는 alias·함수를 정의하는 파일은 <b>/etc/bashrc</b>입니다(개인별 설정은 ~/.bashrc).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q32",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 중 (괄호) 안에 들어갈 명령의 결과로 알맞은 것은?<br/><code>[ihduser@ihd ~]$ user=kaitman<br/>[ihduser@ihd ~]$ echo \"$user\"<br/>( 괄호 )</code>",
+    "opts": [
+      "아무것도 출력되지 않는다.",
+      "$user",
+      "ihduser",
+      "kaitman"
+    ],
+    "answer": 3,
+    "explain": "쉘 변수 user에 kaitman을 대입했으므로, echo \"$user\"는 큰따옴표 안에서도 변수 값이 그대로 치환되어 <b>kaitman</b>이 출력됩니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q34",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음은 셸 변수를 선언한 후에 관련 내용을 확인하는 과정이다. (괄호) 안에 들어갈 명령어로 알맞은 것은?<br/><code>$ a=1<br/>$ b=2<br/>$ ( 괄호 )</code>",
+    "opts": [
+      "printenv",
+      "unset",
+      "env",
+      "set"
+    ],
+    "answer": 3,
+    "explain": "옵션이나 인자 없이 실행하면 현재 셸에 선언된 변수와 함수를 모두 출력해주는 명령은 <b>set</b>입니다(env·printenv는 환경변수만 출력).",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q35",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음은 로그인 셸을 확인하는 과정이다. (괄호) 안에 들어갈 명령어로 알맞은 것은?<br/><code>[ihdman@www ~]# ( 괄호 )<br/>  PID TTY    TIME     CMD<br/>2472 pts/0  00:00:00  bash<br/>2881 pts/0  00:00:00  ( 괄호 )</code>",
+    "opts": [
+      "ps",
+      "chsh",
+      "jobs",
+      "shells"
+    ],
+    "answer": 0,
+    "explain": "실행 중인 프로세스 목록을 보여주는 <b>ps</b> 명령입니다. 옵션 없이 실행하면 현재 터미널의 bash와 더불어 명령 자신(ps)도 실행 중인 프로세스로 함께 출력되기 때문에, 표의 두 번째 CMD 칸에도 같은 답(ps)이 나타납니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q36",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 (괄호) 안에 들어갈 파일명으로 알맞은 것은?<br/><br/>특정 사용자가 로그인 시에 부여되는 셸 정보는 ( 괄호 ) 파일에서 확인할 수 있다.",
+    "opts": [
+      "/etc/passwd",
+      "/etc/shells",
+      "/etc/bashrc",
+      "/etc/profile"
+    ],
+    "answer": 0,
+    "explain": "각 사용자 계정의 로그인 셸 정보는 사용자 계정 정보를 담은 <b>/etc/passwd</b> 파일의 마지막 필드에 기록되어 있습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q37",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음은 ihdman 사용자가 변경 가능한 셸의 목록 정보를 확인하는 과정이다. (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><code>[ihdman@www ~]$ chsh ( 괄호 )</code>",
+    "opts": [
+      "-l",
+      "-u",
+      "-s",
+      "-c"
+    ],
+    "answer": 0,
+    "explain": "chsh 명령에서 사용 가능한 셸 목록을 나열해서 보여주는 옵션은 <b>-l</b>(list shells)입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q38",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 셸로 알맞은 것은?<br/><br/>히스토리 기능, Alias 기능, 작업 제어 등과 같은 유용한 기능이 포함된 셸로 1978년에 버클리 대학의 빌 조이가 개발하였다.",
+    "opts": [
+      "bourne shell",
+      "csh",
+      "dash",
+      "bash"
+    ],
+    "answer": 1,
+    "explain": "1978년 버클리대의 빌 조이가 개발했으며 히스토리·alias·작업 제어 기능을 갖춘 셸은 <b>csh(C Shell)</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q39",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 설명에 해당하는 파일명으로 알맞은 것은?<br/><br/>현재 시스템에 마운트된 파일 시스템 정보를 저장하고 있는 파일로 실제 파일은 /proc/self/mounts이다.",
+    "opts": [
+      "/etc/fstab",
+      "/etc/mtab",
+      "/etc/mounts",
+      "/proc/partitions"
+    ],
+    "answer": 1,
+    "explain": "현재 마운트된 파일시스템 정보를 담고 있으며 실제로는 /proc/self/mounts에 대한 심볼릭 링크인 파일은 <b>/etc/mtab</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q41",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음은 ihduser 사용자의 홈 디렉터리가 차지하고 있는 디스크 용량을 확인하는 과정이다. (괄호) 안에 들어갈 명령어로 알맞은 것은?<br/><code># ( 괄호 )<br/>56M    /home/ihduser</code>",
+    "opts": [
+      "df -sh ~ihduser",
+      "quota ihduser",
+      "du -sh ~ihduser",
+      "df -sh /home/ihduser"
+    ],
+    "answer": 2,
+    "explain": "특정 디렉터리가 차지하는 실제 사용량 합계를 보여주는 명령은 <b>du -sh ~ihduser</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q43",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 결과에 해당하는 명령어로 알맞은 것은?<br/><code>[root@www ~]#<br/>/dev/sda1: UUID=\"7e14520d-725e-424b-917e-ccdac407276f\" TYPE=\"xfs\"<br/>/dev/sda2: UUID=\"06dc516e-68cd-401f-af90-d72576803484\" TYPE=\"swap\"<br/>[root@www ~]#</code>",
+    "opts": [
+      "lsblk",
+      "blkid",
+      "fdisk",
+      "uuid"
+    ],
+    "answer": 1,
+    "explain": "블록 장치의 UUID와 파일시스템 타입을 보여주는 명령은 <b>blkid</b>입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q44",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 그림에 해당하는 명령어로 알맞은 것은?<br/><code>Block grace time: 7days; Inode grace time: 7days<br/>                Block limits                File limits<br/>User    used  soft   hard  grace   used soft hard grace<br/>root     --     0      0     0       3    0    0<br/>alin     --    12  102400 112640     7    0    0<br/>joon2    --    12      0     0       7    0    0</code>",
+    "opts": [
+      "quota",
+      "edquota",
+      "repquota",
+      "xfs_quota"
+    ],
+    "answer": 2,
+    "explain": "전체 사용자의 쿼터 사용 현황을 이런 표 형태로 한 번에 보여주는 명령은 <b>repquota</b>(report quota)입니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q46",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "project 그룹에 속한 사용자들이 /project 디렉터리에서 파일 생성은 자유로우나 삭제는 본인의 생성한 파일만 가능하도록 설정하려고 한다. 또한 파일 생성 시 자동으로 그룹소유권이 project로 부여되도록 설정하려고 한다. /project디렉터리의 정보가 다음과 같을 때 관련 명령으로 알맞은것은?<br/><code>[root@www /]# ls -ld /project<br/>drwxr-x---. 2 root project 6 Apr  4 19:32 /project<br/>[root@www /]#</code>",
+    "opts": [
+      "chmod 1770 /project",
+      "chmod 2770 /project",
+      "chmod 3770 /project",
+      "chmod 5770 /project"
+    ],
+    "answer": 2,
+    "explain": "'본인 파일만 삭제 가능'은 Sticky Bit(1000), '생성 시 그룹 소유권 자동 상속'은 SetGID(2000)입니다. 두 특수 권한을 함께 설정하면 1000+2000=3000이므로 <b>chmod 3770 /project</b>가 알맞습니다.",
+    "examStage": "2차"
+  },
+  {
+    "id": "lm2-realexam-2023-12-q47",
+    "extra": true,
+    "topicHint": "2023-12 기출문제",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "2023-12 기출문제"
+    ],
+    "q": "다음 명령의 결과로 설정되는 lin.txt 파일의 허가권 값으로알맞은 것은?<br/><code>[posein@www ~]$ ls -l lin.txt<br/>-rw-rw-r--. 1 posein posein 81 Jun 28 17:09 lin.txt<br/>[posein@www ~]$ chmod g=r lin.txt</code>",
+    "opts": [
+      "----r-----",
+      "-r--r--r--",
+      "-rw-r--r--",
+      "-rw-rw----"
+    ],
+    "answer": 2,
+    "explain": "chmod g=r은 그룹 권한을 '읽기만'으로 덮어쓰므로 그룹의 쓰기(w) 권한이 사라지고, 소유자·기타 권한은 그대로 유지되어 <b>-rw-r--r--</b>가 됩니다.",
+    "examStage": "2차"
+  }
+]

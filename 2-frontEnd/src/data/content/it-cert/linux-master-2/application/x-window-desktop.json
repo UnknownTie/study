@@ -1,0 +1,11 @@
+{
+  "name": "X 윈도 시스템과 데스크톱 환경",
+  "concepts": [
+    "X 서버(화면 출력 담당)·X 클라이언트(응용프로그램) 구조, DISPLAY 환경변수, xhost(IP 기반 접근제어)·xauth(쿠키 인증키 기반)",
+    "XFree86 → X.org 전환 배경, X 프로토콜 기본 TCP 포트 6000번대",
+    "데스크톱 환경과 라이브러리: GNOME-GTK+, KDE-Qt<br/>, 윈도매니저(Metacity/Mutter/Xfwm/Enlightenment 등)와 디스플레이매니저(GDM/LightDM) 구분",
+    "systemctl get-default / set-default graphical.target(그래픽 모드) vs multi-user.target(텍스트 모드)",
+    "~/.Xauthority(X 인증키 저장 파일), 원격 X 클라이언트 실행 시 DISPLAY 변수 설정"
+  ],
+  "example": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">xhost +192.168.0.10</span>\n<span class=\"out\">192.168.0.10 being added to access control list</span>\n<span class=\"prompt\">[user@remote ~]$</span> <span class=\"cmd\">export DISPLAY=192.168.0.20:0.0</span>"
+}

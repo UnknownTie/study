@@ -1,0 +1,81 @@
+.content-blocks p {
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.content-image {
+  margin: 12px 0;
+  text-align: center;
+}
+.content-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.content-image figcaption {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.content-table-wrap {
+  margin: 10px 0;
+  overflow-x: auto;
+}
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.content-table th,
+.content-table td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+.content-table th {
+  background: var(--accent-soft);
+  color: var(--text);
+  font-weight: 700;
+}
+.content-table tbody tr:nth-child(even) {
+  background: var(--bg);
+}
+.accordion {
+  margin: 10px 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.accordion-item + .accordion-item {
+  border-top: 1px solid var(--border);
+}
+.accordion-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--card);
+  border: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: left;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+.accordion-toggle:hover {
+  background: var(--accent-soft);
+}
+.accordion-caret {
+  color: var(--accent);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+.accordion-body {
+  padding: 4px 14px 14px 30px;
+  background: var(--bg);
+}
+.accordion-body .content-blocks p {
+  margin: 0 0 8px;
+}

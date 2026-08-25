@@ -1,0 +1,9 @@
+{
+  "name": "응용 프로그램",
+  "concepts": [
+    "LibreOffice 구성요소 용도 구분: Writer(문서)·Calc(스프레드시트)·Impress(프레젠테이션)·Draw(그림)",
+    "Evince(GNOME 문서/PDF 뷰어), Eog(이미지 뷰어) vs Gimp·ImageMagick(이미지 편집·처리), Totem(GNOME 동영상 플레이어)",
+    "콘솔 전용 텍스트 브라우저 lynx/links vs GUI 브라우저(Firefox·Chrome·Safari·Edge) 구분"
+  ],
+  "example": null
+}

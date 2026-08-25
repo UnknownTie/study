@@ -1,0 +1,10 @@
+{
+  "name": "텍스트 편집기",
+  "concepts": [
+    "편집기 개발자 암기: vi=빌 조이, vim=브람 무레나르, emacs=리처드 스톨만, nano=GNU 프로젝트(pico의 라이선스 이슈로 대체)",
+    "vi 명령모드 이동 h/j/k/l, dd(줄삭제)/u(undo)/ZZ(저장 후 종료), ex 모드 치환 :%s/대상/결과/g (^, $, \\< 등 메타문자 활용)",
+    "vi 환경설정 옵션 set nu(줄번호) | set nonu(줄번호 표시 안 함) | set ai(자동들여쓰기) | set sm(괄호 강조)<br/>, 설정 영속화 파일 .exrc(vi)와 .vimrc(vim)",
+    "gedit/kwrite는 X 윈도 환경에서만 동작하는 GUI 편집기, nano는 [Ctrl]+[X] 종료·[Ctrl]+[O] 저장·[Ctrl]+[A]/[E] 줄 이동"
+  ],
+  "example": "<span class=\"prompt\">[ihduser@localhost ~]$</span> <span class=\"cmd\">vi memo.txt</span>\n<span class=\"cmt\"># 명령모드에서 :set nu → 줄번호 표시\n# :%s/\\&lt;linux/Linux/g → 단어 시작이 linux인 것만 치환\n# ZZ 또는 :wq → 저장 후 종료</span>"
+}

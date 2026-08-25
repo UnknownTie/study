@@ -1,0 +1,8 @@
+{
+  "name": "설치·역사·부트로더",
+  "concepts": [
+    "리누스 토르발즈가 미닉스(Minix)에 영향을 받아 개발, GNU 프로젝트(리처드 스톨만, <b>FSF</b> 설립)와 결합해 완성된 자유 소프트웨어 운영체제. <b>GPL</b> 라이선스를 따름.",
+    "부트로더: <b>LILO</b>(반드시 MBR에만 설치되는 것은 아님, 다양한 OS 선택 가능) → <b>GRUB</b>(IDE 디스크 인식 순서 등 개선, LILO보다 나중 개발). 설정파일 <code>/etc/lilo.conf</code>의 <code>boot=</code>(설치 위치)·<code>map=</code>(자동 생성 파일)·<code>timeout=</code>(대기 시간).",
+    "파티션 분할 도구는 <code>fdisk</code>(간단한 인터페이스, 적은 용량으로 강력한 기능) 등."
+  ]
+}

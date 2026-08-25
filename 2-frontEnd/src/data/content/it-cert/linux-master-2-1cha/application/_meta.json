@@ -1,0 +1,16 @@
+{
+  "name": "2과목: 리눅스 활용",
+  "order": 20,
+  "note": "X 윈도와 데스크톱 환경, 응용 프로그램, 가상화·클라우드, 배포판·임베디드, 네트워크 기초를 다룹니다.",
+  "concepts": [
+    "X 윈도 구조: <b>X 서버</b>(화면을 보여주는 쪽, 키보드·마우스 입력 처리) ↔ <b>X 클라이언트</b>(실제 프로그램이 실행되는 쪽) 구조. 원격 실행 시 클라이언트는 <code>$DISPLAY</code> 환경변수로 접속할 서버를 지정하고, 서버 쪽은 <code>xhost</code>로 접속 허용 여부를 제어. <code>xauth list $DISPLAY</code>로 접속 인증에 쓰이는 매직 쿠키(MIT-MAGIC-COOKIE) 확인.",
+    "X 라이브러리·툴킷 계보: <b>Xlib</b>(저수준) → 이를 대체한 <b>XCB</b>. 위젯 툴킷은 <b>GTK+</b>(GNOME 계열) vs <b>Qt</b>(KDE 계열). 데스크톱 환경: <b>GNOME</b>(GTK+, LGPL) · <b>KDE</b>(Qt) · <b>Xfce</b>(경량, 자체 윈도 매니저 xfwm). 윈도 매니저 예: <b>Metacity</b>(GNOME 2.x 기본) · <b>TWM</b>(X 최초의 윈도 매니저) · <b>FVWM</b>.",
+    "응용 프로그램: 오피스 스위트 <b>LibreOffice</b> — Writer(문서)·Calc(스프레드시트)·Impress(프레젠테이션)·Draw(그림판 성격). 이미지 뷰어는 <b>Eog</b>(Eye of GNOME, 보기 전용) vs 이미지 편집기 <b>GIMP</b>/ImageMagick. 텍스트만 다루는 파일 형식 확인은 <code>file</code> 명령.",
+    "가상화 기술: <b>전가상화</b>(하드웨어 지원, 게스트 OS 수정 불필요) 대표는 <b>KVM</b>(2005년 Qumranet 개발, 현재 레드햇 주도, 리눅스 커널 내장) — <b>반가상화</b>(게스트 OS 일부 수정 필요, 오버헤드 적음) 대표는 <b>Xen</b>. <b>Docker</b>는 컨테이너(OS 커널 공유, 경량 가상화), <b>Kubernetes</b>는 컨테이너 오케스트레이션(CNCF 관리, 배포·확장·관리 자동화).",
+    "클러스터링: <b>고가용성(HA) 클러스터</b>(주 노드 장애 시 백업 노드가 서비스를 이어받음, 로드밸런싱 포함) vs <b>고성능(HPC)/베어울프 클러스터</b>(저가형 PC를 묶어 대규모 연산 처리에 사용).",
+    "리눅스 배포판: 레드햇 계열(RHEL·CentOS·Fedora) — 데비안 계열(Debian·<b>Ubuntu</b>는 캐노니컬이 데비안 기반+유니티 데스크톱 채택) — 수세 계열(SUSE) — 국내 배포판 <b>수리눅스(SuLinux)</b>. 임베디드/모바일: 팜(Palm) 출신 → LG 인수 <b>webOS</b>, 마이크로컨트롤러 프로토타이핑 플랫폼 <b>Arduino</b>.",
+    "네트워크 기초 — OSI 7계층: <b>물리(비트)-데이터링크(프레임)-네트워크(패킷)-전송(세그먼트)-세션-표현(코드·암호화 변환)-응용</b>. IPv4 클래스: A(0~127)·B(128~191)·C(192~223), 서브넷 마스크로 네트워크/브로드캐스트 주소를 계산(호스트비트 전부 0=네트워크 주소, 전부 1=브로드캐스트 주소).",
+    "네트워크 명령·프로토콜: <code>ifconfig</code>/<code>ip</code>(인터페이스 설정) · <code>route</code>(게이트웨이) · <code>arp</code>(IP↔MAC 변환, 반대는 rarp) · <code>traceroute</code>(경로 확인) · <code>nslookup</code>(도메인 조회). 서비스 포트/프로토콜 매핑은 <code>/etc/services</code>, DNS 서버 주소는 <code>/etc/resolv.conf</code>, 로컬 이름-IP 매핑은 <code>/etc/hosts</code>. 원격 접속: <b>SSH</b>(암호화, <code>ssh -l 사용자 호스트</code> 또는 <code>ssh 사용자@호스트</code>) vs <b>Telnet</b>(평문이라 보안 취약, <code>-l</code> 옵션으로 계정 지정). 메일: <b>SMTP</b>(서버간 발송) · POP3/IMAP(수신). 파일 공유: <b>NFS</b>(유닉스 계열 간) vs <b>SAMBA</b>(SMB/CIFS 구현, 윈도우와 공유)."
+  ],
+  "example": "<span class=\"prompt\">[ihd@www ~]$</span> <span class=\"cmd\">export DISPLAY=192.168.5.10:0</span>\n<span class=\"prompt\">[ihd@www ~]$</span> <span class=\"cmd\">ssh -l kaitman 192.168.5.13</span>\n<span class=\"prompt\">[root@www ~]#</span> <span class=\"cmd\">systemctl get-default</span>\n<span class=\"out\">graphical.target</span>"
+}

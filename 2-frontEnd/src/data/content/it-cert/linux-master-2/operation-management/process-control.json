@@ -1,0 +1,24 @@
+{
+  "name": "프로세스와 작업 제어",
+  "concepts": [
+    "fg/bg/jobs 명령, [Ctrl]+[Z](SIGTSTP, 일시중지 후 백그라운드 전환) / [Ctrl]+[C](SIGINT, 강제종료)",
+    [
+      { "type": "text", "html": "주요 시그널 번호와 의미 (전체 목록은 <code>kill -l</code>로 확인)" },
+      {
+        "type": "table",
+        "headers": ["번호", "이름", "의미"],
+        "rows": [
+          ["1", "SIGHUP", "연결 종료(hang up). 데몬에게는 설정파일 재적재 신호로도 사용"],
+          ["2", "SIGINT", "[Ctrl]+[C] 인터럽트, 실행 중인 프로세스에 종료 요청"],
+          ["9", "SIGKILL", "강제 종료. 프로세스가 무시/처리할 수 없는 즉시 종료 신호"],
+          ["15", "SIGTERM", "정상 종료 요청(kill 명령의 기본 시그널)"],
+          ["20", "SIGTSTP", "[Ctrl]+[Z] 일시 중지, 프로세스를 백그라운드로 전환"]
+        ]
+      }
+    ],
+    "nice(신규 프로세스 생성 시 우선순위 지정, 프로세스명 사용) vs renice(실행 중인 프로세스, PID 사용)<br/>, NI 값 범위 -20~19",
+    "ps 상태코드 R(실행)/S(대기)/D(디스크대기)/T(중지)/Z(좀비)<br/>, standalone(상주) vs inetd/xinetd(요청시 구동) 데몬 방식 비교",
+    "cron 필드 순서(분 시 일 월 요일), nohup(세션 종료 후에도 유지)<br/>, fork(자식 프로세스 복제) vs exec(현재 프로세스 대체)"
+  ],
+  "example": "<span class=\"prompt\">localhost:~#</span> <span class=\"cmd\">kill -l</span>\n<span class=\"out\"> 1) SIGHUP   2) SIGINT   3) SIGQUIT  4) SIGILL\n 9) SIGKILL 15) SIGTERM 20) SIGTSTP</span>\n<span class=\"prompt\">localhost:~#</span> <span class=\"cmd\">nice -n 5 find / -name \"*.log\" &</span>\n<span class=\"out\">[1] 1222</span>\n<span class=\"prompt\">localhost:~#</span> <span class=\"cmd\">ps -l</span>\n<span class=\"out\">... NI ...\n...  5 ... find</span>\n<span class=\"prompt\">localhost:~#</span> <span class=\"cmd\">renice 10 1222</span>\n<span class=\"out\">1222: old priority 5, new priority 10</span>"
+}

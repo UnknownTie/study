@@ -1,0 +1,8 @@
+{
+  "name": "파일시스템과 디스크 관리",
+  "concepts": [
+    "마운트: <code>mount</code>/<code>umount</code>(사용 중인 장치는 언마운트 불가), 부팅시 자동 마운트 정보는 <code>/etc/fstab</code>. 파티션 종류: 주(Primary, 최대 4개) / 확장(Extended, 1개만 가능) / 논리(Logical, 확장 안에 여러 개).",
+    "디스크·용량 확인: <code>df</code>(파일시스템 단위)·<code>du</code>(디렉터리 실사용량)·<code>free</code>(메모리)·<code>fdisk</code>(파티션 나누기).",
+    "LVM 구성 순서: <b>PV → VG → LV</b>. RAID: <b>RAID-0</b>(스트라이핑) · <b>RAID-1</b>(미러링) · <b>RAID-5</b>(패리티, 디스크 1개 분량 제외 나머지 사용 가능)."
+  ]
+}

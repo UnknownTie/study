@@ -1,0 +1,98 @@
+[
+  {
+    "id": "lm2-1cha-x-window-desktop-1",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "X 윈도우와 데스크톱 환경"
+    ],
+    "q": {
+      "text": "다음 중 리눅스의 사용자 환경(GUI)에 대한 설명으로 옳은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "GUI가 없어도 리눅스는 잘 동작하므로, 직접적인 사용자 인터페이스가 필요 없는 임베디드 시스템에 적합하다.",
+        "truth": "true"
+      },
+      {
+        "text": "리눅스에는 GUI 환경이 전혀 제공되지 않아 사용하기 불편하다.",
+        "truth": "false"
+      },
+      {
+        "text": "MS 윈도우와 같이 고정된 하나의 윈도 관리자만 사용할 수 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "리눅스에서 GUI가 다운되면 반드시 운영체제를 재기동해야 한다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "리눅스에도 X 윈도우 시스템을 기반으로 한 GNOME·KDE 등 다양한 GUI 환경이 제공되므로 'GUI가 전혀 없다'는 설명은 틀렸습니다. 다만 GUI 없이 CLI만으로도 완전하게 동작하므로, 화면 출력이 필요 없는 <b>임베디드 시스템</b>에도 적합합니다. 또한 GNOME·KDE·Xfce 등 원하는 윈도 관리자를 자유롭게 선택할 수 있어 하나의 창 관리자만 고정적으로 쓰는 것이 아니며, GUI(X 서버)만 재시작해도 되어 OS 전체를 재부팅할 필요는 없습니다."
+  },
+  {
+    "id": "lm2-1cha-x-window-desktop-2",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "X 윈도우와 데스크톱 환경"
+    ],
+    "q": {
+      "text": "X 윈도우 시스템에서 화면 출력·입력장치를 관리하며 X 클라이언트(응용 프로그램)의 요청을 처리하는 요소로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "X 서버(X Server)",
+        "truth": "true"
+      },
+      {
+        "text": "윈도 관리자(Window Manager)",
+        "truth": "false"
+      },
+      {
+        "text": "데스크톱 환경(Desktop Environment)",
+        "truth": "false"
+      },
+      {
+        "text": "디스플레이 매니저(Display Manager)",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>X 서버</b>는 화면 출력·입력장치를 관리하며 X 클라이언트(응용 프로그램)의 요청을 처리합니다. 윈도 관리자는 창의 배치·장식을, 데스크톱 환경은 GNOME·KDE 같은 통합 UI 세트를 의미합니다."
+  },
+  {
+    "id": "lm2-1cha-x-window-desktop-3",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "X 윈도우와 데스크톱 환경"
+    ],
+    "q": {
+      "text": "다음 중 리눅스의 데스크톱 환경(Desktop Environment)으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "GNOME",
+        "truth": "true"
+      },
+      {
+        "text": "Aero",
+        "truth": "false"
+      },
+      {
+        "text": "Finder",
+        "truth": "false"
+      },
+      {
+        "text": "Explorer",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>GNOME</b>은 GTK 기반의 대표적인 리눅스 데스크톱 환경입니다. Aero·Explorer는 윈도우, Finder는 macOS 전용입니다."
+  }
+]

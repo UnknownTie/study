@@ -1,0 +1,17 @@
+{
+  "counts": {
+    "file-permission": 4,
+    "filesystem-disk": 9,
+    "shell-login": 8,
+    "process-control": 10,
+    "text-editor": 6,
+    "package-management": 7,
+    "compression-archive": 1,
+    "peripheral-multimedia": 3,
+    "x-window-desktop": 7,
+    "applications": 2,
+    "virtualization-cloud": 4,
+    "distro-embedded": 0,
+    "network-basics": 19
+  }
+}

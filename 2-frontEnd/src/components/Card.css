@@ -1,0 +1,44 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 20px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+.card-ribbon {
+  position: absolute;
+  top: 14px;
+  right: -34px;
+  transform: rotate(40deg);
+  padding: 4px 40px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--card-accent, var(--accent));
+}
+.card-title {
+  margin: 6px 0 6px;
+  font-size: 1.1rem;
+}
+.card-note {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+.card-stat-label {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.card-example-label {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}

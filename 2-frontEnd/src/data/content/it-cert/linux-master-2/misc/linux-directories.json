@@ -1,0 +1,225 @@
+{
+  "name": "리눅스 주요 디렉터리들의 정의",
+  "concepts": [
+    [
+      {
+        "type": "text",
+        "html": "리눅스는 <b>FHS(Filesystem Hierarchy Standard)</b>에 따라 디렉터리마다 역할이 정해져 있습니다. 시험에 자주 나오는 주요 디렉터리와 용도"
+      },
+      {
+        "type": "table",
+        "headers": ["디렉터리", "설명"],
+        "rows": [
+          ["/", "모든 디렉터리의 최상위 루트"],
+          ["/bin", "ls, cp, mv 등 부팅·단일 사용자 모드에서도 필요한 기본 명령어"],
+          ["/sbin", "fdisk, reboot, ifconfig 등 시스템 관리용 명령어(주로 root 전용)"],
+          ["/boot", "커널 이미지(vmlinuz), GRUB 설정 등 부팅에 필요한 파일"],
+          ["/dev", "하드디스크, 터미널 등 장치를 나타내는 특수 파일"],
+          ["/etc", "시스템 및 각종 서비스의 설정 파일"],
+          ["/home", "일반 사용자 개인 홈 디렉터리"],
+          ["/root", "root 사용자 전용 홈 디렉터리"],
+          ["/lib, /lib64", "커널 모듈과 /bin·/sbin 실행에 필요한 공유 라이브러리"],
+          ["/media", "USB, CD 등 이동식 미디어가 자동으로 마운트되는 위치"],
+          ["/mnt", "관리자가 임시로 파일시스템을 마운트할 때 사용하는 위치"],
+          ["/opt", "배포판 기본 패키지가 아닌 추가 응용 프로그램 설치 위치"],
+          ["/proc", "실행 중인 프로세스·커널 정보를 보여주는 가상 파일시스템"],
+          ["/run", "부팅 이후 생성되는 런타임 가변 데이터(PID 파일 등, 과거 /var/run)"],
+          ["/srv", "웹·FTP 등 이 시스템이 제공하는 서비스용 데이터"],
+          ["/tmp", "임시 파일 저장 공간(재부팅 시 삭제될 수 있음)"],
+          ["/usr", "사용자용 프로그램·라이브러리·문서(/usr/bin, /usr/local 등 포함, 읽기 전용에 가까운 준정적 데이터)"],
+          ["/var", "로그, 메일, 스풀 등 계속 변하는(가변) 데이터"]
+        ]
+      },
+      {
+        "type": "text",
+        "html": "디렉터리를 클릭하면 자주 쓰는 명령어와 실행 예제를 볼 수 있습니다."
+      },
+      {
+        "type": "accordion",
+        "items": [
+          {
+            "title": "/ — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls -l /</code> 최상위 디렉터리 목록 확인 · <code>df -h /</code> 루트 파일시스템 사용량 확인" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">df -h /</span>\n<span class=\"out\">Filesystem  Size  Used Avail Use% Mounted on\n/dev/sda1    20G  8.0G   12G  40% /</span>"
+              }
+            ]
+          },
+          {
+            "title": "/bin — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls /bin</code> 기본 명령어 목록 확인 · <code>which ls</code> 명령어의 실제 위치 확인(최근 배포판은 /usr/bin으로 심볼릭 링크됨)" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">which ls</span>\n<span class=\"out\">/usr/bin/ls</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ls -l /bin</span>\n<span class=\"out\">lrwxrwxrwx. 1 root root 7 ... /bin -> usr/bin</span>"
+              }
+            ]
+          },
+          {
+            "title": "/sbin — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls /sbin</code> 관리용 명령어 목록 확인 · <code>fdisk -l</code> 디스크 파티션 정보 확인(root 전용)" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">fdisk -l</span>\n<span class=\"out\">Disk /dev/sda: 20 GiB, 21474836480 bytes, 41943040 sectors</span>"
+              }
+            ]
+          },
+          {
+            "title": "/boot — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls /boot</code> 커널·부팅 파일 확인 · <code>uname -r</code> 현재 사용 중인 커널 버전 확인" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">uname -r</span>\n<span class=\"out\">3.10.0-1160.el7.x86_64</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ls /boot</span>\n<span class=\"out\">grub2  vmlinuz-3.10.0-1160.el7.x86_64  initramfs-3.10.0-1160.el7.x86_64.img</span>"
+              }
+            ]
+          },
+          {
+            "title": "/dev — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>lsblk</code> 블록 장치(디스크·파티션) 트리 확인 · <code>ls /dev/sd*</code> 디스크 장치 파일 확인" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">lsblk</span>\n<span class=\"out\">NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT\nsda      8:0    0  20G  0 disk\n└─sda1   8:1    0  20G  0 part /</span>"
+              }
+            ]
+          },
+          {
+            "title": "/etc — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>cat /etc/passwd</code> 사용자 계정 정보 확인 · <code>vi /etc/fstab</code> 부팅 시 마운트 정보 편집" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">cat /etc/passwd | head -2</span>\n<span class=\"out\">root:x:0:0:root:/root:/bin/bash\nbin:x:1:1:bin:/bin:/sbin/nologin</span>"
+              }
+            ]
+          },
+          {
+            "title": "/home — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls /home</code> 사용자 홈 디렉터리 목록 확인 · <code>useradd kim</code> 사용자 생성 시 /home/kim이 자동 생성됨" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">useradd kim</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ls /home</span>\n<span class=\"out\">kim</span>"
+              }
+            ]
+          },
+          {
+            "title": "/root — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls -la /root</code> root 사용자의 홈 디렉터리 내용 확인(일반 사용자는 권한 없어 접근 불가)" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ls -la /root</span>\n<span class=\"out\">drwx------. 3 root root  ... .\n-rw-------. 1 root root  ... .bash_history</span>"
+              }
+            ]
+          },
+          {
+            "title": "/lib, /lib64 — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ldd /bin/ls</code> 실행 파일이 사용하는 공유 라이브러리 확인 · <code>ls /lib/modules</code> 커널 모듈 확인" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ldd /bin/ls</span>\n<span class=\"out\">linux-vdso.so.1\nlibc.so.6 => /lib64/libc.so.6</span>"
+              }
+            ]
+          },
+          {
+            "title": "/media — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls /media</code> 자동 마운트된 이동식 미디어 확인 · <code>mount</code>로 마운트 상태 확인" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">mount | grep media</span>\n<span class=\"out\">/dev/sdb1 on /media/usb type vfat (rw,nosuid,nodev)</span>"
+              }
+            ]
+          },
+          {
+            "title": "/mnt — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>mount 장치 /mnt</code> 임시 마운트 · <code>umount /mnt</code> 마운트 해제" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">mount /dev/sdb1 /mnt</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">umount /mnt</span>"
+              }
+            ]
+          },
+          {
+            "title": "/opt — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls /opt</code> 배포판 기본 패키지가 아닌 추가 설치 프로그램 확인" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ls /opt</span>\n<span class=\"out\">google  mysolution</span>"
+              }
+            ]
+          },
+          {
+            "title": "/proc — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>cat /proc/cpuinfo</code> CPU 정보 확인 · <code>cat /proc/meminfo</code> 메모리 정보 확인" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">cat /proc/meminfo | head -2</span>\n<span class=\"out\">MemTotal:       8021224 kB\nMemFree:         512344 kB</span>"
+              }
+            ]
+          },
+          {
+            "title": "/run — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls /run</code> 실행 중인 서비스의 PID 파일 등 런타임 데이터 확인" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ls /run | grep pid</span>\n<span class=\"out\">sshd.pid</span>"
+              }
+            ]
+          },
+          {
+            "title": "/srv — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls /srv</code> 이 서버가 제공하는 웹·FTP 등 서비스 데이터 확인" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ls /srv</span>\n<span class=\"out\">www  ftp</span>"
+              }
+            ]
+          },
+          {
+            "title": "/tmp — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls -la /tmp</code> 임시 파일 확인 · <code>find /tmp -type f -mtime +7</code> 7일 이상 지난 임시 파일 찾기(정리용)" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">find /tmp -type f -mtime +7</span>\n<span class=\"out\">/tmp/old_upload.tmp</span>"
+              }
+            ]
+          },
+          {
+            "title": "/usr — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>ls /usr/bin | wc -l</code> 사용자용 프로그램 개수 확인 · <code>ls /usr/local</code> 직접 설치한 프로그램 확인" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ls /usr/local</span>\n<span class=\"out\">bin  etc  games  include  lib  sbin  share  src</span>"
+              }
+            ]
+          },
+          {
+            "title": "/var — 자주 쓰는 명령어",
+            "body": [
+              { "type": "text", "html": "<code>tail -f /var/log/messages</code> 시스템 로그 실시간 확인 · <code>du -sh /var/log</code> 로그 용량 확인" },
+              {
+                "type": "terminal",
+                "html": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">du -sh /var/log</span>\n<span class=\"out\">120M  /var/log</span>"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  ],
+  "example": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ls -d /bin /sbin /etc /var /proc</span>\n<span class=\"out\">/bin  /etc  /proc  /sbin  /var</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">cat /proc/cpuinfo | head -3</span>\n<span class=\"out\">processor : 0\nvendor_id : GenuineIntel\nmodel name : Intel(R) Core(TM) ...</span>"
+}

@@ -1,0 +1,216 @@
+/* 전역 테마 — 기존 HTML 프로토타입에서 검증된 팔레트 이식. 페이지별로 색을 새로 정의하지 않고 여기 변수만 참조한다. */
+:root {
+  --bg: #f3f5f8;
+  --card: #ffffff;
+  --text: #1c2333;
+  --muted: #5b6472;
+  --border: #e2e6ec;
+  --accent: #2f6fed;
+  --accent2: #7c4dff;
+  --accent-soft: #e8f0fe;
+  --bar-track: #e9edf3;
+  --shadow: 0 8px 24px rgba(30, 40, 60, 0.08);
+  --cat1: #2f6fed;
+  --cat2: #12a894;
+  --ok: #2fbf71;
+  --ok-soft: rgba(47, 191, 113, 0.12);
+  --fail: #e5484d;
+  --fail-soft: rgba(229, 72, 77, 0.12);
+}
+
+:root[data-theme='dark'] {
+  --bg: #12151c;
+  --card: #1a1f29;
+  --text: #e8ecf3;
+  --muted: #9aa4b5;
+  --border: #2a3140;
+  --accent: #6d97ff;
+  --accent2: #b39bff;
+  --accent-soft: #212b42;
+  --bar-track: #232a37;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --cat1: #6d97ff;
+  --cat2: #3ed3bd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #12151c;
+    --card: #1a1f29;
+    --text: #e8ecf3;
+    --muted: #9aa4b5;
+    --border: #2a3140;
+    --accent: #6d97ff;
+    --accent2: #b39bff;
+    --accent-soft: #212b42;
+    --bar-track: #232a37;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --cat1: #6d97ff;
+    --cat2: #3ed3bd;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Pretendard', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+}
+
+/* ---- 공용 반응형 그리드 유틸리티 (CardGrid, QuizPanel, MockExamPage 결과가 전부 재사용) ---- */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* ---- 공용 통계 바 ---- */
+.stat-bar-track {
+  width: 100%;
+  height: 10px;
+  background: var(--bar-track);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: var(--accent);
+}
+
+/* ---- 버튼 위계 ----
+   강조(Primary): 예제 문제 풀어보기 / 가상 모의고사 응시 / N개 시험 문제 풀기
+   보조(Secondary): 문제 보기 / 정답 확인 / 섞어서 풀기 / 원래 순서
+   텍스트/고스트: 설명 보기 / Breadcrumbs / back 버튼
+   세그먼트 그룹: 출제율 필터
+*/
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.btn-primary:hover {
+  opacity: 0.92;
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 0.84rem;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 0;
+}
+.btn-ghost:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.segment-group {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.segment-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.segment-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ---- 다크/라이트 토글 (Header 전용, 페이지마다 재생성하지 않음) ---- */
+.theme-toggle {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+/* ---- 접근 비밀번호 게이트 ---- */
+.gate-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+.gate-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: center;
+}
+.gate-title {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+.gate-input {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 1rem;
+}
+.gate-submit {
+  width: 100%;
+}
+.gate-error {
+  margin: 0;
+  color: var(--fail);
+  font-size: 0.85rem;
+}

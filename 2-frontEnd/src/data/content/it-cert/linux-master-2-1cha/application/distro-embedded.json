@@ -1,0 +1,27 @@
+{
+  "name": "리눅스 배포판과 모바일·임베디드 OS",
+  "concepts": [
+    "레드햇 계열(<b>RHEL</b>-상용/유료, <b>CentOS</b>-RHEL 기반 무료, <b>Fedora</b>-레드햇 후원 커뮤니티판, 6개월 주기·짧은 지원기간) — 데비안 계열(Debian·<b>Ubuntu</b>·<b>Kali Linux</b>-보안/해킹 도구 내장) — 슬랙웨어 계열(<b>SUSE</b>·Slax·Vector Linux, ※Knoppix는 데비안 기반이라 슬랙웨어 계열 아님) — 국내 배포판 <b>수리눅스(SuLinux)</b>.",
+    [
+      {
+        "type": "text",
+        "html": "오픈소스 라이선스는 <b>소스 코드 수정 후 재배포할 때 공개 의무가 있는지</b>로 크게 나뉜다: 공개를 강제하는 <b>카피레프트(copyleft)</b> 계열(GPL·LGPL·MPL)과, 공개를 강제하지 않는 <b>관대한(permissive)</b> 계열(BSD·MIT·Apache). <b>저작권(Copyright)</b>은 라이선스 종류가 아니라 소유권 자체를 나타내는 표기이며, GPL·LGPL 같은 라이선스는 그 저작권을 바탕으로 한 구체적 이용 허락 방식이다."
+      },
+      {
+        "type": "table",
+        "headers": ["라이선스", "공개 의무 범위(카피레프트 정도)", "수정 후 재배포 시 소스 공개", "대표 예시"],
+        "rows": [
+          ["<b>GPL</b>", "강한 카피레프트", "파생 프로그램 전체 소스 공개 의무", "리눅스 커널, GCC"],
+          ["<b>LGPL</b>", "완화된 카피레프트", "라이브러리 자체 수정본만 공개 의무<br/>(라이브러리를 링크해서 쓰는 응용 프로그램 쪽은 비공개 가능)", "glibc"],
+          ["<b>MPL</b>", "파일(모듈) 단위 카피레프트", "MPL 코드 자체만 공개 의무<br/>(결합된 다른 코드는 비공개 가능)", "Firefox"],
+          ["<b>BSD · MIT</b>", "관대(permissive)", "공개 의무 없음<br/>(독점 소프트웨어로 재배포도 가능)", "BSD, X Window System · jQuery · Node.js(MIT)"],
+          ["<b>Apache License</b>", "관대(permissive) + 특허 보호 조항", "공개 의무 없음", "Apache HTTP Server"]
+        ]
+      },
+      {
+        "type": "text",
+        "html": "라이선스 조합 문제 팁: '수정 후 재배포해도 소스 공개가 필요 없는 조합'을 고르는 문제는 <b>BSD·MIT·Apache처럼 관대한 라이선스끼리 묶인 보기</b>를 고르면 된다 — GPL·LGPL이 하나라도 섞이면 그 부분은 공개 의무가 생긴다."
+      }
+    ]
+  ]
+}

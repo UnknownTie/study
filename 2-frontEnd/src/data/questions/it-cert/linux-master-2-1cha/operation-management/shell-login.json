@@ -1,0 +1,706 @@
+[
+  {
+    "id": "lm2-1cha-shell-login-1",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "1.bash 환경에서 아래 명령의 실행 결과에 대한 설명으로 가장 적절한 것은?<br/><code>#export PATH=$PATH:/etc</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "기존의 경로(PATH)를 제거하고 새로운 경로를 추가하였다.",
+        "truth": "false"
+      },
+      {
+        "text": "기존의 경로(PATH)에 /etc라는 새로운 경로를 추가하였다.",
+        "truth": "true"
+      },
+      {
+        "text": "잘못된 명령으로, export $PATH=PATH:/etc로 실행하는 것이 옳다.",
+        "truth": "false"
+      },
+      {
+        "text": "잘못된 명령으로, export PATH=PATH:/etc로 실행하는 것이 옳다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 1,
+    "explain": "PATH 뒤에 <b>$PATH:/etc</b>처럼 이어붙이면, 기존 경로(PATH)를 그대로 유지한 채 /etc가 검색 경로에 추가됩니다. '기존 경로를 제거하고 추가했다'는 설명은 틀렸고, 'export $PATH=PATH:/etc'는 대입 시 변수명 앞에 $를 붙이는 잘못된 문법이며, 'export PATH=PATH:/etc'(뒤쪽 PATH 앞에 $가 없는 형태)는 기존 값과 상관없이 PATH를 문자 그대로 'PATH:/etc'로 덮어써 버리므로 원래 명령과 다른(틀린) 결과를 냅니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-2",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "30.Bash쉘(Shell)에서 설정되어 있는 PATH 환경변수에 /user/local/bin 이라는 새로운 값을 추가하기 명령으로 알맞은것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "export PATH=/usr/local/bin",
+        "truth": "false"
+      },
+      {
+        "text": "path=/usr/local/bin",
+        "truth": "false"
+      },
+      {
+        "text": "export PATH=$PATH:/usr/local/bin",
+        "truth": "true"
+      },
+      {
+        "text": "path=$PATH:/usr/local/bin",
+        "truth": "false"
+      }
+    ],
+    "answer": 2,
+    "explain": "기존 PATH 값을 유지하며 새 경로를 추가하려면 <b>export PATH=$PATH:/usr/local/bin</b>처럼 $PATH를 포함시켜야 합니다. export PATH=/usr/local/bin은 기존 PATH를 모두 <b>덮어써</b> 버리고, path=/usr/local/bin과 path=$PATH:/usr/local/bin은 소문자 path라는 별개의 변수를 만들 뿐이며 export하지 않아 명령 검색에 전혀 영향을 주지 못합니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-3",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 명령의 실행 결과에 대한 설명으로 가장 적절한 것은?<br/><code>[root@ihdroot]echo$PWD<br/>/root</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "현재 작업디렉토리의 위치를 확인해 보고 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "홈 디렉토리 정보를 간직하고 있는 PWD 환경변수의 내용을 출력하고 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "시스템 관리자의 권한으로만 위 환경변수를 확인해 볼 수 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "일반적으로 디렉토리를 이동하면 PWD 변수를 수동으로 다시 설정해 주어야 한다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>PWD</b>는 현재 작업 디렉터리 경로를 담고 있는 환경변수로, echo $PWD는 현재 위치를 확인하는 것입니다. PWD는 홈 디렉터리가 아니라 <b>현재 작업 디렉터리</b>를 담고 있고(홈 디렉터리는 HOME 변수), 일반 사용자도 이 값을 확인할 수 있어 관리자 권한이 필요 없으며, cd로 디렉터리를 옮기면 셸이 PWD를 <b>자동으로</b> 갱신해 주므로 수동 재설정이 필요 없습니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-4",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "리눅스에서 쉘이 명령어를 찾을 수 있도록 지정하는 검색경로(PATH)를 설정하는 파일로 가장 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/etc/profile",
+        "truth": "true"
+      },
+      {
+        "text": "/etc/passwd",
+        "truth": "false"
+      },
+      {
+        "text": "/etc/shadow",
+        "truth": "false"
+      },
+      {
+        "text": "/etc/environment",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "전역 PATH 등 로그인 환경변수는 <b>/etc/profile</b>에서 설정합니다. /etc/passwd는 사용자 계정 정보, /etc/shadow는 암호화된 비밀번호 정보를 담는 파일로 PATH 설정과 무관하며, /etc/environment는 일부 배포판(Debian 계열)에서 단순 환경변수를 지정하는 데 쓰이지만 셸 스크립트 문법을 지원하지 않아 PATH 검색 경로를 설정하는 표준 파일로 보기 어렵습니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-5",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 명령의 실행결과에 대한 설명으로 가장 적절한 것은?<br/><code>ihd@ihd skel $ ls -al /etc/skel</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "현재 로그인된 계정의 bash 설정 파일들을 나열하고 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "/etc/skel 디렉터리는 새 계정 생성 시 홈 디렉터리에 복사될 기본 설정 파일들의 원본을 담고 있어, 이를 나열하고 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "시스템 전체 사용자의 목록을 나열하고 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "현재 로그인된 사용자의 권한 정보를 나열하고 있다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 1,
+    "explain": "<code>/etc/skel</code>은 새 계정을 생성할 때 홈 디렉터리로 복사되는 <b>기본(스켈레톤) 설정 파일들의 원본</b>을 담은 디렉터리입니다. 현재 로그인 계정 자신의 bash 설정 파일은 홈 디렉터리(~/.bashrc 등)에 있지 /etc/skel에 있는 것이 아니고, 전체 사용자 목록은 /etc/passwd에 있으며, 이 명령은 파일 목록을 보여줄 뿐 사용자의 권한 정보와는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-6",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 중 환경 설정에 관련된 명령어가 아닌 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "unset",
+        "truth": "true"
+      },
+      {
+        "text": "export",
+        "truth": "true"
+      },
+      {
+        "text": "env",
+        "truth": "true"
+      },
+      {
+        "text": "put",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "<b>put</b>은 ftp 파일 전송 명령이지 셸 환경설정 명령이 아닙니다. unset·export·env는 모두 환경변수 관련 명령입니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-7",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 명령의 의미는?<br/><code>source=`ls *.c`</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "source 셸 변수에 'ls *.c' 명령의 실행 결과(즉 .c 확장자를 가진 파일 목록)를 대입한다.",
+        "truth": "true"
+      },
+      {
+        "text": ".c 확장자를 가진 파일을 찾아 화면에 나열한다.",
+        "truth": "false"
+      },
+      {
+        "text": "source 셸 변수에 'ls *.c'라는 문자열 자체를 대입한다.",
+        "truth": "false"
+      },
+      {
+        "text": "source라는 이름의 파일을 생성한다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "백틱(`)은 명령 치환으로, 명령의 <b>실행 결과</b>를 그 자리에 대입합니다. 따라서 source 변수에는 문자열 'ls *.c'가 아니라 그 명령이 나열한 .c 파일 목록이 들어갑니다. 단순히 화면에 나열만 하는 것이 아니라 그 결과가 <b>source 변수에 대입</b>된다는 점이 핵심이며, 파일이 아니라 셸 변수를 만드는 것이므로 'source라는 파일을 생성한다'는 설명도 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-8",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 중 셸(shell)의 내장 키워드가 아닌 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "ls",
+        "truth": "false"
+      },
+      {
+        "text": "while",
+        "truth": "true"
+      },
+      {
+        "text": "do",
+        "truth": "true"
+      },
+      {
+        "text": "if",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>ls</b>는 셸에 내장된 것이 아니라 <b>/bin</b> 등에 있는 외부(별도) 실행 파일입니다. while·do·if는 셸 자체의 제어문 키워드입니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-9",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 중 현재 사용중인 터미널의 장치 파일명을 확인하기 위한 명령으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "tty",
+        "truth": "true"
+      },
+      {
+        "text": "stty",
+        "truth": "false"
+      },
+      {
+        "text": "term",
+        "truth": "false"
+      },
+      {
+        "text": "xterm",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "현재 터미널의 장치 파일명(예: /dev/pts/0)을 보여주는 명령은 <b>tty</b>입니다. stty는 터미널의 속도·모드 등 <b>설정</b>을 확인·변경하는 명령이지 장치 파일명을 보여주지 않고, term은 리눅스의 표준 명령이 아니며, xterm은 X 윈도우용 터미널 에뮬레이터 프로그램으로 장치 파일명 확인과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-10",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 중 ls 명령 실행 시에 'alF' 옵션이 기본 적용되도록 설정하려 할 때 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "alias ls 'ls -alF'",
+        "truth": "false"
+      },
+      {
+        "text": "alias ls='ls -alF'",
+        "truth": "true"
+      },
+      {
+        "text": "unalias ls 'ls -alF'",
+        "truth": "false"
+      },
+      {
+        "text": "unalias ls='ls -alF'",
+        "truth": "false"
+      }
+    ],
+    "answer": 1,
+    "explain": "alias 설정 문법은 <b>alias 별칭='명령어'</b> 형식입니다. alias ls 'ls -alF'는 등호(=) 없이 공백으로 나열한 잘못된 문법이고, unalias는 등록된 별칭을 <b>해제</b>하는 명령이라 값을 대입할 수 없으므로 unalias ls 'ls -alF'와 unalias ls='ls -alF' 모두 별칭을 새로 설정하는 용도로 쓸 수 없습니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-11",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><code># date ( ) 2017 02 01</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "+\"%Y %m %d\"",
+        "truth": "true"
+      },
+      {
+        "text": "-f \"%Y %m %d\"",
+        "truth": "false"
+      },
+      {
+        "text": "--format YMD",
+        "truth": "false"
+      },
+      {
+        "text": "/YMD",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "date 명령에서 출력 형식을 지정할 때는 <b>+\"형식문자열\"</b>을 사용합니다(%Y 연도, %m 월, %d 일). -f \"%Y %m %d\"의 -f는 파일에서 날짜 값을 읽어들이는 옵션으로 형식 지정 문법이 아니고, --format YMD와 /YMD는 date 명령에 존재하지 않는 옵션·문법입니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-12",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 중 시스템에서 사용 중인 커널 버전을 확인하는 명령으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "uname -r",
+        "truth": "true"
+      },
+      {
+        "text": "kernelver",
+        "truth": "false"
+      },
+      {
+        "text": "ver",
+        "truth": "false"
+      },
+      {
+        "text": "cat /proc/kernel",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>uname -r</b>로 현재 실행 중인 커널 버전을 확인할 수 있습니다. kernelver와 ver는 리눅스의 표준 명령이 아니고(ver는 윈도우 명령과 혼동하기 쉽습니다), cat /proc/kernel은 존재하지 않는 파일이며 커널 버전 정보는 /proc/version에 있습니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-13",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 중 (괄호) 안에 들어갈 명령으로 알맞은 것은?<br/><code>#( ) /usr/local/share/man:/usr/share/man</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "manpath",
+        "truth": "true"
+      },
+      {
+        "text": "echo $MANPATH",
+        "truth": "false"
+      },
+      {
+        "text": "man -p",
+        "truth": "false"
+      },
+      {
+        "text": "showman",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>manpath</b> 명령은 man 페이지를 검색할 경로 목록을 출력합니다. echo $MANPATH는 MANPATH 환경변수가 별도로 설정되어 있지 않으면 아무 값도 출력하지 않아 기본 검색 경로를 보장하지 못하고, man -p는 그런 옵션이 없으며, showman은 존재하지 않는 명령입니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-14",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "aaa 명령을 실행하면 'ls -alF'가 실행되는데, 이 명령어(별칭)의 사용을 중단하려고 한다. (괄호) 안에 들어갈 명령으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "unalias aaa",
+        "truth": "true"
+      },
+      {
+        "text": "unset aaa",
+        "truth": "false"
+      },
+      {
+        "text": "alias aaa=",
+        "truth": "false"
+      },
+      {
+        "text": "delalias aaa",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "설정된 alias를 해제하는 명령은 <b>unalias</b>입니다. unset은 셸·환경 <b>변수</b>를 제거하는 명령이지 alias를 대상으로 하지 않고, alias aaa=는 별칭을 빈 문자열로 재정의할 뿐 완전히 삭제(해제)하는 것과는 다르며, delalias는 리눅스에 존재하지 않는 명령입니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-15",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 (괄호) 안에 들어갈 명령으로 알맞은 것은?<br/><code>#( ) ls<br/>alias ls='ls --color=auto'<br/>/bin/ls</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "which",
+        "truth": "false"
+      },
+      {
+        "text": "whereis",
+        "truth": "false"
+      },
+      {
+        "text": "type -a",
+        "truth": "true"
+      },
+      {
+        "text": "find",
+        "truth": "false"
+      }
+    ],
+    "answer": 2,
+    "explain": "<code>type -a</code>는 alias와 실제 실행 경로를 함께 보여주므로 alias 설정과 /bin/ls 경로가 모두 출력되는 이 결과와 맞습니다. which는 alias를 인식하지 못하는 경우가 많아 alias 정의 줄까지는 보여주지 못하고, whereis는 실행 파일·소스·man 페이지의 위치를 찾는 명령으로 alias 정보와는 무관하며, find는 파일 시스템에서 파일을 검색하는 명령이라 alias나 명령 검색 경로 확인과는 관계가 없습니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-16",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 중 사용 중인 터미널의 화면을 지워 첫줄에 프롬프트가 나타나도록 하는 명령어로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "clear",
+        "truth": "true"
+      },
+      {
+        "text": "cls",
+        "truth": "false"
+      },
+      {
+        "text": "reset",
+        "truth": "false"
+      },
+      {
+        "text": "refresh",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "터미널 화면을 지우는 명령은 <b>clear</b>입니다. cls는 리눅스가 아닌 MS-DOS/Windows의 명령이고, reset은 화면을 지우기보다 <b>깨진 터미널 설정을 초기화</b>하는 데 주로 쓰이는 명령이며, refresh는 리눅스 셸의 표준 명령이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-17",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 중 환경변수인 PATH에 설정된 값을 확인하는 방법으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "echo $PATH",
+        "truth": "true"
+      },
+      {
+        "text": "echo PATH",
+        "truth": "false"
+      },
+      {
+        "text": "set PATH",
+        "truth": "false"
+      },
+      {
+        "text": "cat PATH",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "환경변수 값은 앞에 <b>$</b>를 붙여 <code>echo $PATH</code>로 확인합니다. $ 없이 echo PATH를 실행하면 변수 값이 아니라 'PATH'라는 문자열 자체가 출력되고, set PATH는 값을 조회하는 것이 아니라 셸 옵션·위치 매개변수를 다루는 문법이며, cat PATH는 PATH라는 이름의 파일을 읽으려 시도하지만 그런 파일은 존재하지 않습니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-18",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 중 사용자의 명령어 실행과 가장 관계가 깊은(일정 시간 입력이 없으면 자동 로그아웃시키는) 환경 변수로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "TMOUT",
+        "truth": "true"
+      },
+      {
+        "text": "PATH",
+        "truth": "false"
+      },
+      {
+        "text": "PS1",
+        "truth": "false"
+      },
+      {
+        "text": "IFS",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>TMOUT</b>은 지정한 시간(초) 동안 입력이 없으면 셸을 자동 로그아웃시키는 환경변수입니다. PATH는 명령을 찾는 검색 경로, PS1은 프롬프트 모양을 지정하는 변수, IFS는 입력을 단어로 나눌 때 쓰는 구분자(Internal Field Separator) 변수로 모두 자동 로그아웃과는 관계가 없습니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-19",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 중 일정 시간 동안 작업을 하지 않는 사용자를 강제적으로 로그아웃되도록 설정할 때 사용하는 파일로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/etc/profile",
+        "truth": "true"
+      },
+      {
+        "text": "/etc/passwd",
+        "truth": "false"
+      },
+      {
+        "text": "/etc/shells",
+        "truth": "false"
+      },
+      {
+        "text": "/etc/skel",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "전역 환경변수 <code>TMOUT</code>을 설정해 자동 로그아웃을 걸 수 있는 곳은 <b>/etc/profile</b>입니다. /etc/passwd는 사용자 계정 정보 파일, /etc/shells는 로그인에 사용할 수 있는 셸 목록을 담은 파일, /etc/skel은 신규 계정 생성 시 홈 디렉터리로 복사되는 기본 설정 파일 모음으로 모두 자동 로그아웃 설정과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-20",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 중 콘솔 모드나 터미널창에서 로그아웃하는 방법으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "[Ctrl]+[d]",
+        "truth": "false"
+      },
+      {
+        "text": "exit",
+        "truth": "true"
+      },
+      {
+        "text": "logout",
+        "truth": "true"
+      },
+      {
+        "text": "[Ctrl]+[c]",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>[Ctrl]+[d]</b>는 EOF(입력 종료) 신호로, 많은 셸에서 로그아웃과 비슷하게 동작하기도 하지만 표준적인 로그아웃 방법으로 보기 어렵습니다. exit·logout·[Ctrl]+[c]가 일반적인 종료 방법으로 제시되었습니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-21",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "cal 명령 실행 시 올해의 달력 전체를 출력할 때 사용하는 옵션으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "-a",
+        "truth": "false"
+      },
+      {
+        "text": "-m",
+        "truth": "false"
+      },
+      {
+        "text": "-s",
+        "truth": "false"
+      },
+      {
+        "text": "-y",
+        "truth": "true"
+      }
+    ],
+    "answer": 3,
+    "explain": "<b>cal -y</b>는 현재 연도 전체(1~12월) 달력을 출력합니다. -a는 cal 명령에 존재하지 않는 옵션이고, -m과 -s는 각각 월요일·일요일을 한 주의 시작 요일로 지정하는 옵션일 뿐 연간 달력 출력과는 관계가 없습니다."
+  },
+  {
+    "id": "lm2-1cha-shell-login-22",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "쉘과 로그인 환경"
+    ],
+    "q": {
+      "text": "다음 (괄호) 안에 들어갈 명령으로 알맞은 것은?<br/><code>#( ) ls<br/>/bin/ls</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "which",
+        "truth": "true"
+      },
+      {
+        "text": "whereis",
+        "truth": "false"
+      },
+      {
+        "text": "type -a",
+        "truth": "false"
+      },
+      {
+        "text": "find",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "이 예제처럼 alias 없이 명령의 실제 실행 경로(/bin/ls)만 확인할 때는 <b>which</b>를 사용합니다. whereis는 실행 파일뿐 아니라 소스·man 페이지 위치까지 함께 찾아 이 결과와 형식이 다르고, type -a는 alias가 설정되어 있으면 그 alias 정보까지 함께 보여주므로 alias 없는 이 상황과는 맞지 않으며, find는 파일 시스템에서 파일을 검색하는 명령이라 PATH 기반 실행 경로 확인과는 다른 방식입니다."
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "lm2-1cha-package-management-1",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "패키지 관리와 소프트웨어 설치"
+    ],
+    "q": {
+      "text": "리눅스 설치 메뉴 중에 yum 명령을 사용하기 위해 설정하는 항목으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "리포지터리 설정",
+        "truth": "true"
+      },
+      {
+        "text": "방화벽 설정",
+        "truth": "false"
+      },
+      {
+        "text": "네트워크 설정",
+        "truth": "false"
+      },
+      {
+        "text": "타임존 설정",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "yum이 패키지를 내려받을 저장소 위치를 지정하는 것이 <b>리포지터리(repository) 설정</b>입니다. 방화벽 설정은 네트워크 접근 제어, 네트워크 설정은 IP·호스트명 등 통신 환경 구성, 타임존 설정은 시스템 시간대 지정을 위한 항목으로 yum 저장소 지정과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-package-management-2",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "패키지 관리와 소프트웨어 설치"
+    ],
+    "q": {
+      "text": "레드햇 계열 리눅스에서 rpm 패키지의 의존성 문제까지 저장소를 통해 자동으로 처리하며 설치·삭제하는 명령으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "yum",
+        "truth": "true"
+      },
+      {
+        "text": "rpm",
+        "truth": "false"
+      },
+      {
+        "text": "dpkg",
+        "truth": "false"
+      },
+      {
+        "text": "tar",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>yum</b>은 rpm 패키지의 의존성 문제를 저장소(repository)를 통해 자동으로 해결해주는 패키지 관리자입니다. rpm은 패키지 자체는 다루지만 의존성은 직접 해결해야 하고, dpkg는 데비안 계열의 패키지 명령이며, tar는 파일을 압축·아카이브하는 명령으로 패키지 의존성 관리와는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-package-management-3",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "패키지 관리와 소프트웨어 설치"
+    ],
+    "q": {
+      "text": "데비안 계열 리눅스에서 사용하는 패키지 관리 명령으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "apt-get",
+        "truth": "true"
+      },
+      {
+        "text": "yum",
+        "truth": "false"
+      },
+      {
+        "text": "rpm",
+        "truth": "false"
+      },
+      {
+        "text": "urpmi",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>apt-get</b>(또는 apt)은 데비안·우분투 계열에서 사용하는 패키지 관리 명령입니다. yum·rpm은 레드햇 계열, urpmi는 만드리바 계열입니다."
+  }
+]

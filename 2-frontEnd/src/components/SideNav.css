@@ -1,0 +1,36 @@
+.side-nav {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0 20px;
+}
+.side-nav .nav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--text);
+  text-align: left;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.side-nav .nav-btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.side-nav .nav-btn.next {
+  align-items: flex-end;
+  text-align: right;
+}
+.side-nav .nav-label {
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+.side-nav .nav-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+}

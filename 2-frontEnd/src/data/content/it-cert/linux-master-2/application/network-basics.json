@@ -1,0 +1,53 @@
+{
+  "name": "네트워크 기초",
+  "concepts": [
+    [
+      { "type": "text", "html": "<b>OSI 7계층</b>과 계층별 전송단위(PDU)·대표 장비" },
+      {
+        "type": "table",
+        "headers": ["계층", "이름", "전송단위(PDU)", "대표 장비"],
+        "rows": [
+          ["7", "응용(Application)", "데이터(Data)", "게이트웨이"],
+          ["6", "표현(Presentation)", "데이터(Data)", "-"],
+          ["5", "세션(Session)", "데이터(Data)", "-"],
+          ["4", "전송(Transport)", "세그먼트(Segment)", "-"],
+          ["3", "네트워크(Network)", "패킷(Packet)", "라우터"],
+          ["2", "데이터링크(Data Link)", "프레임(Frame)", "브리지·스위치"],
+          ["1", "물리(Physical)", "비트(Bit)", "허브·리피터"]
+        ]
+      }
+    ],
+    [
+      { "type": "text", "html": "IPv4 주소체계 — <b>클래스별 대역(A/B/C)</b>과 CIDR·서브넷마스크로 <b>네트워크 주소·브로드캐스트 주소</b>를 구하는 방법" },
+      {
+        "type": "table",
+        "headers": ["클래스", "첫 옥텟 범위", "기본 서브넷마스크", "기본 프리픽스", "용도"],
+        "rows": [
+          ["A", "0 ~ 127", "255.0.0.0", "/8", "대규모 네트워크"],
+          ["B", "128 ~ 191", "255.255.0.0", "/16", "중규모 네트워크"],
+          ["C", "192 ~ 223", "255.255.255.0", "/24", "소규모 네트워크"],
+          ["D", "224 ~ 239", "-", "-", "멀티캐스트"],
+          ["E", "240 ~ 255", "-", "-", "연구·예약용"]
+        ]
+      },
+      { "type": "text", "html": "<b>네트워크 주소</b> = IP 주소와 서브넷마스크를 AND 연산(호스트 비트를 모두 0으로) · <b>브로드캐스트 주소</b> = 네트워크 주소의 호스트 비트를 모두 1로 설정" },
+      {
+        "type": "table",
+        "headers": ["계산 예시: 192.168.1.130/26", "값"],
+        "rows": [
+          ["서브넷마스크", "255.255.255.192"],
+          ["호스트 비트 수 / 블록 크기", "6비트 / 2⁶ = 64"],
+          ["130이 속한 구간(마지막 옥텟)", "128 ~ 191"],
+          ["네트워크 주소", "192.168.1.128"],
+          ["브로드캐스트 주소", "192.168.1.191"],
+          ["사용 가능 호스트 범위", "192.168.1.129 ~ 192.168.1.190"]
+        ]
+      },
+      { "type": "text", "html": "IPv4(32bit, 점으로 구분된 4자리 10진수) vs IPv6(128bit, 콜론으로 구분된 8그룹 16진수)" }
+    ],
+    "네트워크 설정/조회 파일과 명령: <br/>/etc/hosts<br/>/etc/resolv.conf<br/>/etc/sysconfig/network(-scripts),<br/>netstat/ss(소켓·연결상태)<br/> ip route/ethtool/mii-tool(케이블·게이트웨이 확인)",
+    "주요 프로토콜과 포트: SSH(22)·Telnet(23)·SMTP(25)·DNS(53)·HTTP(80)·SNMP(161)<br/>, TCP 3-way handshake(SYN→SYN/ACK→ACK), ARP(IP→MAC)",
+    "LAN 토폴로지(스타/링/버스/망형) 특징 비교, SAMBA(SMB/CIFS 파일·프린터 공유) vs NFS(유닉스/리눅스간 파일공유)"
+  ],
+  "example": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ip addr show eth0</span>\n<span class=\"out\">inet 192.168.0.20/24 brd 192.168.0.255 scope global eth0</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">netstat -antp</span>\n<span class=\"out\">tcp  0.0.0.0:22   0.0.0.0:*   LISTEN</span>"
+}

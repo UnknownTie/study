@@ -1,0 +1,8 @@
+{
+  "name": "파일·디렉터리 기본 명령어",
+  "concepts": [
+    "기본 명령: <code>ls</code>(-a 전체, -l 상세, -R 하위까지)·<code>cp</code>·<code>mv</code>·<code>rm</code>·<code>mkdir</code>·<code>cat</code>(파일 병합/출력)·<code>touch</code>(빈 파일 생성, 이미 있으면 타임스탬프만 갱신).",
+    "검색·비교: <code>grep</code>(패턴 검색, -v 반대매칭, -r 하위 디렉터리까지)·<code>find</code>·<code>diff</code>(두 파일 차이, -i 대소문자 무시, -w 공백무시)·<code>cmp</code>(바이트 단위 비교).",
+    "리다이렉션: <code>&gt;</code>(출력, 덮어쓰기)·<code>&gt;&gt;</code>(추가)·<code>&lt;</code>(입력)·<code>2&gt;</code>(표준에러만 파일로)·파이프 <code>|</code>."
+  ]
+}

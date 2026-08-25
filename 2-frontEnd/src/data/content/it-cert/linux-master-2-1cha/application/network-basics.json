@@ -1,0 +1,7 @@
+{
+  "name": "네트워크 기초",
+  "concepts": [
+    "OSI 7계층: 물리-데이터링크-네트워크-전송-세션-표현-응용. 명령: <code>ifconfig</code>/<code>ip</code>·<code>traceroute</code>(경로)·<code>nslookup</code>(도메인 조회)·<code>netstat</code>(연결/라우팅 상태)·<code>ping</code>(도달 확인).",
+    "서비스: <b>Telnet</b>(평문) vs <b>SSH</b>(암호화). 파일공유: <b>NFS</b> vs <b>SAMBA</b>."
+  ]
+}

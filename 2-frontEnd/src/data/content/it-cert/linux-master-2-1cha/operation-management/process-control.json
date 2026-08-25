@@ -1,0 +1,7 @@
+{
+  "name": "프로세스와 작업 제어",
+  "concepts": [
+    "<code>ps</code>(현재 프로세스)·<code>top</code>(실시간)·<code>kill</code>(PID 지정)·<code>killall</code>/<code>pkill</code>(이름 지정). 우선순위 <code>nice</code>/<code>renice</code>(값이 작을수록 우선순위 높음).",
+    "예약 실행 <code>cron</code>(분 시 일 월 요일 순), 부팅 시 정지 없이 재시작하는 것은 <code>reboot</code>/<code>shutdown -r</code>."
+  ]
+}

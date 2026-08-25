@@ -1,0 +1,7 @@
+{
+  "name": "텍스트 편집기",
+  "concepts": [
+    "vi/vim ex 명령모드: <code>:wq</code>(저장 후 종료)·<code>:q!</code>(무조건 종료). 검색은 <code>/</code>(순방향)·<code>?</code>(역방향)·<code>n</code>(같은 방향)·<code>N</code>(반대 방향).",
+    "GUI 전용 편집기는 <b>gedit</b>."
+  ]
+}

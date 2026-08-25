@@ -1,0 +1,11 @@
+{
+  "name": "패키지 관리와 소프트웨어 설치",
+  "concepts": [
+    "배포판별 기본/온라인 패키지 도구: 레드햇 계열 rpm→yum/dnf, 데비안 계열 dpkg→apt-get, 수세 계열 YaST→zypper",
+    "rpm 옵션 -i(설치)/-U(업그레이드)/-e(제거)/-q 계열(a 전체, i 정보, l 파일목록, f 소유 패키지 조회)",
+    "apt-get remove(패키지만 제거) vs apt-get purge(설정파일까지 제거), alien(rpm↔deb 패키지 형식 변환)",
+    "소스 설치 3단계: configure(Makefile 생성) → make(컴파일) → make install(설치), cmake를 쓰는 프로젝트(KDE, MySQL 등)",
+    "epel-release 같은 확장 저장소 설치, yum install/remove 기본 문법"
+  ],
+  "example": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">rpm -qa | grep vsftpd</span>\n<span class=\"out\">vsftpd-3.0.2-29.el7_9.x86_64</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">yum remove nmap</span>"
+}

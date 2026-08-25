@@ -1,0 +1,130 @@
+[
+  {
+    "id": "lm2-1cha-text-editor-1",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "텍스트 편집기"
+    ],
+    "q": {
+      "text": "리눅스에서 제공되는 편집기가 아닌 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "gedit",
+        "truth": "true"
+      },
+      {
+        "text": "vi",
+        "truth": "true"
+      },
+      {
+        "text": "emacs",
+        "truth": "true"
+      },
+      {
+        "text": "word",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "<b>Word</b>는 마이크로소프트 오피스 프로그램으로 리눅스 기본 편집기가 아닙니다. gedit·vi·emacs는 모두 리눅스에서 사용하는 편집기입니다."
+  },
+  {
+    "id": "lm2-1cha-text-editor-2",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "텍스트 편집기"
+    ],
+    "q": {
+      "text": "리눅스에서 파일을 편집하는 도구로 vi를 사용합니다. 다음 중 vi 사용법이 잘못된 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "a - 현재 위치한 커서 뒤에 입력",
+        "truth": "true"
+      },
+      {
+        "text": "x - 현재 커서가 위치한 한 라인을 삭제",
+        "truth": "false"
+      },
+      {
+        "text": "cw - 현재 커서가 위치한 단어를 변경",
+        "truth": "true"
+      },
+      {
+        "text": "yy - 현재 커서가 위치한 라인 복사",
+        "truth": "true"
+      }
+    ],
+    "answer": 1,
+    "explain": "<b>x</b>는 커서 위치의 <b>문자 한 개</b>만 삭제하는 명령입니다. 라인 전체를 삭제하는 것은 <code>dd</code>입니다."
+  },
+  {
+    "id": "lm2-1cha-text-editor-3",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "텍스트 편집기"
+    ],
+    "q": {
+      "text": "다음 설명에 해당하는 명령으로 알맞은 것은?<br/>GNU 프로젝트에 의해 배포되는 온라인 매뉴얼으로서 하이퍼텍스트 형식으로 관련 정보를 제공한다.",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "info",
+        "truth": "true"
+      },
+      {
+        "text": "man",
+        "truth": "false"
+      },
+      {
+        "text": "help",
+        "truth": "false"
+      },
+      {
+        "text": "whatis",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "GNU의 하이퍼텍스트 방식 온라인 도움말은 <b>info</b>입니다. man은 각 명령의 매뉴얼 페이지를 순차적 텍스트 형식으로 보여주는 명령, help는 쉘 내장 명령의 간단한 사용법을 출력하는 명령, whatis는 명령에 대한 한 줄 요약만 보여주는 명령으로 하이퍼텍스트 형식의 온라인 매뉴얼과는 다릅니다."
+  },
+  {
+    "id": "lm2-1cha-text-editor-4",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "텍스트 편집기"
+    ],
+    "q": {
+      "text": "다음 중 텍스트 파일의 내용을 한 페이지씩 확인하는 명령으로, 커서(cursor)를 사용해서 상하좌우 이동이 가능한 명령으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "less",
+        "truth": "true"
+      },
+      {
+        "text": "more",
+        "truth": "false"
+      },
+      {
+        "text": "cat",
+        "truth": "false"
+      },
+      {
+        "text": "head",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>less</b>는 more와 달리 위아래로 자유롭게 스크롤(커서 이동)할 수 있는 페이저입니다. more는 아래쪽으로만 이동할 수 있어 위로 스크롤이 불가능하고, cat은 파일 전체를 화면에 한 번에 출력할 뿐 페이지 단위로 나누어 보여주지 않으며, head는 파일 앞부분 일부 줄만 출력할 뿐 커서로 페이지를 넘기는 기능이 없습니다."
+  }
+]

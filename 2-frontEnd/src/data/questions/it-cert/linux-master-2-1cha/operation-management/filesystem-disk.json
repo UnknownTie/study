@@ -1,0 +1,1954 @@
+[
+  {
+    "id": "lm2-1cha-filesystem-disk-1",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음중 다수의 디스크나 파티션을 하나로 묶어서 구성하는 기술과 관련 있는 조합으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "㉠ext4 ㉡LVM",
+        "truth": "false"
+      },
+      {
+        "text": "㉠ext4 ㉡RAID",
+        "truth": "false"
+      },
+      {
+        "text": "㉠ext3 ㉡ext4",
+        "truth": "false"
+      },
+      {
+        "text": "㉠LVM ㉡RAID",
+        "truth": "true"
+      }
+    ],
+    "answer": 3,
+    "explain": "여러 개의 디스크·파티션을 논리적으로 하나로 묶어 관리하는 대표 기술은 <b>LVM</b>과 <b>RAID</b>입니다. '㉠ext4 ㉡LVM'과 '㉠ext4 ㉡RAID'는 ㉠(ext4)이 파일시스템일 뿐 디스크를 묶는 기술이 아니라서 틀리고, '㉠ext3 ㉡ext4'는 둘 다 파일시스템으로 디스크·파티션을 묶는 기술과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-2",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 리눅스 시스템의 파티션 분할에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "/와 스왑(Swap) 등 최소 2개의 파티션을 분할해야 한다.",
+        "truth": "true"
+      },
+      {
+        "text": "리눅스를 서버로 사용하는 경우에는 4개 이상의 파티션 분할이 필요하다.",
+        "truth": "true"
+      },
+      {
+        "text": "/home, /var, /usr 등의 파티션은 분할하도록 권장하고 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "처음 설치시 분할한 파티션은 사용중에 자유롭게 변경할 수 있다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "설치 시 나눈 파티션 구성은 이후 운영 중에 마음대로 바꾸기 어렵고, 재구성하려면 별도 도구(LVM 등)나 재설치가 필요한 경우가 많습니다. '사용중에 자유롭게 변경할 수 있다'는 설명은 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-3",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음중 리눅스에서 파티션을 분할하도록 권장하는 영역으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "/etc",
+        "truth": "false"
+      },
+      {
+        "text": "/tmp",
+        "truth": "true"
+      },
+      {
+        "text": "/usr",
+        "truth": "true"
+      },
+      {
+        "text": "/var",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "/etc 디렉토리는 시스템 부팅 초기 단계에 반드시 필요한 환경 설정 파일들이 모여 있는 곳 , /etc가 없다면, /usr을 별도 파티션으로 분리하면 오히려 부팅 문제가 생길 수 있어 분할을 권장하지 않습니다. /tmp·/var는 흔히 분리를 권장하는 영역입니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-4",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 하드디스크 일부를 메모리처럼 사용하는 기술로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "라이브러리",
+        "truth": "false"
+      },
+      {
+        "text": "스왑",
+        "truth": "true"
+      },
+      {
+        "text": "파이프",
+        "truth": "false"
+      },
+      {
+        "text": "리다이렉션",
+        "truth": "false"
+      }
+    ],
+    "answer": 1,
+    "explain": "디스크 공간의 일부를 메모리가 부족할 때 대신 사용하는 것은 <b>스왑(Swap)</b>입니다. 라이브러리는 여러 프로그램이 공유해서 쓰는 코드 모음, 파이프는 한 프로세스의 출력을 다른 프로세스의 입력으로 연결하는 기능, 리다이렉션은 입출력 방향을 파일 등으로 전환하는 기능으로 모두 디스크를 메모리처럼 쓰는 것과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-5",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 파티션의 유형에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "확장 파티션은 2개 이상 설정이 가능하다.",
+        "truth": "false"
+      },
+      {
+        "text": "5개 이상의 파티션이 필요한 경우에는 확장 파티션의 선언이 필요하다.",
+        "truth": "true"
+      },
+      {
+        "text": "확장 파티션을 선언해야 논리 파티션을 선언할 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "주 파티션은 4개까지 사용가능하다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "확장(Extended) 파티션은 하나의 디스크에 <b>1개만</b> 만들 수 있습니다(그 안에 여러 논리 파티션을 나누어 사용). '2개 이상 설정 가능하다'는 설명이 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-6",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "mount명령어의 옵션에 대한 설명으로 맞는 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "-a : /etc/mtab에 나열되어있는 모든 파일시스템을 mount한다.",
+        "truth": "true"
+      },
+      {
+        "text": "-f : 특정 파일시스템만 선택적으로 mount한다.",
+        "truth": "false"
+      },
+      {
+        "text": "-n : mount에 대한 기록을 남기지 않는다.",
+        "truth": "false"
+      },
+      {
+        "text": "-w : 현재 mount를 선택적으로 해제한다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>mount -a</b>는 /etc/fstab에 등록된 파일시스템들을 한 번에 마운트하는 옵션입니다. -f는 실제로 마운트하지 않고 시도만 하는(fake) 옵션이라 '특정 파일시스템만 선택적으로 mount한다'는 설명과 다르고, -n은 /etc/mtab 갱신을 생략하는 옵션일 뿐 마운트 사실 자체를 아예 기록에서 지우는 것은 아니라서 정확한 설명으로 보기 어려우며, -w는 읽기·쓰기 모드로 마운트하는 옵션이지 '현재 mount를 해제한다'는 의미가 아니므로 틀립니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-7",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 주 파티션에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "부팅 가능한 파티션으로 디스크에 하나 이상 존재해야 한다.",
+        "truth": "true"
+      },
+      {
+        "text": "하나의 디스크에 총 4개까지 사용가능하다.",
+        "truth": "true"
+      },
+      {
+        "text": "주 파티션 4개 사용후 확장 파티션의 선언이 가능하다.",
+        "truth": "false"
+      },
+      {
+        "text": "3개 영역으로 파티션 분할할 경우에 주 파티션내에 설치 가능하다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "주 파티션은 최대 4개까지 만들 수 있고, <b>4개를 모두 사용한 뒤에는 더 이상 확장 파티션을 추가로 선언할 수 없습니다</b>(주 파티션 자리 중 하나를 확장 파티션으로 써야 함). '4개 사용 후 확장 파티션 선언이 가능하다'는 설명이 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-8",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음중 E-IDE 타입의 디스크를 Secondary Slave에 연결했을 경우에 인식하는 장치 파일명으로 알맞은 것은",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/dev/hda",
+        "truth": "false"
+      },
+      {
+        "text": "/dev/hdb",
+        "truth": "false"
+      },
+      {
+        "text": "/dev/hdc",
+        "truth": "false"
+      },
+      {
+        "text": "/dev/hdd",
+        "truth": "true"
+      }
+    ],
+    "answer": 3,
+    "explain": "IDE 장치 이름은 hda(Primary Master), hdb(Primary Slave), hdc(Secondary Master), <b>hdd(Secondary Slave)</b> 순으로 부여됩니다. hda는 Primary Master, hdb는 Primary Slave, hdc는 Secondary Master 위치를 가리키는 이름이라 Secondary Slave에 연결된 디스크명으로는 맞지 않습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-9",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "파티션에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "하나의 물리적 디스크에는 4개의 Primary 파티션으로 분할이 가능하다.",
+        "truth": "true"
+      },
+      {
+        "text": "파티션은 실린더를 기준으로 나뉘어 진다.",
+        "truth": "true"
+      },
+      {
+        "text": "1개의 Extended 파티션은 6개의 Primary 파티션으로 분할이 가능하다",
+        "truth": "false"
+      },
+      {
+        "text": "하나의 물리적 디스크에 12개 이상의 파티션 생성도 가능하다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "확장(Extended) 파티션 안에는 <b>논리(Logical) 파티션</b>을 만드는 것이지 '주(Primary) 파티션'을 만드는 것이 아닙니다. 따라서 ③번 설명이 개념적으로 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-10",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "일반적으로 “/”디렉토리 바로 하단에 위치하는 디렉토리가 아닌 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "/include",
+        "truth": "false"
+      },
+      {
+        "text": "/proc",
+        "truth": "true"
+      },
+      {
+        "text": "/usr",
+        "truth": "true"
+      },
+      {
+        "text": "/var",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>/include</b>는 표준 리눅스 최상위 디렉터리 구조(FHS)에 없는 이름입니다. /proc·/usr·/var는 모두 표준 최상위 디렉터리입니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-11",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "디렉토리 및 파티션에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "/ : 일반적으로 부팅에 필요한 시스템 파일이 위치한다.",
+        "truth": "false"
+      },
+      {
+        "text": "swap : 일반적으로 메모리의 2배 크기로 설정한다.",
+        "truth": "true"
+      },
+      {
+        "text": "/usr : 각종 라이브러리가 저장된 디렉터리로 커널 모듈도 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "/home : 사용자 파일이 저장된다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "부팅에 필요한 최소 파일은 <b>/boot</b>에 위치합니다. /(루트)는 전체 파일시스템의 최상위일 뿐, '부팅용 파일이 위치한다'는 설명은 /boot에 더 맞는 설명이라 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-12",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "하나의 디스크를 몇 개의 드라이브로 분할하여 사용할지 설정하는 것으로 그 용어와 툴(Tool)의 조합이 맞는 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "MBR,FDISK",
+        "truth": "false"
+      },
+      {
+        "text": "MBR,LILO",
+        "truth": "false"
+      },
+      {
+        "text": "파티션,Disk Druid",
+        "truth": "true"
+      },
+      {
+        "text": "파티션,LILO",
+        "truth": "false"
+      }
+    ],
+    "answer": 2,
+    "explain": "하나의 디스크를 여러 드라이브로 나누는 단위를 가리키는 용어는 <b>파티션</b>이며, 이를 설정하는 도구로 fdisk 외에 그래픽 도구인 <b>Disk Druid</b>가 있습니다. 'MBR,FDISK'와 'MBR,LILO'는 MBR(Master Boot Record)이 부트로더·파티션 테이블이 저장되는 영역일 뿐 '나누는 단위'를 가리키는 용어가 아니라서 틀리고, '파티션,LILO'는 LILO가 파티션 설정 도구가 아니라 부트로더(Boot Loader)라서 틀립니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-13",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "일반적인 디렉토리에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "/bin에는 기본 실행파일들, 즉 사용자 명령어들이 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "/etc에는 시스템 관리시 필요한 설정파일들이 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "/opt에는 각 장치에 필요한 socket 및 log 파일들이 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "/proc에는 시스템 관리를 목적으로 메모리상에 만들어 놓은 가상 디렉토리로서, 디렉토리내의 파일들은 현재 시스템 설정을 보여준다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "<b>/opt</b>는 추가 응용 프로그램(옵션 소프트웨어) 설치 경로입니다. 장치별 소켓·로그 파일이 있다는 설명은 /opt와 맞지 않아 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-14",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "/home 디렉토리에 대한 일반적인 설명으로 맞는 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "일반적인 명령어와 라이브러리들이 설치되는 디렉토리",
+        "truth": "false"
+      },
+      {
+        "text": "사용자 계정의 홈 디렉토리가 위치하는 디렉토리",
+        "truth": "true"
+      },
+      {
+        "text": "시스템 관리에 관련된 바이너리 파일이 위치하는 디렉토리",
+        "truth": "false"
+      },
+      {
+        "text": "기타 문서들이 저장되는 디렉토리",
+        "truth": "false"
+      }
+    ],
+    "answer": 1,
+    "explain": "<b>/home</b>은 각 사용자 계정의 홈 디렉터리가 위치하는 곳입니다. '일반적인 명령어와 라이브러리 설치'는 <b>/usr</b>에 대한 설명이고, '시스템 관리용 바이너리'는 <b>/sbin</b>, '기타 문서 저장'은 <b>/usr/share/doc</b> 등에 해당해 모두 /home과는 다른 디렉터리를 가리킵니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-15",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 명령어들의 실행 결과에 대한 설명으로 적절한 것은?<br/><code>[root@ihd root]# mount /mnt/cdrom<br/>[root@ihd root]# cd /mnt/cdrom<br/>[root@ihd cdrm]# umount /mnt/cdrom<br/>umount: /mnt/cdrom: device is busy</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "마운트 되어 있는 장치가 사용되고 있기 때문에 언마운트가 되지 않고 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "마운트가 처음부터 되지 않아서 언마운트 명령도 실패한 것이다.",
+        "truth": "false"
+      },
+      {
+        "text": "권한이 없어서 언마운트할 수 없다.",
+        "truth": "false"
+      },
+      {
+        "text": "존재하지 않는 장치라서 언마운트할 수 없다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "현재 작업 디렉터리(cd /mnt/cdrom)가 그 마운트 지점 안에 있는 상태이므로 장치가 <b>사용 중(busy)</b>이라 언마운트가 거부됩니다. 첫 mount 명령이 오류 없이 실행되었으므로 '처음부터 마운트가 되지 않았다'는 사실과 다르고, 에러 메시지가 'device is busy'로 권한 오류(Permission denied)나 장치 없음(No such device) 메시지가 아니므로 권한 부족이나 존재하지 않는 장치가 원인이라는 설명도 틀립니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-16",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "일반적으로 / 디렉토리 바로 하단에 위치하는 디렉토리가 아닌 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "/include",
+        "truth": "false"
+      },
+      {
+        "text": "/boot",
+        "truth": "true"
+      },
+      {
+        "text": "/etc",
+        "truth": "true"
+      },
+      {
+        "text": "/lib",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>/include</b>는 표준 리눅스 최상위 디렉터리 구조(FHS)에 없는 이름입니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-17",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "일반적으로 /etc 에 위치하며, 시스템을 부팅 시 자동으로 마운트되게 하기 위해 설정해야 하는 파일은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "fstab",
+        "truth": "true"
+      },
+      {
+        "text": "mtab",
+        "truth": "false"
+      },
+      {
+        "text": "exports",
+        "truth": "false"
+      },
+      {
+        "text": "hosts",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "부팅 시 자동으로 마운트할 파일시스템 목록은 <code>/etc/fstab</code>에 설정합니다. <code>/etc/mtab</code>은 현재 마운트된 상태를 기록하는 파일일 뿐 자동 마운트 설정 파일이 아니고, <code>/etc/exports</code>는 NFS 공유 설정 파일, <code>/etc/hosts</code>는 호스트명-IP 매핑 파일로 마운트 설정과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-18",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "간단한 인터페이스에 적은 용량으로 막강한 기능을 가진 파티션 분할 명령어는?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "fdisk",
+        "truth": "true"
+      },
+      {
+        "text": "parted",
+        "truth": "false"
+      },
+      {
+        "text": "Disk Druid",
+        "truth": "false"
+      },
+      {
+        "text": "GParted",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>fdisk</b>는 텍스트 기반의 간단한 인터페이스로 적은 용량임에도 강력한 파티션 관리 기능을 제공하는 대표적인 명령어입니다. parted는 기능은 많지만 이 문항이 강조하는 '간단하고 가벼움'의 대표 사례로 보기 어렵고, Disk Druid와 GParted는 그래픽(GUI) 기반 도구라서 상대적으로 용량이 크고 '간단한 인터페이스'와는 거리가 있습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-19",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 명령에 대한 설명으로 가장 적절한 것은?<br/><code># mount -t ext2 /dev/hdc1 /usr/local/apache</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/dev/hdc1 파티션을 /usr/local/apache 디렉토리에 마운트하고 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "/usr/local/apache 디렉토리를 /dev/hdc1 파티션으로 복사하고 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "/dev/hdc1 파티션을 ext2로 포맷하고 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "/usr/local/apache 디렉토리를 언마운트하고 있다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<code>mount -t 파일시스템종류 장치 마운트지점</code> 형식이므로, ext2 타입의 /dev/hdc1을 /usr/local/apache에 마운트하는 것입니다. mount 명령은 파일을 복사하지 않으므로 '디렉토리를 파티션으로 복사한다'는 설명은 틀리고, -t 옵션은 이미 있는 파일시스템의 종류를 지정할 뿐 포맷(mkfs)하지 않으므로 '포맷하고 있다'도 틀리며, mount는 연결하는 명령이지 umount처럼 해제하는 명령이 아니므로 '언마운트하고 있다'도 틀립니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-20",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 리눅스를 정상 설치했을 경우 기본적으로 생성되는 파일 시스템이 아닌 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "swap 파일시스템",
+        "truth": "true"
+      },
+      {
+        "text": "하나 이상의 ext(2/3/4) 파일시스템",
+        "truth": "true"
+      },
+      {
+        "text": "proc 파일시스템",
+        "truth": "true"
+      },
+      {
+        "text": "romdrive 파일시스템",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "<b>romdrive</b>라는 파일시스템은 리눅스 표준 설치 과정에 존재하지 않습니다. swap·ext 계열·proc은 기본적으로 생성됩니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-21",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "CD-ROM이 IDE 장치의 Secondary Slave로 연결되었을 때, 일반적으로 사용하는 장치 파일 이름은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/dev/hda",
+        "truth": "false"
+      },
+      {
+        "text": "/dev/hdb",
+        "truth": "false"
+      },
+      {
+        "text": "/dev/hdc",
+        "truth": "false"
+      },
+      {
+        "text": "/dev/hdd",
+        "truth": "true"
+      }
+    ],
+    "answer": 3,
+    "explain": "IDE 장치는 Primary Master(hda)·Primary Slave(hdb)·Secondary Master(hdc)·<b>Secondary Slave(hdd)</b> 순으로 이름이 부여됩니다. hda·hdb·hdc는 각각 Primary Master·Primary Slave·Secondary Master 위치의 장치명이라 Secondary Slave에 연결된 CD-ROM의 이름으로는 맞지 않습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-22",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "파티션을 분할하는 장점으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "특정 디렉터리의 문제가 다른 디렉터리로 번지는 것을 막을 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "백업·복구 단위를 분리할 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "파일시스템 손상 범위를 제한할 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "파일의 크기가 커질 경우 다른 파티션을 활용할 수 있다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "각 파티션은 독립된 용량 한계를 가지므로, 한 파티션이 꽉 차도 <b>다른 파티션의 여유 공간을 자동으로 끌어다 쓸 수는 없습니다.</b> 오히려 파티션을 나누면 이런 유연성이 줄어듭니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-23",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "일반적으로 시스템 부팅에 필요한 파일이 있는 디렉토리는?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/boot",
+        "truth": "true"
+      },
+      {
+        "text": "/proc",
+        "truth": "false"
+      },
+      {
+        "text": "/opt",
+        "truth": "false"
+      },
+      {
+        "text": "/mnt",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "커널 이미지 등 부팅에 필요한 파일은 <b>/boot</b>에 있습니다. /proc은 프로세스·커널 상태를 보여주는 가상 파일시스템, /opt는 추가 응용 프로그램 설치 경로, /mnt는 임시 마운트 지점으로 모두 부팅 파일과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-24",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "리눅스의 기본 명령어에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "외부 명령어는 디스크의 실행파일로 존재한다.",
+        "truth": "true"
+      },
+      {
+        "text": "내부 명령어는 쉘 자체에 내장되어 있어 별도의 실행 파일이 없다.",
+        "truth": "true"
+      },
+      {
+        "text": "cd·pwd 등은 대표적인 내부(built-in) 명령어이다.",
+        "truth": "true"
+      },
+      {
+        "text": "내부 명령어는 실행 시 새로운 서브 프로세스를 exec하여 실행한다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "내부(built-in) 명령어는 셸 프로세스 안에서 직접 처리되므로 <b>별도의 자식 프로세스를 생성하지 않습니다.</b> 새 프로세스를 fork/exec하는 것은 외부 명령어의 특징입니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-25",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "일반적인 파티션 설정에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "/ (루트)와 스왑은 최소한 분할해야 한다.",
+        "truth": "true"
+      },
+      {
+        "text": "스왑 파티션은 용량 제한이 없다.",
+        "truth": "false"
+      },
+      {
+        "text": "/home을 분리하면 재설치 시에도 사용자 데이터를 보존하기 쉽다.",
+        "truth": "true"
+      },
+      {
+        "text": "/var는 로그 등이 쌓여 커질 수 있어 분리를 고려한다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 1,
+    "explain": "스왑 파티션도 배포판·커널 버전에 따라 <b>권장·상한 용량 가이드가 존재</b>합니다. '용량 제한이 없다'는 설명이 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-26",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "리눅스 시스템에서 지원하지 않는 파일 시스템은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "NTFS",
+        "truth": "true"
+      },
+      {
+        "text": "ext4",
+        "truth": "false"
+      },
+      {
+        "text": "XFS",
+        "truth": "false"
+      },
+      {
+        "text": "Btrfs",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "리눅스는 ext4·XFS·Btrfs 등은 완전히 지원하지만, <b>NTFS</b>는 전통적으로 커널 기본 드라이버의 지원이 제한적이었습니다(읽기 위주, 별도 드라이버/유틸리티 필요). 보기 중 '리눅스가 지원하지 않는 것'을 고르는 문항 취지에 맞춰 NTFS를 정답으로 합니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-27",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "홍길동은 자신이 사용하고 있는 시스템의 관리자로부터 너무 많은 디스크 용량을 사용하고 있다는 경고를 들었다. 홍길동의 홈 디렉토리에서 홈 디렉토리를 포함한 하위 디렉토리까지 사용하고 있는 디스크 용량을 확인하는 명령어로서 가장 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "du -sh ~",
+        "truth": "true"
+      },
+      {
+        "text": "df -h ~",
+        "truth": "false"
+      },
+      {
+        "text": "ls -al ~",
+        "truth": "false"
+      },
+      {
+        "text": "free -h",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "특정 디렉터리(홈 디렉터리)의 실제 사용량 합계를 보려면 <b>du -sh</b>를 사용합니다. df -h는 파일시스템(마운트) 단위의 전체 사용량을 보여줄 뿐 특정 디렉터리 하위 총 사용량은 알려주지 않고, ls -al은 각 파일의 개별 크기만 나열할 뿐 하위 디렉터리까지 합산하지 않으며, free -h는 메모리 사용량을 보여줄 뿐 디스크와는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-28",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "저널링(Journaling) 파일 시스템에 관한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "파일시스템 변경 내역을 저널(로그)에 먼저 기록한다.",
+        "truth": "true"
+      },
+      {
+        "text": "비정상 종료 후 복구 시간이 짧다.",
+        "truth": "true"
+      },
+      {
+        "text": "ext3·XFS·JFS 등이 대표적이다.",
+        "truth": "true"
+      },
+      {
+        "text": "Ext2 보다 읽기,쓰기 성능이 우수하다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "저널링은 로그 기록이라는 추가 작업이 들어가므로, 일반적으로 저널링이 없는 <b>ext2보다 오버헤드가 있어 순수 성능은 떨어질 수 있습니다.</b> 대신 안정성(빠른 복구)이 장점입니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-29",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 리눅스 파일시스템의 특징에 해당하지 않는 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "윈도우와 마찬가지로 각 파티션마다 별도의 루트 파일시스템이 따로 존재한다.",
+        "truth": "false"
+      },
+      {
+        "text": "하나의 파일은 inode와 데이터 블록을 갖는다.",
+        "truth": "true"
+      },
+      {
+        "text": "계층 구조의 파일 시스템이다.",
+        "truth": "true"
+      },
+      {
+        "text": "디렉터리 파일의 데이터 블록에는 그 디렉터리 안에 들어 있는 파일들의 inode 값이 들어있다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "리눅스는 여러 파티션을 <b>하나의 통합된 루트(/)</b> 아래 마운트해서 사용합니다. 윈도우처럼 파티션마다 별도의 루트(C:, D: 등)가 있는 구조가 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-30",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 저널링(Journaling) 파일시스템에 해당하는 것으로만 묶은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "ext3, JFS, ReiserFS, XFS",
+        "truth": "true"
+      },
+      {
+        "text": "ext2, FAT32, ext3",
+        "truth": "false"
+      },
+      {
+        "text": "ext2, ISO9660",
+        "truth": "false"
+      },
+      {
+        "text": "FAT16, FAT32",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>ext3·JFS·ReiserFS·XFS</b>는 모두 저널링을 지원하는 파일시스템입니다. 'ext2, FAT32, ext3'는 ext2와 FAT32가 저널링을 지원하지 않는 파일시스템이라 섞여 있어 틀리고, 'ext2, ISO9660'은 둘 다 저널링을 지원하지 않으며(ISO9660은 CD/DVD용 읽기전용 파일시스템), 'FAT16, FAT32'도 저널링 기능이 없는 파일시스템이라 모두 틀립니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-31",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 리눅스에서 지원하는 저널링(Journaling) 파일시스템으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "ReiserFS",
+        "truth": "true"
+      },
+      {
+        "text": "XFS",
+        "truth": "true"
+      },
+      {
+        "text": "JFS",
+        "truth": "true"
+      },
+      {
+        "text": "ext2",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "<b>ext2</b>는 저널링을 지원하지 않는 파일시스템입니다. ReiserFS·XFS·JFS는 모두 저널링 파일시스템입니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-32",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "파티션에 대한 일반적인 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "주 파티션은 하나의 디스크에 4개까지 만들 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "확장 파티션은 하나의 디스크에 4개까지 만들 수 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "논리 파티션은 만들 수 있는 개수에 제한이 없다.",
+        "truth": "true"
+      },
+      {
+        "text": "논리 파티션은 확장 파티션 내부에 만들어진다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 1,
+    "explain": "확장(Extended) 파티션은 하나의 디스크에 <b>1개만</b> 만들 수 있습니다. '4개까지'라는 설명이 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-33",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 리눅스의 기술적인 특징에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "리눅스는 최상위 디렉터리를 .(점, 현재 디렉터리 표시)으로 기준 삼아 하위 디렉터리가 존재하는 계층 구조이다.",
+        "truth": "false"
+      },
+      {
+        "text": "모든 장치는 파일화해서 관리한다.",
+        "truth": "true"
+      },
+      {
+        "text": "공유 라이브러리를 통해 메모리를 효율적으로 사용한다.",
+        "truth": "true"
+      },
+      {
+        "text": "리다이렉션을 이용해서 입출력을 전환할 수 있다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "리눅스의 최상위(루트) 디렉터리는 <b>/</b>이며, <b>.</b>은 '현재 디렉터리'를 의미하는 별개의 표기입니다. 최상위 디렉터리를 .으로 표현한 설명이 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-34",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "특정 파일이나 디렉토리의 사용 용량을 확인하는 명령어는?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "free",
+        "truth": "false"
+      },
+      {
+        "text": "du",
+        "truth": "true"
+      },
+      {
+        "text": "df",
+        "truth": "false"
+      },
+      {
+        "text": "quota",
+        "truth": "false"
+      }
+    ],
+    "answer": 1,
+    "explain": "특정 파일·디렉터리의 사용 용량을 보는 명령은 <b>du</b>입니다. free는 메모리(RAM)·스왑 사용량을 보여주고, df는 마운트된 파일시스템 전체 단위의 사용량을 보여줄 뿐 개별 파일·디렉터리 단위가 아니며, quota는 사용자·그룹별 디스크 할당량을 관리하는 명령이라 특정 파일 용량 확인과는 다릅니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-35",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 리눅스 명령어와 가장 관계가 깊은 디렉터리로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/bin",
+        "truth": "true"
+      },
+      {
+        "text": "/etc",
+        "truth": "false"
+      },
+      {
+        "text": "/dev",
+        "truth": "false"
+      },
+      {
+        "text": "/proc",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "기본 명령어 실행 파일들은 <b>/bin</b>(및 /usr/bin)에 있습니다. /etc는 설정 파일, /dev는 장치 파일, /proc은 프로세스·커널 정보를 보여주는 가상 파일시스템이 위치하는 곳으로 명령어 실행 파일과는 직접 관련이 없습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-36",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 파티션 선언 순서로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "주 파티션 → 확장 파티션 → 논리 파티션",
+        "truth": "true"
+      },
+      {
+        "text": "확장 파티션 → 주 파티션 → 논리 파티션",
+        "truth": "false"
+      },
+      {
+        "text": "논리 파티션 → 주 파티션 → 확장 파티션",
+        "truth": "false"
+      },
+      {
+        "text": "주 파티션 → 논리 파티션 → 확장 파티션",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "먼저 <b>주 파티션</b>들을 선언하고, 그중 하나를 <b>확장 파티션</b>으로 만든 뒤, 그 안에 <b>논리 파티션</b>을 만드는 순서입니다. 확장 파티션은 주 파티션 자리를 활용해 만들어지므로 주 파티션보다 먼저 선언할 수 없고, 논리 파티션도 확장 파티션 없이는 존재할 수 없으므로 '확장→주→논리'나 '논리→주→확장' 순서는 불가능하며, '주→논리→확장'도 확장 파티션 선언 없이 논리 파티션을 먼저 만들 수 없어 틀립니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-37",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 파티션 분할된 상태를 확인할 수 있는 파일로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/proc/partitions",
+        "truth": "true"
+      },
+      {
+        "text": "/etc/fstab",
+        "truth": "false"
+      },
+      {
+        "text": "/etc/mtab",
+        "truth": "false"
+      },
+      {
+        "text": "/proc/mounts",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "현재 인식된 파티션 목록은 <b>/proc/partitions</b> 파일로 확인할 수 있습니다. /etc/fstab은 부팅 시 마운트할 설정 목록이고, /etc/mtab과 /proc/mounts는 현재 마운트된 파일시스템 목록을 보여줄 뿐 디스크의 파티션 분할 상태 자체를 보여주는 파일이 아니라서 모두 틀립니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-38",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 파티션에 부여될 수 있는 최대 주(Primary) 파티션 번호 값으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "4",
+        "truth": "true"
+      },
+      {
+        "text": "3",
+        "truth": "false"
+      },
+      {
+        "text": "5",
+        "truth": "false"
+      },
+      {
+        "text": "8",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "주 파티션은 최대 <b>4</b>개까지 만들 수 있어 번호도 1~4까지입니다. 3은 실제 가능한 최대 개수보다 작은 값이라 틀리고, 5는 논리 파티션이 시작되는 번호이지 주 파티션 번호가 아니며, 8은 주 파티션 개수 제한을 초과하는 값이라 틀립니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-39",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음과 같은 디스크의 파티션이 분할된 경우에 관련 설명으로 알맞은 것은?<br/>디스크를 주 파티션 4개로 분할한 상태이고, 디스크의 반에 해당하는 용량만큼은 분할되지 않은 상태이다.",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "디스크의 남은 용량은 사용이 불가능하다.",
+        "truth": "true"
+      },
+      {
+        "text": "확장 파티션을 추가로 만들어 남은 용량을 쓸 수 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "자동으로 5번째 파티션이 생성된다.",
+        "truth": "false"
+      },
+      {
+        "text": "남은 용량은 스왑으로 자동 할당된다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "주 파티션을 이미 4개 다 사용한 상태라 <b>더 이상 파티션(확장 포함)을 추가로 선언할 수 없어</b> 남은 공간은 활용할 수 없게 됩니다. 확장 파티션도 주 파티션 슬롯 중 하나를 차지해야 만들 수 있으므로 이제 와서 추가로 만들 수 없고, 파티션은 사용자가 직접 선언해야 생성되므로 '자동으로 5번째 파티션이 생성된다'는 일어나지 않으며, 마찬가지로 리눅스가 남은 공간을 스왑으로 자동 할당해 주지도 않습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-40",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 논리 파티션에 부여될 수 있는 최소 파티션 번호 값으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "5",
+        "truth": "true"
+      },
+      {
+        "text": "1",
+        "truth": "false"
+      },
+      {
+        "text": "4",
+        "truth": "false"
+      },
+      {
+        "text": "6",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "주 파티션이 1~4번을 차지하므로, 논리 파티션은 항상 <b>5</b>번부터 시작합니다. 1과 4는 이미 주 파티션에 할당된 번호 범위이므로 논리 파티션 번호가 될 수 없고, 6은 논리 파티션 번호이긴 하지만 최소값(5)이 아니라 틀립니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-41",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 리눅스 커널이 들어있는 디렉터리로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/boot",
+        "truth": "true"
+      },
+      {
+        "text": "/lib/modules",
+        "truth": "false"
+      },
+      {
+        "text": "/proc",
+        "truth": "false"
+      },
+      {
+        "text": "/sys",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "부팅용 커널 이미지(vmlinuz 등)는 <b>/boot</b>에 있습니다. /lib/modules는 커널 자체가 아니라 커널이 필요에 따라 불러오는 모듈(드라이버) 파일들이 저장되는 곳이고, /proc과 /sys는 커널 정보를 파일처럼 보여주는 가상 파일시스템일 뿐 커널 이미지 파일이 저장된 곳이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-42",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "물리적 시스템의 메모리(RAM)의 크기가 1GB일 때 권장할 만한 스왑 공간 용량으로 가장 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "2GB",
+        "truth": "true"
+      },
+      {
+        "text": "512MB",
+        "truth": "false"
+      },
+      {
+        "text": "1GB",
+        "truth": "false"
+      },
+      {
+        "text": "4GB",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "전통적인 권장 기준으로 소용량 RAM(예: 1GB 이하)에서는 <b>RAM의 약 2배</b>를 스왑으로 권장하는 경우가 많습니다. 512MB는 RAM보다 작아 권장 기준에 못 미치고, 1GB는 RAM과 동일한 크기로 2배 기준에 미달하며, 4GB는 권장치(2GB)보다 과도하게 큰 값이라 가장 알맞은 답이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-43",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 일반적으로 권장하는 파티션 분할 영역의 조합으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "/, SWAP, /etc, /var",
+        "truth": "false"
+      },
+      {
+        "text": "/, SWAP, /usr, /var",
+        "truth": "true"
+      },
+      {
+        "text": "/, SWAP, /home, /var",
+        "truth": "true"
+      },
+      {
+        "text": "/, SWAP, /boot, /home",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>/etc</b>는 시스템 설정 파일이 위치한 곳으로, 별도 파티션으로 분리하는 것을 일반적으로 권장하지 않습니다(반면 /usr·/var·/home·/boot는 흔히 분리 권장 대상)."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-44",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "사용 중인 일부 디스크에 오류가 발생되더라도 정상적인 사용이 가능하게 하려 할 때 선택하는 파일시스템/구성 유형으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "LVM(Physical Volume)로 구성해 다중 디스크를 활용",
+        "truth": "true"
+      },
+      {
+        "text": "단일 파티션만 사용",
+        "truth": "false"
+      },
+      {
+        "text": "RAID 없이 단일 디스크만 사용",
+        "truth": "false"
+      },
+      {
+        "text": "스왑 파티션 확장",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "여러 물리 디스크를 <b>LVM</b>(또는 RAID)으로 묶어두면, 디스크 하나에 문제가 생겨도 구성에 따라 서비스를 지속할 수 있습니다. 단일 파티션이나 RAID 없는 단일 디스크는 그 디스크 하나가 고장 나면 바로 데이터를 잃으므로 장애 대응이 되지 않고, 스왑 파티션 확장은 메모리 부족 상황에 대응하는 것일 뿐 디스크 오류 대응과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-45",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 설명으로 알맞은 것은?<br/>여러 개의 디스크를 하나로 묶어서 사용하는 기술로서 사용 중에 파티션의 크기를 줄이거나 늘릴 수 있다.",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "LVM",
+        "truth": "true"
+      },
+      {
+        "text": "RAID-0",
+        "truth": "false"
+      },
+      {
+        "text": "파티션 테이블",
+        "truth": "false"
+      },
+      {
+        "text": "스왑",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "여러 디스크를 묶어 유연하게 볼륨 크기를 조절할 수 있는 기술은 <b>LVM</b>입니다. RAID-0은 여러 디스크를 하나로 묶어 성능은 높이지만 구성 후 파티션 크기를 자유롭게 줄이거나 늘리는 기능은 제공하지 않고, 파티션 테이블은 디스크의 파티션 구성 정보를 담은 영역일 뿐 여러 디스크를 묶는 기술이 아니며, 스왑은 가상 메모리 용도로 디스크 결합·크기 조절 기능과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-46",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 스왑 파티션에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "리눅스에서는 전통적으로 디스크 용량의 2배를 권장하였다(모든 경우에 일괄 적용).",
+        "truth": "false"
+      },
+      {
+        "text": "가상 메모리 역할을 담당하는 영역이다.",
+        "truth": "true"
+      },
+      {
+        "text": "스왑 파티션의 ID 번호는 82이다.",
+        "truth": "true"
+      },
+      {
+        "text": "리눅스에서 반드시 분할해야 하는 대표적 영역이다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "스왑 권장 용량은 <b>메모리(RAM) 크기에 따라 달라지는 가이드라인</b>이지, 모든 경우에 일괄적으로 '디스크 용량의 2배'를 권장하는 것은 아닙니다(오히려 RAM 대비 배수로 논의됨)."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-47",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 '/dev/sdb6'에 대한 설명으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "디스크 유형은 S-ATA(또는 SCSI/SAS 계열)이다.",
+        "truth": "true"
+      },
+      {
+        "text": "디스크 유형은 IDE이다.",
+        "truth": "false"
+      },
+      {
+        "text": "6번째 디스크를 의미한다.",
+        "truth": "false"
+      },
+      {
+        "text": "스왑 전용 장치이다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "장치명이 <b>sdX</b>로 시작하면 S-ATA·SCSI·USB 등 최신 블록 장치 드라이버를 사용하는 디스크입니다(IDE는 hdX로 표기). 따라서 'IDE이다'는 틀리고, sdb의 'b'가 두 번째 디스크를 뜻할 뿐 뒤에 붙는 숫자 6은 디스크 순번이 아니라 <b>파티션 번호</b>를 의미하므로 '6번째 디스크'라는 설명도 틀리며, 장치명만으로는 스왑 전용인지 알 수 없고 스왑 여부는 파티션 타입 설정에 따르므로 '스왑 전용 장치'라는 단정도 틀립니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-48",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 파티션의 종류에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "주 파티션을 2개 사용 후에 확장 파티션을 선언했다면 논리 파티션의 번호는 4번부터 시작한다.",
+        "truth": "false"
+      },
+      {
+        "text": "확장 파티션을 선언해야 논리 파티션을 사용할 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "확장 파티션은 하나의 물리적 디스크에 1개만 사용할 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "확장 파티션을 사용할 경우 실질적으로 사용 가능한 주 파티션의 수는 3개이다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "주 파티션 개수와 관계없이 <b>논리 파티션 번호는 항상 5번부터</b> 시작합니다(주 파티션 자리가 1~4번으로 예약되어 있기 때문). '4번부터'라는 설명이 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-49",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 파티션 분할 프로그램으로 가장 거리가 먼 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "partprobe",
+        "truth": "false"
+      },
+      {
+        "text": "fdisk",
+        "truth": "true"
+      },
+      {
+        "text": "parted",
+        "truth": "true"
+      },
+      {
+        "text": "kpartx",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>partprobe</b>는 파티션 테이블 변경을 커널에 다시 읽어들이게 알려주는 명령이지, 파티션을 직접 나누는 분할 도구가 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-50",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 주 파티션에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "주 파티션 4개 사용 후 확장 파티션의 선언이 가능하다.",
+        "truth": "false"
+      },
+      {
+        "text": "부팅 가능한 파티션은 주 파티션 중 하나여야 한다.",
+        "truth": "true"
+      },
+      {
+        "text": "하나의 디스크에 주 파티션은 최대 4개까지 만들 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "주 파티션 슬롯 일부를 확장 파티션으로 사용할 수 있다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "주 파티션 <b>4개를 모두 사용한 뒤에는 더 이상 확장 파티션을 추가로 선언할 수 없습니다</b>(그중 하나의 자리를 확장 파티션으로 미리 배정해야 함). '4개 사용 후 확장 파티션 선언 가능'은 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-51",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "현재 시스템에 S-ATA 타입 디스크를 장착하여 사용 중이다. USB 메모리를 시스템에 연결했을 때 인식되는 장치 파일명으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/dev/sdb",
+        "truth": "true"
+      },
+      {
+        "text": "/dev/hdd",
+        "truth": "false"
+      },
+      {
+        "text": "/dev/usb0",
+        "truth": "false"
+      },
+      {
+        "text": "/dev/fd0",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "USB 저장장치도 SCSI 서브시스템을 거쳐 <b>/dev/sdX</b> 계열 이름으로 인식됩니다(이미 S-ATA 디스크가 sda를 쓰고 있다면 USB는 sdb 등 다음 이름을 받음). /dev/hdd는 구형 IDE 명명 방식이라 S-ATA 환경과 맞지 않고, /dev/usb0이라는 이름은 리눅스 블록 장치 명명 규칙에 존재하지 않으며, /dev/fd0은 플로피 디스크 드라이브를 가리키는 이름이라 USB 메모리와는 다릅니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-52",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 파티션 분할에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "파티션을 분할하면 여러 운영체제의 부트로더를 각각 독립적으로 설치해 동시에 주 부트로더로 사용할 수 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "파티션을 분할하면 파티션 단위로 다양한 정책(마운트 옵션 등) 설정이 가능하다.",
+        "truth": "true"
+      },
+      {
+        "text": "파티션 분할을 통해 여러 개의 운영체제를 한 디스크에 둘 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "일부 파티션 손상이 다른 파티션에 번지는 것을 막을 수 있다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "여러 OS를 설치해도 실제 부팅을 담당하는 <b>부트로더는 보통 하나(MBR 등)</b>이며, 그 하나가 각 OS를 선택해 넘겨주는 방식입니다. '여러 부트로더를 동시에 사용'한다는 설명은 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-53",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 파티션의 유형에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "확장 파티션은 2개 이상 설정이 가능하다.",
+        "truth": "false"
+      },
+      {
+        "text": "5개 이상의 파티션이 필요한 경우에는 확장 파티션의 선언이 필요하다.",
+        "truth": "true"
+      },
+      {
+        "text": "확장 파티션을 선언해야 논리 파티션을 선언할 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "주 파티션은 4개까지 사용 가능하다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "확장 파티션은 하나의 디스크에 <b>1개만</b> 만들 수 있습니다. '2개 이상 설정 가능'이 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-54",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 리눅스에서 파티션을 분할하도록 권장하는 영역으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "/etc",
+        "truth": "false"
+      },
+      {
+        "text": "/home",
+        "truth": "true"
+      },
+      {
+        "text": "/var",
+        "truth": "true"
+      },
+      {
+        "text": "/usr",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>/etc</b>는 흔히 분리 권장 대상이 아닙니다. /home·/var·/usr은 일반적으로 분리를 권장하는 영역입니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-55",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 시스템에 장착 가능한 디스크 유형이 아닌 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "IDE 디스크",
+        "truth": "false"
+      },
+      {
+        "text": "S-ATA 디스크",
+        "truth": "true"
+      },
+      {
+        "text": "USB 메모리",
+        "truth": "true"
+      },
+      {
+        "text": "SCSI 디스크",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "이 문항은 'IDE 디스크'를 정답(가장 거리가 먼/예외적인 것)으로 제시합니다 — 오래된 IDE 방식은 최신 시스템에서 사실상 사용되지 않는 반면, S-ATA·USB·SCSI는 현재도 널리 쓰입니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-56",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 가상 파일 시스템으로 프로세스 및 하드웨어에 대한 정보를 담고 있는 디렉터리로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/proc",
+        "truth": "true"
+      },
+      {
+        "text": "/dev",
+        "truth": "false"
+      },
+      {
+        "text": "/sys",
+        "truth": "false"
+      },
+      {
+        "text": "/run",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "실행 중인 프로세스·커널 정보를 메모리상에서 파일처럼 보여주는 가상 파일시스템은 <b>/proc</b>입니다.<br/> /dev는 장치 파일들이 위치하는 디렉터리이고,<br/> /sys는 커널 객체·장치 속성을 노출하는 또 다른 가상 파일시스템(sysfs)으로 /proc과는 성격이 다르며,<br/> /run은 부팅 후 생성되는 런타임 상태 파일(PID, 소켓 등)을 담는 tmpfs 디렉터리로 프로세스 전반의 상세 정보를 담은 /proc과는 다릅니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-57",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 파일 시스템 복구와 가장 관련 있는 디렉터리로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/lost+found",
+        "truth": "true"
+      },
+      {
+        "text": "/tmp",
+        "truth": "false"
+      },
+      {
+        "text": "/var/tmp",
+        "truth": "false"
+      },
+      {
+        "text": "/proc",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "fsck 등으로 복구할 때 연결이 끊긴(고아) 파일 조각들이 모이는 곳은 <b>/lost+found</b>입니다. /tmp와 /var/tmp는 임시 파일 저장용 디렉터리일 뿐 파일시스템 복구와는 무관하고, /proc은 프로세스·커널 정보를 보여주는 가상 파일시스템으로 역시 파일시스템 복구 기능과는 관련이 없습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-58",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 사용자 계정과 가장 관계가 깊은 디렉터리로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/home",
+        "truth": "true"
+      },
+      {
+        "text": "/etc",
+        "truth": "false"
+      },
+      {
+        "text": "/var",
+        "truth": "false"
+      },
+      {
+        "text": "/usr",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "각 사용자의 홈 디렉터리가 위치하는 곳은 <b>/home</b>입니다. /etc는 시스템 설정 파일, /var는 로그 등 가변 데이터, /usr은 응용 프로그램·라이브러리가 위치하는 디렉터리로 모두 사용자 계정 자체와는 직접적인 관련이 적습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-59",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 리눅스의 기술적인 특징에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "리눅스는 최상위 디렉터리인 .(점, 현재 디렉터리 표시)을 기준으로 하위 디렉터리가 존재하는 계층적인 파일 구조이다.",
+        "truth": "false"
+      },
+      {
+        "text": "모든 장치는 파일화해서 관리한다.",
+        "truth": "true"
+      },
+      {
+        "text": "공유 라이브러리를 통해 메모리를 효율적으로 사용한다.",
+        "truth": "true"
+      },
+      {
+        "text": "리다이렉션을 이용해서 입출력을 전환할 수 있다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "최상위 디렉터리는 <b>/</b>(루트)이며, <b>.</b>은 '현재 디렉터리'를 뜻하는 별개의 기호입니다. 최상위 디렉터리를 .으로 설명한 것이 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-60",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음 중 리눅스 설치 시에 나타나는 파일시스템 유형으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "ext",
+        "truth": "false"
+      },
+      {
+        "text": "ext2",
+        "truth": "true"
+      },
+      {
+        "text": "vfat",
+        "truth": "true"
+      },
+      {
+        "text": "physical volume(LVM)",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "설치 메뉴의 파일시스템 목록에는 보통 ext2·ext3/4·vfat·LVM 등이 나오며, 단순히 <b>'ext'</b>라는 이름의 항목은 없습니다."
+  },
+  {
+    "id": "lm2-1cha-filesystem-disk-61",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "파일시스템과 디스크 관리"
+    ],
+    "q": {
+      "text": "다음중 다수의 디스크나 파티션을 하나로 묶어서 구성하는 기술과 관련 있는 조합으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "㉠ext4 ㉡LVM",
+        "truth": "false"
+      },
+      {
+        "text": "㉠ext4 ㉡RAID",
+        "truth": "false"
+      },
+      {
+        "text": "㉠ext3 ㉡ext4",
+        "truth": "false"
+      },
+      {
+        "text": "㉠LVM ㉡RAID",
+        "truth": "true"
+      }
+    ],
+    "answer": 3,
+    "explain": "여러 디스크·파티션을 하나로 묶는 대표 기술은 <b>LVM</b>과 <b>RAID</b>입니다. '㉠ext4 ㉡LVM'과 '㉠ext4 ㉡RAID'는 ㉠(ext4)이 파일시스템일 뿐 디스크를 묶는 기술이 아니라서 틀리고, '㉠ext3 ㉡ext4'는 둘 다 파일시스템으로 여러 디스크를 묶는 기술과는 무관합니다."
+  }
+]

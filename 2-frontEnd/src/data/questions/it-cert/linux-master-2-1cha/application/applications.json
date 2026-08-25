@@ -1,0 +1,98 @@
+[
+  {
+    "id": "lm2-1cha-applications-1",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "응용 프로그램"
+    ],
+    "q": {
+      "text": "리눅스용 그래픽 사용자 인터페이스(데스크톱 환경)로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "KDE",
+        "truth": "true"
+      },
+      {
+        "text": "MS-DOS",
+        "truth": "false"
+      },
+      {
+        "text": "BIOS",
+        "truth": "false"
+      },
+      {
+        "text": "POSIX",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>KDE</b>는 Qt 기반의 대표적인 리눅스 데스크톱 환경(그래픽 사용자 인터페이스)입니다. MS-DOS는 텍스트 기반의 도스용 운영체제, BIOS는 부팅 시 하드웨어를 초기화하는 펌웨어, POSIX는 유닉스 계열 운영체제의 호환성 표준(API 규격)으로 모두 GUI가 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-applications-2",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "응용 프로그램"
+    ],
+    "q": {
+      "text": "다음 중 리눅스에서 사용할 수 있는 이미지 편집 프로그램으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "GIMP",
+        "truth": "true"
+      },
+      {
+        "text": "Outlook",
+        "truth": "false"
+      },
+      {
+        "text": "PowerPoint",
+        "truth": "false"
+      },
+      {
+        "text": "Internet Explorer",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>GIMP</b>는 리눅스의 대표적인 오픈소스 이미지 편집 프로그램(포토샵에 대응)입니다. Outlook은 이메일 클라이언트, PowerPoint는 발표자료 작성 도구, Internet Explorer는 웹 브라우저로 모두 이미지 편집과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-applications-3",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "응용 프로그램"
+    ],
+    "q": {
+      "text": "다음 중 리눅스에서 사용할 수 있는 오피스(문서 작성) 프로그램으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "LibreOffice",
+        "truth": "true"
+      },
+      {
+        "text": "MS Access",
+        "truth": "false"
+      },
+      {
+        "text": "Internet Explorer",
+        "truth": "false"
+      },
+      {
+        "text": "Windows Media Player",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>LibreOffice</b>는 리눅스에서도 사용할 수 있는 대표적인 오픈소스 오피스 스위트입니다. MS Access는 데이터베이스 관리 프로그램, Internet Explorer는 웹 브라우저, Windows Media Player는 미디어 재생 프로그램으로 문서 작성과는 무관합니다."
+  }
+]

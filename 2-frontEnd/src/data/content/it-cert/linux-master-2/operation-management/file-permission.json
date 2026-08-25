@@ -1,0 +1,11 @@
+{
+  "name": "파일 및 디렉터리 권한 관리",
+  "concepts": [
+    "chmod / chown / chgrp 기본 문법과 8진수 표기 (예: chmod g+w, chown user:group 파일)",
+    "Set-UID(4) · Set-GID(2) · Sticky-Bit(1)의 의미와 조합 부여 — 예: 공용 디렉터리에 chmod 3770 (SGID+Sticky-Bit)",
+    "umask 계산: 파일 기본권한 666, 디렉터리 기본권한 777에서 umask 값을 차감 (예: umask 0022 → 파일 644 / 디렉터리 755)",
+    "특수 권한이 실제로 걸린 대표 파일 /usr/bin/passwd (SUID로 일반 사용자도 비밀번호 변경 가능)",
+    "ls -l 로 SUID/SGID/Sticky-Bit 확인, chmod/chown/chgrp/umask 명령 간 역할 구분"
+  ],
+  "example": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">chmod 3770 /project</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">ls -ld /project</span>\n<span class=\"out\">drwxrws--T 2 root project 4096 7월 26 10:00 /project</span>"
+}

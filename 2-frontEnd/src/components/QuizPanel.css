@@ -1,0 +1,36 @@
+.quiz-panel {
+  margin-top: 20px;
+}
+.quiz-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.quiz-toolbar-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-right: 4px;
+}
+.quiz-count {
+  margin-left: auto;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.quiz-toolbar .btn-secondary.active {
+  background: var(--accent);
+  color: #fff;
+}
+.quiz-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 4px 20px;
+  box-shadow: var(--shadow);
+}
+.quiz-empty {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 20px 0;
+}

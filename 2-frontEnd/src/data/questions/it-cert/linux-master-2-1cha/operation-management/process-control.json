@@ -1,0 +1,834 @@
+[
+  {
+    "id": "lm2-1cha-process-control-1",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "shutdown 명령어의 옵션에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "-c : 예약된 shutdown 명령을 취소한다.",
+        "truth": "true"
+      },
+      {
+        "text": "-h : shutdown 명령이 완료되면 시스템을 정지시킨다.",
+        "truth": "true"
+      },
+      {
+        "text": "-f : shutdown 전에 수행중인 모든 프로세스에게 kill 시그널을 보낸다.",
+        "truth": "false"
+      },
+      {
+        "text": "-r : shutdown 명령이 완료되면 시스템을 재부팅한다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "shutdown의 <b>-f</b> 옵션은 재부팅 시 fsck(파일시스템 검사)를 건너뛰게 하는 옵션입니다. '수행중인 프로세스에게 kill 시그널을 보낸다'는 설명은 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-2",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "reboot명령어의 수행 과정에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "파일 시스템을 언마운트한다.",
+        "truth": "true"
+      },
+      {
+        "text": "시스템을 shutdown한다.",
+        "truth": "true"
+      },
+      {
+        "text": "시스템 실행수준(run level)을 3으로 변경시킨다.",
+        "truth": "true"
+      },
+      {
+        "text": "다중 사용자(multi-user)모드에서는 수행되지 않는다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "reboot는 런레벨(멀티유저 모드 포함)과 상관없이 실행되는 명령입니다. '다중 사용자 모드에서는 수행되지 않는다'는 설명이 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-3",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음 중 콘솔 모드(또는 텍스트 모드)의 실행레벨로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "1",
+        "truth": "false"
+      },
+      {
+        "text": "3",
+        "truth": "true"
+      },
+      {
+        "text": "5",
+        "truth": "false"
+      },
+      {
+        "text": "6",
+        "truth": "false"
+      }
+    ],
+    "answer": 1,
+    "explain": "텍스트(콘솔) 모드로 부팅되는 실행레벨은 <b>3</b>번입니다. <b>1</b>번은 단일 사용자(싱글유저) 모드, <b>5</b>번은 그래픽(X 윈도우) 모드, <b>6</b>번은 재부팅용 레벨로 모두 일반 콘솔 모드가 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-4",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "시스템을 10분 후에 재시작하기 위한 명령은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "shutdown –r +10",
+        "truth": "true"
+      },
+      {
+        "text": "shutdown –h +10",
+        "truth": "false"
+      },
+      {
+        "text": "shutdown –r 00:10",
+        "truth": "false"
+      },
+      {
+        "text": "shutdown –h 00:10",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "지정한 시간(분) 뒤에 재시작하려면 <b>shutdown -r +시간(분)</b> 형식을 사용합니다: shutdown -r +10. shutdown -h +10은 10분 뒤 재시작이 아니라 <b>정지(종료)</b>시키며, shutdown -r 00:10과 shutdown -h 00:10은 '10분 후'가 아니라 <b>00시 10분이라는 특정 시각</b>에 재시작/정지시키는 명령입니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-5",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "파일 또는 디렉토리와 관련된 명령어가 아닌 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "cp",
+        "truth": "true"
+      },
+      {
+        "text": "mkdir",
+        "truth": "true"
+      },
+      {
+        "text": "ps",
+        "truth": "false"
+      },
+      {
+        "text": "rm",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "<b>ps</b>는 실행 중인 프로세스를 보여주는 명령이지, 파일이나 디렉터리를 다루는 명령이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-6",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "시스템을 재시작하지 않고 종료하는 명령으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "shutdown -h now",
+        "truth": "true"
+      },
+      {
+        "text": "halt",
+        "truth": "true"
+      },
+      {
+        "text": "init 0",
+        "truth": "true"
+      },
+      {
+        "text": "reboot",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "<b>reboot</b>는 시스템을 종료 후 다시 <b>재시작</b>시키는 명령입니다. shutdown -h now·halt·init 0은 모두 재시작 없이 시스템을 정지시킵니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-7",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "시스템의 메모리 사용량 정보를 확인하는 명령어는?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "free",
+        "truth": "true"
+      },
+      {
+        "text": "top",
+        "truth": "false"
+      },
+      {
+        "text": "df",
+        "truth": "false"
+      },
+      {
+        "text": "du",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>free</b> 명령은 전체·사용·여유 메모리와 스왑 사용량을 보여줍니다. top은 CPU·프로세스 상태 중심의 실시간 모니터링 도구이고, df는 파일시스템(디스크)의 사용량, du는 디렉터리·파일 단위의 디스크 사용량을 보여주므로 메모리 사용량 확인 명령이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-8",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "시스템관리자 A는 실행중인 웹서버의 로그(log)파일을 백업시키기 위해, 웹서버를 잠시정지 시켰다가 다시 시작시키려 한다. 이때에 사용하는 명령어로 가장 적당한 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "restart",
+        "truth": "true"
+      },
+      {
+        "text": "reboot",
+        "truth": "false"
+      },
+      {
+        "text": "kill -9",
+        "truth": "false"
+      },
+      {
+        "text": "nohup",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "특정 서비스(웹서버)만 잠시 멈췄다가 다시 시작할 때는 서비스 관리 명령의 <b>restart</b>(예: systemctl restart httpd)를 사용합니다. reboot는 시스템 전체를 재부팅하므로 과도하고, kill -9는 프로세스를 강제 종료만 할 뿐 다시 시작시키지 않으며, nohup은 로그아웃 후에도 프로세스가 계속 실행되게 하는 명령으로 재시작 기능이 없습니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-9",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "시스템 관리자 홍길동은 사용자들로부터 시스템 시각이 잘못 설정되어 있다는 이야기를 들었다. 이를 시정하기 위한 명령으로서 가장 적당한 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "date",
+        "truth": "true"
+      },
+      {
+        "text": "time",
+        "truth": "false"
+      },
+      {
+        "text": "clock -w",
+        "truth": "false"
+      },
+      {
+        "text": "ntpdate",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "시스템 날짜·시각을 직접 확인·설정하는 기본 명령은 <b>date</b>입니다(예: date MMDDhhmmYYYY). time은 명령의 실행 시간을 측정하는 명령이고, clock -w는 시스템 시각을 하드웨어(CMOS) 시계에 기록만 할 뿐 시각 자체를 바로잡는 명령이 아니며, ntpdate는 네트워크 시간 서버와 동기화하는 명령으로 별도 서버 설정이 필요해 가장 간단한 해결책이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-10",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "물리적인 터미널 하나로 가상의 다중 터미널을 사용할 수 있게 하는 기능은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "가상 콘솔(Virtual Console)",
+        "truth": "true"
+      },
+      {
+        "text": "가상 메모리(Virtual Memory)",
+        "truth": "false"
+      },
+      {
+        "text": "스왑(Swap)",
+        "truth": "false"
+      },
+      {
+        "text": "크론(Cron)",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "[Ctrl]+[Alt]+[F1~F6] 등으로 전환하는, 하나의 물리 터미널에서 여러 개의 독립적인 로그인 세션을 쓸 수 있는 기능이 <b>가상 콘솔</b>입니다. 가상 메모리는 디스크를 이용해 물리 메모리를 확장하는 기법, 스왑은 그 가상 메모리 구현에 쓰이는 디스크 영역, 크론은 작업을 예약 실행하는 데몬으로 모두 다중 터미널 기능과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-11",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "리눅스에서 재부팅(reboot) 기록이 저장되는 로그 파일로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/var/adm/wtmp",
+        "truth": "true"
+      },
+      {
+        "text": "/var/log/messages",
+        "truth": "false"
+      },
+      {
+        "text": "/etc/rc.log",
+        "truth": "false"
+      },
+      {
+        "text": "/proc/boot",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "재부팅·로그인 이력은 <b>wtmp</b> 로그 파일(시스템에 따라 /var/adm/wtmp 또는 /var/log/wtmp)에 기록됩니다. /var/log/messages는 커널·데몬 등 일반 시스템 메시지를 담는 로그로 재부팅 이력 전용이 아니고, /etc/rc.log와 /proc/boot는 리눅스에 존재하지 않는 파일입니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-12",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "현재 시스템에서 수행되고 있는 프로세스 중 xinetd 프로세스에 대한 정보만 확인하려고 한다. 관련 명령을 작성하면?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "ps -ef | grep xinetd",
+        "truth": "true"
+      },
+      {
+        "text": "top xinetd",
+        "truth": "false"
+      },
+      {
+        "text": "kill xinetd",
+        "truth": "false"
+      },
+      {
+        "text": "find / -name xinetd",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "전체 프로세스 목록에서 특정 이름만 걸러 보려면 <b>ps -ef | grep xinetd</b>처럼 ps 출력을 grep으로 필터링합니다. top xinetd는 top이 프로세스 이름을 인자로 받는 방식이 아니고, kill xinetd는 이름이 아닌 PID를 지정해야 하며 정보 확인이 아닌 종료 명령이고, find / -name xinetd는 실행 중인 프로세스가 아니라 그 이름의 파일을 찾는 명령입니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-13",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "시스템의 현재 메모리 사용률과 CPU의 부하상태, 그리고 프로세스의 상태를 지속적으로 점검하려 한다. 다음 중 가장 적합한 도구는?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "top",
+        "truth": "true"
+      },
+      {
+        "text": "ps",
+        "truth": "false"
+      },
+      {
+        "text": "free",
+        "truth": "false"
+      },
+      {
+        "text": "pstree",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>top</b>은 CPU·메모리 사용률과 프로세스 상태를 실시간으로 갱신하며 지속적으로 보여줍니다. ps는 실행 시점의 프로세스 스냅샷만, free는 메모리 정보만, pstree는 프로세스 계층 구조만 보여줄 뿐 CPU 부하까지 포함해 지속적으로 갱신 확인하기에는 적합하지 않습니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-14",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "명령 실행 중간에 일정 시간 동안 연기(delay)하려고 한다. (괄호) 안에 들어갈 명령어는?<br/><code># cd /home; ( ) 10 ; ls /home</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "sleep",
+        "truth": "true"
+      },
+      {
+        "text": "wait",
+        "truth": "false"
+      },
+      {
+        "text": "delay",
+        "truth": "false"
+      },
+      {
+        "text": "pause",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "지정한 시간(초) 동안 실행을 지연시키는 명령은 <b>sleep</b>입니다. wait는 백그라운드로 실행 중인 자식 프로세스의 종료를 기다리는 명령이지 단순 시간 지연이 아니며, delay와 pause는 리눅스 셸의 표준 명령이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-15",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음 중 특정 명령을 주기적으로 반복 실행시킬 때 사용하는 명령어로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "watch",
+        "truth": "true"
+      },
+      {
+        "text": "cron",
+        "truth": "false"
+      },
+      {
+        "text": "sleep",
+        "truth": "false"
+      },
+      {
+        "text": "repeat",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>watch 명령</b>은 지정한 명령을 일정 주기로 반복 실행해 화면에 계속 갱신해서 보여줍니다(cron은 특정 시각 예약 실행에 더 가깝습니다). sleep은 단순히 일정 시간 실행을 멈추는 명령으로 반복 기능이 없고, repeat는 리눅스(bash)의 표준 명령이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-16",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음 중 밤 12시(자정)에 시스템을 종료하는 명령으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "shutdown -h 00:00",
+        "truth": "true"
+      },
+      {
+        "text": "shutdown -h +24",
+        "truth": "false"
+      },
+      {
+        "text": "shutdown -r 00:00",
+        "truth": "false"
+      },
+      {
+        "text": "shutdown -c 00:00",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "특정 시각을 지정해 종료하려면 <b>shutdown -h HH:MM</b> 형식을 사용합니다. shutdown -h +24는 지금 시각으로부터 24분 후 종료하는 것이라 자정이 된다는 보장이 없고, shutdown -r 00:00은 종료가 아니라 <b>재부팅</b>시키며, shutdown -c 00:00의 -c는 예약된 shutdown을 <b>취소</b>하는 옵션이라 시각 지정 자체가 의미가 없습니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-17",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음 명령의 결과가 나머지 셋과 다른 하나로 알맞은 것은?",
+      "answerType": "other"
+    },
+    "opts": [
+      {
+        "text": "init 6",
+        "truth": "other"
+      },
+      {
+        "text": "halt",
+        "truth": "some"
+      },
+      {
+        "text": "init 0",
+        "truth": "some"
+      },
+      {
+        "text": "poweroff",
+        "truth": "some"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>init 6</b>은 시스템을 <b>재시작(reboot)</b>시키는 런레벨이고, halt·init 0·poweroff는 모두 시스템을 <b>정지(종료)</b>시킵니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-18",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음 중 시스템이 종료될 때 사용하는 런레벨로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "0",
+        "truth": "true"
+      },
+      {
+        "text": "1",
+        "truth": "false"
+      },
+      {
+        "text": "3",
+        "truth": "false"
+      },
+      {
+        "text": "6",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "런레벨 <b>0</b>은 시스템 종료(halt)입니다. 1은 단일 사용자(싱글유저) 모드, 3은 다중 사용자 텍스트 모드로 정상 가동 상태이며, 6은 재부팅 레벨로 모두 시스템 종료가 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-19",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음 설명에 해당하는 런레벨로 알맞은 것은?<br/>일반적으로는 사용되지 않는 레벨이지만 사용자가 정의하여 사용할 수 있다.",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "4",
+        "truth": "true"
+      },
+      {
+        "text": "0",
+        "truth": "false"
+      },
+      {
+        "text": "1",
+        "truth": "false"
+      },
+      {
+        "text": "6",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "런레벨 <b>4</b>는 용도가 미리 정의되어 있지 않아 관리자가 임의로 정의해 사용할 수 있는 레벨입니다. 0은 시스템 종료, 1은 단일 사용자 모드, 6은 재부팅으로 각각 이미 고정된 용도가 정해져 있어 사용자 정의 레벨이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-20",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음 중 콘솔 모드(또는 텍스트 모드)의 실행 레벨로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "3",
+        "truth": "true"
+      },
+      {
+        "text": "1",
+        "truth": "false"
+      },
+      {
+        "text": "4",
+        "truth": "false"
+      },
+      {
+        "text": "5",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "콘솔(텍스트) 모드의 런레벨은 <b>3</b>번입니다. 1번은 단일 사용자(싱글유저) 모드, 4번은 용도가 정해지지 않은 사용자 정의 레벨, 5번은 그래픽(X 윈도우) 모드로 모두 일반 콘솔 모드가 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-21",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음 중 텍스트 모드 기반의 가상 콘솔에서 이미 지나간 화면 내용을 보기 위한 키 조합으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "[Shift]+[Page Up]",
+        "truth": "true"
+      },
+      {
+        "text": "[Ctrl]+[Page Up]",
+        "truth": "false"
+      },
+      {
+        "text": "[Alt]+[Page Up]",
+        "truth": "false"
+      },
+      {
+        "text": "[Ctrl]+[Home]",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "가상 콘솔(텍스트 모드)에서 스크롤백을 보려면 <b>[Shift]+[Page Up]</b>(아래는 [Shift]+[Page Down])을 사용합니다. [Ctrl]+[Page Up], [Alt]+[Page Up], [Ctrl]+[Home]은 콘솔에서 화면을 거슬러 올라가 보는 기능에 할당된 조합이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-22",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음 중 현재 사용 중인 터미널 이외에 추가로 다른 가상 콘솔을 사용하기 위한 키 조합으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "[Alt]+[F2]",
+        "truth": "true"
+      },
+      {
+        "text": "[Ctrl]+[F2]",
+        "truth": "false"
+      },
+      {
+        "text": "[Shift]+[F2]",
+        "truth": "false"
+      },
+      {
+        "text": "[Alt]+[Tab]",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "텍스트 모드의 다른 가상 콘솔로 전환할 때는 <b>[Alt]+[F1~F6]</b> 키 조합을 사용합니다. [Ctrl]+[F2]와 [Shift]+[F2]는 가상 콘솔 전환에 쓰이지 않고, [Alt]+[Tab]은 그래픽 환경에서 창을 전환하는 조합으로 텍스트 콘솔 전환과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-23",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음 중 하나의 모니터를 장착한 시스템에 여러 개의 가상 화면을 제공하는 기술로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "가상 콘솔",
+        "truth": "true"
+      },
+      {
+        "text": "가상 메모리",
+        "truth": "false"
+      },
+      {
+        "text": "이중 모니터",
+        "truth": "false"
+      },
+      {
+        "text": "스크린 세이버",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "[Alt]+[F1~F6]으로 전환하는, 하나의 물리 화면으로 여러 개의 독립된 로그인 화면을 제공하는 기능은 <b>가상 콘솔</b>입니다. 가상 메모리는 디스크로 물리 메모리를 확장하는 기법일 뿐 화면과 무관하고, 이중 모니터는 모니터를 물리적으로 두 대 사용하는 방식이라 '하나의 모니터'라는 조건에 맞지 않으며, 스크린 세이버는 화면 보호 기능으로 다중 화면 제공과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-24",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음은 /backup 디렉터리에 생성되는 파일을 모니터링하는 과정이다. (괄호) 안에 들어갈 명령어로 알맞은 것은?<br/><code># ( 괄호 ) ls -al /backup</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "time",
+        "truth": "false"
+      },
+      {
+        "text": "date",
+        "truth": "false"
+      },
+      {
+        "text": "watch",
+        "truth": "true"
+      },
+      {
+        "text": "strings",
+        "truth": "false"
+      }
+    ],
+    "answer": 2,
+    "explain": "디렉터리 상태를 주기적으로 반복 확인하려면 <b>watch</b> 명령을 사용합니다(예: watch ls /backup). time은 뒤따르는 명령의 실행 시간을 측정하는 명령, date는 현재 날짜·시각을 출력하는 명령, strings는 바이너리 파일에서 문자열을 추출하는 명령으로 모두 반복 모니터링 기능이 없습니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-25",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "재부팅했을 때 호출되는 런레벨값을 확인하려고 한다. 다음 중 관련 정보를 담고 있는 파일로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "/boot/grub/grub.conf",
+        "truth": "false"
+      },
+      {
+        "text": "/etc/runlevels",
+        "truth": "false"
+      },
+      {
+        "text": "/etc/inittab",
+        "truth": "true"
+      },
+      {
+        "text": "/boot/runlevels",
+        "truth": "false"
+      }
+    ],
+    "answer": 2,
+    "explain": "기본 런레벨은 전통적으로 <b>/etc/inittab</b>의 initdefault 항목에서 지정합니다(systemd 계열에서는 /etc/systemd/system/default.target). /boot/grub/grub.conf는 부트로더(GRUB) 설정 파일로 커널 로딩 정보를 담을 뿐 런레벨과는 무관하고, /etc/runlevels와 /boot/runlevels는 리눅스에 존재하지 않는 파일입니다."
+  },
+  {
+    "id": "lm2-1cha-process-control-26",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "프로세스와 작업 제어"
+    ],
+    "q": {
+      "text": "다음 중 명령의 결과가 나머지 셋과 다른 것은?",
+      "answerType": "other"
+    },
+    "opts": [
+      {
+        "text": "init 0",
+        "truth": "other"
+      },
+      {
+        "text": "telinit 6",
+        "truth": "some"
+      },
+      {
+        "text": "shutdown -r now",
+        "truth": "some"
+      },
+      {
+        "text": "reboot",
+        "truth": "some"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>init 0</b>은 시스템을 <b>종료(halt)</b>시키는 반면, telinit 6·shutdown -r now·reboot는 모두 시스템을 <b>재시작</b>시킵니다."
+  }
+]

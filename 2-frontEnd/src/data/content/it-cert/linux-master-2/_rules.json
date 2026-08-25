@@ -1,0 +1,24 @@
+{
+  "_comment": "공식 공고 기준으로 재확인 필요 — 2차(80문항/100분/과목별 과락 40점+평균 60점)는 일반적인 자격증 패턴과 사용자 확인을 참고한 추정치입니다. 1차는 별도 시험(linux-master-2-1cha)으로 분리됨.",
+  "totalQuestions": 80,
+  "timeLimitMinutes": 100,
+  "passAverage": 60,
+  "subjects": [
+    { "subjectId": "operation-management", "questionCount": 48, "passScore": 40 },
+    { "subjectId": "application", "questionCount": 32, "passScore": 40 }
+  ],
+  "rounds": [
+    {
+      "id": "round2",
+      "label": "2차",
+      "totalQuestions": 80,
+      "timeLimitMinutes": 100,
+      "hasSubjectCutoff": true,
+      "passAverage": 60,
+      "subjects": [
+        { "subjectId": "operation-management", "questionCount": 48, "passScore": 40 },
+        { "subjectId": "application", "questionCount": 32, "passScore": 40 }
+      ]
+    }
+  ]
+}

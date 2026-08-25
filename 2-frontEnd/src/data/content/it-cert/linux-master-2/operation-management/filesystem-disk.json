@@ -1,0 +1,11 @@
+{
+  "name": "파일시스템과 디스크 관리",
+  "concepts": [
+    "quota(조회) — <br/><b>edquota</b>는 vi 같은 편집기 화면이 열려 사용자별 block/inode의 soft·hard limit을 직접 고쳐 저장하는 대화형 방식<br/>(한 사용자를 세밀하게 조정할 때 편리)<br/>, <b>setquota</b>는 setquota 사용자 block-soft | block-hard | inode-soft | inode-hard 파일시스템처럼 값을 명령줄 인자로 한 번에 지정하는 방식(스크립트로 여러 사용자를 일괄 설정할 때 편리) — xfs_quota(XFS 전용)",
+    "df(마운트된 디스크의 여유공간) vs du(디렉터리·파일 단위 사용량) 차이",
+    "/etc/fstab(부팅시 마운트 정보, 필드순서: 장치-마운트포인트-타입-옵션-덤프-패스)<br/> vs /etc/mtab·/proc/mounts(현재 마운트 상태)",
+    "fdisk 대화형 명령 n(생성)/d(삭제)/t(타입변경)/w(저장 후 종료)/q(취소)<br/>, mkfs.xfs·mke2fs -t ext4 포맷",
+    "LVM 구성 순서 PV → VG → LV (PE는 VG 내부의 할당 단위)<br/>, RAID 0/1/5/6 실사용 용량 계산 (예: RAID-5는 (N-1)×용량)"
+  ],
+  "example": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">mount -t ext4 /dev/sdb1 /data</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">df -h /data</span>\n<span class=\"out\">/dev/sdb1   20G   1.2G   18G   7% /data</span>\n<span class=\"cmt\"># edquota: 편집기(vi) 화면이 열리고, 그 안에서 kim 사용자의 block/inode soft·hard 값을 직접 고쳐서 저장</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">edquota -u kim</span>\n<span class=\"out\">Disk quotas for user kim (uid 1001):\n  Filesystem  blocks  soft  hard  inodes  soft  hard\n  /dev/sdb1   150000  0     0     420     0     0</span>\n<span class=\"cmt\"># setquota: 편집기 없이 명령줄 인자만으로 즉시 설정 — 여러 사용자 일괄 설정(스크립트)에 편리</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">setquota -u kim 500000 550000 0 0 /data</span>"
+}

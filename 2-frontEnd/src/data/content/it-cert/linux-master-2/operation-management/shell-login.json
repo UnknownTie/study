@@ -1,0 +1,11 @@
+{
+  "name": "쉘과 로그인 환경",
+  "concepts": [
+    "쉘 등장 순서: Bourne shell → C shell(csh) → Korn shell → Bash → Zsh, /etc/shells(설치된 셸 목록) vs /etc/passwd(계정별 로그인 셸)",
+    "chsh -s(로그인 셸 변경) / chsh -l(사용 가능한 셸 목록) 옵션",
+    "환경변수 SHELL·PS1(기본 프롬프트)·PS2(연속 프롬프트)·LANG·TERM, /etc/profile·/etc/bashrc(전역) vs ~/.bash_profile·~/.bashrc(개인) 설정파일",
+    "history 치환: !!(직전 명령), !문자열(해당 문자열로 시작하는 최근 명령), alias와 백슬래시(\\ls)로 alias 우회",
+    "init(PID 1, 구형) → systemd 전환, exec/fork와 초기화 프로세스의 관계"
+  ],
+  "example": "<span class=\"prompt\">[ihduser@localhost ~]$</span> <span class=\"cmd\">chsh -l</span>\n<span class=\"out\">/bin/sh</span>\n<span class=\"out\">/bin/bash</span>\n<span class=\"out\">/bin/csh</span>\n<span class=\"prompt\">[ihduser@localhost ~]$</span> <span class=\"cmd\">echo $SHELL</span>\n<span class=\"out\">/bin/bash</span>"
+}

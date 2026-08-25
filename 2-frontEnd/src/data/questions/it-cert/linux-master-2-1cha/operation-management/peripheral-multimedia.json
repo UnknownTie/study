@@ -1,0 +1,98 @@
+[
+  {
+    "id": "lm2-1cha-peripheral-multimedia-1",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "주변장치 및 멀티미디어 서비스"
+    ],
+    "q": {
+      "text": "시디롬을 열고 닫을 때, 사용하는 명령어는?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "eject",
+        "truth": "true"
+      },
+      {
+        "text": "mount",
+        "truth": "false"
+      },
+      {
+        "text": "mmd",
+        "truth": "false"
+      },
+      {
+        "text": "close",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>eject</b> 명령은 CD/DVD 트레이를 여닫는 데 사용합니다. mount는 파일시스템을 마운트하는 명령, mmd는 mtools에서 도스(MS-DOS) 파일시스템에 디렉터리를 만드는 명령, close는 리눅스에 존재하지 않는 명령으로 모두 트레이 개폐와는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-peripheral-multimedia-2",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "주변장치 및 멀티미디어 서비스"
+    ],
+    "q": {
+      "text": "리눅스에서 사운드카드 등을 관리하는 표준 사운드 드라이버·API 체계로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "ALSA",
+        "truth": "true"
+      },
+      {
+        "text": "CUPS",
+        "truth": "false"
+      },
+      {
+        "text": "SAMBA",
+        "truth": "false"
+      },
+      {
+        "text": "NFS",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>ALSA</b>(Advanced Linux Sound Architecture)는 리눅스의 표준 사운드 드라이버·API 체계입니다. CUPS는 인쇄, SAMBA·NFS는 파일 공유 서비스입니다."
+  },
+  {
+    "id": "lm2-1cha-peripheral-multimedia-3",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "주변장치 및 멀티미디어 서비스"
+    ],
+    "q": {
+      "text": "리눅스에서 프린터 인쇄 시스템(관리)을 담당하는 대표적인 서비스로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "CUPS",
+        "truth": "true"
+      },
+      {
+        "text": "ALSA",
+        "truth": "false"
+      },
+      {
+        "text": "SAMBA",
+        "truth": "false"
+      },
+      {
+        "text": "NFS",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>CUPS</b>(Common Unix Printing System)는 리눅스·유닉스의 표준 인쇄 시스템입니다.<br/> ALSA는 사운드카드를 위한 오디오 드라이버·API 체계,<br/> SAMBA는 윈도우와 파일을 공유하는 서비스,<br/> NFS는 유닉스 계열 간 파일 공유 프로토콜로 모두 인쇄 시스템이 아닙니다."
+  }
+]

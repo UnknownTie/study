@@ -1,0 +1,98 @@
+[
+  {
+    "id": "lm2-1cha-compression-archive-1",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "압축과 아카이브"
+    ],
+    "q": {
+      "text": "용량이 큰 파일을 여러 개의 작은 파일로 분리하여 플로피 디스크로 이동시킬 때 사용하는 명령어는?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "split",
+        "truth": "true"
+      },
+      {
+        "text": "cut",
+        "truth": "false"
+      },
+      {
+        "text": "fold",
+        "truth": "false"
+      },
+      {
+        "text": "tar",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "큰 파일을 지정한 크기로 분할하는 명령은 <b>split</b>입니다(합칠 때는 cat으로 이어붙임). cut은 각 줄에서 특정 필드·문자를 잘라내는 명령, fold는 긴 줄을 지정한 폭으로 접어 줄바꿈하는 명령으로 파일을 여러 개로 나누는 것과는 다르며, tar는 여러 파일을 하나로 묶는 아카이브 명령입니다."
+  },
+  {
+    "id": "lm2-1cha-compression-archive-2",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "압축과 아카이브"
+    ],
+    "q": {
+      "text": "여러 개의 파일을 하나로 묶는 아카이브(파일 보관) 명령으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "tar",
+        "truth": "true"
+      },
+      {
+        "text": "split",
+        "truth": "false"
+      },
+      {
+        "text": "gzip",
+        "truth": "false"
+      },
+      {
+        "text": "cut",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>tar</b>(Tape ARchive)는 여러 파일·디렉터리를 하나의 아카이브 파일로 묶거나 풀 때 사용합니다(압축 자체는 gzip·bzip2 등과 결합해서 씁니다). split은 하나의 파일을 여러 개의 작은 파일로 나누는 명령, gzip은 파일을 압축하는 명령(여러 파일을 하나로 묶지는 못함), cut은 각 줄에서 필드를 추출하는 명령으로 모두 여러 파일을 하나로 묶는 아카이브 기능과는 다릅니다."
+  },
+  {
+    "id": "lm2-1cha-compression-archive-3",
+    "tags": [
+      "리눅스마스터2급",
+      "1과목: 리눅스 운영 및 관리",
+      "압축과 아카이브"
+    ],
+    "q": {
+      "text": "확장자가 .tar.gz인 파일의 압축을 해제하는 명령으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "tar zxvf 파일명",
+        "truth": "true"
+      },
+      {
+        "text": "tar cvf 파일명",
+        "truth": "false"
+      },
+      {
+        "text": "gzip 파일명",
+        "truth": "false"
+      },
+      {
+        "text": "split 파일명",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": ".tar.gz는 tar로 묶고 gzip으로 압축한 파일이므로, gzip 옵션 z와 추출 옵션 x를 함께 쓴 <b>tar zxvf</b>로 풉니다. tar cvf는 압축 없이 새 아카이브를 생성(c)하는 명령이라 해제와는 반대 동작이고, gzip 파일명은 .gz 압축만 처리할 뿐 tar로 묶인 내용은 풀지 못하며, split 파일명은 파일을 여러 조각으로 나누는 명령으로 압축 해제와는 무관합니다."
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "name": "주변장치 및 멀티미디어 서비스",
+  "concepts": [
+    "CD/DVD 장치 꺼내기는 <code>eject</code>. 사운드 관련 인터페이스는 <b>OSS</b>/<b>ALSA</b>."
+  ]
+}

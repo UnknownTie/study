@@ -1,0 +1,10 @@
+{
+  "name": "주변장치 및 멀티미디어 서비스",
+  "concepts": [
+    "프린팅 시스템: CUPS(애플 개발 오픈소스 프린팅 시스템), LPRng(BSD 계열)",
+    "명령 계열 구분: System V 계열 lp/lpstat vs BSD 계열 lpr/lpq/lprm, lpq·lpstat=큐 확인, lprm=작업 삭제",
+    "사운드: OSS(초기 표준, 기능 제한) → ALSA(현재 표준, alsactl로 설정 저장/복원)",
+    "스캐너: SANE(이미지 장치 접근 API) 및 GUI 프론트엔드 XSANE"
+  ],
+  "example": "<span class=\"prompt\">[ihduser@localhost ~]$</span> <span class=\"cmd\">lp report.pdf</span>\n<span class=\"out\">request id is printer1-1 (1 file(s))</span>\n<span class=\"prompt\">[ihduser@localhost ~]$</span> <span class=\"cmd\">lpstat -p</span>"
+}

@@ -1,0 +1,674 @@
+[
+  {
+    "id": "lm2-1cha-distro-embedded-1",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 우분투(ubuntu) 리눅스의 기반이 되는 리눅스로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "Fedora",
+        "truth": "false"
+      },
+      {
+        "text": "RHEL",
+        "truth": "false"
+      },
+      {
+        "text": "Devian",
+        "truth": "true"
+      },
+      {
+        "text": "Slackware",
+        "truth": "false"
+      }
+    ],
+    "answer": 2,
+    "explain": "우분투(Ubuntu)는 <b>데비안(Debian)</b> 계열을 기반으로 만들어진 배포판입니다. Fedora와 RHEL은 레드햇(Red Hat) 계열 배포판이고, Slackware는 독자적으로 개발된 배포판이라 우분투의 기반과는 관련이 없습니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-2",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음중 국내에서 배포하는 리눅스로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "SuLinux",
+        "truth": "true"
+      },
+      {
+        "text": "CentOS",
+        "truth": "false"
+      },
+      {
+        "text": "SUSE",
+        "truth": "false"
+      },
+      {
+        "text": "Fedora",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>수리눅스(SuLinux)</b>는 한국(국내)에서 만든 배포판입니다. CentOS는 미국에서 RHEL을 재빌드한 배포판, SUSE는 독일 SUSE사의 배포판, Fedora는 미국 레드햇이 후원하는 커뮤니티 배포판으로 모두 해외 배포판입니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-3",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 영국 회사인 캐노니컬에서 데비안 리눅스를 기초로 고유한 데스크톱 환경인 유니티를 사용하여 만든배포판으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "수세리눅스",
+        "truth": "false"
+      },
+      {
+        "text": "슬랙웨어",
+        "truth": "false"
+      },
+      {
+        "text": "CentOS",
+        "truth": "false"
+      },
+      {
+        "text": "우분투",
+        "truth": "true"
+      }
+    ],
+    "answer": 3,
+    "explain": "캐노니컬이 데비안을 기반으로 유니티 데스크톱을 채택해 만든 배포판은 <b>우분투(Ubuntu)</b>입니다. 수세리눅스는 독일 SUSE사의 배포판, 슬랙웨어는 데비안과 무관하게 독자적으로 개발된 배포판, CentOS는 RHEL을 재빌드한 레드햇 계열 배포판이라 모두 캐노니컬·유니티와는 관련이 없습니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-4",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "리눅스 배포판을 구성하고 있는 것으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "리눅스 커널",
+        "truth": "true"
+      },
+      {
+        "text": "GNU 유틸리티",
+        "truth": "true"
+      },
+      {
+        "text": "패키지 관리 시스템",
+        "truth": "true"
+      },
+      {
+        "text": "허드(Hurd)",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "<b>허드(Hurd)</b>는 GNU 프로젝트의 독자적인 커널로, 리눅스 커널과는 별개의 프로젝트입니다. 리눅스 배포판은 리눅스 커널을 사용하므로 Hurd는 구성 요소가 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-5",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 MPL 라이선스를 적용하는 소프트웨어로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "Firefox",
+        "truth": "true"
+      },
+      {
+        "text": "Linux 커널",
+        "truth": "false"
+      },
+      {
+        "text": "Apache HTTP Server",
+        "truth": "false"
+      },
+      {
+        "text": "MySQL",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>Firefox</b>(및 파생 제품)는 MPL(Mozilla Public License)을 사용합니다. Linux 커널은 GPLv2, Apache HTTP Server는 Apache License, MySQL은 GPL(및 상용 이중 라이선스)을 사용해 MPL이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-6",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 아파치 라이선스를 적용하는 소프트웨어로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "Hadoop",
+        "truth": "true"
+      },
+      {
+        "text": "Firefox",
+        "truth": "false"
+      },
+      {
+        "text": "Linux 커널",
+        "truth": "false"
+      },
+      {
+        "text": "VLC",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>Hadoop</b>은 Apache License 2.0을 사용하는 대표적인 아파치 재단 프로젝트입니다. Firefox는 MPL, Linux 커널은 GPLv2, VLC는 GPL을 사용해 아파치 라이선스가 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-7",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 해당 라이선스가 적용된 프로그램의 소스 코드를 수정해서 사용할 경우에도 반드시 공개할 필요가 없는 라이선스 조합으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "Apache, MIT",
+        "truth": "true"
+      },
+      {
+        "text": "GPL, LGPL",
+        "truth": "false"
+      },
+      {
+        "text": "GPL, MPL",
+        "truth": "false"
+      },
+      {
+        "text": "LGPL, GPL",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>Apache·MIT</b> 라이선스는 수정 후 재배포 시 소스 공개를 강제하지 않는 관대한(permissive) 라이선스입니다. GPL·LGPL, GPL·MPL, LGPL·GPL 조합은 모두 GPL이 포함되어 있어, GPL의 강한 카피레프트 특성상 수정한 소스 코드를 반드시 공개해야 하므로 조건에 맞지 않습니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-8",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 MPL 라이선스에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "MPL 소스 코드와 다른 코드를 결합한 경우에 다른 코드의 소스도 반드시 공개해야 한다.",
+        "truth": "false"
+      },
+      {
+        "text": "소스 코드의 재배포가 가능하다.",
+        "truth": "true"
+      },
+      {
+        "text": "독점적 소프트웨어와의 결합이 가능하다.",
+        "truth": "true"
+      },
+      {
+        "text": "MPL 소스 코드를 수정한 경우에는 반드시 그 부분의 소스 코드를 공개해야 한다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "MPL은 <b>파일(모듈) 단위 카피레프트</b>라서, MPL 코드 자체는 공개해야 하지만 <b>결합된 다른 소스코드까지 공개할 의무는 없습니다.</b> '다른 코드도 공개해야 한다'는 설명이 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-9",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 설명에 해당하는 라이선스로 알맞은 것은?<br/>소스 코드를 수정해서 프로그램을 개발한 후에 소스 코드를 공개하지 않고 독점적 소프트웨어로 사용하려고 한다.",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "BSD",
+        "truth": "true"
+      },
+      {
+        "text": "GPL",
+        "truth": "false"
+      },
+      {
+        "text": "MPL",
+        "truth": "false"
+      },
+      {
+        "text": "AGPL",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>BSD 라이선스</b>는 수정 후 소스 공개 의무가 없어, 독점(비공개) 소프트웨어로도 자유롭게 활용할 수 있습니다. GPL은 수정본을 반드시 동일 라이선스로 공개해야 하고, MPL은 수정한 파일의 소스 공개 의무가 있으며, AGPL은 네트워크로 서비스만 제공해도 소스 공개를 요구하는 등 GPL·MPL·AGPL 모두 비공개 독점 소프트웨어로 사용할 수 없습니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-10",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음에서 설명하는 라이선스로 알맞은 것은?<br/>해당 소프트웨어를 누구나 개작할 수 있고, 수정본의 재배포 시에 소스 코드의 비공개가 가능하다. 이 라이선스가 적용된 소프트웨어에는 X Window System, jQuery, Node.js 등이 있다.",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "MIT",
+        "truth": "true"
+      },
+      {
+        "text": "GPL",
+        "truth": "false"
+      },
+      {
+        "text": "MPL",
+        "truth": "false"
+      },
+      {
+        "text": "AGPL",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>MIT 라이선스</b>는 매우 관대한 라이선스로, 수정본을 소스 공개 없이 재배포할 수 있습니다. GPL은 수정 시 소스 공개 의무가 있고, MPL은 수정한 파일 단위로 공개해야 하며, AGPL은 네트워크 서비스로 제공하는 경우까지 공개를 요구해 모두 MIT처럼 자유롭게 비공개 재배포할 수 없습니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-11",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 슬랙웨어 계열 리눅스에 속하는 배포판으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "Knoppix",
+        "truth": "false"
+      },
+      {
+        "text": "SUSE",
+        "truth": "true"
+      },
+      {
+        "text": "Slax",
+        "truth": "true"
+      },
+      {
+        "text": "Vector Linux",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>Knoppix</b>는 데비안 기반 라이브 배포판입니다. SUSE·Slax·Vector Linux는 슬랙웨어 계열로 분류됩니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-12",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음에서 설명하는 리눅스 배포판으로 알맞은 것은?<br/>데비안 기반으로 만들어진 리눅스 배포판으로 다양한 해킹 도구를 내장하고 있어 정보보안에 대해 학습할 때 매우 유용하다.",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "Kali Linux",
+        "truth": "true"
+      },
+      {
+        "text": "Ubuntu",
+        "truth": "false"
+      },
+      {
+        "text": "Fedora",
+        "truth": "false"
+      },
+      {
+        "text": "CentOS",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "모의해킹·보안 도구를 대거 포함한 데비안 기반 배포판은 <b>Kali Linux</b>입니다. Ubuntu는 데스크톱·서버용 범용 데비안 계열 배포판, Fedora와 CentOS는 레드햇 계열 배포판으로 보안 도구를 기본 내장하지 않습니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-13",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음에서 설명하는 리눅스 배포판으로 알맞은 것은?<br/>레드햇의 후원과 개발 공동체의 지원 아래 배포되는 리눅스로 6개월 간격으로 새로운 버전이 배포되며, 각 버전별 지원 기간이 다른 배포판에 비해 짧다.",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "Fedora",
+        "truth": "true"
+      },
+      {
+        "text": "CentOS",
+        "truth": "false"
+      },
+      {
+        "text": "RHEL",
+        "truth": "false"
+      },
+      {
+        "text": "Debian",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "레드햇이 후원하는 커뮤니티 배포판으로, 빠른 배포 주기(약 6개월)와 짧은 지원 기간이 특징인 것은 <b>Fedora</b>입니다. CentOS는 RHEL을 재빌드해 장기간(수년) 지원하는 배포판, RHEL은 유료 구독 기반의 상용 배포판으로 지원 기간이 길며, Debian은 안정화를 중시해 릴리스 주기가 훨씬 긴 배포판이라 설명과 맞지 않습니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-14",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 BSD 라이선스에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "수정본의 재배포는 의무사항이다.",
+        "truth": "false"
+      },
+      {
+        "text": "상용 프로그램에 사용할 수 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "수정 후에 소스 코드를 공개해도 된다.",
+        "truth": "true"
+      },
+      {
+        "text": "수정 후에 소스 코드를 공개하지 않아도 된다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "BSD 라이선스는 재배포를 <b>의무화하지 않습니다</b> — 수정 후 배포 여부·공개 여부 모두 자유입니다. '재배포는 의무사항'이라는 설명이 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-15",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음에서 설명하는 라이선스로 알맞은 것은?<br/>이 라이선스가 적용된 소스 코드 수정 시에는 반드시 소스 코드를 공개해야 하지만, 다른 코드와 결합하여 만든 프로그램인 경우에는 이 소스 코드를 제외한 다른 소스 코드는 공개하지 않아도 된다.",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "MPL",
+        "truth": "true"
+      },
+      {
+        "text": "GPL",
+        "truth": "false"
+      },
+      {
+        "text": "BSD",
+        "truth": "false"
+      },
+      {
+        "text": "MIT",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "파일(모듈) 단위로만 공개 의무가 있는 부분적 카피레프트 라이선스는 <b>MPL</b>입니다. GPL은 결합된 프로그램 전체의 소스를 공개해야 하는 강한 카피레프트이고, BSD와 MIT는 수정 후에도 소스 공개 의무 자체가 없어 설명과 다릅니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-16",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 LGPL에 대한 설명으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "LGPL이 적용된 라이브러리를 이용해 프로그램을 개발했을 경우, 그 프로그램 자체의 소스 코드는 공개하지 않아도 된다.",
+        "truth": "true"
+      },
+      {
+        "text": "LGPL은 어떤 경우에도 상업적 사용이 금지된다.",
+        "truth": "false"
+      },
+      {
+        "text": "LGPL 라이브러리를 쓰면 전체 프로그램을 반드시 공개해야 한다.",
+        "truth": "false"
+      },
+      {
+        "text": "LGPL은 실행 파일에는 적용할 수 없다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>LGPL</b>은 라이브러리를 링크해서 쓰는 응용 프로그램 자체에는 소스 공개를 강제하지 않는(단, 라이브러리 자체의 수정본은 공개해야 하는) 완화된 카피레프트 라이선스입니다. LGPL은 상업적 사용을 금지하지 않으며, 라이브러리를 이용하는 프로그램 전체의 공개를 요구하지도 않고, 실행 파일(바이너리) 형태에도 적용할 수 있습니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-17",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 저작권을 나타내는 표기로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "Copyright",
+        "truth": "true"
+      },
+      {
+        "text": "GPL",
+        "truth": "false"
+      },
+      {
+        "text": "Free Software",
+        "truth": "false"
+      },
+      {
+        "text": "LGPL",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "소유권을 표시하는 일반적 개념은 <b>Copyright</b>(저작권)이며, GPL·LGPL은 그 저작권을 바탕으로 한 구체적인 라이선스 방식입니다. Free Software(자유 소프트웨어)는 소프트웨어의 자유로운 사용·배포를 강조하는 개념/운동이지 저작권 표기 방식이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-18",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 영국 회사인 캐노니컬에서 데비안 리눅스를 기초로 고유한 데스크톱 환경인 유니티를 사용하여 만든 배포판으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "우분투",
+        "truth": "true"
+      },
+      {
+        "text": "페도라",
+        "truth": "false"
+      },
+      {
+        "text": "CentOS",
+        "truth": "false"
+      },
+      {
+        "text": "수세",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "캐노니컬이 데비안 기반 + 유니티 데스크톱으로 만든 배포판은 <b>우분투</b>입니다. 페도라는 레드햇이 후원하는 커뮤니티 배포판, CentOS는 RHEL 재빌드 배포판, 수세는 독일 SUSE사의 배포판으로 모두 캐노니컬·유니티와 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-19",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 국내에서 배포하는 리눅스로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "SuLinux",
+        "truth": "true"
+      },
+      {
+        "text": "CentOS",
+        "truth": "false"
+      },
+      {
+        "text": "SUSE",
+        "truth": "false"
+      },
+      {
+        "text": "Fedora",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>SuLinux</b>(수리눅스)는 국내에서 만든 배포판입니다. CentOS는 RHEL을 재빌드한 미국계 배포판, SUSE는 독일 SUSE사의 배포판, Fedora는 미국 레드햇이 후원하는 커뮤니티 배포판으로 모두 국외에서 만들어졌습니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-20",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 상용판 리눅스로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "RHEL",
+        "truth": "true"
+      },
+      {
+        "text": "CentOS",
+        "truth": "false"
+      },
+      {
+        "text": "Fedora",
+        "truth": "false"
+      },
+      {
+        "text": "Debian",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>RHEL</b>(Red Hat Enterprise Linux)은 유료 구독·지원 기반의 상용 배포판입니다. CentOS는 RHEL을 무료로 재빌드한 배포판, Fedora는 레드햇이 후원하는 무료 커뮤니티 배포판, Debian은 커뮤니티가 만드는 무료 배포판이라 모두 상용판이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-distro-embedded-21",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "리눅스 배포판과 모바일·임베디드 OS"
+    ],
+    "q": {
+      "text": "다음 중 LGPL 라이선스에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "LGPL 소스 코드와 다른 코드를 결합한 경우에 다른 소스 코드를 공개해야 한다.",
+        "truth": "false"
+      },
+      {
+        "text": "독점적 소프트웨어와의 결합이 가능하다.",
+        "truth": "true"
+      },
+      {
+        "text": "소스 코드의 재배포가 가능하다.",
+        "truth": "true"
+      },
+      {
+        "text": "LGPL 소스 코드를 수정한 경우에 반드시 소스 코드를 공개해야 한다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "LGPL은 라이브러리를 <b>링크해서 쓰는 응용 프로그램(다른 코드) 쪽에는 공개 의무를 부과하지 않습니다.</b> '다른 소스 코드도 공개해야 한다'는 설명이 틀렸습니다."
+  }
+]

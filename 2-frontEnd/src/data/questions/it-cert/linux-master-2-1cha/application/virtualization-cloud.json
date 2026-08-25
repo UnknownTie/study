@@ -1,0 +1,98 @@
+[
+  {
+    "id": "lm2-1cha-virtualization-cloud-1",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "가상화·클라우드"
+    ],
+    "q": {
+      "text": "리눅스 설치 시에 Xen 및 KVM을 사용하기 위해 선택하는 패키지 그룹으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "Virtual Host(가상화 호스트)",
+        "truth": "true"
+      },
+      {
+        "text": "Desktop",
+        "truth": "false"
+      },
+      {
+        "text": "Development Tools",
+        "truth": "false"
+      },
+      {
+        "text": "Web Server",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "가상화 하이퍼바이저(Xen·KVM) 관련 패키지들은 설치 시 <b>가상화 호스트(Virtual Host)</b> 그룹으로 선택합니다. Desktop은 일반 데스크톱 사용 환경 패키지 그룹, Development Tools는 컴파일러 등 개발 도구 모음, Web Server는 아파치 등 웹 서비스용 패키지 그룹으로 가상화 하이퍼바이저와는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-virtualization-cloud-2",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "가상화·클라우드"
+    ],
+    "q": {
+      "text": "다음 중 리눅스 커널에 내장된 가상화 기술(하이퍼바이저)로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "KVM",
+        "truth": "true"
+      },
+      {
+        "text": "VirtualBox",
+        "truth": "false"
+      },
+      {
+        "text": "VMware",
+        "truth": "false"
+      },
+      {
+        "text": "Hyper-V",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>KVM</b>(Kernel-based Virtual Machine)은 리눅스 커널에 내장된 가상화 모듈입니다. VirtualBox·VMware는 별도로 설치하는 가상화 소프트웨어이고, Hyper-V는 윈도우 전용입니다."
+  },
+  {
+    "id": "lm2-1cha-virtualization-cloud-3",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "가상화·클라우드"
+    ],
+    "q": {
+      "text": "클라우드 서비스 모델 중 사용자가 운영체제·미들웨어까지 직접 관리하며 서버·스토리지 같은 인프라만 제공받는 형태로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "IaaS",
+        "truth": "true"
+      },
+      {
+        "text": "SaaS",
+        "truth": "false"
+      },
+      {
+        "text": "PaaS",
+        "truth": "false"
+      },
+      {
+        "text": "DaaS",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>IaaS</b>(Infrastructure as a Service)는 서버·스토리지 등 인프라만 제공하고 OS·미들웨어·애플리케이션은 사용자가 직접 관리합니다. SaaS는 완성된 응용 프로그램을, PaaS는 개발·실행 플랫폼을 제공하며, DaaS(Desktop as a Service)는 가상 데스크톱 환경을 제공하는 서비스입니다."
+  }
+]

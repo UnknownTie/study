@@ -1,0 +1,898 @@
+[
+  {
+    "id": "lm2-1cha-network-basics-1",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "시스템의 네트워크 인터페이스에 대한 정보를 확인하는 명령어로 적절하지 못한 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "ifconfig",
+        "truth": "true"
+      },
+      {
+        "text": "netstat -l",
+        "truth": "true"
+      },
+      {
+        "text": "cat /etc/crontab",
+        "truth": "false"
+      },
+      {
+        "text": "route",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "<b>cat /etc/crontab</b>은 예약 작업(cron) 설정을 보는 것이라 네트워크 인터페이스 정보와 무관합니다. ifconfig·netstat -l·route는 모두 네트워크 인터페이스·연결 정보를 확인하는 명령입니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-2",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "현재 호스트에서 ihd.or.kr까지 연결되는 과정을 알고 싶을 때 사용할 명령은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "traceroute ihd.or.kr",
+        "truth": "true"
+      },
+      {
+        "text": "ping ihd.or.kr",
+        "truth": "false"
+      },
+      {
+        "text": "telnet.ihd.or.kr",
+        "truth": "false"
+      },
+      {
+        "text": "ftp ihd.or.kr",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "목적지까지 거쳐 가는 경로(홉)를 확인하는 명령은 <b>traceroute</b>입니다. ping은 도달 여부와 응답 시간만 확인할 뿐 경로는 보여주지 않고, telnet은 원격 로그인, ftp는 파일 전송을 위한 명령이라 경로 확인과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-3",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "특정 호스트의 IP주소를 찾기 위해 사용하는 명령어는?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "dia",
+        "truth": "false"
+      },
+      {
+        "text": "netfind",
+        "truth": "false"
+      },
+      {
+        "text": "nslookup",
+        "truth": "true"
+      },
+      {
+        "text": "vmware",
+        "truth": "false"
+      }
+    ],
+    "answer": 2,
+    "explain": "특정 호스트의 IP 주소를 도메인 이름으로 조회하는 명령은 <b>nslookup</b>입니다. dia는 다이어그램 작성 프로그램, netfind는 표준 리눅스 명령이 아니며, vmware는 가상화 소프트웨어로 모두 IP 주소 조회와 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-4",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "다음 중 리눅스에서 지원하는 네트워크 파일시스템의 종류로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "SMB",
+        "truth": "true"
+      },
+      {
+        "text": "CIFS",
+        "truth": "true"
+      },
+      {
+        "text": "JFS",
+        "truth": "false"
+      },
+      {
+        "text": "NFS",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "<b>JFS</b>는 로컬 파일시스템(저널링 파일시스템)이지 네트워크로 파일을 공유하는 네트워크 파일시스템이 아닙니다. SMB·CIFS·NFS는 모두 네트워크를 통한 파일 공유 프로토콜입니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-5",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "1. 다음 명령에 대한 설명으로 가장 적절한 것은?<br/> <code>#ifconfig eth0 down</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "eth0이라는 네트워크 어댑터를 다시 설정하고 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "eth0이라는 네트워크 어댑터를 비활성화 시키고 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "eth0이라는 네트워크 어댑터를 시스템에서 완전히 삭제하고 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "eth0이라는 네트워크 어댑터의 아이피를 변경시키고 있다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 1,
+    "explain": "네트워크 어댑터를 비활성화(다운)시키는 명령은 <b>ifconfig 인터페이스명 down</b>입니다. down 옵션은 인터페이스를 그대로 둔 채 활성화 상태만 끄는 것이라, '재설정'하거나 '완전히 삭제'하거나 'IP를 변경'하는 동작은 일으키지 않습니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-6",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "ftp에서 여러 개의 파일을 다운로드 받을 때 사용하는 명령어로 가장 적당한 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "put",
+        "truth": "false"
+      },
+      {
+        "text": "mput",
+        "truth": "false"
+      },
+      {
+        "text": "get",
+        "truth": "false"
+      },
+      {
+        "text": "mget",
+        "truth": "true"
+      }
+    ],
+    "answer": 3,
+    "explain": "여러 파일을 한 번에 받을 때는 <b>mget</b>(multiple get)을 사용합니다. put은 파일 하나를 업로드, mput은 여러 파일을 업로드(다운로드 아님), get은 파일을 하나만 다운로드하는 명령이라 여러 파일 다운로드에는 맞지 않습니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-7",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "ftp 내부 명령어가 아닌 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "put",
+        "truth": "true"
+      },
+      {
+        "text": "get",
+        "truth": "true"
+      },
+      {
+        "text": "open",
+        "truth": "true"
+      },
+      {
+        "text": "mcopy",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "<b>mcopy</b>는 MS-DOS 형식 디스크 파일을 다루는 mtools 계열 명령이며 ftp 내부 명령어가 아닙니다. put·get·open은 ftp 세션 안에서 쓰는 명령입니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-8",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "네트워크 설정 중 DHCP 옵션에 대한 설명으로 옳은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "매스커레이드(Masquerade)에 의한 네트워크 구현 시 사용한다.",
+        "truth": "false"
+      },
+      {
+        "text": "Dynamic Host Configuration Program의 약자이다.",
+        "truth": "false"
+      },
+      {
+        "text": "다수의 IP 주소를 확보해 두고 이를 다른 시스템에 유동적으로 할당하는 네트워크 시스템에서 사용한다.",
+        "truth": "true"
+      },
+      {
+        "text": "bootp와는 전혀 다른 기능을 제공한다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 2,
+    "explain": "<b>DHCP</b>(Dynamic Host Configuration <b>Protocol</b>)는 IP 주소 풀을 확보해두고 접속하는 호스트에 동적으로 할당해주는 프로토콜입니다. 매스커레이드는 NAT(IP 주소 변환) 기술로 DHCP와는 별개이며, DHCP는 Program이 아니라 Protocol의 약자이고, DHCP는 BOOTP를 확장한 프로토콜로 기능이 유사해 '전혀 다르다'는 설명도 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-9",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "네트워크 인터페이스를 설정 또는 확인하는 명령어로 맞는 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "ifconfig",
+        "truth": "true"
+      },
+      {
+        "text": "ipconfig",
+        "truth": "false"
+      },
+      {
+        "text": "xconfig",
+        "truth": "false"
+      },
+      {
+        "text": "iptable",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "리눅스에서 네트워크 인터페이스를 설정·확인하는 명령은 <b>ifconfig</b>(또는 최신 ip 명령)입니다. ipconfig는 윈도우용이고, xconfig는 네트워크 설정과 무관한 명령이며, iptable(iptables)은 인터페이스가 아니라 방화벽 규칙을 설정하는 도구입니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-10",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "netstat 명령어에서 라우팅 테이블을 출력하는 옵션은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "-r",
+        "truth": "true"
+      },
+      {
+        "text": "-a",
+        "truth": "false"
+      },
+      {
+        "text": "-n",
+        "truth": "false"
+      },
+      {
+        "text": "-i",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>netstat -r</b>은 커널 라우팅 테이블을 출력합니다. -a는 모든 소켓(연결) 상태, -n은 주소를 숫자로 표시, -i는 인터페이스별 통계를 보여주는 옵션으로 라우팅 테이블 출력과는 다릅니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-11",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "netstat 명령어의 옵션에 대한 설명으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "-a : 모든 소켓의 상태를 출력한다.",
+        "truth": "true"
+      },
+      {
+        "text": "-n : 주소를 숫자 형태 그대로 출력한다.",
+        "truth": "true"
+      },
+      {
+        "text": "-x : Unix domain socket의 상태만 화면에 출력한다.",
+        "truth": "false"
+      },
+      {
+        "text": "-r : 라우팅 테이블을 출력한다.",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "<b>-x</b>는 netstat의 표준 옵션이 아닙니다(Unix domain socket만 보려면 <code>-a --unix</code> 등을 사용). 이 설명은 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-12",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "다음 설명을 듣고 () 안에 들어갈 가장 적당한 단어를 고르시오.<br/>( )은 TCP/IP 프로토콜을 사용하는 응용 프로그램으로 다른 호스트에 IP 데이터그램이 도착할 수 있는지를 검사하는 것을 의미한다.",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "ping",
+        "truth": "true"
+      },
+      {
+        "text": "telnet",
+        "truth": "false"
+      },
+      {
+        "text": "ftp",
+        "truth": "false"
+      },
+      {
+        "text": "finger",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>ping</b>은 ICMP를 이용해 상대 호스트까지 IP 데이터그램이 도달 가능한지 확인하는 명령입니다. telnet은 원격 로그인, ftp는 파일 전송, finger는 사용자 정보 조회를 위한 프로그램으로 IP 데이터그램 도달 여부 확인과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-13",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "자신의 호스트 명을 변경 또는 확인하기 위해 사용하는 명령어는?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "hostname",
+        "truth": "true"
+      },
+      {
+        "text": "ifconfig",
+        "truth": "false"
+      },
+      {
+        "text": "netstat",
+        "truth": "false"
+      },
+      {
+        "text": "domainname",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>hostname</b> 명령으로 호스트 이름을 확인하거나(인자 없이) 변경(인자로 새 이름 지정)할 수 있습니다. ifconfig는 네트워크 인터페이스 설정, netstat은 네트워크 연결 상태 확인 명령이며, domainname은 호스트명이 아니라 NIS 도메인명을 확인·설정하는 명령입니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-14",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "다음 명령의 실행 결과에 대한 설명으로 가장 적절한 것은?<br/><code>[root@susaek rentiz]# traceroute ihd.or.kr</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "ihd.or.kr까지 도달하기 위해 거쳐 가는 연결된 노드(경로)들을 확인해 보고 있다.",
+        "truth": "true"
+      },
+      {
+        "text": "ihd.or.kr 서버가 살아있는지만 확인하고 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "ihd.or.kr의 도메인을 IP 주소로 변환하고 있다.",
+        "truth": "false"
+      },
+      {
+        "text": "ihd.or.kr에 파일을 전송하고 있다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>traceroute</b>는 목적지까지 거쳐 가는 경로상의 각 노드(홉)를 확인하는 명령입니다. 서버 생존 여부만 확인하는 것은 ping, 도메인을 IP로 변환하는 것은 nslookup·dig, 파일을 전송하는 것은 ftp의 역할이며 traceroute의 목적은 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-15",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "사용 중인 시스템의 MAC 주소를 확인할 수 있는 명령은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "ifconfig",
+        "truth": "true"
+      },
+      {
+        "text": "nslookup",
+        "truth": "false"
+      },
+      {
+        "text": "traceroute",
+        "truth": "false"
+      },
+      {
+        "text": "route",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>ifconfig</b>(또는 ip link)로 각 네트워크 인터페이스의 MAC 주소(HWaddr)를 확인할 수 있습니다. nslookup은 도메인의 IP 주소를 조회하고, traceroute는 경유하는 경로(홉)를 확인하며, route는 라우팅 테이블을 다루는 명령이라 MAC 주소 확인과는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-16",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "다음 중 네트워크를 설정할 때 사용되는 명령어 또는 파일과 무관한 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "ifconfig",
+        "truth": "true"
+      },
+      {
+        "text": "/etc/sysconfig/network",
+        "truth": "true"
+      },
+      {
+        "text": "route",
+        "truth": "true"
+      },
+      {
+        "text": "/etc/login.defs",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "<b>/etc/login.defs</b>는 계정 생성 시의 기본 정책(UID 범위 등)을 담은 파일로 네트워크 설정과 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-17",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "다음 중 ping 명령어를 사용하여 확인할 수 없는 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "원격 호스트가 네트워크에 응답하는지 여부",
+        "truth": "true"
+      },
+      {
+        "text": "대략적인 왕복 응답 시간(RTT)",
+        "truth": "true"
+      },
+      {
+        "text": "외부에서 사용 중인 시스템에 ping을 이용한 DoS 공격을 하고 있는지 여부",
+        "truth": "false"
+      },
+      {
+        "text": "패킷 손실 여부",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "ping은 <b>내가 보낸 패킷의 응답만</b> 확인하는 도구라서, 제3자가 다른 시스템을 공격 중인지 여부 같은 <b>외부 트래픽 감시</b>는 확인할 수 없습니다(그런 건 침입탐지시스템(IDS)의 역할)."
+  },
+  {
+    "id": "lm2-1cha-network-basics-18",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "ping 명령어에 대한 설명으로 올바른 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "원격 호스트의 연결 상태를 확인한다.",
+        "truth": "true"
+      },
+      {
+        "text": "파일을 원격 호스트로 전송한다.",
+        "truth": "false"
+      },
+      {
+        "text": "원격 호스트에 로그인한다.",
+        "truth": "false"
+      },
+      {
+        "text": "도메인 이름을 IP로 변환한다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>ping</b>은 ICMP Echo 요청/응답으로 원격 호스트와의 연결(도달) 상태를 확인합니다. 파일 전송은 ftp·scp, 원격 로그인은 telnet·ssh, 도메인을 IP로 변환하는 것은 nslookup·dig의 역할이며 ping의 기능이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-19",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "다음은 네트워크에 관련된 명령 및 파일들이다. 그에 대한 설명 중 옳지 않은 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "/etc/hosts : IP주소, 호스트명, alias명 설정 파일",
+        "truth": "true"
+      },
+      {
+        "text": "ifconfig : 자신의 NIC에 대한 IP 주소 및 네트워크 관련 정보 확인",
+        "truth": "true"
+      },
+      {
+        "text": "netconfig : 네트워크 서비스 프로토콜 설정 도구",
+        "truth": "true"
+      },
+      {
+        "text": "adsl-setup : 시스템 전체의 네트워크 설정을 총괄하는 표준 설정파일",
+        "truth": "false"
+      }
+    ],
+    "answer": 3,
+    "explain": "<b>adsl-setup</b>은 ADSL(PPPoE) 연결을 설정하는 스크립트일 뿐, 시스템 네트워크 설정을 총괄하는 표준 파일이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-20",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "어떤 사람이 리눅스에서 인터넷을 사용하기 위해 브라우저를 통해 원격시스템과의 연결을 요청했다. 그런데 연결은 되지 않고 \"unknown host\" 오류 메시지만 나온다. 제일 먼저 점검해보아야 할 사항은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "hostname 명령을 수행해 본다.",
+        "truth": "true"
+      },
+      {
+        "text": "/etc/host.conf 파일을 점검한다.",
+        "truth": "false"
+      },
+      {
+        "text": "ifconfig 명령을 수행한다.",
+        "truth": "false"
+      },
+      {
+        "text": "/etc/resolv.conf 파일을 점검한다.",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "'unknown host' 오류는 이름 해석 관련 문제일 가능성이 크며, 우선 자신의 시스템 상태(hostname)부터 간단히 확인해보는 것이 첫 점검 단계로 제시되어 있습니다. ifconfig는 인터페이스 상태를 보여줄 뿐 이름 해석 문제와는 직접 관련이 없고, /etc/host.conf(이름 해석 순서)·/etc/resolv.conf(DNS 서버 설정)는 이름 해석과 관련은 있지만 더 세부적인 점검 단계라 가장 먼저 확인할 사항으로는 적절하지 않습니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-21",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "인터넷에는 TCP/IP 프로토콜 기반의 다양한 서비스가 있다. 다음 중 그 서비스에 대한 설명이 옳지 않은 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "TELNET : 원격 시스템으로 접속하여 명령이나 각종 응용 프로그램을 실행시킬 수 있는 단말기 서비스 프로토콜",
+        "truth": "true"
+      },
+      {
+        "text": "FTP : 양쪽 컴퓨터를 연결하여 파일을 송·수신하는 서비스 프로토콜",
+        "truth": "true"
+      },
+      {
+        "text": "SMTP : 연결할 호스트의 이름에 대한 IP 주소를 찾아 주는 프로토콜",
+        "truth": "false"
+      },
+      {
+        "text": "HTTP : 웹을 통해 다양한 종류의 전자문서들을 서비스하는 프로토콜",
+        "truth": "true"
+      }
+    ],
+    "answer": 2,
+    "explain": "호스트 이름을 IP 주소로 찾아주는 것은 <b>DNS(nslookup 등)</b>의 역할입니다. <b>SMTP</b>는 메일 서버 간에 전자우편을 전송하는 프로토콜이라 이 설명은 틀렸습니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-22",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "메일 서버로 사용하던 리눅스 시스템을 웹 서버로 변경하게 되어서 시스템에 설정되어 있는 호스트명을 변경하려고 한다. 다음 설명에 해당하는 명령으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "hostname 새이름",
+        "truth": "true"
+      },
+      {
+        "text": "ifconfig 새이름",
+        "truth": "false"
+      },
+      {
+        "text": "domainname 새이름",
+        "truth": "false"
+      },
+      {
+        "text": "route 새이름",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "호스트 이름을 확인·변경하는 명령은 <b>hostname</b>입니다(인자로 새 이름을 주면 변경). ifconfig는 네트워크 인터페이스 설정, domainname은 NIS 도메인명 설정, route는 라우팅 테이블 관리 명령이라 호스트명 변경에는 사용하지 않습니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-23",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "다음 중 특정 도메인이 사용하는 IP 주소를 조회하는 명령으로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "dig, host",
+        "truth": "true"
+      },
+      {
+        "text": "route, arp",
+        "truth": "false"
+      },
+      {
+        "text": "ifconfig, ip",
+        "truth": "false"
+      },
+      {
+        "text": "netstat, ss",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "도메인의 IP 조회에는 <b>dig</b>·<b>host</b>·nslookup 등을 사용합니다. route·arp는 라우팅 테이블/ARP 캐시 관리, ifconfig·ip는 네트워크 인터페이스 설정, netstat·ss는 소켓·연결 상태 확인 명령으로 도메인의 IP 조회 기능은 없습니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-24",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "메일 서버에 대한 정보를 조회하려고 할 때 (괄호) 안에 들어갈 내용으로 알맞은 것은?<br/><code>$ nslookup ( ) ihd.or.kr</code>",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "-type=mx",
+        "truth": "true"
+      },
+      {
+        "text": "-type=a",
+        "truth": "false"
+      },
+      {
+        "text": "-type=ns",
+        "truth": "false"
+      },
+      {
+        "text": "-type=ptr",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "메일 교환 서버(MX 레코드)를 조회할 때는 <b>nslookup -type=mx 도메인</b>을 사용합니다. -type=a는 도메인의 IPv4 주소(A 레코드), -type=ns는 네임서버(NS 레코드), -type=ptr는 IP를 도메인으로 역조회(PTR 레코드)하는 옵션으로 메일 서버 정보(MX)와는 다릅니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-25",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "다음 설명으로 알맞은 것은?<br/>- 도메인이나 IP주소를 조회하는 명령이다.<br/>- 명령어 다음에 도메인을 입력해서 직접 조회가 가능하다.<br/>- 명령어만 실행하여 대화형 모드로 조회가 가능하다.",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "nslookup",
+        "truth": "true"
+      },
+      {
+        "text": "dig",
+        "truth": "false"
+      },
+      {
+        "text": "host",
+        "truth": "false"
+      },
+      {
+        "text": "whois",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "인자 없이 실행하면 <b>대화형 모드</b>로 들어가는 것이 nslookup의 특징입니다(dig·host는 대화형 모드가 없음). whois는 도메인 등록 정보(소유자 등)를 조회하는 명령으로, IP·도메인 상호 조회 기능이나 대화형 모드와는 다릅니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-26",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "다음 중 도메인에 대한 IP 주소를 조회하는 명령으로 가장 거리가 먼 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "hostname",
+        "truth": "false"
+      },
+      {
+        "text": "nslookup",
+        "truth": "true"
+      },
+      {
+        "text": "dig",
+        "truth": "true"
+      },
+      {
+        "text": "host",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>hostname</b>은 로컬 시스템 자신의 이름을 확인·설정하는 명령이지, 다른 도메인의 IP를 조회하는 명령이 아닙니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-27",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "다음 중 네트워크를 통해 날짜 및 시간을 동기화할 때 사용하는 서버로 알맞은 것은?",
+      "answerType": "true"
+    },
+    "opts": [
+      {
+        "text": "NTP",
+        "truth": "true"
+      },
+      {
+        "text": "DHCP",
+        "truth": "false"
+      },
+      {
+        "text": "DNS",
+        "truth": "false"
+      },
+      {
+        "text": "SMTP",
+        "truth": "false"
+      }
+    ],
+    "answer": 0,
+    "explain": "시각 동기화 프로토콜(서버)은 <b>NTP</b>(Network Time Protocol)입니다. DHCP는 IP 주소를 자동 할당하는 프로토콜, DNS는 도메인을 IP로 변환하는 서비스, SMTP는 전자우편을 전송하는 프로토콜로 시간 동기화와는 무관합니다."
+  },
+  {
+    "id": "lm2-1cha-network-basics-28",
+    "tags": [
+      "리눅스마스터2급",
+      "2과목: 리눅스 활용",
+      "네트워크 기초"
+    ],
+    "q": {
+      "text": "다음 중 네트워크상에서 사용자 인증에 사용하는 시스템으로 틀린 것은?",
+      "answerType": "false"
+    },
+    "opts": [
+      {
+        "text": "NFS",
+        "truth": "false"
+      },
+      {
+        "text": "NIS",
+        "truth": "true"
+      },
+      {
+        "text": "LDAP",
+        "truth": "true"
+      },
+      {
+        "text": "Kerberos",
+        "truth": "true"
+      }
+    ],
+    "answer": 0,
+    "explain": "<b>NFS</b>는 파일 공유(네트워크 파일시스템) 프로토콜이지 사용자 인증 시스템이 아닙니다. NIS·LDAP·Kerberos는 모두 네트워크 사용자 인증에 쓰입니다."
+  }
+]

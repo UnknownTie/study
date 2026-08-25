@@ -1,0 +1,10 @@
+{
+  "name": "가상화·컨테이너·클라우드",
+  "concepts": [
+    "가상화 방식: Xen(반가상화), KVM·VirtualBox(전가상화), VMware 가상디스크 형식 VMDK",
+    "컨테이너/자동화 도구: Docker(경량 컨테이너), Kubernetes(컨테이너 오케스트레이션, CNCF 관리), Ansible(구성 자동화), OpenStack(클라우드 통합관리)",
+    "클러스터 유형: 고계산용(HPC·베어울프, 과학연산용 저비용 클러스터), 고가용성(장애시 서비스 이어받기), 부하분산 클러스터",
+    "클라우드 서비스 모델 IaaS < PaaS < SaaS 순으로 사용자가 직접 설정하는 범위가 줄어듦"
+  ],
+  "example": "<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">docker run -d -p 80:80 nginx</span>\n<span class=\"prompt\">[root@localhost ~]#</span> <span class=\"cmd\">docker ps</span>\n<span class=\"out\">CONTAINER ID   IMAGE   STATUS         PORTS\n7f2a1c9e4b3d   nginx   Up 5 seconds   0.0.0.0:80->80/tcp</span>"
+}

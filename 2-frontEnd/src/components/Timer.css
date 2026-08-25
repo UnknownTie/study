@@ -1,0 +1,30 @@
+/* 화면 정중앙 높이(top:50%)에서, 가운데 정렬된 문제 섹션(.page, max-width:980px) 바로 오른쪽
+   여백에 붙인다. 뷰포트 폭이 좁아 오른쪽 여백이 부족할 때는 아래 미디어쿼리에서 원래 위치
+   (우상단 고정)로 되돌아간다. */
+.exam-timer {
+  position: fixed;
+  top: 50%;
+  left: calc(50vw + 506px);
+  transform: translateY(-50%);
+  z-index: 20;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--text);
+}
+@media (max-width: 1200px) {
+  .exam-timer {
+    top: 70px;
+    left: auto;
+    right: 20px;
+    transform: none;
+  }
+}
+.exam-timer.low {
+  border-color: var(--fail);
+  color: var(--fail);
+}

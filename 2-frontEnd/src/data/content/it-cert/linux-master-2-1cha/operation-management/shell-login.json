@@ -1,0 +1,7 @@
+{
+  "name": "쉘과 로그인 환경",
+  "concepts": [
+    "셸 계보: <b>Bourne shell → csh(빌 조이) → Korn shell → bash(GNU) → zsh</b>. 로그인 셸 목록 <code>/etc/shells</code>, 변경은 <code>chsh -s</code>.",
+    "환경변수: <code>$SHELL</code>·<code>$PS1/$PS2</code>·<code>$PATH</code>(명령어 검색 경로, 기존 값 유지하려면 <code>$PATH:</code>로 이어붙임). 전역 설정 <code>/etc/profile</code> vs 개인 설정 <code>~/.bash_profile</code>."
+  ]
+}

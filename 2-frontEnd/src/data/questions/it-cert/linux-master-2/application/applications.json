@@ -1,0 +1,18 @@
+[
+  {
+    "id": "lm2-applications-1",
+    "tags": ["리눅스마스터2급", "2과목: 리눅스 활용", "응용 프로그램"],
+    "q": "LibreOffice 구성 요소 중 스프레드시트(표 계산) 작업에 사용하는 것은?",
+    "opts": ["Writer", "Calc", "Impress", "Draw"],
+    "answer": 1,
+    "explain": "<b>Calc</b>가 스프레드시트 프로그램이며, Writer는 문서 작성, Impress는 프레젠테이션, Draw는 그림·도해 작성용입니다."
+  },
+  {
+    "id": "lm2-applications-2",
+    "tags": ["리눅스마스터2급", "2과목: 리눅스 활용", "응용 프로그램"],
+    "q": "GNOME 데스크톱 환경의 기본 이미지 뷰어(보기 전용) 프로그램은?",
+    "opts": ["Gimp", "Eog", "Evince", "Totem"],
+    "answer": 1,
+    "explain": "<b>Eog(Eye of GNOME)</b>가 GNOME 기본 이미지 뷰어입니다. Gimp는 이미지 편집기, Evince는 문서(PDF) 뷰어, Totem은 동영상 재생 프로그램입니다."
+  }
+]

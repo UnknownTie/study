@@ -1,0 +1,58 @@
+[
+  {
+    "id": "lm2-x-window-desktop-1",
+    "tags": ["리눅스마스터2급", "2과목: 리눅스 활용", "X 윈도 시스템과 데스크톱 환경"],
+    "q": "X 클라이언트가 자신의 화면 출력을 어느 X 서버로 보낼지 지정하는 환경변수는?",
+    "opts": ["TERM", "DISPLAY", "XSERVER", "HOST"],
+    "answer": 1,
+    "explain": "<b>DISPLAY</b> 환경변수에 호스트:디스플레이번호 형식으로 접속할 X 서버를 지정합니다. (예: :0 은 로컬 시스템의 첫 번째 X 서버)"
+  },
+  {
+    "id": "lm2-x-window-desktop-2",
+    "tags": ["리눅스마스터2급", "2과목: 리눅스 활용", "X 윈도 시스템과 데스크톱 환경"],
+    "q": "GNOME 데스크톱 환경이 기반으로 삼는 라이브러리는?",
+    "opts": ["Qt", "GTK+", "FLTK", "Motif"],
+    "answer": 1,
+    "explain": "GNOME은 <b>GTK+</b> 라이브러리를 기반으로 하며, KDE는 Qt, CDE는 Motif 라이브러리를 사용합니다."
+  },
+  {
+    "id": "lm2-x-window-desktop-3",
+    "tags": ["리눅스마스터2급", "2과목: 리눅스 활용", "X 윈도 시스템과 데스크톱 환경"],
+    "q": "IP 주소를 기준으로 X 서버에 대한 접근을 허용·차단하는 명령으로 알맞은 것은?",
+    "opts": ["xauth", "xhost", "xset", "xrdb"],
+    "answer": 1,
+    "explain": "<b>xhost</b>는 IP 주소 기준으로 접근을 제어합니다(xhost + 전체 허용, xhost - 전체 차단). xauth는 MIT-MAGIC-COOKIE 인증키 기준으로 접근을 제어합니다."
+  },
+  {
+    "id": "lm2-x-window-desktop-4",
+    "tags": ["리눅스마스터2급", "2과목: 리눅스 활용", "X 윈도 시스템과 데스크톱 환경"],
+    "q": "KDE 데스크톱 환경이 기반으로 삼는 라이브러리로 알맞은 것은?",
+    "opts": ["GTK+", "Qt", "FLTK", "Motif"],
+    "answer": 1,
+    "explain": "KDE는 <b>Qt</b> 라이브러리를 기반으로 합니다. GTK+는 GNOME, Motif는 CDE에서 사용됩니다."
+  },
+  {
+    "id": "lm2-x-window-desktop-5",
+    "tags": ["리눅스마스터2급", "2과목: 리눅스 활용", "X 윈도 시스템과 데스크톱 환경"],
+    "q": "MIT-MAGIC-COOKIE 방식의 인증키를 기준으로 X 서버 접근을 제어하는 명령으로 알맞은 것은?",
+    "opts": ["xhost", "xauth", "xset", "xrdb"],
+    "answer": 1,
+    "explain": "<b>xauth</b>는 인증키(MIT-MAGIC-COOKIE) 기준으로 접근을 제어합니다. xhost는 IP 주소 기준으로 제어한다는 점에서 구분됩니다."
+  },
+  {
+    "id": "lm2-x-window-desktop-6",
+    "tags": ["리눅스마스터2급", "2과목: 리눅스 활용", "X 윈도 시스템과 데스크톱 환경"],
+    "q": "로그인 화면을 제공하고 사용자 세션을 시작하는 프로그램을 가리키는 명칭으로 알맞은 것은?",
+    "opts": ["윈도 매니저", "데스크톱 환경", "디스플레이 매니저", "위젯"],
+    "answer": 2,
+    "explain": "<b>디스플레이 매니저</b>(예: GDM, LightDM)는 로그인 화면을 제공하고 세션을 시작합니다. 윈도 매니저는 창의 배치·외관만 관리합니다."
+  },
+  {
+    "id": "lm2-x-window-desktop-7",
+    "tags": ["리눅스마스터2급", "2과목: 리눅스 활용", "X 윈도 시스템과 데스크톱 환경"],
+    "q": "GNOME 3.x 데스크톱 환경에서 기본으로 사용되는 윈도우 매니저로 알맞은 것은?",
+    "opts": ["Metacity", "Mutter", "Xfwm", "Enlightenment"],
+    "answer": 1,
+    "explain": "<b>Mutter</b>는 GNOME 3.x의 기본 윈도우 매니저로, GNOME 2.x의 Metacity 후속 버전입니다."
+  }
+]

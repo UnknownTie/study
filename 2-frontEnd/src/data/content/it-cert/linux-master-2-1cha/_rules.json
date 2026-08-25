@@ -1,0 +1,24 @@
+{
+  "_comment": "공식 공고 기준으로 재확인 필요 — 1차(50문항/60분/과락 없음)는 일반적인 자격증 패턴과 사용자 확인을 참고한 추정치입니다. 문항 배분(32/18)은 2차 비율(48/32=60/40)을 기준으로 하되 전체 문항수가 적은 점을 고려해 사용자 판단으로 소폭 조정했습니다.",
+  "totalQuestions": 50,
+  "timeLimitMinutes": 60,
+  "passAverage": 60,
+  "subjects": [
+    { "subjectId": "operation-management", "questionCount": 32 },
+    { "subjectId": "application", "questionCount": 18 }
+  ],
+  "rounds": [
+    {
+      "id": "round1",
+      "label": "1차",
+      "totalQuestions": 50,
+      "timeLimitMinutes": 60,
+      "hasSubjectCutoff": false,
+      "passAverage": 60,
+      "subjects": [
+        { "subjectId": "operation-management", "questionCount": 32 },
+        { "subjectId": "application", "questionCount": 18 }
+      ]
+    }
+  ]
+}

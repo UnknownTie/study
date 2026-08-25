@@ -1,0 +1,18 @@
+[
+  {
+    "id": "lm2-peripheral-multimedia-1",
+    "tags": ["리눅스마스터2급", "1과목: 리눅스 운영 및 관리", "주변장치 및 멀티미디어 서비스"],
+    "q": "System V 계열 유닉스에서 인쇄 작업을 요청할 때 사용하는 명령은?",
+    "opts": ["lpr", "lp", "lpq", "lprm"],
+    "answer": 1,
+    "explain": "System V 계열은 <b>lp</b>(출력 요청)·lpstat·cancel을 사용하고, BSD 계열은 lpr·lpq·lprm·lpc를 사용합니다."
+  },
+  {
+    "id": "lm2-peripheral-multimedia-2",
+    "tags": ["리눅스마스터2급", "1과목: 리눅스 운영 및 관리", "주변장치 및 멀티미디어 서비스"],
+    "q": "기능 제한이 있던 초기 사운드 서브시스템(OSS)을 대체해 현재 표준으로 쓰이는 것은?",
+    "opts": ["SANE", "ALSA", "CUPS", "XSANE"],
+    "answer": 1,
+    "explain": "<b>ALSA(Advanced Linux Sound Architecture)</b>가 OSS를 대체해 다양한 사운드카드를 지원하는 현재 표준입니다. SANE·XSANE은 스캐너, CUPS는 프린팅 관련 소프트웨어입니다."
+  }
+]

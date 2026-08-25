@@ -1,0 +1,7 @@
+{
+  "name": "사용자·그룹 계정 관리",
+  "concepts": [
+    "계정 생성/삭제: <code>useradd</code>(-f 옵션은 계정 만료 유예일)·<code>userdel -r</code>(홈 디렉터리까지 삭제)·<code>usermod</code>(-s 로그인 셸, -g 그룹 변경).",
+    "계정 정보 파일: <code>/etc/passwd</code>(UID·GID·홈·로그인 셸), <code>/etc/shadow</code>(암호화된 비밀번호), <code>/etc/group</code>(그룹 소속 정보)."
+  ]
+}

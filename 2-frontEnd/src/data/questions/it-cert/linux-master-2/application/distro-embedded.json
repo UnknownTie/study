@@ -1,0 +1,18 @@
+[
+  {
+    "id": "lm2-distro-embedded-1",
+    "tags": ["리눅스마스터2급", "2과목: 리눅스 활용", "리눅스 배포판과 모바일·임베디드 OS"],
+    "q": "팜(Palm)이 개발하고 이후 LG로 인수되어 스마트TV 등에 쓰이는, 리눅스 커널 기반 운영체제는?",
+    "opts": ["QNX", "webOS", "VxWorks", "FreeRTOS"],
+    "answer": 1,
+    "explain": "<b>webOS</b>는 팜 → HP → LG로 인수되며 이어진 리눅스 커널 기반 운영체제입니다. QNX는 리눅스가 아닌 유닉스 계열의 실시간 임베디드 OS입니다."
+  },
+  {
+    "id": "lm2-distro-embedded-2",
+    "tags": ["리눅스마스터2급", "2과목: 리눅스 활용", "리눅스 배포판과 모바일·임베디드 OS"],
+    "q": "마이크로컨트롤러와 입출력 핀을 갖춘, 전용 IDE로 프로그래밍하는 대표적인 오픈소스 임베디드 프로토타이핑 플랫폼은?",
+    "opts": ["Arduino", "Tizen", "QNX", "Raspberry Pi OS"],
+    "answer": 0,
+    "explain": "<b>Arduino</b>는 마이크로컨트롤러 기반의 오픈소스 하드웨어·소프트웨어 프로토타이핑 플랫폼입니다. Tizen은 모바일·IoT용 리눅스 배포판, Raspberry Pi OS는 완전한 리눅스 배포판입니다."
+  }
+]

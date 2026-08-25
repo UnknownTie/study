@@ -1,0 +1,9 @@
+{
+  "name": "압축과 아카이브",
+  "concepts": [
+    "tar 기본 옵션 c(생성)/x(해제)/t(목록보기)/v(상세출력)/f(파일지정) 조합 (예: tar cvf source.tar *.c)",
+    "압축 결합 옵션: -z(gzip), -j(bzip2), -J(xz), -Z(compress, 대문자 Z)",
+    "압축 효율 순서: xz > bz2 > gz > compress — 대용량 백업일수록 xz 계열 선호"
+  ],
+  "example": "<span class=\"prompt\">[ihduser@localhost ~]$</span> <span class=\"cmd\">tar -zcvf backup.tar.gz /home/ihduser</span>\n<span class=\"prompt\">[ihduser@localhost ~]$</span> <span class=\"cmd\">tar tvf backup.tar.gz</span>\n<span class=\"out\">-rw-r--r-- ihduser/ihduser 1024 7-26 10:00 memo.txt</span>"
+}

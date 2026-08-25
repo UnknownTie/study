@@ -1,0 +1,6 @@
+{
+  "name": "가상화·클라우드",
+  "concepts": [
+    "전가상화 <b>KVM</b> vs 반가상화 <b>Xen</b>. 컨테이너 <b>Docker</b>, 오케스트레이션 <b>Kubernetes</b>."
+  ]
+}

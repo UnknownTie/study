@@ -1,0 +1,16 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.crumb-sep {
+  color: var(--muted);
+  margin: 0 2px;
+}
+.crumb-current {
+  color: var(--text);
+  font-weight: 700;
+}

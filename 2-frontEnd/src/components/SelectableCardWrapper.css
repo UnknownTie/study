@@ -1,0 +1,23 @@
+.selectable-wrap {
+  position: relative;
+  border-radius: 16px;
+  transition: box-shadow 0.15s ease;
+}
+.selectable-wrap.selected {
+  box-shadow: 0 0 0 3px var(--accent);
+}
+.selectable-check {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}

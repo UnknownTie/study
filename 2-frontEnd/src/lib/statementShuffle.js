@@ -1,0 +1,37 @@
+import { shuffle } from './shuffle';
+
+// "다음 중 옳은/옳지 않은 것을 고르시오"(혹은 "나머지 셋과 다른 것을 고르시오") 스타일 문제:
+// q.q와 opts 각 원소가 { text, answerType|truth } 형태로 태깅되어 있다.
+// 일반 문제는 q.q가 문자열, opts 원소도 문자열이므로 이 유형이 아니다(기존 문제는 전혀 영향받지 않음).
+// truth/answerType 값: "true"/"false"(참/거짓 진술) 또는 "other"/"some"(나머지 셋과 다른 것 찾기류).
+export function isStatementQuestion(q) {
+  return (
+    typeof q.q === 'object' &&
+    q.q !== null &&
+    Array.isArray(q.opts) &&
+    q.opts.length > 0 &&
+    q.opts.every((opt) => typeof opt === 'object' && opt !== null && 'truth' in opt)
+  );
+}
+
+// 문제 텍스트: 태깅된 문제는 q.q.text, 일반 문제는 q.q 그대로.
+export function getQuestionText(q) {
+  return typeof q.q === 'string' ? q.q : q.q.text;
+}
+
+// 보기 텍스트: 태깅된 문제는 opt.text, 일반 문제는 opt(문자열) 그대로.
+export function getOptText(opt) {
+  return typeof opt === 'string' ? opt : opt.text;
+}
+
+// opts를 섞고 answer를 새 위치로 재계산한다. truth 라벨은 각 opt 객체에 붙어 있으므로 함께 섞인다.
+// 태깅되지 않은 일반 문제는 그대로 반환 — 호출부가 유형을 미리 구분할 필요 없음.
+export function shuffleStatementOptions(q) {
+  if (!isStatementQuestion(q)) return q;
+  const order = shuffle(q.opts.map((_, i) => i));
+  return {
+    ...q,
+    opts: order.map((i) => q.opts[i]),
+    answer: order.indexOf(q.answer),
+  };
+}

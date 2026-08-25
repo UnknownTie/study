@@ -1,0 +1,7 @@
+{
+  "name": "파일 및 디렉터리 권한 관리",
+  "concepts": [
+    "허가권 <code>rwx</code> 3단위(소유자·그룹·기타), <code>chmod</code>(권한)·<code>chown</code>(소유자)·<code>chgrp</code>(소유그룹) 변경, <code>umask</code>는 기본 생성 권한(파일 666·디렉터리 777)에서 뺄 값.",
+    "특수권한: <b>SUID(4000)</b>·<b>SGID(2000)</b>·<b>Sticky-Bit(1000)</b>."
+  ]
+}
