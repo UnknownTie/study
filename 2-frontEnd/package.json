@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "git add -A && (git commit -m deploy || echo no changes to commit) && git push"
   },
   "dependencies": {
     "react": "^19.2.7",

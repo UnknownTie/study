@@ -18,4 +18,13 @@ npm run dev
 
 ## 배포
 
-`main` 브랜치에 push되면 GitHub Actions가 `2-frontEnd`를 빌드해 GitHub Pages로 자동 배포합니다 (`.github/workflows/deploy.yml`).
+`main` 브랜치에 push되면 GitHub Actions가 `2-frontEnd`를 빌드해 GitHub Pages(`https://UnknownTie.github.io/study/`)로 자동 배포합니다 (`.github/workflows/deploy.yml`).
+
+바뀐 내용을 배포하려면:
+
+```bash
+cd 2-frontEnd
+npm run deploy
+```
+
+변경사항을 커밋하고 `main`에 push까지 한 번에 해서 배포 워크플로우를 트리거합니다.
