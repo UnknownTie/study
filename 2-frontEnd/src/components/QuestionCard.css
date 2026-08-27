@@ -70,6 +70,10 @@
   margin-top: 4px;
   flex-wrap: wrap;
 }
+.btn-ghost.starred {
+  color: #ff9800; /* or any star color */
+  font-weight: 700;
+}
 .qexplain-below {
   margin-top: 14px;
   padding-top: 14px;

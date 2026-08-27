@@ -3,10 +3,12 @@ import QuestionCard from './QuestionCard';
 import { shuffle } from '../lib/shuffle';
 import { shuffleStatementOptions, isStatementQuestion } from '../lib/statementShuffle';
 import { enrichWithTopicPct, filterByMinPct, filterByExamStage, getExamStage } from '../lib/quizFilters';
+import { useStars } from '../lib/useStars';
 import './QuizPanel.css';
 
 const PCT_OPTIONS = [0, 1, 3, 5, 10];
 const STAGE_OPTIONS = ['전체', '1차', '2차'];
+const STAR_OPTIONS = ['전체 풀기', '별표 풀기'];
 
 // 문제 목록 묶음: 출제율 필터 + 1차/2차 필터 + 섞어서 풀기 + 카드박스 하나에 문제1, 문제2, ... 순서로 나열.
 // questions에는 이미 topicName/examName 같은 표시용 필드가 있다고 가정(호출부가 채워 넣음).
@@ -14,9 +16,12 @@ const STAGE_OPTIONS = ['전체', '1차', '2차'];
 export default function QuizPanel({ questions, statMap, showSourceTag = false, examName }) {
   const [minPct, setMinPct] = useState(0);
   const [stage, setStage] = useState('전체');
+  const [starFilter, setStarFilter] = useState('전체 풀기');
   const [shuffled, setShuffled] = useState(false);
   const [shuffleSeed, setShuffleSeed] = useState(0);
   const [showTruth, setShowTruth] = useState(false);
+
+  const { stars, toggleStar, isStarred } = useStars();
 
   const enriched = useMemo(() => enrichWithTopicPct(questions, statMap), [questions, statMap]);
   // 1차(족보)와 2차(실제 기출 등)가 섞여 있는 문제 풀에서만 필터를 보여준다 — 한 종류뿐이면 굳이 노출하지 않음.
@@ -26,13 +31,20 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
     [enriched, stage, stageOptionsAvailable]
   );
   const filtered = useMemo(() => filterByMinPct(byStage, minPct), [byStage, minPct]);
+  const byStar = useMemo(() => {
+    if (starFilter === '별표 풀기') {
+      return filtered.filter(q => stars.includes(q.id));
+    }
+    return filtered;
+  }, [filtered, starFilter, stars]);
+
   const ordered = useMemo(() => {
-    if (!shuffled) return filtered;
+    if (!shuffled) return byStar;
     // 문제 순서뿐 아니라 "옳은/옳지 않은 것을 고르시오"류 문제의 보기 순서(①~④)도 함께 섞는다
     // (태깅 안 된 일반 문제는 shuffleStatementOptions가 그대로 반환하므로 영향 없음).
-    return shuffle(filtered).map(shuffleStatementOptions);
+    return shuffle(byStar).map(shuffleStatementOptions);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filtered, shuffled, shuffleSeed]);
+  }, [byStar, shuffled, shuffleSeed]);
   // "참인 보기만 색칠" 버튼은 참/거짓형으로 태깅된 문제가 하나라도 있을 때만 노출한다.
   const hasStatementQuestions = useMemo(() => ordered.some(isStatementQuestion), [ordered]);
 
@@ -52,6 +64,17 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
               onClick={() => setMinPct(p)}
             >
               {p === 0 ? '전체' : `${p}%+`}
+            </button>
+          ))}
+        </div>
+        <div className="segment-group">
+          {STAR_OPTIONS.map((s) => (
+            <button
+              key={s}
+              className={`segment-btn ${starFilter === s ? 'active' : ''}`}
+              onClick={() => setStarFilter(s)}
+            >
+              {s}
             </button>
           ))}
         </div>
@@ -100,12 +123,14 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
       <div className="quiz-box">
         {ordered.map((q, idx) => (
           <QuestionCard
-            key={q.id}
+            key={`${q.id}-${starFilter}`}
             question={q}
             number={idx + 1}
             tagLabel={showSourceTag ? q.topicTagLabel : null}
             examLabel={examName || q.examName}
             showTruth={showTruth}
+            isStarred={isStarred(q.id)}
+            onToggleStar={() => toggleStar(q.id)}
           />
         ))}
       </div>

@@ -22,7 +22,7 @@ function chipColor(label) {
 
 // 카드박스 안의 문제 한 줄: 문제+보기 아래로 해설이 바로 펼쳐진다(뒤집기 없음).
 // showTruth(참인 보기만 색칠)는 QuizPanel 툴바의 전역 토글로, 카드 전체에 일괄 적용된다(문제별 토글 아님).
-export default function QuestionCard({ question, tagLabel, examLabel, number, showTruth = false }) {
+export default function QuestionCard({ question, tagLabel, examLabel, number, showTruth = false, isStarred, onToggleStar }) {
   const [revealed, setRevealed] = useState(false);
   const [explainOpen, setExplainOpen] = useState(false);
   const chip = examLabel ? chipColor(examLabel) : null;
@@ -41,6 +41,9 @@ export default function QuestionCard({ question, tagLabel, examLabel, number, sh
         </div>
       )}
       <p className="qtext">
+        <button className={`btn-ghost ${isStarred ? 'starred' : ''}`} onClick={onToggleStar}>
+          {isStarred ? '★ ' : '☆ '}
+        </button>
         <span className="qnumber">문제{number}.</span>{' '}
         <span dangerouslySetInnerHTML={{ __html: getQuestionText(question) }} />
       </p>
@@ -58,6 +61,7 @@ export default function QuestionCard({ question, tagLabel, examLabel, number, sh
         })}
       </ul>
       <div className="qcard-actions">
+
         <button className="btn-secondary" onClick={() => setRevealed(true)}>
           정답 확인
         </button>
