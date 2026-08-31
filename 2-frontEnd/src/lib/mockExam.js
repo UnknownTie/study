@@ -1,6 +1,6 @@
 // 가상 모의고사 응시지 구성 + 채점. React/DOM에 의존하지 않는 순수 함수 모음.
 import { shuffle } from './shuffle';
-import { shuffleStatementOptions } from './statementShuffle';
+import { shuffleOptions } from './statementShuffle';
 
 // 과목별로 min(실제 문항수, 보유 문제 수)만큼 뽑아 응시지를 구성한다.
 // getQuestionsBySubjectFn(subjectId) => 해당 과목의 보유 문제 배열 을 넘겨받아 사용한다(호출부가 loader를 주입).
@@ -13,8 +13,8 @@ export function buildMockPaper(examRules, getQuestionsBySubjectFn) {
       passScore: rule.passScore,
       requestedCount: rule.questionCount,
       availableCount: pool.length,
-      // "옳은/옳지 않은 것을 고르시오"류 문제는 회차마다 보기(①~④) 순서도 새로 섞는다.
-      questions: shuffle(pool).slice(0, count).map(shuffleStatementOptions),
+      // 회차마다 보기(①~④) 순서도 새로 섞는다.
+      questions: shuffle(pool).slice(0, count).map(shuffleOptions),
     };
   });
   return { examRules, sections };

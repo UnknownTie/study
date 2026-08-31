@@ -24,10 +24,9 @@ export function getOptText(opt) {
   return typeof opt === 'string' ? opt : opt.text;
 }
 
-// opts를 섞고 answer를 새 위치로 재계산한다. truth 라벨은 각 opt 객체에 붙어 있으므로 함께 섞인다.
-// 태깅되지 않은 일반 문제는 그대로 반환 — 호출부가 유형을 미리 구분할 필요 없음.
-export function shuffleStatementOptions(q) {
-  if (!isStatementQuestion(q)) return q;
+// opts를 섞고 answer를 새 위치로 재계산한다. 문자열 보기든({opt: "..."}) 태깅된 보기든({text, truth})
+// 순서만 섞을 뿐 각 원소 자체는 건드리지 않으므로 두 형태 모두 동일하게 동작한다 — 형식과 무관하게 항상 섞는다.
+export function shuffleOptions(q) {
   const order = shuffle(q.opts.map((_, i) => i));
   return {
     ...q,

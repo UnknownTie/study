@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import QuestionCard from './QuestionCard';
 import { shuffle } from '../lib/shuffle';
-import { shuffleStatementOptions, isStatementQuestion } from '../lib/statementShuffle';
+import { shuffleOptions, isStatementQuestion } from '../lib/statementShuffle';
 import { enrichWithTopicPct, filterByMinPct, filterByExamStage, getExamStage } from '../lib/quizFilters';
 import { useStars } from '../lib/useStars';
 import './QuizPanel.css';
@@ -40,9 +40,8 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
 
   const ordered = useMemo(() => {
     if (!shuffled) return byStar;
-    // 문제 순서뿐 아니라 "옳은/옳지 않은 것을 고르시오"류 문제의 보기 순서(①~④)도 함께 섞는다
-    // (태깅 안 된 일반 문제는 shuffleStatementOptions가 그대로 반환하므로 영향 없음).
-    return shuffle(byStar).map(shuffleStatementOptions);
+    // 문제 순서뿐 아니라 보기 순서(①~④)도 함께 섞는다(문제 유형과 무관하게 항상 적용).
+    return shuffle(byStar).map(shuffleOptions);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [byStar, shuffled, shuffleSeed]);
   // "참인 보기만 색칠" 버튼은 참/거짓형으로 태깅된 문제가 하나라도 있을 때만 노출한다.

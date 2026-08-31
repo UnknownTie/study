@@ -1,5 +1,5 @@
 import { shuffle } from './shuffle';
-import { shuffleStatementOptions } from './statementShuffle';
+import { shuffleOptions } from './statementShuffle';
 
 // 실전처럼 풀기: 회차(1차/2차 등)별 문항수(questionCount)를 유형별 문제 + 연습문제([연습문제] 태그)를 합쳐서 중복 없이 채운다.
 // round는 loader.js의 getExamRounds(examId)가 반환하는 배열의 원소 하나(예: {id,label,totalQuestions,timeLimitMinutes,hasSubjectCutoff,passAverage,subjects}).
@@ -15,8 +15,8 @@ export function buildTimedExamPaper(round, getQuestionsBySubjectFn, getExtraQues
       passScore: rule.passScore ?? null,
       requestedCount: rule.questionCount,
       availableCount: pool.length,
-      // "옳은/옳지 않은 것을 고르시오"류 문제는 회차마다 보기(①~④) 순서도 새로 섞는다.
-      questions: pool.slice(0, count).map(shuffleStatementOptions),
+      // 회차마다 보기(①~④) 순서도 새로 섞는다.
+      questions: pool.slice(0, count).map(shuffleOptions),
     };
   });
   return { round, sections };
