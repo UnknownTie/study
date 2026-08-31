@@ -27,7 +27,11 @@ export default function MockExamPage() {
 
   const paper = useMemo(() => {
     if (!rules) return null;
-    return buildMockPaper(rules, (subjectId) => getQuestionsBySubject(examId, subjectId));
+    // 실전처럼 풀기(buildTimedExamPaper)와 동일하게 기출 연습문제 풀도 함께 사용한다.
+    return buildMockPaper(rules, (subjectId) => [
+      ...getQuestionsBySubject(examId, subjectId),
+      ...getExtraQuestionsBySubject(examId, subjectId),
+    ]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [examId, rules]);
 

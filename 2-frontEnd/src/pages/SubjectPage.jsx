@@ -35,6 +35,14 @@ export default function SubjectPage() {
   const topicBasedAll = useMemo(() => getQuestionsBySubject(examId, subjectId), [examId, subjectId]);
   const extraAll = useMemo(() => getExtraQuestionsBySubject(examId, subjectId), [examId, subjectId]);
   const totalQuestionCount = topicBasedAll.length + extraAll.length;
+  // 유형 카드에 [기본 문제 + 그 유형으로 분류된 기출 연습문제] 합산 문항수를 보여주기 위한 카운트 맵.
+  const extraCountByTopic = useMemo(() => {
+    const map = {};
+    for (const q of extraAll) {
+      if (q.topicId) map[q.topicId] = (map[q.topicId] || 0) + 1;
+    }
+    return map;
+  }, [extraAll]);
 
   const questions = useMemo(() => {
     if (!showQuiz) return [];
@@ -98,7 +106,7 @@ export default function SubjectPage() {
             key={topic.id}
             title={topic.name}
             stat={topic.stat}
-            exampleCount={getQuestionsByTopic(examId, subjectId, topic.id).length}
+            exampleCount={getQuestionsByTopic(examId, subjectId, topic.id).length + (extraCountByTopic[topic.id] || 0)}
             onClick={() => navigate(`/exam/${examId}/${subjectId}/${topic.id}`)}
           />
         ))}

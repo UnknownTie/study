@@ -5,7 +5,7 @@ import SideNav from '../components/SideNav';
 import ContentBlocks from '../components/ContentBlocks';
 import Terminal from '../components/Terminal';
 import QuizPanel from '../components/QuizPanel';
-import { findTopic, findExam, getQuestionsByTopic, getTopicStatMap } from '../data/loader';
+import { findTopic, findExam, getQuestionsByTopic, getExtraQuestionsBySubject, getTopicStatMap } from '../data/loader';
 
 export default function TopicPage() {
   const { examId, subjectId, topicId } = useParams();
@@ -23,10 +23,20 @@ export default function TopicPage() {
     s.topics.map((t) => ({ id: t.id, name: t.name, to: `/exam/${examId}/${s.id}/${t.id}` }))
   );
 
-  const allQuestions = useMemo(() => getQuestionsByTopic(examId, subjectId, topicId), [examId, subjectId, topicId]);
+  const topicBasedAll = useMemo(() => getQuestionsByTopic(examId, subjectId, topicId), [examId, subjectId, topicId]);
+  // 유형(topicId)이 분류된 기출 연습문제 — questions-extra는 원래 유형에 안 묶이는 게 기본이지만,
+  // 분류 작업을 거친 문항은 topicId가 붙어 있으므로 여기서 이 유형에 해당하는 것만 골라 합친다.
+  const extraMatched = useMemo(
+    () => getExtraQuestionsBySubject(examId, subjectId).filter((q) => q.topicId === topicId),
+    [examId, subjectId, topicId]
+  );
+  const allQuestions = useMemo(() => [...topicBasedAll, ...extraMatched], [topicBasedAll, extraMatched]);
   const questions = useMemo(() => {
     if (!showQuiz) return [];
-    return allQuestions.map((q) => ({ ...q, topicTagLabel: topic.name }));
+    return allQuestions.map((q) => ({
+      ...q,
+      topicTagLabel: q.extra ? `[기출] ${q.topicHint || ''}`.trim() : topic.name,
+    }));
   }, [showQuiz, allQuestions, topic]);
 
   return (
@@ -65,6 +75,25 @@ export default function TopicPage() {
           )
         )}
       </ul>
+
+      {topic.formulas && topic.formulas.length > 0 && (
+        <>
+          <h3>공식</h3>
+          <div className="formula-list">
+            {topic.formulas.map((f, i) => (
+              <div className="formula-item" key={i}>
+                <p className="formula-expr" dangerouslySetInnerHTML={{ __html: f.expr }} />
+                {f.derivation && (
+                  <details className="formula-derivation">
+                    <summary>유도 과정 · 원리 보기</summary>
+                    <div className="formula-derivation-body" dangerouslySetInnerHTML={{ __html: f.derivation }} />
+                  </details>
+                )}
+              </div>
+            ))}
+          </div>
+        </>
+      )}
 
       {topic.example && (
         <>

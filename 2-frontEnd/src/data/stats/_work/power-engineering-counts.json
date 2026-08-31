@@ -1,0 +1,63 @@
+{
+  "2019-04": {
+    "power-system-stability": 3,
+    "hydro-power": 1,
+    "transmission-characteristics": 3,
+    "distribution-system": 5,
+    "circuit-breakers-relays": 1,
+    "neutral-grounding": 2,
+    "thermal-power": 1,
+    "line-constants-corona": 1,
+    "fault-calculation": 1,
+    "overvoltage-protection": 2
+  },
+  "2020-06": {
+    "circuit-breakers-relays": 4,
+    "distribution-system": 4,
+    "fault-calculation": 1,
+    "transmission-characteristics": 3,
+    "line-constants-corona": 1,
+    "transmission-line-basics": 1,
+    "thermal-power": 2,
+    "insulation-coordination": 1,
+    "overvoltage-protection": 1,
+    "hydro-power": 1,
+    "neutral-grounding": 1
+  },
+  "2021-05": {
+    "line-constants-corona": 2,
+    "distribution-system": 7,
+    "transmission-characteristics": 2,
+    "circuit-breakers-relays": 2,
+    "thermal-power": 1,
+    "overvoltage-protection": 2,
+    "fault-calculation": 1,
+    "nuclear-power": 1,
+    "power-system-stability": 1,
+    "neutral-grounding": 1
+  },
+  "2021-08": {
+    "circuit-breakers-relays": 5,
+    "distribution-system": 2,
+    "hydro-power": 2,
+    "fault-calculation": 1,
+    "neutral-grounding": 2,
+    "transmission-characteristics": 3,
+    "transmission-line-basics": 1,
+    "overvoltage-protection": 1,
+    "line-constants-corona": 2,
+    "thermal-power": 1
+  },
+  "2022-04": {
+    "overvoltage-protection": 2,
+    "transmission-characteristics": 3,
+    "circuit-breakers-relays": 3,
+    "distribution-system": 5,
+    "line-constants-corona": 1,
+    "power-system-stability": 2,
+    "thermal-power": 1,
+    "neutral-grounding": 1,
+    "transmission-line-basics": 1,
+    "hydro-power": 1
+  }
+}

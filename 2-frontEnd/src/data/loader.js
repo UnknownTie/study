@@ -78,6 +78,9 @@ for (const [key, mod] of Object.entries(contentFiles)) {
     name: data.name,
     concepts: data.concepts || [],
     example: data.example ?? null,
+    // 공식 + 유도과정: 물리/공학 계열 시험(전기기사 등)에서 '실행 예제'(터미널 스타일) 대신 쓰는 필드.
+    // 터미널 예제와 달리 문항마다 여러 개일 수 있고, 각 공식에 접이식 유도 설명이 딸려온다.
+    formulas: data.formulas || [],
   });
 }
 
@@ -179,7 +182,9 @@ for (const [key, mod] of Object.entries(extraQuestionFiles)) {
   const segs = segmentsOf(key, './questions-extra/');
   const [categoryId, examId, subjectId] = segs;
   for (const q of data) {
-    allExtraQuestions.push({ ...q, categoryId, examId, subjectId, topicId: null });
+    // topicId는 기본적으로 없음(유형에 안 묶인 연습문제 풀)이지만, 문항 자체에 이미 topicId가 분류되어
+    // 있으면(예: 전기기사 기출문제) 그 값을 그대로 살린다 — 아래 스프레드 뒤에 덮어쓰지 않도록 주의.
+    allExtraQuestions.push({ ...q, categoryId, examId, subjectId, topicId: q.topicId ?? null });
   }
 }
 

@@ -1,0 +1,59 @@
+{
+  "2019-04": {
+    "dc-machine-control": 3,
+    "special-machines": 2,
+    "synchronous-generator": 2,
+    "transformer-basics": 3,
+    "synchronous-motor": 3,
+    "power-conversion": 1,
+    "induction-motor-basics": 2,
+    "dc-machine-basics": 2,
+    "transformer-connection": 1,
+    "induction-motor-control": 1
+  },
+  "2020-06": {
+    "synchronous-generator": 3,
+    "power-conversion": 2,
+    "dc-machine-control": 3,
+    "induction-motor-control": 2,
+    "dc-machine-basics": 2,
+    "transformer-connection": 2,
+    "induction-motor-basics": 1,
+    "special-machines": 2,
+    "transformer-basics": 2,
+    "synchronous-motor": 1
+  },
+  "2021-05": {
+    "dc-machine-control": 2,
+    "synchronous-motor": 3,
+    "power-conversion": 2,
+    "transformer-basics": 5,
+    "induction-motor-basics": 3,
+    "dc-machine-basics": 1,
+    "synchronous-generator": 1,
+    "special-machines": 2,
+    "induction-motor-control": 1
+  },
+  "2021-08": {
+    "transformer-connection": 1,
+    "dc-machine-control": 4,
+    "synchronous-motor": 2,
+    "power-conversion": 2,
+    "induction-motor-basics": 3,
+    "synchronous-generator": 2,
+    "transformer-basics": 4,
+    "induction-motor-control": 1,
+    "special-machines": 1
+  },
+  "2022-04": {
+    "transformer-basics": 2,
+    "special-machines": 2,
+    "dc-machine-control": 3,
+    "dc-machine-basics": 1,
+    "induction-motor-control": 2,
+    "transformer-connection": 2,
+    "induction-motor-basics": 2,
+    "power-conversion": 2,
+    "synchronous-generator": 4
+  }
+}

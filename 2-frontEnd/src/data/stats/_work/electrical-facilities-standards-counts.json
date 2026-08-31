@@ -1,0 +1,54 @@
+{
+  "2019-04": {
+    "grounding-system": 4,
+    "high-voltage-facilities": 1,
+    "low-voltage-facilities": 1,
+    "overhead-underground-lines": 10,
+    "power-plant-substation": 2,
+    "special-facilities": 2
+  },
+  "2020-06": {
+    "distributed-renewable-energy": 2,
+    "grounding-system": 1,
+    "high-voltage-facilities": 1,
+    "lightning-protection": 1,
+    "low-voltage-facilities": 2,
+    "overhead-underground-lines": 7,
+    "power-plant-substation": 1,
+    "special-facilities": 3,
+    "wiring-systems": 2
+  },
+  "2021-05": {
+    "distributed-renewable-energy": 1,
+    "general-provisions": 2,
+    "grounding-system": 1,
+    "high-voltage-facilities": 1,
+    "lightning-protection": 1,
+    "low-voltage-facilities": 1,
+    "overhead-underground-lines": 6,
+    "power-plant-substation": 3,
+    "special-facilities": 1,
+    "wiring-systems": 3
+  },
+  "2021-08": {
+    "distributed-renewable-energy": 1,
+    "general-provisions": 1,
+    "grounding-system": 1,
+    "high-voltage-facilities": 1,
+    "overhead-underground-lines": 8,
+    "power-plant-substation": 2,
+    "special-facilities": 3,
+    "wiring-systems": 3
+  },
+  "2022-04": {
+    "distributed-renewable-energy": 2,
+    "general-provisions": 1,
+    "grounding-system": 1,
+    "high-voltage-facilities": 2,
+    "low-voltage-facilities": 2,
+    "overhead-underground-lines": 7,
+    "power-plant-substation": 1,
+    "special-facilities": 2,
+    "wiring-systems": 2
+  }
+}

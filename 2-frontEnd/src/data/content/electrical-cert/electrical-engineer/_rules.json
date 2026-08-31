@@ -1,0 +1,13 @@
+{
+  "_comment": "큐넷 공식 공고 기준으로 재확인 필요 — 5과목 각 20문항(총 100문항), 과목당 40점 이상 + 평균 60점 이상 합격은 전기기사 필기의 통상적인 CBT 기준이며, 시험시간(120~150분)은 회차 공고에 따라 달라질 수 있는 추정치입니다.",
+  "totalQuestions": 100,
+  "timeLimitMinutes": 150,
+  "passAverage": 60,
+  "subjects": [
+    { "subjectId": "electromagnetics", "questionCount": 20, "passScore": 40 },
+    { "subjectId": "power-engineering", "questionCount": 20, "passScore": 40 },
+    { "subjectId": "electrical-machinery", "questionCount": 20, "passScore": 40 },
+    { "subjectId": "circuit-control", "questionCount": 20, "passScore": 40 },
+    { "subjectId": "electrical-facilities-standards", "questionCount": 20, "passScore": 40 }
+  ]
+}

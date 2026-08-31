@@ -1,0 +1,57 @@
+{
+  "2019-04": {
+    "inductance": 3,
+    "dielectrics-polarization": 2,
+    "current-resistance": 3,
+    "magnetic-materials-circuit": 2,
+    "coulomb-electric-field": 4,
+    "magnetostatics": 5,
+    "maxwell-electromagnetic-waves": 1
+  },
+  "2020-06": {
+    "magnetic-materials-circuit": 2,
+    "inductance": 3,
+    "potential-conductor-system": 2,
+    "magnetostatics": 3,
+    "current-resistance": 2,
+    "dielectrics-polarization": 2,
+    "maxwell-electromagnetic-waves": 1,
+    "capacitance": 2,
+    "coulomb-electric-field": 2,
+    "electromagnetic-induction": 1
+  },
+  "2021-05": {
+    "coulomb-electric-field": 5,
+    "capacitance": 2,
+    "electromagnetic-induction": 2,
+    "inductance": 1,
+    "magnetostatics": 2,
+    "dielectrics-polarization": 2,
+    "magnetic-materials-circuit": 3,
+    "potential-conductor-system": 1,
+    "maxwell-electromagnetic-waves": 2
+  },
+  "2021-08": {
+    "inductance": 2,
+    "current-resistance": 1,
+    "magnetic-materials-circuit": 3,
+    "potential-conductor-system": 1,
+    "capacitance": 3,
+    "dielectrics-polarization": 1,
+    "maxwell-electromagnetic-waves": 2,
+    "magnetostatics": 3,
+    "coulomb-electric-field": 3,
+    "electric-image-method": 1
+  },
+  "2022-04": {
+    "maxwell-electromagnetic-waves": 2,
+    "magnetic-materials-circuit": 3,
+    "electric-image-method": 2,
+    "dielectrics-polarization": 2,
+    "inductance": 2,
+    "coulomb-electric-field": 1,
+    "capacitance": 3,
+    "potential-conductor-system": 2,
+    "magnetostatics": 3
+  }
+}

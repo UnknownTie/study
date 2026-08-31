@@ -43,8 +43,8 @@ export default function QuestionCard({ question, tagLabel, examLabel, number, sh
       <p className="qtext">
         <button className={`btn-ghost ${isStarred ? 'starred' : ''}`} onClick={onToggleStar}>
           {isStarred ? '★ ' : '☆ '}
+          <span className="qnumber">문제{number}.</span>{' '}
         </button>
-        <span className="qnumber">문제{number}.</span>{' '}
         <span dangerouslySetInnerHTML={{ __html: getQuestionText(question) }} />
       </p>
       <ul className="qopts">
