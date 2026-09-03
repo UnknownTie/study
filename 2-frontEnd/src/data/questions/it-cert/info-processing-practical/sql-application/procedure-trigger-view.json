@@ -1,0 +1,31 @@
+[
+  {
+    "id": "ipp-procedure-trigger-view-1",
+    "tags": ["정보처리기사 실기", "SQL 응용", "프로시저·트리거·뷰"],
+    "q": "PL/SQL 저장 프로시저의 기본 구조(DECLARE - BEGIN - EXCEPTION - END)에서, 실제 실행할 SQL문과 로직을 작성하는 실행부에 해당하는 예약어는?",
+    "opts": ["DECLARE", "BEGIN", "EXCEPTION", "REPLACE"],
+    "answer": 1,
+    "explain": "<b>BEGIN</b>부터 END까지가 실행부로, 실제 실행할 SQL문과 로직을 작성합니다. DECLARE는 변수 선언부, EXCEPTION은 예외 처리부입니다."
+  },
+  {
+    "id": "ipp-procedure-trigger-view-2",
+    "tags": ["정보처리기사 실기", "SQL 응용", "프로시저·트리거·뷰"],
+    "q": "테이블에 데이터가 실제로 반영되기 전에 값을 검증하거나 가공하기 위해 사용하는 트리거의 동작 시점으로 알맞은 것은?",
+    "opts": ["BEFORE", "AFTER", "INSTEAD OF", "ON COMMIT"],
+    "answer": 0,
+    "explain": "<b>BEFORE</b> 트리거는 이벤트(INSERT/UPDATE/DELETE)가 실제로 테이블에 반영되기 전에 실행되므로, 값 검증이나 가공에 주로 사용됩니다. AFTER 트리거는 반영된 후에 실행되어 이력·로그 기록 등에 사용됩니다."
+  },
+  {
+    "id": "ipp-procedure-trigger-view-3",
+    "tags": ["정보처리기사 실기", "SQL 응용", "프로시저·트리거·뷰"],
+    "q": "다음 중 일반적으로 데이터 변경(INSERT/UPDATE/DELETE)이 불가능한 뷰의 정의로 옳은 것은?",
+    "opts": [
+      "단일 테이블의 일부 컬럼만 SELECT하여 정의한 뷰",
+      "단일 테이블 전체 컬럼을 SELECT하여 정의한 뷰",
+      "GROUP BY와 집계함수(SUM, AVG 등)를 포함하여 정의한 뷰",
+      "WHERE 조건 하나만 포함하여 정의한 뷰"
+    ],
+    "answer": 2,
+    "explain": "<b>GROUP BY와 집계함수를 포함한 뷰</b>는 원본 테이블의 개별 행과 뷰의 행이 1:1로 대응되지 않으므로 일반적으로 데이터 변경(INSERT/UPDATE/DELETE)이 불가능합니다."
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "name": "서브쿼리와 GROUP BY/HAVING",
+  "concepts": [
+    "서브쿼리(Subquery): SELECT 문 안에 괄호로 묶여 포함된 또 다른 SELECT 문으로, 메인쿼리의 WHERE·FROM·SELECT 절 등에서 조건이나 값으로 사용",
+    "단일행 서브쿼리: 실행 결과가 반드시 1건(1행)만 반환되어야 하며, =, &gt;, &lt;, &gt;=, &lt;=, &lt;&gt; 같은 단일행 비교연산자와 함께 사용(다중행 결과에 사용하면 오류 발생)",
+    "다중행 서브쿼리: 실행 결과가 여러 행일 수 있으며, IN(목록 중 하나라도 일치), ANY/SOME(조건을 만족하는 값이 하나라도 있으면 참), ALL(모든 값을 만족해야 참), EXISTS(서브쿼리 결과가 한 건이라도 존재하면 참) 연산자와 함께 사용",
+    "집계함수(그룹함수): COUNT(행 개수), SUM(합계), AVG(평균), MAX(최댓값), MIN(최솟값)가 대표적이며, COUNT(*)를 제외한 나머지 집계함수는 NULL 값을 계산에서 제외",
+    "GROUP BY 컬럼: 지정한 컬럼의 값이 같은 행들을 하나의 그룹으로 묶어 그룹별로 집계함수를 적용, SELECT 절에는 GROUP BY에 명시한 컬럼과 집계함수만 함께 사용 가능",
+    "HAVING 조건: GROUP BY로 묶인 그룹에 대한 조건(주로 집계함수 조건)을 지정하는 절, WHERE는 그룹화 이전 개별 행을 걸러내고 HAVING은 그룹화 이후 그룹을 걸러낸다는 점에서 구분",
+    "SELECT 문의 논리적 실행 순서: FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY 순으로 처리(문법상 작성 순서와 실제 처리 순서가 다름에 유의)"
+  ],
+  "example": "<span class=\"cmd\">SELECT dept, AVG(salary) AS avg_sal\nFROM employee\nGROUP BY dept\nHAVING AVG(salary) &gt;= 3500;</span>\n<span class=\"out\">DEPT    AVG_SAL\n------  -------\n개발팀   3850\n총무팀   5000</span>\n<span class=\"cmt\">-- 부서별 평균 급여를 구한 뒤 평균이 3500 이상인 그룹만 출력\n-- 영업팀(Kim 3000, Choi 2800)은 평균 2900이라 제외, 개발팀(Lee 4500, Park 3200)은 평균 3850, 총무팀(Jung 5000)은 평균 5000</span>"
+}

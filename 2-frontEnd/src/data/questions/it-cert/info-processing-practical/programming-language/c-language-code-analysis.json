@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ipp-c-language-code-analysis-1",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "C언어 코드 분석 실전"],
+    "q": "다음 C 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">int i, sum = 0;\nfor (i = 1; i &lt;= 5; i++) {\n    if (i == 3)\n        continue;\n    sum += i;\n}\nprintf(\"%d\", sum);</span>",
+    "opts": ["12", "15", "9", "10"],
+    "answer": 0,
+    "explain": "i가 3일 때 continue가 실행되어 sum += i를 건너뛰고 바로 다음 반복(증감식)으로 넘어간다(break와 달리 반복문 자체는 끝나지 않는다). 따라서 1, 2, 4, 5만 더해져 1+2+4+5=12가 출력된다."
+  },
+  {
+    "id": "ipp-c-language-code-analysis-2",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "C언어 코드 분석 실전"],
+    "q": "다음 C 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">int i, j, cnt = 0;\nfor (i = 1; i &lt;= 3; i++) {\n    for (j = 1; j &lt;= 3; j++) {\n        if (j == i)\n            break;\n        cnt++;\n    }\n}\nprintf(\"%d\", cnt);</span>",
+    "opts": ["3", "6", "4", "9"],
+    "answer": 0,
+    "explain": "break는 안쪽(가장 가까운) 반복문만 종료시키므로 바깥 for문은 계속 진행된다. i=1일 때 j=1에서 곧바로 j==i가 되어 cnt 증가 없이 break, i=2일 때 j=1에서 cnt가 1 증가한 후 j=2에서 break, i=3일 때 j=1·j=2에서 cnt가 2번 증가한 후 j=3에서 break된다. 따라서 cnt = 0+1+2 = 3이다."
+  },
+  {
+    "id": "ipp-c-language-code-analysis-3",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "C언어 코드 분석 실전"],
+    "q": "다음 C 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">int x = 2;\nswitch (x) {\n    case 1:\n        printf(\"A\");\n    case 2:\n        printf(\"B\");\n    case 3:\n        printf(\"C\");\n        break;\n    default:\n        printf(\"D\");\n}</span>",
+    "opts": ["B", "BC", "BCD", "ABC"],
+    "answer": 1,
+    "explain": "switch는 x와 일치하는 case로 바로 진입할 뿐, 그 case에 break가 없으면 조건 재검사 없이 바로 아래 case들을 순서대로 계속 실행하는 fall-through가 일어난다. x가 2이므로 case 2부터 실행되어 B가 출력되고, break가 없어 case 3으로 흘러들어가 C가 출력된 뒤 case 3의 break에서 멈춘다. case 1과 default는 애초에 진입점이 아니므로 실행되지 않는다. 결과는 BC이다."
+  }
+]

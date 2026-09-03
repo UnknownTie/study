@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ipp-java-code-analysis-1",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 코드 분석 실전"],
+    "q": "다음 Java 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">int[] arr = {2, 4, 6, 8};\nint sum = 0;\nfor (int v : arr) {\n  if (v &gt; 5)\n    sum += v;\n}\nSystem.out.println(sum);</span>",
+    "opts": ["10", "14", "20", "6"],
+    "answer": 1,
+    "explain": "향상된 for문(for-each)은 arr의 각 원소를 순서대로 v에 대입하며 순회한다. v가 5보다 큰 경우만 sum에 더해지는데, 4개 원소 중 6과 8만 조건을 만족한다. 6 + 8 = 14가 출력된다."
+  },
+  {
+    "id": "ipp-java-code-analysis-2",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 코드 분석 실전"],
+    "q": "다음 Java 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">public class Main {\n  static int sum(int n) {\n    if (n == 0) return 0;\n    return n + sum(n - 1);\n  }\n  public static void main(String[] args) {\n    System.out.println(sum(5));\n  }\n}</span>",
+    "opts": ["10", "15", "20", "5"],
+    "answer": 1,
+    "explain": "sum(n)은 n이 0이 될 때(종료 조건)까지 자기 자신을 n-1로 호출하는 재귀함수로, 각 호출에서 n을 결과에 더한다. 호출 순서를 풀면 sum(5) = 5 + sum(4) = 5 + 4 + sum(3) = ... = 5+4+3+2+1+0 = 15가 출력된다."
+  },
+  {
+    "id": "ipp-java-code-analysis-3",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 코드 분석 실전"],
+    "q": "다음 Java 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">int i = 0, result = 1;\nwhile (true) {\n  i++;\n  result *= i;\n  if (i &gt;= 4)\n    break;\n}\nSystem.out.println(result);</span>",
+    "opts": ["24", "10", "6", "16"],
+    "answer": 0,
+    "explain": "while (true)는 break를 만나기 전까지 무한히 반복되는 구조로, 반복 순서(i 증가 → result에 곱함 → 조건 검사)를 정확히 지켜야 한다. i가 1,2,3,4로 증가할 때마다 result에 차례로 곱해져 result = 1×2×3×4 = 24가 되는 팩토리얼 계산이며, i가 4가 되는 순간 조건을 만족해 break로 종료된다."
+  }
+]

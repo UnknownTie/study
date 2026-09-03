@@ -1,0 +1,12 @@
+{
+  "name": "Java 클래스 상속과 다형성",
+  "concepts": [
+    "extends 키워드로 클래스를 상속하며, 자식 클래스는 부모 클래스의 필드와 메서드를 물려받는다(단 private 멤버는 자식이 직접 접근할 수 없다)",
+    "super는 부모 클래스를 가리키는 키워드로, super()는 부모 클래스의 생성자를 호출하고 super.메서드()는 부모의 메서드를 명시적으로 호출한다",
+    "오버라이딩(overriding)은 부모 클래스의 메서드를 자식 클래스가 동일한 시그니처로 재정의하는 것으로, 실행 시 객체의 실제 타입에 따라 호출되는 메서드가 결정되는 동적 바인딩이 적용된다",
+    "오버로딩(overloading)은 같은 이름의 메서드를 매개변수의 개수나 타입을 다르게 하여 여러 개 정의하는 것이다",
+    "추상클래스(abstract class)는 구현부가 없는 abstract 메서드를 포함할 수 있으며 new로 직접 인스턴스화할 수 없고, 상속받은 자식 클래스가 반드시 구현해야 한다",
+    "인터페이스(interface)는 추상 메서드(및 상수)의 집합으로, 클래스는 implements로 여러 인터페이스를 동시에 구현하여 다중 상속의 한계를 보완할 수 있다"
+  ],
+  "example": "<span class=\"cmd\">class Animal {\n    String sound() { return \"...\"; }\n}\nclass Dog extends Animal {\n    String sound() { return \"Woof\"; }\n}\nclass Cat extends Animal {\n    String sound() { return \"Meow\"; }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Animal[] animals = { new Dog(), new Cat() };\n        for (Animal a : animals) {\n            System.out.print(a.sound() + \" \");\n        }\n    }\n}</span>\n<span class=\"out\">Woof Meow </span>\n<span class=\"cmt\">// Animal 타입 배열이지만 실제 객체(Dog, Cat)의 오버라이딩된 메서드가 호출됨(다형성)</span>"
+}

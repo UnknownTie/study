@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ipp-dcl-transaction-control-1",
+    "tags": ["정보처리기사 실기", "SQL 응용", "DCL과 트랜잭션 제어어"],
+    "q": "다음 SQL문의 의미로 옳은 것은?",
+    "code": "<span class=\"cmd\">GRANT SELECT ON employee TO user1 WITH GRANT OPTION;</span>",
+    "opts": [
+      "user1은 employee 테이블을 조회할 수 있고, 이 조회 권한을 다른 사용자에게 다시 부여할 수도 있다",
+      "user1은 employee 테이블을 조회만 할 수 있고 권한 재부여는 불가능하다",
+      "user1의 employee 테이블 조회 권한이 회수된다",
+      "user1은 employee 테이블에 대한 모든 권한(INSERT/UPDATE/DELETE 포함)을 갖는다"
+    ],
+    "answer": 0,
+    "explain": "GRANT는 권한을 부여하는 명령이고, SELECT는 조회 권한만을 의미하므로 INSERT/UPDATE/DELETE 등 다른 권한은 포함되지 않는다. WITH GRANT OPTION이 추가되어 있으므로 user1은 SELECT 권한을 가질 뿐 아니라, 이 권한을 다른 사용자에게 다시 부여(위임)할 수도 있다는 점까지 정확히 읽어야 한다."
+  },
+  {
+    "id": "ipp-dcl-transaction-control-2",
+    "tags": ["정보처리기사 실기", "SQL 응용", "DCL과 트랜잭션 제어어"],
+    "q": "다음 SQL문에서 빈칸에 들어갈 명령어로 알맞은 것은? (실행 결과: Lee 행만 취소되고 Kim 행은 유지됨)",
+    "code": "<span class=\"cmd\">INSERT INTO employee VALUES ('Kim', 3000);\nSAVEPOINT sp1;\nINSERT INTO employee VALUES ('Lee', 3500);\n______ TO sp1;</span>",
+    "opts": ["COMMIT", "ROLLBACK", "SAVEPOINT", "REVOKE"],
+    "answer": 1,
+    "explain": "ROLLBACK TO sp1은 sp1이라는 저장점(SAVEPOINT) 이후에 수행된 변경만 취소하고, 그 이전에 이미 수행된 변경은 그대로 유지한다. sp1은 Kim 삽입 직후·Lee 삽입 직전에 찍혔으므로, ROLLBACK TO sp1을 실행하면 그 이후의 Lee 삽입만 취소되고 Kim 삽입은 남는다. COMMIT은 되돌릴 수 없이 전부 확정하고, SAVEPOINT는 저장점을 새로 찍을 뿐 취소 동작이 아니다."
+  },
+  {
+    "id": "ipp-dcl-transaction-control-3",
+    "tags": ["정보처리기사 실기", "SQL 응용", "DCL과 트랜잭션 제어어"],
+    "q": "트랜잭션에서 COMMIT을 수행했을 때 나타나는 결과로 옳은 것은?",
+    "opts": [
+      "지정한 SAVEPOINT 지점까지만 변경 내용이 취소된다",
+      "트랜잭션에서 수행한 변경 내용이 취소되고 이전 상태로 복구된다",
+      "트랜잭션에서 수행한 변경 내용이 데이터베이스에 영구적으로 반영되며, 이후에는 ROLLBACK으로 되돌릴 수 없다",
+      "다른 사용자에게 권한이 자동으로 부여된다"
+    ],
+    "answer": 2,
+    "explain": "COMMIT은 트랜잭션에서 수행한 변경 내용을 데이터베이스에 영구적으로 반영하고 트랜잭션을 종료하는 명령이다. COMMIT이 실행된 이후에는 그 시점까지의 변경을 ROLLBACK으로 되돌릴 수 없다는 것이 핵심이며, 이는 COMMIT과 ROLLBACK이 서로 상반된 결과를 낸다는 점, 그리고 SAVEPOINT/권한부여와는 무관한 명령이라는 점을 함께 구분해야 풀 수 있다."
+  }
+]

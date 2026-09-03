@@ -1,0 +1,14 @@
+{
+  "name": "프로시저·트리거·뷰",
+  "concepts": [
+    "저장 프로시저(Stored Procedure): 자주 사용하는 일련의 SQL문과 로직을 하나의 이름으로 묶어 데이터베이스에 저장해두고, CALL(또는 EXECUTE) 명령으로 호출하여 실행하는 프로그램 단위",
+    "PL/SQL 프로시저 기본 구조: CREATE [OR REPLACE] PROCEDURE 이름(매개변수, ...) IS/AS → DECLARE(변수 선언부, 생략 가능) → BEGIN(실행부, 필수) → EXCEPTION(예외 처리부, 선택) → END;",
+    "프로시저 매개변수 모드: IN(값을 전달받기만 하는 입력 모드, 기본값), OUT(처리 결과를 호출자에게 돌려주는 출력 모드), IN OUT(입력과 출력을 겸하는 모드)",
+    "트리거(Trigger): 테이블에 INSERT·UPDATE·DELETE 같은 이벤트가 발생했을 때 사용자의 명시적 호출 없이 자동으로 실행되도록 정의해 둔 프로시저형 데이터베이스 객체",
+    "트리거의 동작 시점: BEFORE(이벤트가 실제로 반영되기 전에 실행, 값 검증·가공 등에 사용) / AFTER(이벤트가 반영된 후에 실행, 이력·로그 기록 등에 사용)로 구분되며, FOR EACH ROW를 지정하면 영향받는 행마다 트리거가 실행(행 단위 트리거)",
+    "뷰(View): 하나 이상의 테이블(또는 다른 뷰)을 기반으로 정의한 가상의 테이블로, 실제 데이터를 저장하지 않고 정의된 SELECT 질의를 저장해 두었다가 뷰를 참조하는 시점에 실행",
+    "뷰의 특징: 복잡한 질의를 단순화하고, 특정 컬럼만 노출시켜 보안성을 높이며, 물리적 저장공간을 거의 사용하지 않음. 다만 일반적으로 뷰에는 인덱스를 직접 생성할 수 없는 등의 제약이 있음",
+    "뷰를 통한 데이터 변경(INSERT/UPDATE/DELETE) 제약: 집계함수, GROUP BY, DISTINCT, 집합연산자(UNION 등)를 포함하거나 여러 테이블을 조인하여 정의한 뷰는 일반적으로 데이터 변경이 불가능"
+  ],
+  "example": "<span class=\"cmd\">CREATE OR REPLACE TRIGGER trg_salary_check\nBEFORE UPDATE OF salary ON employee\nFOR EACH ROW\nBEGIN\n  IF :NEW.salary &lt; :OLD.salary THEN\n    RAISE_APPLICATION_ERROR(-20001, '급여는 감소할 수 없습니다');\n  END IF;\nEND;</span>\n<span class=\"out\">Trigger created.</span>\n<span class=\"cmt\">-- salary가 실제로 UPDATE되기 전(BEFORE)에 실행되어, 새 값(:NEW.salary)이 이전 값(:OLD.salary)보다 작으면 오류를 발생시켜 갱신을 막음</span>"
+}

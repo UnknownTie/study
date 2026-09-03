@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ContentBlocks from './ContentBlocks';
+import Terminal from './Terminal';
 import { isStatementQuestion, getQuestionText, getOptText } from '../lib/statementShuffle';
 import './QuestionCard.css';
 
@@ -47,6 +48,7 @@ export default function QuestionCard({ question, tagLabel, examLabel, number, sh
         </button>
         <span dangerouslySetInnerHTML={{ __html: getQuestionText(question) }} />
       </p>
+      {question.code && <Terminal html={question.code} />}
       <ul className="qopts">
         {question.opts.map((opt, i) => {
           const classes = [];

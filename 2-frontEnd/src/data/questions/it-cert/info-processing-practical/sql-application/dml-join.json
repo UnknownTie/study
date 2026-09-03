@@ -1,0 +1,28 @@
+[
+  {
+    "id": "ipp-dml-join-1",
+    "tags": ["정보처리기사 실기", "SQL 응용", "JOIN"],
+    "q": "employee 테이블(Kim-10, Lee-20, Park-NULL 총 3행)과 department 테이블(10-영업팀, 20-개발팀, 30-총무팀 총 3행)을 다음과 같이 조인했을 때 결과 행 수는?",
+    "code": "<span class=\"cmd\">SELECT e.name, d.dept_name\nFROM employee e LEFT OUTER JOIN department d\nON e.dept_id = d.dept_id;</span>",
+    "opts": ["2행", "3행", "4행", "6행"],
+    "answer": 1,
+    "explain": "LEFT OUTER JOIN은 조인 조건을 만족하지 않더라도 왼쪽(FROM 절에 먼저 나온) 테이블인 employee의 모든 행을 결과에서 빠짐없이 포함시킨다. dept_id가 NULL이라 조인 조건을 만족시킬 상대가 없는 Park도 dept_name이 NULL로 채워진 채 결과에 포함되므로, employee의 행 수 그대로 총 3행이 반환된다(사원이 없는 총무팀은 오른쪽 테이블 기준이라 애초에 결과에 영향을 주지 않는다)."
+  },
+  {
+    "id": "ipp-dml-join-2",
+    "tags": ["정보처리기사 실기", "SQL 응용", "JOIN"],
+    "q": "A 테이블에 4개의 행, B 테이블에 3개의 행이 있을 때, 다음 SQL문의 실행 결과 행 수는?",
+    "code": "<span class=\"cmd\">SELECT * FROM A CROSS JOIN B;</span>",
+    "opts": ["12행", "7행", "3행", "4행"],
+    "answer": 0,
+    "explain": "CROSS JOIN은 별도의 조인 조건 없이 두 테이블의 모든 행을 하나씩 전부 조합하는 카티션곱(Cartesian Product)을 생성한다. 결과 행 수는 두 테이블 행 수를 더하는 것이 아니라 곱한 값이므로 4 × 3 = 12행이며, 이는 조인 조건을 명시하지 않은 채 FROM 절에 콤마로 여러 테이블을 나열했을 때도 똑같이 발생할 수 있는 결과라는 점까지 알아야 한다."
+  },
+  {
+    "id": "ipp-dml-join-3",
+    "tags": ["정보처리기사 실기", "SQL 응용", "JOIN"],
+    "q": "두 테이블에서 이름과 데이터 타입이 동일한 컬럼을 DBMS가 자동으로 찾아 별도의 ON 조건 없이 등가조인을 수행하는 JOIN은?",
+    "opts": ["CROSS JOIN", "RIGHT OUTER JOIN", "NATURAL JOIN", "SELF JOIN"],
+    "answer": 2,
+    "explain": "NATURAL JOIN은 두 테이블에서 이름과 데이터 타입이 동일한 컬럼을 자동으로 찾아 ON 절 없이 등가조인을 수행한다는 점이 다른 JOIN들과 구분되는 핵심 특징이다. CROSS JOIN은 조건 없이 모든 행을 조합하는 카티션곱, RIGHT OUTER JOIN은 오른쪽 테이블 기준의 외부조인, SELF JOIN은 같은 테이블을 자기 자신과 조인하는 것으로 모두 자동 컬럼 매칭과는 관계가 없다."
+  }
+]

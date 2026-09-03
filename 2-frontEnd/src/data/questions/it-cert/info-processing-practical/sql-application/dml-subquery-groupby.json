@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ipp-dml-subquery-groupby-1",
+    "tags": ["정보처리기사 실기", "SQL 응용", "서브쿼리와 GROUP BY/HAVING"],
+    "q": "다음 SQL문의 실행 결과에 대한 설명으로 옳은 것은?",
+    "code": "<span class=\"cmd\">SELECT name, salary FROM employee\nWHERE salary &gt; (SELECT AVG(salary) FROM employee);</span>",
+    "opts": [
+      "전체 사원의 평균 급여보다 급여가 많은 사원을 조회한다",
+      "전체 사원의 평균 급여보다 급여가 적은 사원을 조회한다",
+      "급여가 가장 높은 사원 한 명만 조회한다",
+      "부서별 평균 급여를 조회한다"
+    ],
+    "answer": 0,
+    "explain": "괄호 안의 서브쿼리 SELECT AVG(salary) FROM employee는 GROUP BY가 없으므로 부서별이 아닌 전체 사원의 평균 급여 단일 값 하나를 반환한다. 메인쿼리는 이 단일 값과 salary를 비교연산자 &gt;(초과)로 비교하므로, 평균보다 급여가 '많은' 사원만 조회된다 — 부등호 방향과, MAX가 아닌 AVG라는 점을 함께 정확히 읽어야 한다."
+  },
+  {
+    "id": "ipp-dml-subquery-groupby-2",
+    "tags": ["정보처리기사 실기", "SQL 응용", "서브쿼리와 GROUP BY/HAVING"],
+    "q": "서브쿼리의 실행 결과가 여러 행(다중행)일 수 있을 때, 함께 사용할 수 없는 연산자는?",
+    "opts": ["IN", "ANY", "=", "EXISTS"],
+    "answer": 2,
+    "explain": "=는 서브쿼리 결과가 반드시 한 건(단일행)일 때만 사용할 수 있는 비교연산자이며, 서브쿼리가 여러 행을 반환하면 오류가 발생한다. 서브쿼리 결과가 여러 행일 수 있는 경우에는 IN(목록에 포함되는지), ANY/SOME(하나라도 만족하는지), ALL(모두 만족하는지), EXISTS(결과 존재 여부) 같은 다중행 전용 연산자를 사용해야 한다."
+  },
+  {
+    "id": "ipp-dml-subquery-groupby-3",
+    "tags": ["정보처리기사 실기", "SQL 응용", "서브쿼리와 GROUP BY/HAVING"],
+    "q": "employee 테이블에 영업팀 2명, 개발팀 2명, 총무팀 1명이 있을 때, 다음 SQL문의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">SELECT dept, COUNT(*) FROM employee\nGROUP BY dept HAVING COUNT(*) &gt;= 2;</span>",
+    "opts": [
+      "총무팀 1",
+      "영업팀 2, 개발팀 2, 총무팀 1",
+      "개발팀 2",
+      "영업팀 2, 개발팀 2"
+    ],
+    "answer": 3,
+    "explain": "GROUP BY dept는 먼저 부서별로 행을 묶어 COUNT(*)로 각 그룹의 인원수를 센다. HAVING은 WHERE와 달리 그룹화된 결과(집계값)에 대해서만 걸 수 있는 조건절로, 여기서는 인원이 2명 이상(COUNT(*) &gt;= 2)인 그룹만 최종 결과에 남긴다. 영업팀(2명)과 개발팀(2명)은 조건을 만족하지만 총무팀(1명)은 조건을 만족하지 못해 결과에서 제외된다."
+  }
+]

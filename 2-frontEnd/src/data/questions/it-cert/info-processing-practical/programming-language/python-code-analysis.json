@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ipp-python-code-analysis-1",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Python 코드 분석 실전"],
+    "q": "다음 Python 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">lst = [1, 2, 3]\nlst.append(4)\nlst.pop(0)\nprint(lst)</span>",
+    "opts": ["[1, 2, 3, 4]", "[2, 3, 4]", "[1, 2, 3]", "[2, 3, 4, 1]"],
+    "answer": 1,
+    "explain": "append(4)는 리스트 맨 끝에 4를 추가하므로 [1, 2, 3, 4]가 되고, 이어서 pop(0)은 인덱스 0의 값을 제거하면서 반환한다(인자를 생략한 pop()과 달리 맨 앞 원소가 제거됨에 주의). 인덱스 0의 값 1이 제거되어 최종적으로 [2, 3, 4]가 남는다."
+  },
+  {
+    "id": "ipp-python-code-analysis-2",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Python 코드 분석 실전"],
+    "q": "다음 Python 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">prices = {\"apple\": 1000, \"banana\": 500, \"cherry\": 2000}\ntotal = 0\nfor key in prices:\n  if prices[key] &gt;= 1000:\n    total += prices[key]\nprint(total)</span>",
+    "opts": ["1500", "3000", "3500", "500"],
+    "answer": 1,
+    "explain": "딕셔너리를 for로 순회하면 기본적으로 키(key)가 하나씩 넘어오며, prices[key]로 그 키에 대응하는 값을 조회한다. 조건 &gt;= 1000(1000 이상, 경계값 1000 포함)을 만족하는 것은 apple(1000)과 cherry(2000)이고 banana(500)는 제외된다. 1000 + 2000 = 3000이 출력된다."
+  },
+  {
+    "id": "ipp-python-code-analysis-3",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Python 코드 분석 실전"],
+    "q": "다음 Python 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">result = []\nfor i in range(1, 10, 3):\n  result.append(i)\nprint(result)</span>",
+    "opts": ["[1, 4, 7]", "[1, 4, 7, 10]", "[1, 2, 3]", "[3, 6, 9]"],
+    "answer": 0,
+    "explain": "range(start, stop, step)은 start부터 시작해 step만큼 증가하며 stop 미만까지의 값을 생성하고, stop 값 자체는 포함하지 않는다. 1에서 시작해 3씩 증가하면 1, 4, 7이고 다음 값인 10은 stop(10) 이상이라 생성되지 않으므로 result는 [1, 4, 7]이다."
+  }
+]

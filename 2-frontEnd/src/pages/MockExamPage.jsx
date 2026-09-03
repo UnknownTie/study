@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Breadcrumbs from '../components/Breadcrumbs';
 import ContentBlocks from '../components/ContentBlocks';
+import Terminal from '../components/Terminal';
 import Timer from '../components/Timer';
 import {
   findExam,
@@ -218,8 +219,11 @@ export default function MockExamPage() {
       {mode !== MODE_TIMED && (
         <div className="mock-notice">
           실제 시험은 {rules.subjects.map((r) => r.questionCount).join('/')}문항이지만, 지금 보유한 연습문제{' '}
-          {paper.sections.map((s) => s.availableCount).join('/')}문항으로 모의 진행합니다. 합격 기준(과목별{' '}
-          {rules.subjects.map((r) => r.passScore).join('/')}점 이상, 평균 {rules.passAverage}점 이상)은 공식 공고 기준으로 재확인이
+          {paper.sections.map((s) => s.availableCount).join('/')}문항으로 모의 진행합니다. 합격 기준(
+          {rules.subjects.every((r) => typeof r.passScore === 'number')
+            ? `과목별 ${rules.subjects.map((r) => r.passScore).join('/')}점 이상, `
+            : '과목별 과락 없이 '}
+          평균 {rules.passAverage}점 이상)은 공식 공고 기준으로 재확인이
           필요한 추정값입니다.
           {mode === MODE_EXPLAIN_LIVE && ' 보기를 클릭하면 바로 그 문제의 정답과 해설이 표시됩니다.'}
         </div>
@@ -257,6 +261,7 @@ export default function MockExamPage() {
                 return (
                   <div key={q.id} style={{ marginBottom: 18 }}>
                     <p style={{ fontWeight: 700 }} dangerouslySetInnerHTML={{ __html: getQuestionText(q) }} />
+                    {q.code && <Terminal html={q.code} />}
                     <ul className="qopts" style={{ listStyle: 'none', padding: 0 }}>
                       {q.opts.map((opt, i) => {
                         const selected = picked === i;
@@ -367,6 +372,7 @@ export default function MockExamPage() {
                       <p style={{ fontWeight: 700 }}>
                         {number}. <span dangerouslySetInnerHTML={{ __html: getQuestionText(q) }} />
                       </p>
+                      {q.code && <Terminal html={q.code} />}
                       <ul className="qopts" style={{ listStyle: 'none', padding: 0 }}>
                         {q.opts.map((opt, i) => {
                           const selected = picked === i;

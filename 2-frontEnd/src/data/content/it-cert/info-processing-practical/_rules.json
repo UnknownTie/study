@@ -1,0 +1,17 @@
+{
+  "_comment": "큐넷 공식 공고 기준으로 재확인 필요 — 정보처리기사 실기는 필답형(단답형·서술형) 20문항 내외, 100점 만점, 60점 이상 합격(과목별 과락 없음)이 통상 알려진 기준이며, 시험시간(150분)과 과목별 배분(programming-language를 중심으로 한 추정 가중치)은 공식 문항 배분표가 아닌 일반적으로 알려진 출제 비중을 참고한 추정치입니다. 이 앱에서는 필답형 문항을 4지선다로 재구성해 자가 학습용으로 제공합니다.",
+  "totalQuestions": 20,
+  "timeLimitMinutes": 150,
+  "passAverage": 60,
+  "subjects": [
+    { "subjectId": "requirements-ui", "questionCount": 2 },
+    { "subjectId": "data-io", "questionCount": 2 },
+    { "subjectId": "sql-application", "questionCount": 3 },
+    { "subjectId": "integration-interface", "questionCount": 2 },
+    { "subjectId": "server-program", "questionCount": 2 },
+    { "subjectId": "programming-language", "questionCount": 4 },
+    { "subjectId": "app-sw-foundation", "questionCount": 2 },
+    { "subjectId": "sw-security", "questionCount": 2 },
+    { "subjectId": "test-packaging-project", "questionCount": 1 }
+  ]
+}

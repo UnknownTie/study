@@ -1,0 +1,14 @@
+{
+  "name": "DDL 기본",
+  "concepts": [
+    "DDL(Data Definition Language)은 CREATE(생성), ALTER(변경), DROP(삭제), RENAME(이름변경), TRUNCATE(데이터 전체 삭제) 등 데이터베이스 객체(테이블, 뷰, 인덱스, 스키마 등)의 구조 자체를 정의하는 명령어",
+    "CREATE TABLE 문법: CREATE TABLE 테이블명 (컬럼명1 데이터타입 [제약조건], 컬럼명2 데이터타입 [제약조건], ...); 형태로 컬럼과 제약조건을 함께 정의",
+    "PRIMARY KEY(기본키): 테이블의 각 행을 유일하게 식별하는 제약조건으로 NULL과 중복 값을 모두 허용하지 않으며, 한 테이블에 하나만 지정 가능(개체 무결성 보장)",
+    "FOREIGN KEY(외래키): 다른 테이블의 PRIMARY KEY(또는 UNIQUE 컬럼)를 참조하는 제약조건으로 REFERENCES 테이블명(컬럼명) 형태로 지정하며, 참조되는 값이 없으면 입력할 수 없음(참조 무결성 보장)",
+    "NOT NULL: 해당 컬럼에 NULL 값 입력을 금지하는 제약조건, UNIQUE: 컬럼 값의 중복을 허용하지 않되 NULL은 허용(PRIMARY KEY와 달리 한 테이블에 여러 개 지정 가능)",
+    "CHECK: 컬럼에 입력 가능한 값의 조건(범위)을 지정하는 제약조건, 예: CHECK (age &gt;= 0)처럼 특정 조건을 만족하는 값만 입력 허용",
+    "ALTER TABLE: 기존 테이블의 구조를 변경하는 명령어로 ADD(컬럼 추가), MODIFY(컬럼 정의 변경), DROP COLUMN(컬럼 삭제) 등의 옵션을 사용",
+    "DROP TABLE 테이블명 [CASCADE CONSTRAINT];로 테이블 구조와 데이터를 모두 삭제하며, CASCADE CONSTRAINT 옵션을 추가하면 해당 테이블을 참조하는 다른 테이블의 외래키 제약조건까지 함께 삭제"
+  ],
+  "example": "<span class=\"cmd\">CREATE TABLE employee (\n  emp_id CHAR(6) PRIMARY KEY,\n  emp_name VARCHAR(20) NOT NULL,\n  age INT CHECK (age &gt;= 18),\n  dept_id CHAR(4),\n  FOREIGN KEY (dept_id) REFERENCES department(dept_id)\n);</span>\n<span class=\"out\">Table created.</span>\n<span class=\"cmt\">-- emp_id는 기본키(중복·NULL 불가), age는 18 이상만 허용, dept_id는 department 테이블의 dept_id를 참조하는 외래키</span>"
+}

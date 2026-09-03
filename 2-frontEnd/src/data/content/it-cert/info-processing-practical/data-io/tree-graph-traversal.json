@@ -1,0 +1,14 @@
+{
+  "name": "트리·그래프 순회",
+  "concepts": [
+    "트리 용어: 루트(root, 최상위 노드), 간선(edge), 부모/자식 노드, 리프(leaf, 자식이 없는 단말 노드), 깊이(depth)·레벨(level), 트리의 높이(height, 루트에서 가장 깊은 리프까지의 거리)",
+    "이진트리(Binary Tree): 각 노드가 왼쪽·오른쪽 최대 2개의 자식만 가지는 트리. 포화이진트리(모든 레벨이 꽉 참), 완전이진트리(마지막 레벨을 제외한 모든 레벨이 꽉 차고 마지막 레벨은 왼쪽부터 채움), 사향(경사)이진트리(자식이 한쪽으로만 치우침)로 구분",
+    "전위순회(Preorder, Root-Left-Right): 루트를 먼저 방문한 뒤 왼쪽 서브트리, 오른쪽 서브트리 순으로 순회",
+    "중위순회(Inorder, Left-Root-Right): 왼쪽 서브트리를 먼저 방문하고 루트, 오른쪽 서브트리 순으로 순회. 이진탐색트리(BST)를 중위순회하면 오름차순으로 정렬된 결과를 얻음",
+    "후위순회(Postorder, Left-Right-Root): 왼쪽 서브트리, 오른쪽 서브트리를 먼저 방문한 뒤 마지막에 루트를 방문",
+    "그래프(Graph): 정점(vertex)과 간선(edge)의 집합. 방향그래프(edge에 방향 있음) vs 무방향그래프, 인접행렬(정점 수만큼의 2차원 배열로 연결 여부 표현) vs 인접리스트(각 정점마다 연결된 정점 목록을 저장) 표현 방식",
+    "DFS(깊이우선탐색, Depth First Search): 스택(또는 재귀호출)을 이용해 한 방향으로 갈 수 있는 만큼 깊이 내려간 뒤 더 갈 곳이 없으면 되돌아오는(backtracking) 방식",
+    "BFS(너비우선탐색, Breadth First Search): 큐를 이용해 시작 정점에서 가까운 정점부터 레벨 단위로 차례로 방문하는 방식"
+  ],
+  "example": "<span class=\"cmt\">// 이진트리: 루트 1, 왼쪽자식 2, 오른쪽자식 3 / 2의 왼쪽자식 4, 오른쪽자식 5</span>\n<span class=\"cmd\">전위순회(Preorder, Root-Left-Right)</span>\n<span class=\"out\">1, 2, 4, 5, 3</span>\n<span class=\"cmd\">중위순회(Inorder, Left-Root-Right)</span>\n<span class=\"out\">4, 2, 5, 1, 3</span>\n<span class=\"cmd\">후위순회(Postorder, Left-Right-Root)</span>\n<span class=\"out\">4, 5, 2, 3, 1</span>\n<span class=\"cmt\">// 그래프: A-B, A-C, B-D, C-D 로 연결된 무방향 그래프, A에서 시작</span>\n<span class=\"cmd\">DFS(스택/재귀, 알파벳 순으로 이웃 방문)</span>\n<span class=\"out\">A, B, D, C</span>\n<span class=\"cmd\">BFS(큐 사용)</span>\n<span class=\"out\">A, B, C, D</span>"
+}

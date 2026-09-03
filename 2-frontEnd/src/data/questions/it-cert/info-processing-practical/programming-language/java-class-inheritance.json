@@ -1,0 +1,85 @@
+[
+  {
+    "id": "ipp-java-class-inheritance-1",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 클래스 상속과 다형성"],
+    "q": "다음 Java 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">class Shape {\n  double area() { return 0; }\n}\nclass Circle extends Shape {\n  double r;\n  Circle(double r) { this.r = r; }\n  double area() { return 3.14 * r * r; }\n}\npublic class Main {\n  public static void main(String[] args) {\n    Shape s = new Circle(2);\n    System.out.println(s.area());\n  }\n}</span>",
+    "opts": ["0.0", "4.0", "12.56", "6.28"],
+    "answer": 2,
+    "explain": "참조변수 s의 선언 타입은 Shape이지만 실제로 가리키는 객체는 Circle이다. 메서드 호출은 참조 타입이 아닌 실제 객체의 타입을 기준으로 오버라이딩된 메서드가 실행되는 동적 바인딩(런타임 다형성)을 따르므로, Circle의 area()가 호출된다. 3.14 * 2 * 2 = 12.56이 출력된다."
+  },
+  {
+    "id": "ipp-java-class-inheritance-2",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 클래스 상속과 다형성"],
+    "q": "다음 Java 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">class Animal {\n  Animal() { System.out.print(\"A\"); }\n}\nclass Dog extends Animal {\n  Dog() {\n    super();\n    System.out.print(\"D\");\n  }\n}\npublic class Main {\n  public static void main(String[] args) {\n    new Dog();\n  }\n}</span>",
+    "opts": ["A", "D", "AD", "DA"],
+    "answer": 2,
+    "explain": "자식 클래스의 생성자가 호출되면 명시적으로 super()를 적지 않아도 부모 클래스의 기본 생성자가 자동으로 먼저 호출되며, 여기서는 명시적으로 super()를 호출하고 있다. Animal() 생성자가 먼저 실행되어 A가 출력되고, super() 호출이 끝난 뒤 Dog 생성자의 나머지 코드가 실행되어 D가 출력된다. 부모 생성자가 자식 생성자보다 항상 먼저 끝난다는 점이 핵심이므로 결과는 AD이다."
+  },
+  {
+    "id": "ipp-java-class-inheritance-3",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 클래스 상속과 다형성"],
+    "q": "다음 중 Java의 추상클래스(abstract class)에 대한 설명으로 옳지 않은 것은?",
+    "opts": [
+      "abstract 메서드는 본문(구현) 없이 선언부만 가질 수 있다",
+      "추상클래스는 new 연산자로 직접 인스턴스화할 수 없다",
+      "추상클래스를 상속받은 일반 자식 클래스는 반드시 모든 abstract 메서드를 재정의(구현)해야 한다",
+      "추상클래스는 필드나 구현이 있는 일반 메서드를 가질 수 없다"
+    ],
+    "answer": 3,
+    "explain": "추상클래스는 abstract 메서드뿐 아니라 일반 필드와 구현이 있는 일반 메서드도 함께 가질 수 있다는 점이 인터페이스와의 핵심 차이다(전통적 인터페이스는 필드를 상수로만, 메서드는 추상 메서드 위주로 가진다). 나머지 세 설명(직접 인스턴스화 불가, 선언부만 있는 abstract 메서드 허용, 자식 클래스의 구현 의무)은 모두 옳다."
+  },
+  {
+    "id": "ipp-java-class-inheritance-4",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 클래스 상속과 다형성"],
+    "q": "다음 Java 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">class Calc {\n  int add(int a, int b) { return a + b; }\n  double add(double a, double b) { return a + b; }\n}\npublic class Main {\n  public static void main(String[] args) {\n    Calc c = new Calc();\n    System.out.println(c.add(1, 2) + c.add(1.0, 2.0));\n  }\n}</span>",
+    "opts": ["6.0", "6", "33.0", "컴파일 오류가 발생한다"],
+    "answer": 0,
+    "explain": "오버로딩(Overloading)은 매개변수의 개수나 타입이 다르면 이름이 같은 메서드를 여러 개 정의할 수 있는 기능으로, 어떤 메서드가 호출될지는 컴파일 시점에 전달된 인자의 타입을 보고 결정된다(정적 바인딩). 오버라이딩이 실행 시점(런타임)에 실제 객체 타입으로 결정되는 것과 정반대라는 점이 핵심 구분 포인트다. c.add(1, 2)는 int형 인자와 일치하는 add(int,int)가 호출되어 정수 3을, c.add(1.0, 2.0)은 add(double,double)이 호출되어 3.0을 반환한다. int값 3과 double값 3.0을 +로 더하면 int가 double로 자동 승격되어 결과는 6.0이 된다."
+  },
+  {
+    "id": "ipp-java-class-inheritance-5",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 클래스 상속과 다형성"],
+    "q": "메서드 오버라이딩(Overriding)과 오버로딩(Overloading)에 대한 설명으로 옳지 않은 것은?",
+    "opts": [
+      "오버라이딩은 부모 클래스의 메서드를 자식 클래스에서 같은 시그니처(이름과 매개변수 목록)로 재정의하는 것이다",
+      "오버로딩된 메서드들은 매개변수의 개수나 타입이 다르면, 반환 타입만 같고 나머지는 동일해도 서로 다른 메서드로 구별된다",
+      "오버라이딩된 메서드는 실행 시점에 참조변수가 실제로 가리키는 객체의 타입에 따라 호출될 메서드가 결정된다",
+      "오버로딩된 메서드들은 매개변수 목록은 완전히 동일하고 반환 타입만 다르면 서로 다른 메서드로 구별된다"
+    ],
+    "answer": 3,
+    "explain": "Java에서 오버로딩은 메서드 이름이 같더라도 매개변수의 개수·타입·순서 중 하나라도 다르면 성립하며, 오직 반환 타입만 다르고 매개변수 목록은 완전히 동일한 경우는 오버로딩으로 인정되지 않아 컴파일 오류가 발생한다(호출 시 어떤 메서드를 실행할지 반환 타입만으로는 구별할 수 없기 때문). 나머지 설명 — 오버라이딩은 같은 시그니처로 재정의, 오버로딩은 매개변수가 다르면 반환 타입이 같아도 구별됨, 오버라이딩은 런타임에 실제 객체 타입으로 결정됨 — 은 모두 옳다."
+  },
+  {
+    "id": "ipp-java-class-inheritance-6",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 클래스 상속과 다형성"],
+    "q": "Java에서 클래스의 다중상속(하나의 클래스가 여러 부모 클래스를 동시에 상속받는 것)을 지원하지 않는 대신, 여러 개를 동시에 구현(implements)하여 다중상속과 비슷한 효과를 낼 수 있는 것은?",
+    "opts": ["인터페이스(interface)", "추상클래스(abstract class)", "내부클래스(inner class)", "익명클래스(anonymous class)"],
+    "answer": 0,
+    "explain": "Java는 서로 다른 부모로부터 같은 이름의 멤버를 물려받을 때 생기는 모호함(다이아몬드 문제)을 피하기 위해 extends로는 오직 하나의 부모 클래스만 상속하도록 제한한다. 추상클래스 역시 extends 기반이므로 이 단일상속 제약을 그대로 받는다. 반면 implements는 콤마로 구분해 여러 인터페이스를 동시에 구현할 수 있어, 여러 타입의 기능을 동시에 받는 다중상속과 유사한 효과를 인터페이스로 구현한다."
+  },
+  {
+    "id": "ipp-java-class-inheritance-7",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 클래스 상속과 다형성"],
+    "q": "다음과 같이 A→B→C로 3단계에 걸쳐 상속되는 Java 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">class A {\n  void show() { System.out.print(\"A\"); }\n}\nclass B extends A {\n  void show() { super.show(); System.out.print(\"B\"); }\n}\nclass C extends B {\n  void show() { super.show(); System.out.print(\"C\"); }\n}\npublic class Main {\n  public static void main(String[] args) {\n    A obj = new C();\n    obj.show();\n  }\n}</span>",
+    "opts": ["ABC", "CBA", "C", "A"],
+    "answer": 0,
+    "explain": "참조변수 obj의 선언 타입은 A지만 실제 객체는 C이므로, 오버라이딩된 C의 show()가 동적 바인딩으로 호출된다. C.show()는 자신의 출력(\"C\")보다 먼저 super.show()로 B.show()를 호출하고, B.show() 역시 자신의 출력(\"B\")보다 먼저 super.show()로 A.show()를 호출한다. 즉 super 호출이 상속 체인을 따라 최상위 부모(A)까지 먼저 타고 올라간 뒤, 그 호출들이 순서대로(A → B → C) 끝나며 각 단계의 출력문이 실행되므로 상속 단계가 몇 단계로 깊어지든 항상 최상위 부모부터 자식 순으로 출력된다. 결과는 ABC이다."
+  },
+  {
+    "id": "ipp-java-class-inheritance-8",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 클래스 상속과 다형성"],
+    "q": "다음 중 Java 인터페이스(interface)에 대한 설명으로 옳지 않은 것은?",
+    "opts": [
+      "인터페이스는 new 연산자로 직접 인스턴스화할 수 없다",
+      "하나의 클래스는 implements 키워드로 여러 인터페이스를 동시에 구현할 수 있다",
+      "인터페이스에 선언된 필드는 별도 명시가 없어도 기본적으로 public static final(상수)로 취급된다",
+      "인터페이스를 구현하는 일반 클래스는 인터페이스의 추상 메서드 중 일부를 재정의하지 않고 생략해도 컴파일 오류가 발생하지 않는다"
+    ],
+    "answer": 3,
+    "explain": "인터페이스를 구현하는 클래스가 자기 자신도 추상클래스로 선언되지 않는 한, 인터페이스에 선언된 모든 추상 메서드를 빠짐없이 재정의(구현)해야 하며 하나라도 생략하면 컴파일 오류가 발생한다. 나머지 설명 — 직접 인스턴스화 불가, 여러 인터페이스 동시 구현 가능(다중상속과 유사한 효과), 필드는 자동으로 public static final 상수로 취급 — 은 모두 옳다."
+  }
+]

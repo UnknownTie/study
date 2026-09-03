@@ -1,0 +1,12 @@
+{
+  "name": "Java 코드 분석 실전",
+  "concepts": [
+    "Java의 for/while/do-while 반복문 구조는 C와 유사하지만, 배열 선언 방식(int[] arr = new int[n];)과 문자열·객체 처리 방식이 다르다",
+    "향상된 for문(for-each)은 for(타입 변수 : 배열또는컬렉션) 형태로 원소를 처음부터 끝까지 순서대로 꺼내 사용한다",
+    "메서드 호출과 반환값을 추적할 때는 호출된 시점의 인자 값을 기준으로 계산하며, 재귀 호출은 호출이 쌓였다가 종료조건에서부터 거꾸로 결과가 반환되는 흐름을 따라가야 한다",
+    "클래스의 필드(인스턴스 변수)에 저장된 값과, 메서드 내부에서만 존재하는 지역변수의 값 변화는 구분해서 추적해야 한다",
+    "문자열 비교에서 ==는 두 참조가 같은 객체를 가리키는지 비교(주소 비교)하고, equals()는 문자열의 내용이 같은지 비교하므로 코드 분석 문제에서 자주 함정으로 출제된다",
+    "System.out.println()은 출력 후 줄바꿈을 하고, System.out.print()는 줄바꿈 없이 이어서 출력한다"
+  ],
+  "example": "<span class=\"cmd\">public class Main {\n    static int fact(int n) {\n        if (n &lt;= 1) return 1;\n        return n * fact(n - 1);\n    }\n    public static void main(String[] args) {\n        int result = 0;\n        for (int i = 1; i &lt;= 4; i++) {\n            result += fact(i);\n        }\n        System.out.println(result);\n    }\n}</span>\n<span class=\"out\">33</span>\n<span class=\"cmt\">// fact(1)=1, fact(2)=2, fact(3)=6, fact(4)=24 → 1+2+6+24 = 33</span>"
+}

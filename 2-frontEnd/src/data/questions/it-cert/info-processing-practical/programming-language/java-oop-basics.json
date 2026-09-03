@@ -1,0 +1,28 @@
+[
+  {
+    "id": "ipp-java-oop-basics-1",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 객체지향 기본 문법"],
+    "q": "다음 Java 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">class Point {\n  int x, y;\n  Point(int x, int y) {\n    this.x = x;\n    this.y = y;\n  }\n}\npublic class Main {\n  public static void main(String[] args) {\n    Point p = new Point(3, 7);\n    System.out.println(p.x + p.y);\n  }\n}</span>",
+    "opts": ["3", "7", "10", "37"],
+    "answer": 2,
+    "explain": "생성자의 매개변수 이름이 필드 이름과 같은 x, y이므로 this.x/this.y로 '자기 자신 객체의 필드'임을 명시해 구분한다(this 없이 x = x라고만 쓰면 매개변수 자기 자신에게 대입되어 필드는 값을 받지 못한다). 생성자 호출 결과 p.x는 3, p.y는 7이 되며, int형끼리의 +는 문자열 이어붙이기가 아닌 산술 덧셈이므로 3 + 7 = 10이 출력된다."
+  },
+  {
+    "id": "ipp-java-oop-basics-2",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 객체지향 기본 문법"],
+    "q": "다음 Java 코드의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">class Box {\n  static int total = 0;\n  Box() { total += 10; }\n}\npublic class Main {\n  public static void main(String[] args) {\n    new Box();\n    new Box();\n    new Box();\n    System.out.println(Box.total);\n  }\n}</span>",
+    "opts": ["0", "10", "20", "30"],
+    "answer": 3,
+    "explain": "static 필드는 인스턴스마다 별도로 만들어지는 것이 아니라 클래스 전체가 공유하는 단 하나의 저장공간이다. Box 객체를 생성할 때마다 생성자가 실행되어 공유 변수 total에 10씩 누적되므로, 객체를 3번 생성하면 total은 0에서 시작해 30이 된다."
+  },
+  {
+    "id": "ipp-java-oop-basics-3",
+    "tags": ["정보처리기사 실기", "프로그래밍 언어 활용", "Java 객체지향 기본 문법"],
+    "q": "클래스 외부의 다른 패키지에서는 상속받은 자식 클래스에서만 접근할 수 있고, 같은 패키지 내에서는 자유롭게 접근할 수 있는 Java 접근제어자는?",
+    "opts": ["public", "private", "protected", "default(package-private)"],
+    "answer": 2,
+    "explain": "protected는 같은 패키지 내에서는 자유롭게 접근할 수 있고, 다른 패키지에서는 해당 클래스를 상속받은 자식 클래스에서만 접근할 수 있는 접근제어자다. public은 상속 여부와 무관하게 어디서나 접근 가능하고, private은 같은 클래스 내부에서만, default는 상속과 무관하게 같은 패키지 내에서만 접근 가능하다는 차이를 정확히 구분해야 한다."
+  }
+]

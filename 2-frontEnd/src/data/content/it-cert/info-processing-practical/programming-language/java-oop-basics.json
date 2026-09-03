@@ -1,0 +1,12 @@
+{
+  "name": "Java 객체지향 기본 문법",
+  "concepts": [
+    "클래스(class)는 객체를 만들기 위한 설계도이며, new 연산자로 클래스를 기반으로 실제 객체(인스턴스)를 생성한다",
+    "생성자(constructor)는 클래스명과 동일한 이름을 가지며 반환형이 없는 특수한 메서드로, 객체가 생성될 때 자동으로 호출되어 초기화를 담당한다",
+    "this 키워드는 현재 실행 중인 메서드가 속한 객체 자신을 가리키며, 매개변수명과 필드명이 같을 때 이를 구분하거나 생성자 안에서 다른 생성자를 호출(this())할 때 사용한다",
+    "static이 붙은 필드/메서드는 객체마다 따로 생성되지 않고 클래스 전체가 하나를 공유하는 클래스 변수/메서드이며, 객체 생성 없이 클래스명으로 바로 접근할 수 있다",
+    "접근제어자: public(어디서나 접근 가능), protected(같은 패키지 및 상속 관계에서 접근 가능), default(같은 패키지에서만 접근, 제어자 생략 시), private(같은 클래스 내부에서만 접근 가능)",
+    "인스턴스 변수(필드)는 객체마다 독립적으로 별도의 값을 가지므로, 객체별로 상태가 다르게 유지된다"
+  ],
+  "example": "<span class=\"cmd\">class Counter {\n    static int count = 0;\n    int id;\n    Counter() { count++; id = count; }\n}\npublic class Main {\n    public static void main(String[] args) {\n        Counter c1 = new Counter();\n        Counter c2 = new Counter();\n        System.out.println(c1.id + \" \" + c2.id + \" \" + Counter.count);\n    }\n}</span>\n<span class=\"out\">1 2 2</span>\n<span class=\"cmt\">// count는 static이라 객체 생성마다 공유되어 누적되고, id는 인스턴스별로 독립적으로 저장됨</span>"
+}

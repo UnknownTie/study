@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ipp-integration-test-tools-1",
+    "tags": ["정보처리기사 실기", "통합구현 및 인터페이스 구현", "연계 테스트와 통합 구현 도구"],
+    "q": "표준 프로토콜 기반의 서비스 버스를 통해 이기종 시스템 간 메시지를 라우팅·변환하며, 특정 업체 종속성이 낮고 서비스 지향 구조(SOA)에 적합한 통합 구현 방식은?",
+    "opts": ["Point-to-Point", "ESB (Enterprise Service Bus)", "FTP 파일 연계", "DB Link"],
+    "answer": 1,
+    "explain": "ESB(Enterprise Service Bus)는 표준 프로토콜(SOAP, REST 등)을 사용하는 서비스 버스를 통해 시스템 간 메시지를 중계·변환하는 방식으로, EAI에서 발전한 형태이며 특정 벤더 종속성이 낮고 SOA 구조에 적합합니다."
+  },
+  {
+    "id": "ipp-integration-test-tools-2",
+    "tags": ["정보처리기사 실기", "통합구현 및 인터페이스 구현", "연계 테스트와 통합 구현 도구"],
+    "q": "EAI(Enterprise Application Integration)의 구축 유형 중, 중앙의 허브가 모든 시스템 간 연계를 중계하며 허브 장애 시 전체 연계에 영향을 주는 방식은?",
+    "opts": ["Hub&Spoke", "Point-to-Point", "Message Bus", "Hybrid"],
+    "answer": 0,
+    "explain": "Hub&Spoke 방식은 중앙 허브를 두고 모든 시스템이 허브를 통해 연계하는 구조로, 연계 관리는 단순해지지만 허브에 장애가 발생하면 전체 연계가 영향을 받는 단점이 있습니다."
+  },
+  {
+    "id": "ipp-integration-test-tools-3",
+    "tags": ["정보처리기사 실기", "통합구현 및 인터페이스 구현", "연계 테스트와 통합 구현 도구"],
+    "q": "Java 언어로 작성된 개별 모듈(메서드) 단위의 기능을 검증하기 위해 사용하는 대표적인 단위 테스트 프레임워크는?",
+    "opts": ["Jenkins", "Selenium", "JUnit", "SonarQube"],
+    "answer": 2,
+    "explain": "JUnit은 Java의 대표적인 xUnit 계열 단위 테스트 프레임워크로 개별 메서드·모듈 단위의 기능을 검증합니다. Jenkins는 CI 자동화 도구, Selenium은 웹 UI 테스트 도구, SonarQube는 정적 분석 도구입니다."
+  }
+]

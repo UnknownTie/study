@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ipp-api-rest-json-xml-1",
+    "tags": ["정보처리기사 실기", "통합구현 및 인터페이스 구현", "REST API와 JSON/XML"],
+    "q": "REST API에서 특정 자원(Resource) 전체를 새로운 값으로 치환(수정)할 때 사용하는 HTTP 메서드는?",
+    "opts": ["GET", "POST", "PUT", "DELETE"],
+    "answer": 2,
+    "explain": "PUT은 요청한 자원 전체를 치환하는 메서드로 멱등성을 가집니다. GET은 조회, POST는 생성, DELETE는 삭제에 대응합니다. 자원의 일부만 수정할 때는 PATCH를 사용합니다."
+  },
+  {
+    "id": "ipp-api-rest-json-xml-2",
+    "tags": ["정보처리기사 실기", "통합구현 및 인터페이스 구현", "REST API와 JSON/XML"],
+    "q": "JSON(JavaScript Object Notation)이 XML에 비해 갖는 특징으로 옳은 것은?",
+    "opts": ["태그 반복이 많아 문서 크기가 더 크다", "키-값 쌍과 배열로 구성되어 문서가 간결하고 파싱 속도가 빠르다", "스키마(DTD, XSD)를 통한 엄격한 검증이 XML보다 강력하다", "마크업 언어로서 속성(Attribute)과 네임스페이스를 지원한다"],
+    "answer": 1,
+    "explain": "JSON은 키-값 쌍과 배열로 데이터를 표현하는 경량 형식으로, 반복 태그가 없어 XML보다 문서가 간결하고 파싱 속도가 빠릅니다. 나머지 보기는 XML의 특징에 해당합니다."
+  },
+  {
+    "id": "ipp-api-rest-json-xml-3",
+    "tags": ["정보처리기사 실기", "통합구현 및 인터페이스 구현", "REST API와 JSON/XML"],
+    "q": "REST 아키텍처의 제약 조건 중, 클라이언트의 각 요청이 이전 요청과 무관하게 독립적으로 처리되어야 한다는 원칙은?",
+    "opts": ["캐시 가능(Cacheable)", "계층화 시스템(Layered System)", "무상태성(Stateless)", "인터페이스 일관성(Uniform Interface)"],
+    "answer": 2,
+    "explain": "무상태성(Stateless)은 REST의 핵심 제약 조건으로, 서버가 클라이언트의 상태 정보를 저장하지 않고 각 요청을 독립적으로 처리해야 함을 의미합니다."
+  }
+]

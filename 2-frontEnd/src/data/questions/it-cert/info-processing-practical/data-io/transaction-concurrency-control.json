@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ipp-transaction-concurrency-control-1",
+    "tags": ["정보처리기사 실기", "데이터 입출력 구현", "트랜잭션과 병행제어"],
+    "q": "트랜잭션의 ACID 특성 중, 커밋이 완료된 트랜잭션의 결과는 시스템 장애가 발생하더라도 데이터베이스에 영구적으로 반영되어야 한다는 특성은?",
+    "opts": ["원자성(Atomicity)", "일관성(Consistency)", "고립성(Isolation)", "지속성(Durability)"],
+    "answer": 3,
+    "explain": "지속성(Durability)은 커밋된 트랜잭션의 결과가 영구적으로 보존되어야 한다는 특성입니다. 원자성은 all-or-nothing, 일관성은 수행 전후 DB의 일관된 상태 유지, 고립성은 동시 실행 트랜잭션 간 간섭 방지를 의미합니다."
+  },
+  {
+    "id": "ipp-transaction-concurrency-control-2",
+    "tags": ["정보처리기사 실기", "데이터 입출력 구현", "트랜잭션과 병행제어"],
+    "q": "2단계 로킹(Two-Phase Locking) 프로토콜에서, unlock(잠금 해제) 연산만 수행할 수 있고 새로운 lock 연산은 수행할 수 없는 단계는?",
+    "opts": ["확장 단계(Growing Phase)", "축소 단계(Shrinking Phase)", "준비 단계(Prepare Phase)", "커밋 단계(Commit Phase)"],
+    "answer": 1,
+    "explain": "2단계 로킹 프로토콜은 확장 단계에서 lock만 획득하고, 축소 단계에서는 unlock만 수행하도록 하여 직렬가능성(serializability)을 보장합니다. 확장 단계에서는 반대로 lock 연산만 가능합니다."
+  },
+  {
+    "id": "ipp-transaction-concurrency-control-3",
+    "tags": ["정보처리기사 실기", "데이터 입출력 구현", "트랜잭션과 병행제어"],
+    "q": "두 개 이상의 트랜잭션이 서로 상대방이 점유한 자원(lock)의 해제를 무한정 기다리며 더 이상 진행하지 못하는 상태를 가리키는 용어는?",
+    "opts": ["교착상태(Deadlock)", "로킹(Locking)", "갱신분실(Lost Update)", "연쇄복귀(Cascading Rollback)"],
+    "answer": 0,
+    "explain": "교착상태(Deadlock)는 둘 이상의 트랜잭션이 서로가 가진 자원의 해제를 기다리며 무한 대기에 빠지는 상태입니다. 로킹은 병행제어 기법 자체를 의미하고, 갱신분실과 연쇄복귀는 병행제어가 없을 때 발생하는 다른 문제입니다."
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "ipp-ddl-basics-1",
+    "tags": ["정보처리기사 실기", "SQL 응용", "DDL 기본"],
+    "q": "테이블 제약조건 중 컬럼 값의 중복은 허용하지 않지만 NULL 값은 허용하며, 한 테이블에 여러 개 지정할 수 있는 제약조건은?",
+    "opts": ["PRIMARY KEY", "NOT NULL", "CHECK", "UNIQUE"],
+    "answer": 3,
+    "explain": "UNIQUE는 값의 중복만 금지하고 NULL은 허용하며 한 테이블에 여러 개 지정할 수 있다. 반면 PRIMARY KEY는 중복과 NULL을 모두 금지하며 테이블당 단 하나만 지정할 수 있다는 점에서 UNIQUE와 정확히 구분해야 하며, 이 둘을 혼동하는 것이 가장 흔한 실수다."
+  },
+  {
+    "id": "ipp-ddl-basics-2",
+    "tags": ["정보처리기사 실기", "SQL 응용", "DDL 기본"],
+    "q": "다음 SQL문에서 빈칸에 들어갈 명령어로 알맞은 것은? (student 테이블에 phone이라는 새 컬럼을 추가하는 명령문)",
+    "code": "<span class=\"cmd\">______ TABLE student ADD phone VARCHAR(20);</span>",
+    "opts": ["CREATE", "ALTER", "DROP", "UPDATE"],
+    "answer": 1,
+    "explain": "이미 존재하는 테이블의 구조(컬럼 추가·수정·삭제 등)를 변경할 때는 ALTER TABLE ... ADD 문을 사용한다. CREATE는 아예 새로운 테이블을 만들 때, DROP은 테이블 자체를 삭제할 때 쓰며, UPDATE는 테이블 구조가 아닌 이미 저장된 데이터 값을 수정하는 DML 명령이라는 점에서 이 문제와는 무관하다."
+  },
+  {
+    "id": "ipp-ddl-basics-3",
+    "tags": ["정보처리기사 실기", "SQL 응용", "DDL 기본"],
+    "q": "다음 SQL문의 실행 결과로 옳은 것은?",
+    "code": "<span class=\"cmd\">DROP TABLE department CASCADE CONSTRAINT;</span>",
+    "opts": [
+      "department 테이블만 삭제되고 이를 참조하는 외래키 제약조건은 그대로 남는다",
+      "department 테이블의 데이터만 삭제되고 테이블 구조는 유지된다",
+      "department 테이블과 이를 참조하는 다른 테이블의 외래키 제약조건까지 함께 삭제된다",
+      "문법 오류로 실행되지 않는다"
+    ],
+    "answer": 2,
+    "explain": "CASCADE CONSTRAINT 옵션은 테이블을 삭제할 때 그 테이블을 참조(FOREIGN KEY)하고 있는 다른 테이블의 제약조건까지 연쇄적으로 함께 삭제한다. 이 옵션 없이 DROP TABLE만 실행하면 다른 테이블이 참조 중인 경우 삭제 자체가 실패할 수 있다는 점이 이 옵션의 존재 이유이며, 테이블은 삭제되지만 데이터만 지우는 것(DELETE/TRUNCATE)과는 전혀 다른 명령이다."
+  }
+]

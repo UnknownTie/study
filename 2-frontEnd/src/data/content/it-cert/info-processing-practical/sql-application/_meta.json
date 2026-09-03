@@ -1,0 +1,5 @@
+{
+  "name": "SQL 응용",
+  "note": "DDL·DML·DCL, JOIN, 서브쿼리, 프로시저·트리거·뷰",
+  "order": 30
+}
