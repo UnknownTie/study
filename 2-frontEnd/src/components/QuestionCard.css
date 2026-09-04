@@ -48,9 +48,20 @@
   margin-bottom: 6px;
   font-size: 0.9rem;
 }
+.qopts li.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 700;
+}
 .qopts li.correct {
   border-color: var(--ok);
   background: var(--ok-soft);
+  font-weight: 700;
+}
+.qopts li.wrong {
+  border-color: var(--fail);
+  background: var(--fail-soft);
+  color: var(--fail);
   font-weight: 700;
 }
 .qopts li.truth {
@@ -69,6 +80,10 @@
   gap: 10px;
   margin-top: 4px;
   flex-wrap: wrap;
+}
+.qcard-actions .btn-secondary.active {
+  background: var(--accent);
+  color: #fff;
 }
 .btn-ghost.starred {
   color: #ff9800; /* or any star color */

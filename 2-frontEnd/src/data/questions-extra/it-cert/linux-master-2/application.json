@@ -2503,7 +2503,7 @@
       "2과목: 리눅스 활용",
       "2023-09 기출문제"
     ],
-    "q": "다음 그림에 해당하는 프로그램으로 알맞은 것은?<br/><br/>(그림) 흑백 사진(아기와 곰인형, \"Love\" 손글씨)을 보여주는 이미지 뷰어 창 스크린샷. 창 상단에 파일명(1596030874258.jpg)과 확대 비율(47%), 우측에 크기(720x960 픽셀)·JPEG 그림·파일 크기(89.2KB) 등 이미지 속성 패널이 표시되어 있다.",
+    "q": "다음 그림에 해당하는 프로그램으로 알맞은 것은?<br/><br/><img src=\"/images/linux-master-2/eog-image-viewer.png\" alt=\"이미지 뷰어 창 스크린샷: 사진을 보여주는 창 오른쪽에 크기·유형·파일 크기 등 속성(Properties) 패널이 표시되어 있다\" style=\"max-width:100%;border-radius:8px;\"/>",
     "opts": [
       "totem",
       "ImageMagicK",
@@ -2511,7 +2511,7 @@
       "Gimp"
     ],
     "answer": 2,
-    "explain": "그림 파일을 열어서 보여주기만 하는 GNOME 기본 이미지 뷰어는 <b>Eog</b>(Eye of GNOME)입니다. ImageMagick·GIMP는 이미지 편집기라 뷰어 창 형태와는 다릅니다.",
+    "explain": "그림 파일을 열어서 보여주기만 하는 GNOME 기본 이미지 뷰어는 <b>Eog</b>(Eye of GNOME)입니다. ImageMagick·GIMP는 이미지 편집기라 뷰어 창 형태와는 다릅니다.<br/><small>사진: GNOME Image Viewer 3.32 screenshot, Wikimedia Commons, CC BY 4.0</small>",
     "examStage": "2차"
   },
   {
@@ -2523,7 +2523,7 @@
       "2과목: 리눅스 활용",
       "2023-09 기출문제"
     ],
-    "q": "다음 그림에 해당하는 프로그램으로 알맞은 것은?<br/><br/>(그림) 프레젠테이션 슬라이드 편집 화면 스크린샷. 상단에 \"Click to add Title\", 중앙에 \"Click to add Text\" 플레이스홀더가 있고, 우측에 슬라이드 레이아웃 선택 패널이 표시되어 있다.",
+    "q": "다음 그림에 해당하는 프로그램으로 알맞은 것은?<br/><br/><img src=\"/images/linux-master-2/libreoffice-impress.png\" alt=\"프레젠테이션 슬라이드 편집 화면 스크린샷: 상단에 Click to add Title, 중앙에 Click to add Text 플레이스홀더가 있고 우측에 슬라이드 레이아웃 선택 패널이 있다\" style=\"max-width:100%;border-radius:8px;\"/>",
     "opts": [
       "LibreOffice Draw",
       "LibreOfiice Writer",
@@ -2531,7 +2531,7 @@
       "LibreOffice Impress"
     ],
     "answer": 3,
-    "explain": "제목·내용을 채워 넣는 슬라이드 편집 화면은 프레젠테이션 프로그램인 <b>LibreOffice Impress</b>입니다.",
+    "explain": "제목·내용을 채워 넣는 슬라이드 편집 화면은 프레젠테이션 프로그램인 <b>LibreOffice Impress</b>입니다.<br/><small>사진: LibreOffice Impress 4.0.1 screenshot, Wikimedia Commons, LGPL</small>",
     "examStage": "2차"
   },
   {
@@ -2763,7 +2763,7 @@
       "2과목: 리눅스 활용",
       "2023-09 기출문제"
     ],
-    "q": "다음 그림에 해당하는 기술로 가장 알맞은 것은?<br/><br/>(그림) User가 Primary Node에 접속하고, Primary Node와 Backup Node 사이에 \"이상 유무 체크\" 화살표가 있으며, \"primary Node 이상시 서비스를 이어받음\"이라는 설명이 Backup Node 쪽에 표시되어 있다.",
+    "q": "다음 그림에 해당하는 기술로 가장 알맞은 것은?<br/><br/><svg viewBox=\"0 0 480 220\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:100%;background:#fff;border-radius:8px;\"><rect x=\"0\" y=\"0\" width=\"480\" height=\"220\" fill=\"#fff\"/><circle cx=\"60\" cy=\"110\" r=\"22\" fill=\"#5b8def\"/><text x=\"60\" y=\"115\" font-size=\"11\" fill=\"#fff\" text-anchor=\"middle\" font-family=\"sans-serif\">User</text><line x1=\"82\" y1=\"110\" x2=\"170\" y2=\"110\" stroke=\"#333\" stroke-width=\"2\" marker-end=\"url(#arrow2)\"/><rect x=\"170\" y=\"60\" width=\"120\" height=\"60\" rx=\"8\" fill=\"#2f9e44\"/><text x=\"230\" y=\"85\" font-size=\"13\" fill=\"#fff\" text-anchor=\"middle\" font-family=\"sans-serif\" font-weight=\"bold\">Primary</text><text x=\"230\" y=\"102\" font-size=\"13\" fill=\"#fff\" text-anchor=\"middle\" font-family=\"sans-serif\" font-weight=\"bold\">Node</text><rect x=\"170\" y=\"150\" width=\"120\" height=\"60\" rx=\"8\" fill=\"#868e96\"/><text x=\"230\" y=\"175\" font-size=\"13\" fill=\"#fff\" text-anchor=\"middle\" font-family=\"sans-serif\" font-weight=\"bold\">Backup</text><text x=\"230\" y=\"192\" font-size=\"13\" fill=\"#fff\" text-anchor=\"middle\" font-family=\"sans-serif\" font-weight=\"bold\">Node</text><line x1=\"230\" y1=\"120\" x2=\"230\" y2=\"150\" stroke=\"#e8590c\" stroke-width=\"2\" stroke-dasharray=\"4 3\" marker-start=\"url(#arrow)\" marker-end=\"url(#arrow)\"/><text x=\"296\" y=\"138\" font-size=\"12\" fill=\"#e8590c\" font-family=\"sans-serif\">이상 유무 체크</text><rect x=\"295\" y=\"155\" width=\"175\" height=\"48\" rx=\"6\" fill=\"#f1f3f5\" stroke=\"#ced4da\"/><text x=\"305\" y=\"174\" font-size=\"11\" fill=\"#495057\" font-family=\"sans-serif\">Primary Node 이상 시</text><text x=\"305\" y=\"190\" font-size=\"11\" fill=\"#495057\" font-family=\"sans-serif\">Backup이 서비스를 이어받음</text><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 z\" fill=\"#e8590c\"/></marker><marker id=\"arrow2\" markerWidth=\"8\" markerHeight=\"8\" refX=\"4\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 z\" fill=\"#333\"/></marker></defs></svg>",
     "opts": [
       "임베디드 시스템",
       "베어울프 클러스터",
@@ -3063,7 +3063,7 @@
       "2과목: 리눅스 활용",
       "2023-12 기출문제"
     ],
-    "q": "다음 그림에 해당하는 네트워크 케이블로 알맞은 것은?<br/><br/>(그림) 검은색 원형 케이블 양쪽 끝에 금속 BNC 커넥터(원형 삽입 후 90도 회전 잠금 방식)가 달려 있는 동축 케이블 사진.",
+    "q": "다음 그림에 해당하는 네트워크 케이블로 알맞은 것은?<br/><br/><img src=\"/images/linux-master-2/bnc-connector.jpg\" alt=\"검은색 원형 케이블 끝에 금속 BNC 커넥터(원형 삽입 후 90도 회전 잠금 방식)가 달려 있는 동축 케이블 사진\" style=\"max-width:100%;border-radius:8px;\"/>",
     "opts": [
       "STP",
       "UTP",
@@ -3071,7 +3071,7 @@
       "광케이블"
     ],
     "answer": 2,
-    "explain": "삽입 후 돌려서 잠그는 방식의 금속 커넥터가 달린 동축 케이블에 쓰이는 커넥터는 <b>BNC</b>입니다.",
+    "explain": "삽입 후 돌려서 잠그는 방식의 금속 커넥터가 달린 동축 케이블에 쓰이는 커넥터는 <b>BNC</b>입니다.<br/><small>사진: BNC connector (male) by Krzysztof Burghardt, Wikimedia Commons, CC BY-SA 3.0</small>",
     "examStage": "2차"
   },
   {

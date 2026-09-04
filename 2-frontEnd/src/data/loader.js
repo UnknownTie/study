@@ -19,6 +19,14 @@ function unwrap(mod) {
   return mod && mod.default !== undefined ? mod.default : mod;
 }
 
+// 문항 텍스트 안에 "/images/..."로 적어둔 public/ 이미지 경로를 실제 배포 base(dev: '/', 빌드: '/study/')에
+// 맞게 보정한다. 문항 JSON 자체는 base를 모르므로 항상 사이트 루트 기준 절대경로("/images/...")로 적어두고,
+// 로더에서만 이 치환을 거친다.
+function withImageBase(text) {
+  if (typeof text !== 'string' || !text.includes('src="/images/')) return text;
+  return text.replaceAll('src="/images/', `src="${import.meta.env.BASE_URL}images/`);
+}
+
 function segmentsOf(key, prefix) {
   return key.slice(prefix.length).replace(/\.json$/, '').split('/');
 }
@@ -184,7 +192,15 @@ for (const [key, mod] of Object.entries(extraQuestionFiles)) {
   for (const q of data) {
     // topicId는 기본적으로 없음(유형에 안 묶인 연습문제 풀)이지만, 문항 자체에 이미 topicId가 분류되어
     // 있으면(예: 전기기사 기출문제) 그 값을 그대로 살린다 — 아래 스프레드 뒤에 덮어쓰지 않도록 주의.
-    allExtraQuestions.push({ ...q, categoryId, examId, subjectId, topicId: q.topicId ?? null });
+    allExtraQuestions.push({
+      ...q,
+      q: withImageBase(q.q),
+      explain: withImageBase(q.explain),
+      categoryId,
+      examId,
+      subjectId,
+      topicId: q.topicId ?? null,
+    });
   }
 }
 
@@ -302,7 +318,10 @@ for (const [key, mod] of Object.entries(realExamFullFiles)) {
   const data = unwrap(mod);
   const segs = segmentsOf(key, './realexams-full/');
   const sessionId = segs[segs.length - 1];
-  realExamFullBySessionId.set(sessionId, data);
+  const questions = Array.isArray(data.questions)
+    ? data.questions.map((q) => ({ ...q, q: withImageBase(q.q), explain: withImageBase(q.explain) }))
+    : data.questions;
+  realExamFullBySessionId.set(sessionId, { ...data, questions });
 }
 
 export function getRealExamSessions(examId) {

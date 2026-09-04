@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import QuestionCard from './QuestionCard';
 import { shuffle } from '../lib/shuffle';
 import { shuffleOptions, isStatementQuestion } from '../lib/statementShuffle';
 import { enrichWithTopicPct, filterByMinPct, filterByExamStage, getExamStage } from '../lib/quizFilters';
 import { useStars } from '../lib/useStars';
+import { useQuizProgress } from '../lib/quizProgressContext';
 import './QuizPanel.css';
 
 const PCT_OPTIONS = [0, 1, 3, 5, 10];
@@ -20,6 +21,22 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
   const [shuffled, setShuffled] = useState(false);
   const [shuffleSeed, setShuffleSeed] = useState(0);
   const [showTruth, setShowTruth] = useState(false);
+  // "정답 확인"을 누른 문제 id 집합 — 다시 누르면 안 푼 상태로 돌아가는 토글이라 Set으로 관리한다.
+  // 필터/셔플로 카드가 재배치돼도 문제 id 기준이라 "푼 상태"가 그대로 유지된다.
+  const [revealedIds, setRevealedIds] = useState(() => new Set());
+  const toggleRevealed = (id) => {
+    setRevealedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+  // 문제별로 고른 보기 — 정답 확인 전까지는 자유롭게 바꿔 고를 수 있고, 정답/오답 집계에도 쓰인다.
+  const [selectedAnswers, setSelectedAnswers] = useState(() => ({}));
+  const selectAnswer = (id, i) => {
+    setSelectedAnswers((prev) => ({ ...prev, [id]: i }));
+  };
 
   const { stars, toggleStar, isStarred } = useStars();
 
@@ -46,6 +63,30 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
   }, [byStar, shuffled, shuffleSeed]);
   // "참인 보기만 색칠" 버튼은 참/거짓형으로 태깅된 문제가 하나라도 있을 때만 노출한다.
   const hasStatementQuestions = useMemo(() => ordered.some(isStatementQuestion), [ordered]);
+  // 문제를 풀고 있을 때(퀴즈 패널이 떠 있는 동안) 툴바에 보여줄 진행 현황 — 현재 필터된 목록(ordered) 기준.
+  // 정답 확인을 누르지 않은 문제는 "남은 문항"에 남고, 누른 문제만 고른 보기와 정답을 비교해 정답/오답으로 갈린다
+  // (아무 보기도 안 고르고 정답 확인만 누른 경우도 오답으로 집계 — 실제 시험에서 공란과 같은 취급).
+  const totalCount = ordered.length;
+  const solvedCount = useMemo(() => ordered.filter((q) => revealedIds.has(q.id)).length, [ordered, revealedIds]);
+  const remainingCount = totalCount - solvedCount;
+  const correctCount = useMemo(
+    () => ordered.filter((q) => revealedIds.has(q.id) && selectedAnswers[q.id] === q.answer).length,
+    [ordered, revealedIds, selectedAnswers]
+  );
+  const incorrectCount = solvedCount - correctCount;
+  const starredCount = useMemo(() => ordered.filter((q) => stars.includes(q.id)).length, [ordered, stars]);
+
+  // 스크롤을 내려 문제를 풀고 있는 동안에도 진행 현황을 볼 수 있도록, 상단 고정 헤더까지 값을 끌어올린다.
+  // 이 패널이 사라지면(다른 화면으로 이동·"문제 접기") 헤더 표시도 함께 사라지도록 언마운트 시 null로 되돌린다.
+  const { setProgress } = useQuizProgress();
+  useEffect(() => {
+    if (questions.length === 0) {
+      setProgress(null);
+      return undefined;
+    }
+    setProgress({ total: totalCount, remaining: remainingCount, correct: correctCount, incorrect: incorrectCount, starred: starredCount });
+    return () => setProgress(null);
+  }, [questions.length, totalCount, remainingCount, correctCount, incorrectCount, starredCount, setProgress]);
 
   if (questions.length === 0) {
     return <p className="quiz-empty">아직 등록된 연습문제가 없습니다.</p>;
@@ -94,8 +135,11 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
         <button
           className="btn-secondary"
           onClick={() => {
-            setShuffled((s) => !s || true);
+            setShuffled(true);
             setShuffleSeed((n) => n + 1);
+            // 섞을 때마다 새로 푸는 셈이므로 정답 확인·선택했던 보기를 전부 초기화한다.
+            setRevealedIds(new Set());
+            setSelectedAnswers({});
           }}
         >
           {shuffled ? '🔀 다시 섞기' : '🔀 섞어서 풀기'}
@@ -113,7 +157,9 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
             {showTruth ? '참인 보기 색칠 끄기' : '참인 보기만 색칠'}
           </button>
         )}
-        <span className="quiz-count">{ordered.length}문항</span>
+        <span className="quiz-count">
+          전체 {totalCount} · 남은문항 {remainingCount} · 정답 {correctCount} · 오답 {incorrectCount} · ⭐ {starredCount}
+        </span>
       </div>
 
       {/* 카드박스 하나 안에 문제1, 문제2, ... 순서로 나열한다(개별 카드 뒤집기 아님).
@@ -130,6 +176,10 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
             showTruth={showTruth}
             isStarred={isStarred(q.id)}
             onToggleStar={() => toggleStar(q.id)}
+            revealed={revealedIds.has(q.id)}
+            onToggleReveal={() => toggleRevealed(q.id)}
+            selected={selectedAnswers[q.id] ?? null}
+            onSelect={(i) => selectAnswer(q.id, i)}
           />
         ))}
       </div>

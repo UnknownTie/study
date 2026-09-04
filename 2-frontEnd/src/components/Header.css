@@ -10,8 +10,33 @@
   border-bottom: 1px solid var(--border);
 }
 .app-title {
+  flex-shrink: 0;
   font-weight: 800;
   font-size: 1.05rem;
   text-decoration: none;
   color: var(--text);
+  white-space: nowrap;
+}
+.header-quiz-progress {
+  flex: 1 1 auto;
+  min-width: 0; /* flex 아이템 기본값(auto)이면 내용 길이만큼 못 줄어들어 ellipsis가 안 먹는다 */
+  font-size: 0.82rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 12px;
+  text-align: center;
+}
+.header-quiz-progress b {
+  color: var(--accent);
+}
+@media (max-width: 480px) {
+  .app-header {
+    padding: 12px 14px;
+  }
+  .header-quiz-progress {
+    font-size: 0.72rem;
+    margin: 0 8px;
+  }
 }

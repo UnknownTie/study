@@ -23,8 +23,23 @@ function chipColor(label) {
 
 // 카드박스 안의 문제 한 줄: 문제+보기 아래로 해설이 바로 펼쳐진다(뒤집기 없음).
 // showTruth(참인 보기만 색칠)는 QuizPanel 툴바의 전역 토글로, 카드 전체에 일괄 적용된다(문제별 토글 아님).
-export default function QuestionCard({ question, tagLabel, examLabel, number, showTruth = false, isStarred, onToggleStar }) {
-  const [revealed, setRevealed] = useState(false);
+// revealed(정답 확인 여부)·selected(고른 보기)는 QuizPanel이 "푼 문제/정답/오답 개수"를 세야 해서
+// 여기서 로컬로 들지 않고 상위에서 내려받는다. 정답 확인 전에는 보기를 자유롭게 눌러 고를 수 있고,
+// 정답 확인 후에는 보기 선택이 잠기며(다시 고르려면 "정답 가리기"로 먼저 되돌려야 함) 정답은 항상
+// 초록, 내가 고른 보기가 오답이면 그 보기만 빨강으로 표시된다.
+export default function QuestionCard({
+  question,
+  tagLabel,
+  examLabel,
+  number,
+  showTruth = false,
+  isStarred,
+  onToggleStar,
+  revealed,
+  onToggleReveal,
+  selected,
+  onSelect,
+}) {
   const [explainOpen, setExplainOpen] = useState(false);
   const chip = examLabel ? chipColor(examLabel) : null;
   const statementQ = isStatementQuestion(question);
@@ -52,20 +67,29 @@ export default function QuestionCard({ question, tagLabel, examLabel, number, sh
       <ul className="qopts">
         {question.opts.map((opt, i) => {
           const classes = [];
-          if (revealed && i === question.answer) classes.push('correct');
+          if (revealed) {
+            if (i === question.answer) classes.push('correct');
+            else if (i === selected) classes.push('wrong');
+          } else if (i === selected) {
+            classes.push('selected');
+          }
           // "참인 보기만 색칠"은 truth 라벨이 정확히 "true"인 보기만 강조한다(other/some/false는 대상 아님).
           if (showTruth && statementQ && opt.truth === 'true') classes.push('truth');
           return (
-            <li key={i} className={classes.join(' ')}>
+            <li
+              key={i}
+              className={classes.join(' ')}
+              onClick={revealed ? undefined : () => onSelect(i)}
+              style={{ cursor: revealed ? 'default' : 'pointer' }}
+            >
               {String.fromCharCode(9312 + i)} {getOptText(opt)}
             </li>
           );
         })}
       </ul>
       <div className="qcard-actions">
-
-        <button className="btn-secondary" onClick={() => setRevealed(true)}>
-          정답 확인
+        <button className={`btn-secondary ${revealed ? 'active' : ''}`} onClick={onToggleReveal}>
+          {revealed ? '정답 가리기' : '정답 확인'}
         </button>
         <button className="btn-ghost" onClick={() => setExplainOpen((v) => !v)}>
           {explainOpen ? '설명 접기' : '설명 보기'}
