@@ -9,7 +9,12 @@ import './QuizPanel.css';
 
 const PCT_OPTIONS = [0, 1, 3, 5, 10];
 const STAGE_OPTIONS = ['전체', '1차', '2차'];
-const STAR_OPTIONS = ['전체 풀기', '별표 풀기'];
+const FILTER_OPTIONS = [
+  { key: 'remaining', label: '남은문제' },
+  { key: 'correct', label: '정답' },
+  { key: 'incorrect', label: '오답' },
+  { key: 'starred', label: '별표' },
+];
 
 // 문제 목록 묶음: 출제율 필터 + 1차/2차 필터 + 섞어서 풀기 + 카드박스 하나에 문제1, 문제2, ... 순서로 나열.
 // questions에는 이미 topicName/examName 같은 표시용 필드가 있다고 가정(호출부가 채워 넣음).
@@ -17,7 +22,19 @@ const STAR_OPTIONS = ['전체 풀기', '별표 풀기'];
 export default function QuizPanel({ questions, statMap, showSourceTag = false, examName }) {
   const [minPct, setMinPct] = useState(0);
   const [stage, setStage] = useState('전체');
-  const [starFilter, setStarFilter] = useState('전체 풀기');
+  // 기본은 네 항목 모두 체크된 상태(=전체 풀기와 동일). 체크를 해제하면 남은 체크 항목 중
+  // 하나라도 맞는 문제만 보여준다(전부 해제하면 아무 문제도 안 보임).
+  const [checkedFilters, setCheckedFilters] = useState(
+    () => new Set(FILTER_OPTIONS.map((o) => o.key))
+  );
+  const toggleFilter = (key) => {
+    setCheckedFilters((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
   const [shuffled, setShuffled] = useState(false);
   const [shuffleSeed, setShuffleSeed] = useState(0);
   const [showTruth, setShowTruth] = useState(false);
@@ -48,19 +65,24 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
     [enriched, stage, stageOptionsAvailable]
   );
   const filtered = useMemo(() => filterByMinPct(byStage, minPct), [byStage, minPct]);
-  const byStar = useMemo(() => {
-    if (starFilter === '별표 풀기') {
-      return filtered.filter(q => stars.includes(q.id));
-    }
-    return filtered;
-  }, [filtered, starFilter, stars]);
+  const byFilter = useMemo(() => {
+    return filtered.filter((q) => {
+      const revealed = revealedIds.has(q.id);
+      const correct = revealed && selectedAnswers[q.id] === q.answer;
+      if (checkedFilters.has('remaining') && !revealed) return true;
+      if (checkedFilters.has('correct') && correct) return true;
+      if (checkedFilters.has('incorrect') && revealed && !correct) return true;
+      if (checkedFilters.has('starred') && stars.includes(q.id)) return true;
+      return false;
+    });
+  }, [filtered, checkedFilters, revealedIds, selectedAnswers, stars]);
 
   const ordered = useMemo(() => {
-    if (!shuffled) return byStar;
+    if (!shuffled) return byFilter;
     // 문제 순서뿐 아니라 보기 순서(①~④)도 함께 섞는다(문제 유형과 무관하게 항상 적용).
-    return shuffle(byStar).map(shuffleOptions);
+    return shuffle(byFilter).map(shuffleOptions);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [byStar, shuffled, shuffleSeed]);
+  }, [byFilter, shuffled, shuffleSeed]);
   // "참인 보기만 색칠" 버튼은 참/거짓형으로 태깅된 문제가 하나라도 있을 때만 노출한다.
   const hasStatementQuestions = useMemo(() => ordered.some(isStatementQuestion), [ordered]);
   // 문제를 풀고 있을 때(퀴즈 패널이 떠 있는 동안) 툴바에 보여줄 진행 현황 — 현재 필터된 목록(ordered) 기준.
@@ -108,14 +130,15 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
           ))}
         </div>
         <div className="segment-group">
-          {STAR_OPTIONS.map((s) => (
-            <button
-              key={s}
-              className={`segment-btn ${starFilter === s ? 'active' : ''}`}
-              onClick={() => setStarFilter(s)}
-            >
-              {s}
-            </button>
+          {FILTER_OPTIONS.map(({ key, label }) => (
+            <label key={key} className={`filter-checkbox ${checkedFilters.has(key) ? 'active' : ''}`}>
+              <input
+                type="checkbox"
+                checked={checkedFilters.has(key)}
+                onChange={() => toggleFilter(key)}
+              />
+              {label}
+            </label>
           ))}
         </div>
         {stageOptionsAvailable && (
@@ -168,7 +191,7 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
       <div className="quiz-box">
         {ordered.map((q, idx) => (
           <QuestionCard
-            key={`${q.id}-${starFilter}`}
+            key={`${q.id}-${Array.from(checkedFilters).sort().join(',')}`}
             question={q}
             number={idx + 1}
             tagLabel={showSourceTag ? q.topicTagLabel : null}

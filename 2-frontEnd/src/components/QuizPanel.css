@@ -22,6 +22,28 @@
   background: var(--accent);
   color: #fff;
 }
+.filter-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  user-select: none;
+}
+.filter-checkbox input {
+  cursor: pointer;
+}
+.filter-checkbox.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
 .quiz-box {
   background: var(--card);
   border: 1px solid var(--border);
