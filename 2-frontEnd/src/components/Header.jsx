@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuizProgress } from '../lib/quizProgressContext';
+import MemoPad from './MemoPad';
 import './Header.css';
 
 // 다크/라이트 토글은 여기 딱 한 번만 있다 (모든 페이지 상단 같은 위치).
@@ -41,9 +42,12 @@ export default function Header() {
           전체 {progress.total} · 남은문항 {progress.remaining} · 정답 {progress.correct} · 오답 {progress.incorrect} · ⭐ {progress.starred}
         </span>
       )}
-      <button className="theme-toggle" onClick={toggle} aria-label="라이트/다크 전환" title="라이트/다크 전환">
-        {isDarkNow ? '🌙' : '☀️'}
-      </button>
+      <div className="header-actions">
+        <MemoPad />
+        <button className="theme-toggle" onClick={toggle} aria-label="라이트/다크 전환" title="라이트/다크 전환">
+          {isDarkNow ? '🌙' : '☀️'}
+        </button>
+      </div>
     </header>
   );
 }

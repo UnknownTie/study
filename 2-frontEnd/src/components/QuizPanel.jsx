@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import QuestionCard from './QuestionCard';
 import { shuffle } from '../lib/shuffle';
-import { shuffleOptions, isStatementQuestion } from '../lib/statementShuffle';
+import { applyOptionOrder, isStatementQuestion } from '../lib/statementShuffle';
 import { enrichWithTopicPct, filterByMinPct, filterByExamStage, getExamStage } from '../lib/quizFilters';
 import { useStars } from '../lib/useStars';
 import { useQuizProgress } from '../lib/quizProgressContext';
@@ -36,7 +36,16 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
     });
   };
   const [shuffled, setShuffled] = useState(false);
-  const [shuffleSeed, setShuffleSeed] = useState(0);
+  // 문제 순서·보기 순서를 문제 id 기준으로 고정해둔 맵 — "섞어서 풀기"를 누른 순간에만 새로 만든다.
+  // byFilter(체크박스·즐겨찾기 등으로 매번 바뀌는 배열)를 직접 섞으면 별표 해제처럼 필터 결과가
+  // 바뀔 때마다 화면에 남은 문제들까지 다시 무작위로 뒤섞이므로, id별 순서를 미리 고정해두고
+  // 그 순서대로 정렬만 한다.
+  const [shuffleMaps, setShuffleMaps] = useState(null);
+  const reshuffle = () => {
+    const orderMap = new Map(shuffle(enriched.map((q) => q.id)).map((id, idx) => [id, idx]));
+    const optionMap = new Map(enriched.map((q) => [q.id, shuffle(q.opts.map((_, i) => i))]));
+    setShuffleMaps({ orderMap, optionMap });
+  };
   const [showTruth, setShowTruth] = useState(false);
   // "정답 확인"을 누른 문제 id 집합 — 다시 누르면 안 푼 상태로 돌아가는 토글이라 Set으로 관리한다.
   // 필터/셔플로 카드가 재배치돼도 문제 id 기준이라 "푼 상태"가 그대로 유지된다.
@@ -65,8 +74,22 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
     [enriched, stage, stageOptionsAvailable]
   );
   const filtered = useMemo(() => filterByMinPct(byStage, minPct), [byStage, minPct]);
+  // 체크박스(남은문제/정답/오답/별표)와 무관하게 정해지는 "기준 순서" — 섞은 상태라면 고정된
+  // orderMap 순서로, 아니라면 원래 순서 그대로. 문제 번호(number)도 이 순서를 기준으로 매겨서
+  // 정답 확인·별표 토글로 체크박스 필터 결과가 바뀌어도(문제가 화면에서 빠지거나 다시 나타나도)
+  // 남아있는 문제들의 번호와 순서가 흔들리지 않는다.
+  const sortedFiltered = useMemo(() => {
+    if (!shuffled || !shuffleMaps) return filtered;
+    const { orderMap } = shuffleMaps;
+    return [...filtered].sort((a, b) => orderMap.get(a.id) - orderMap.get(b.id));
+  }, [filtered, shuffled, shuffleMaps]);
+  const numberMap = useMemo(() => {
+    const map = new Map();
+    sortedFiltered.forEach((q, idx) => map.set(q.id, idx + 1));
+    return map;
+  }, [sortedFiltered]);
   const byFilter = useMemo(() => {
-    return filtered.filter((q) => {
+    return sortedFiltered.filter((q) => {
       const revealed = revealedIds.has(q.id);
       const correct = revealed && selectedAnswers[q.id] === q.answer;
       if (checkedFilters.has('remaining') && !revealed) return true;
@@ -75,14 +98,14 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
       if (checkedFilters.has('starred') && stars.includes(q.id)) return true;
       return false;
     });
-  }, [filtered, checkedFilters, revealedIds, selectedAnswers, stars]);
+  }, [sortedFiltered, checkedFilters, revealedIds, selectedAnswers, stars]);
 
   const ordered = useMemo(() => {
-    if (!shuffled) return byFilter;
-    // 문제 순서뿐 아니라 보기 순서(①~④)도 함께 섞는다(문제 유형과 무관하게 항상 적용).
-    return shuffle(byFilter).map(shuffleOptions);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [byFilter, shuffled, shuffleSeed]);
+    if (!shuffled || !shuffleMaps) return byFilter;
+    const { optionMap } = shuffleMaps;
+    // 보기 순서(①~④)도 고정된 순서(optionMap)로 재배열한다 — 문제 순서는 이미 sortedFiltered에서 고정됨.
+    return byFilter.map((q) => applyOptionOrder(q, optionMap.get(q.id) ?? q.opts.map((_, i) => i)));
+  }, [byFilter, shuffled, shuffleMaps]);
   // "참인 보기만 색칠" 버튼은 참/거짓형으로 태깅된 문제가 하나라도 있을 때만 노출한다.
   const hasStatementQuestions = useMemo(() => ordered.some(isStatementQuestion), [ordered]);
   // 문제를 풀고 있을 때(퀴즈 패널이 떠 있는 동안) 툴바에 보여줄 진행 현황 — 현재 필터된 목록(ordered) 기준.
@@ -159,7 +182,7 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
           className="btn-secondary"
           onClick={() => {
             setShuffled(true);
-            setShuffleSeed((n) => n + 1);
+            reshuffle();
             // 섞을 때마다 새로 푸는 셈이므로 정답 확인·선택했던 보기를 전부 초기화한다.
             setRevealedIds(new Set());
             setSelectedAnswers({});
@@ -189,11 +212,11 @@ export default function QuizPanel({ questions, statMap, showSourceTag = false, e
           key는 반드시 question.id를 사용한다(배열 인덱스 금지) — 인덱스를 쓰면 셔플 후 자리를
           재사용해 펼침/정답공개 상태가 다른 문제로 새는 버그가 생긴다. */}
       <div className="quiz-box">
-        {ordered.map((q, idx) => (
+        {ordered.map((q) => (
           <QuestionCard
             key={`${q.id}-${Array.from(checkedFilters).sort().join(',')}`}
             question={q}
-            number={idx + 1}
+            number={numberMap.get(q.id)}
             tagLabel={showSourceTag ? q.topicTagLabel : null}
             examLabel={examName || q.examName}
             showTruth={showTruth}

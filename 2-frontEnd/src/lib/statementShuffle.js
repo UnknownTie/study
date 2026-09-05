@@ -24,13 +24,18 @@ export function getOptText(opt) {
   return typeof opt === 'string' ? opt : opt.text;
 }
 
-// opts를 섞고 answer를 새 위치로 재계산한다. 문자열 보기든({opt: "..."}) 태깅된 보기든({text, truth})
-// 순서만 섞을 뿐 각 원소 자체는 건드리지 않으므로 두 형태 모두 동일하게 동작한다 — 형식과 무관하게 항상 섞는다.
-export function shuffleOptions(q) {
-  const order = shuffle(q.opts.map((_, i) => i));
+// order(원래 인덱스들을 새 순서로 나열한 배열)에 맞춰 opts를 재배열하고 answer를 새 위치로 재계산한다.
+// 문자열 보기든({opt: "..."}) 태깅된 보기든({text, truth}) 순서만 바꿀 뿐 각 원소 자체는 건드리지
+// 않으므로 두 형태 모두 동일하게 동작한다 — 형식과 무관하게 항상 적용된다.
+export function applyOptionOrder(q, order) {
   return {
     ...q,
     opts: order.map((i) => q.opts[i]),
     answer: order.indexOf(q.answer),
   };
+}
+
+// opts를 무작위로 섞는다(매 호출마다 새 순서). 고정된 순서를 유지하려면 applyOptionOrder를 직접 쓴다.
+export function shuffleOptions(q) {
+  return applyOptionOrder(q, shuffle(q.opts.map((_, i) => i)));
 }
